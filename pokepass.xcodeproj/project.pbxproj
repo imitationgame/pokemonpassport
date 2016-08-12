@@ -14,6 +14,7 @@
 		DA2602AA1D5E8EC000C3A280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2602A91D5E8EC000C3A280 /* Assets.xcassets */; };
 		DA2602AD1D5E8EC000C3A280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2602AB1D5E8EC000C3A280 /* LaunchScreen.storyboard */; };
 		DA2602B81D5E8EC000C3A280 /* pokepassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2602B71D5E8EC000C3A280 /* pokepassTests.swift */; };
+		DA2602C31D5E993400C3A280 /* CategoryCLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2602C21D5E993400C3A280 /* CategoryCLLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2602B71D5E8EC000C3A280 /* pokepassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokepassTests.swift; sourceTree = "<group>"; };
 		DA2602B91D5E8EC000C3A280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA2602C21D5E993400C3A280 /* CategoryCLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCLLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				DA2602AB1D5E8EC000C3A280 /* LaunchScreen.storyboard */,
 				DA2602AE1D5E8EC000C3A280 /* Info.plist */,
 				DA2602A61D5E8EC000C3A280 /* pokepass.xcdatamodeld */,
+				DA2602C21D5E993400C3A280 /* CategoryCLLocationManager.swift */,
 			);
 			path = pokepass;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				TargetAttributes = {
 					DA26029B1D5E8EC000C3A280 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7AMWG3RLHN;
 					};
 					DA2602B21D5E8EC000C3A280 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -203,6 +207,7 @@
 				DA2602A21D5E8EC000C3A280 /* ViewController.swift in Sources */,
 				DA2602A81D5E8EC000C3A280 /* pokepass.xcdatamodeld in Sources */,
 				DA2602A01D5E8EC000C3A280 /* AppDelegate.swift in Sources */,
+				DA2602C31D5E993400C3A280 /* CategoryCLLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = pokepass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepass;
@@ -344,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = pokepass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepass;
@@ -394,6 +401,7 @@
 				DA2602BE1D5E8EC000C3A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA2602BF1D5E8EC000C3A280 /* Build configuration list for PBXNativeTarget "pokepassTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +410,7 @@
 				DA2602C11D5E8EC000C3A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
