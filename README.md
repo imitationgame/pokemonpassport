@@ -1,2 +1,2 @@
-# pokemonpassport
-Pokemon Passport
+# Pokemon Passport
+Pokemon Go Navigator
