@@ -3,9 +3,7 @@ import UIKit
 class VCreate:UIView
 {
     weak var controller:CCreate!
-    weak var collection:UICollectionView!
-    private let kHeaderHeight:CGFloat = 60
-    private let kCollectionBottom:CGFloat = 120
+    private let kMapHeight:CGFloat = 200
     
     convenience init(controller:CCreate)
     {
