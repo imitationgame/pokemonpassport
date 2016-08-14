@@ -2,7 +2,7 @@ import UIKit
 
 class MMainNavItemProjects:MMainNavItem
 {
-    private let kImage:String = "navigationCreate"
+    private let kImage:String = "navigationProjects"
     
     init(index:Int)
     {
@@ -11,8 +11,8 @@ class MMainNavItemProjects:MMainNavItem
     
     override func controller() -> UIViewController
     {
-        let create:CCreate = CCreate()
+        let projects:CProjects = CProjects()
         
-        return create
+        return projects
     }
 }

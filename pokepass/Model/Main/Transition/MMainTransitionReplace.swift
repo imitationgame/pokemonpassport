@@ -19,7 +19,7 @@ class MMainTransitionReplace:MMainTransition
         }
         else
         {
-            barHeight = parent.bar!.bounds.maxY
+            barHeight = parent.kBarHeight
         }
 
         parent.layoutTopTemporal = NSLayoutConstraint(
