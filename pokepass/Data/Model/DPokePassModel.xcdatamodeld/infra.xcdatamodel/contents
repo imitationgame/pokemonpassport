@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Poem" representedClassName="DInfraPoem" syncable="YES">
+        <attribute name="poemId" attributeType="String" defaultValueString="unknown" indexed="YES" syncable="YES"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="NO" syncable="YES"/>
+        <relationship name="userCreator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="createdPoem" inverseEntity="User" syncable="YES"/>
+        <relationship name="userLiked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="likedPoem" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="DInfraUser" syncable="YES">
+        <attribute name="access" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="unknown" syncable="YES"/>
+        <attribute name="onboarded" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdPoem" toMany="YES" deletionRule="Nullify" destinationEntity="Poem" inverseName="userCreator" inverseEntity="Poem" syncable="YES"/>
+        <relationship name="likedPoem" toMany="YES" deletionRule="Nullify" destinationEntity="Poem" inverseName="userLiked" inverseEntity="Poem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Poem" positionX="-54" positionY="0" width="128" height="105"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>
