@@ -4,7 +4,8 @@ class VCreate:UIView
 {
     weak var controller:CCreate!
     weak var map:VCreateMap!
-    private let kMapHeight:CGFloat = 200
+    private let kLocationsHeight:CGFloat = 100
+    private let kOptionsHeight:CGFloat = 60
     
     convenience init(controller:CCreate)
     {
@@ -22,7 +23,8 @@ class VCreate:UIView
             "map":map]
         
         let metrics:[String:AnyObject] = [
-            "mapHeight":kMapHeight]
+            "locationsHeight":kLocationsHeight,
+            "optionsHeight":kOptionsHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[map]-0-|",
@@ -30,7 +32,17 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[map(mapHeight)]",
+            "H:|-0-[options]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[locations]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[map]-0-[locations(locationsHeight)]-0-[options(optionsHeight)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
