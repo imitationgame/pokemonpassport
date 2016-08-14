@@ -57,6 +57,10 @@
 		DAE03F801D6061960054CDEB /* infraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F191D605FF50054CDEB /* infraTests.swift */; };
 		DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F811D6068040054CDEB /* VMainShadow.swift */; };
 		DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */; };
+		DAE03F921D607BAA0054CDEB /* DPokePassLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8E1D607BAA0054CDEB /* DPokePassLocation+CoreDataProperties.swift */; };
+		DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */; };
+		DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F901D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift */; };
+		DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +128,10 @@
 		DAE03F2C1D605FF50054CDEB /* VProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjects.swift; sourceTree = "<group>"; };
 		DAE03F811D6068040054CDEB /* VMainShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainShadow.swift; sourceTree = "<group>"; };
 		DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemProjects.swift; sourceTree = "<group>"; };
+		DAE03F8E1D607BAA0054CDEB /* DPokePassLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPokePassLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassLocation.swift; sourceTree = "<group>"; };
+		DAE03F901D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPokePassProject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassProject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +278,7 @@
 		DAE03ED81D605FF50054CDEB /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				DAE03F8D1D607BAA0054CDEB /* PokePass */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -412,6 +421,17 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
+		DAE03F8D1D607BAA0054CDEB /* PokePass */ = {
+			isa = PBXGroup;
+			children = (
+				DAE03F8E1D607BAA0054CDEB /* DPokePassLocation+CoreDataProperties.swift */,
+				DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */,
+				DAE03F901D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift */,
+				DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */,
+			);
+			path = PokePass;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +546,8 @@
 				DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */,
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
+				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
+				DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
 				DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */,
 				DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */,
@@ -540,11 +562,13 @@
 				DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */,
 				DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */,
 				DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */,
+				DAE03F921D607BAA0054CDEB /* DPokePassLocation+CoreDataProperties.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
 				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
 				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
+				DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
