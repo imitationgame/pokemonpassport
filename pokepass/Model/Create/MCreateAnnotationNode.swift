@@ -5,13 +5,13 @@ class MCreateAnnotationNode:MCreateAnnotation
 {
     init(coordinate:CLLocationCoordinate2D)
     {
-        let reusableIdentifier:String = VRestaurantMainMapperAnnotationVenue.reusableIdentifier()
+        let reusableIdentifier:String = VCreateMapPinNode.reusableIdentifier()
         super.init(coordinate:coordinate, reusableIdentifier:reusableIdentifier)
     }
     
     override func view() -> MKAnnotationView
     {
-        let view:MKAnnotationView = VRestaurantMainMapperAnnotation.Venue(self)
+        let view:MKAnnotationView = VCreateMapPin.Node(self)
         
         return view
     }

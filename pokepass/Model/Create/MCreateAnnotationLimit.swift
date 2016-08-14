@@ -1,9 +1,18 @@
-//
-//  MCreateAnnotationLimit.swift
-//  pokepass
-//
-//  Created by zero on 8/14/16.
-//  Copyright © 2016 iturbide. All rights reserved.
-//
-
 import Foundation
+import MapKit
+
+class MCreateAnnotationLimit:MCreateAnnotation
+{
+    init(coordinate:CLLocationCoordinate2D)
+    {
+        let reusableIdentifier:String = VCreateMapPinLimit.reusableIdentifier()
+        super.init(coordinate:coordinate, reusableIdentifier:reusableIdentifier)
+    }
+    
+    override func view() -> MKAnnotationView
+    {
+        let view:MKAnnotationView = VCreateMapPin.Limit(self)
+        
+        return view
+    }
+}

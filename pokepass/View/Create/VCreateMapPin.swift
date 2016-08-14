@@ -3,16 +3,16 @@ import MapKit
 
 class VCreateMapPin:MKPinAnnotationView
 {
-    class func Limit(annotation:MCreateAnnotation) -> MCreateAnnotation
+    class func Limit(annotation:MCreateAnnotation) -> VCreateMapPin
     {
-        let view:MCreateAnnotation = VRestaurantMainMapperAnnotationUser(annotation:annotation)
+        let view:VCreateMapPin = VCreateMapPinLimit(annotation:annotation)
         
         return view
     }
     
-    class func Node(annotation:MCreateAnnotation) -> MCreateAnnotation
+    class func Node(annotation:MCreateAnnotation) -> VCreateMapPin
     {
-        let view:MCreateAnnotation = VRestaurantMainMapperAnnotationVenue(annotation:annotation)
+        let view:VCreateMapPin = VCreateMapPinNode(annotation:annotation)
         
         return view
     }

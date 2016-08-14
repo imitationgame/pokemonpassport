@@ -6,16 +6,16 @@ class MCreateAnnotation:NSObject, MKAnnotation
     let coordinate:CLLocationCoordinate2D
     let reusableIdentifier:String
     
-    class func User(coordinate:CLLocationCoordinate2D) -> MRestaurantMainMapAnnotation
+    class func Node(coordinate:CLLocationCoordinate2D) -> MCreateAnnotationNode
     {
-        let annotation:MRestaurantMainMapAnnotation = MRestaurantMainMapAnnotationUser(coordinate:coordinate)
+        let annotation:MCreateAnnotationNode = MCreateAnnotationNode(coordinate:coordinate)
         
         return annotation
     }
     
-    class func Venue(coordinate:CLLocationCoordinate2D, name:String) -> MRestaurantMainMapAnnotation
+    class func Limit(coordinate:CLLocationCoordinate2D, name:String) -> MCreateAnnotationLimit
     {
-        let annotation:MRestaurantMainMapAnnotation = MRestaurantMainMapAnnotationVenue(coordinate:coordinate, name:name)
+        let annotation:MCreateAnnotationLimit = MCreateAnnotationLimit(coordinate:coordinate)
         
         return annotation
     }
