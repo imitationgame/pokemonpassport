@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
-		DAE03F2E1D605FF50054CDEB /* ui.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBB1D605FF40054CDEB /* ui.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
 		DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */; };
@@ -74,6 +73,7 @@
 		DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */; };
 		DAE03FAF1D611AD70054CDEB /* VCreateLocationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAE1D611AD70054CDEB /* VCreateLocationsCell.swift */; };
 		DAE03FB11D611AE30054CDEB /* VCreateOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */; };
+		DAE03FB31D61300B0054CDEB /* ui.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03FB21D61300B0054CDEB /* ui.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		DA26029C1D5E8EC000C3A280 /* pokepass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokepass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
-		DAE03EBB1D605FF40054CDEB /* ui.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ui.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptions.swift; sourceTree = "<group>"; };
 		DAE03FAE1D611AD70054CDEB /* VCreateLocationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateLocationsCell.swift; sourceTree = "<group>"; };
 		DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptionsCell.swift; sourceTree = "<group>"; };
+		DAE03FB21D61300B0054CDEB /* ui.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ui.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +216,8 @@
 		DAE03EB91D605FF40054CDEB /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				DAE03FB21D61300B0054CDEB /* ui.xcassets */,
 				DAE03EBA1D605FF40054CDEB /* brand.xcassets */,
-				DAE03EBB1D605FF40054CDEB /* ui.xcassets */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -559,9 +559,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE03F701D605FF50054CDEB /* Localizable.strings in Resources */,
+				DAE03FB31D61300B0054CDEB /* ui.xcassets in Resources */,
 				DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */,
 				DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */,
-				DAE03F2E1D605FF50054CDEB /* ui.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

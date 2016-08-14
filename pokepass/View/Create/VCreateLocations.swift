@@ -14,6 +14,11 @@ class VCreateLocations:UIView, UICollectionViewDelegate, UICollectionViewDataSou
         backgroundColor = UIColor.clearColor()
         self.controller = controller
         
+        let border:UIView = UIView()
+        border.userInteractionEnabled = false
+        border.backgroundColor = UIColor.main()
+        border.translatesAutoresizingMaskIntoConstraints = false
+        
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.headerReferenceSize = CGSizeZero
         flow.footerReferenceSize = CGSizeZero
@@ -31,11 +36,14 @@ class VCreateLocations:UIView, UICollectionViewDelegate, UICollectionViewDataSou
             VCreateLocationsCell.self,
             forCellWithReuseIdentifier:
             VCreateLocationsCell.reusableIdentifier())
+        self.collection = collection
         
+        addSubview(border)
         addSubview(collection)
         
         let views:[String:AnyObject] = [
-            "collection":collection]
+            "collection":collection,
+            "border":border]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -45,10 +53,26 @@ class VCreateLocations:UIView, UICollectionViewDelegate, UICollectionViewDataSou
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[border]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[border(1)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
+    }
+    
+    override func layoutSubviews()
+    {
+        self.collection.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
     
     //MARK: col del

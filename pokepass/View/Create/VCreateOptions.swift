@@ -11,7 +11,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         self.init()
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.complement()
         self.controller = controller
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -31,6 +31,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             VCreateOptionsCell.self,
             forCellWithReuseIdentifier:
             VCreateOptionsCell.reusableIdentifier())
+        self.collection = collection
         
         addSubview(collection)
         
@@ -51,6 +52,12 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             views:views))
     }
     
+    override func layoutSubviews()
+    {
+        self.collection.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
+    }
+    
     //MARK: col del
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
@@ -66,7 +73,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
         let cell:VCreateOptionsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            VCreateLocationsCell.reusableIdentifier(),
+            VCreateOptionsCell.reusableIdentifier(),
             forIndexPath:
             indexPath) as! VCreateOptionsCell
         
