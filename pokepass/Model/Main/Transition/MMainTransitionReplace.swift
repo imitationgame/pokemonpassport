@@ -59,5 +59,9 @@ class MMainTransitionReplace:MMainTransition
         parent.view.addConstraint(parent.layoutRightTemporal!)
         parent.view.addConstraint(parent.layoutTopTemporal!)
         parent.view.addConstraint(parent.layoutBottomTemporal!)
+        parent.layoutTop = parent.layoutTopTemporal
+        parent.layoutBottom = parent.layoutBottomTemporal
+        parent.layoutRight = parent.layoutRightTemporal
+        parent.layoutLeft = parent.layoutLeftTemporal
     }
 }
