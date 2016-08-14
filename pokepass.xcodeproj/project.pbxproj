@@ -28,10 +28,6 @@
 		DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */; };
 		DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */; };
 		DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */; };
-		DAE03F421D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EDA1D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift */; };
-		DAE03F431D605FF50054CDEB /* DInfraPoem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EDB1D605FF50054CDEB /* DInfraPoem.swift */; };
-		DAE03F441D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EDC1D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift */; };
-		DAE03F451D605FF50054CDEB /* DInfraUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EDD1D605FF50054CDEB /* DInfraUser.swift */; };
 		DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE11D605FF50054CDEB /* MCreate.swift */; };
 		DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE41D605FF50054CDEB /* MMainNav.swift */; };
 		DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */; };
@@ -97,10 +93,6 @@
 		DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelPokePass.swift; sourceTree = "<group>"; };
 		DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerSaver.swift; sourceTree = "<group>"; };
 		DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = infra.xcdatamodel; sourceTree = "<group>"; };
-		DAE03EDA1D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DInfraPoem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DAE03EDB1D605FF50054CDEB /* DInfraPoem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DInfraPoem.swift; sourceTree = "<group>"; };
-		DAE03EDC1D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DInfraUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DAE03EDD1D605FF50054CDEB /* DInfraUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DInfraUser.swift; sourceTree = "<group>"; };
 		DAE03EDE1D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE03EE11D605FF50054CDEB /* MCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreate.swift; sourceTree = "<group>"; };
 		DAE03EE41D605FF50054CDEB /* MMainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNav.swift; sourceTree = "<group>"; };
@@ -278,20 +270,8 @@
 		DAE03ED81D605FF50054CDEB /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				DAE03ED91D605FF50054CDEB /* Infra */,
 			);
 			path = Object;
-			sourceTree = "<group>";
-		};
-		DAE03ED91D605FF50054CDEB /* Infra */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03EDA1D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift */,
-				DAE03EDB1D605FF50054CDEB /* DInfraPoem.swift */,
-				DAE03EDC1D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift */,
-				DAE03EDD1D605FF50054CDEB /* DInfraUser.swift */,
-			);
-			path = Infra;
 			sourceTree = "<group>";
 		};
 		DAE03EDF1D605FF50054CDEB /* Model */ = {
@@ -541,15 +521,12 @@
 				DAE03F531D605FF50054CDEB /* MMainNavPos.swift in Sources */,
 				DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */,
 				DAE03F3A1D605FF50054CDEB /* CMainController.swift in Sources */,
-				DAE03F451D605FF50054CDEB /* DInfraUser.swift in Sources */,
-				DAE03F421D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift in Sources */,
 				DAE03F581D605FF50054CDEB /* MMainTransitionPop.swift in Sources */,
 				DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */,
 				DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */,
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
-				DAE03F441D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift in Sources */,
 				DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */,
 				DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */,
 				DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */,
@@ -561,7 +538,6 @@
 				DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */,
 				DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */,
 				DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */,
-				DAE03F431D605FF50054CDEB /* DInfraPoem.swift in Sources */,
 				DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */,
 				DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
