@@ -1,6 +1,5 @@
 import Foundation
 import CoreData
-import FirebaseDatabase
 
 @objc(DInfraUser)
 class DInfraUser:NSManagedObject

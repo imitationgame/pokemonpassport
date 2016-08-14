@@ -7,16 +7,9 @@ class MMainNavItem
     private(set) var state:MMainNavItemState
     weak var cell:VMainBarCell?
     
-    class func Home(index:Int) -> MMainNavItem
+    class func Projects(index:Int) -> MMainNavItem
     {
-        let item:MMainNavItem = MMainNavItemHome(index:index)
-        
-        return item
-    }
-    
-    class func Profile(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemProfile(index:index)
+        let item:MMainNavItem = MMainNavItemProjects(index:index)
         
         return item
     }
@@ -24,27 +17,6 @@ class MMainNavItem
     class func Create(index:Int) -> MMainNavItem
     {
         let item:MMainNavItem = MMainNavItemCreate(index:index)
-        
-        return item
-    }
-    
-    class func Liked(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemLiked(index:index)
-        
-        return item
-    }
-    
-    class func Notifications(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemNotifications(index:index)
-        
-        return item
-    }
-    
-    class func Root(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemRoot(index:index)
         
         return item
     }
@@ -77,7 +49,7 @@ class MMainNavItem
     
     func controller() -> UIViewController
     {
-        let controller:UIViewController = CHome()
+        let controller:UIViewController = CProjects()
         
         return controller
     }

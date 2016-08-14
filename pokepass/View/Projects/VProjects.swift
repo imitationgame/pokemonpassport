@@ -1,11 +1,11 @@
 import UIKit
 
-class VHome:UIView
+class VProjects:UIView
 {
-    weak var controller:CHome!
+    weak var controller:CProjects!
     weak var spinner:VMainLoader!
     
-    convenience init(controller:CHome)
+    convenience init(controller:CProjects)
     {
         self.init()
         clipsToBounds = true

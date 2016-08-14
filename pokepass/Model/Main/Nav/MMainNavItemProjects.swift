@@ -1,8 +1,8 @@
 import UIKit
 
-class MMainNavItemRoot:MMainNavItem
+class MMainNavItemProjects:MMainNavItem
 {
-    private let kImage:String = "navigationRoot"
+    private let kImage:String = "navigationCreate"
     
     init(index:Int)
     {
@@ -11,7 +11,7 @@ class MMainNavItemRoot:MMainNavItem
     
     override func controller() -> UIViewController
     {
-        let create:CRoot = CRoot()
+        let create:CCreate = CCreate()
         
         return create
     }

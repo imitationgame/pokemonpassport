@@ -36,11 +36,6 @@
 		DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE41D605FF50054CDEB /* MMainNav.swift */; };
 		DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */; };
 		DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */; };
-		DAE03F4B1D605FF50054CDEB /* MMainNavItemHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE71D605FF50054CDEB /* MMainNavItemHome.swift */; };
-		DAE03F4C1D605FF50054CDEB /* MMainNavItemLiked.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE81D605FF50054CDEB /* MMainNavItemLiked.swift */; };
-		DAE03F4D1D605FF50054CDEB /* MMainNavItemNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE91D605FF50054CDEB /* MMainNavItemNotifications.swift */; };
-		DAE03F4E1D605FF50054CDEB /* MMainNavItemProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEA1D605FF50054CDEB /* MMainNavItemProfile.swift */; };
-		DAE03F4F1D605FF50054CDEB /* MMainNavItemRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEB1D605FF50054CDEB /* MMainNavItemRoot.swift */; };
 		DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */; };
 		DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */; };
 		DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */; };
@@ -54,40 +49,18 @@
 		DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF71D605FF50054CDEB /* MMainTransitionReplace.swift */; };
 		DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */; };
 		DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */; };
-		DAE03F5D1D605FF50054CDEB /* MRootPoemsListItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EFE1D605FF50054CDEB /* MRootPoemsListItemAction.swift */; };
-		DAE03F5E1D605FF50054CDEB /* MRootPoemsListItemActionAccept.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EFF1D605FF50054CDEB /* MRootPoemsListItemActionAccept.swift */; };
-		DAE03F5F1D605FF50054CDEB /* MRootPoemsListItemActionReject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F001D605FF50054CDEB /* MRootPoemsListItemActionReject.swift */; };
-		DAE03F601D605FF50054CDEB /* MRootPoemsListItemActionRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F011D605FF50054CDEB /* MRootPoemsListItemActionRevision.swift */; };
-		DAE03F611D605FF50054CDEB /* MRootPoems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F031D605FF50054CDEB /* MRootPoems.swift */; };
-		DAE03F621D605FF50054CDEB /* MRootPoemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F041D605FF50054CDEB /* MRootPoemsList.swift */; };
-		DAE03F631D605FF50054CDEB /* MRootPoemsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F051D605FF50054CDEB /* MRootPoemsListItem.swift */; };
-		DAE03F641D605FF50054CDEB /* MRootPoemsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F061D605FF50054CDEB /* MRootPoemsState.swift */; };
-		DAE03F651D605FF50054CDEB /* MRootPoemsStateNeedsRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F071D605FF50054CDEB /* MRootPoemsStateNeedsRevision.swift */; };
-		DAE03F661D605FF50054CDEB /* MRootPoemsStateReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F081D605FF50054CDEB /* MRootPoemsStateReady.swift */; };
-		DAE03F671D605FF50054CDEB /* MRootPoemsStateRejected.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F091D605FF50054CDEB /* MRootPoemsStateRejected.swift */; };
-		DAE03F681D605FF50054CDEB /* MRootPoemsStateReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F0A1D605FF50054CDEB /* MRootPoemsStateReview.swift */; };
-		DAE03F691D605FF50054CDEB /* MRootPoemsStateUploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F0B1D605FF50054CDEB /* MRootPoemsStateUploading.swift */; };
-		DAE03F6A1D605FF50054CDEB /* MRootPoemsListItemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F0D1D605FF50054CDEB /* MRootPoemsListItemStatus.swift */; };
-		DAE03F6B1D605FF50054CDEB /* MRootPoemsListItemStatusDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F0E1D605FF50054CDEB /* MRootPoemsListItemStatusDownloading.swift */; };
-		DAE03F6C1D605FF50054CDEB /* MRootPoemsListItemStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F0F1D605FF50054CDEB /* MRootPoemsListItemStatusError.swift */; };
-		DAE03F6D1D605FF50054CDEB /* MRootPoemsListItemStatusNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F101D605FF50054CDEB /* MRootPoemsListItemStatusNone.swift */; };
-		DAE03F6E1D605FF50054CDEB /* MRootPoemsListItemStatusReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F111D605FF50054CDEB /* MRootPoemsListItemStatusReady.swift */; };
 		DAE03F6F1D605FF50054CDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F131D605FF50054CDEB /* LaunchScreen.storyboard */; };
 		DAE03F701D605FF50054CDEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F151D605FF50054CDEB /* Localizable.strings */; };
-		DAE03F721D605FF50054CDEB /* infraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F191D605FF50054CDEB /* infraTests.swift */; };
 		DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F1C1D605FF50054CDEB /* VCreate.swift */; };
-		DAE03F741D605FF50054CDEB /* VCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F1D1D605FF50054CDEB /* VCreateCell.swift */; };
-		DAE03F751D605FF50054CDEB /* VCreateCellPublish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F1E1D605FF50054CDEB /* VCreateCellPublish.swift */; };
-		DAE03F761D605FF50054CDEB /* VCreateCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F1F1D605FF50054CDEB /* VCreateCellText.swift */; };
-		DAE03F771D605FF50054CDEB /* VCreateCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F201D605FF50054CDEB /* VCreateCellTitle.swift */; };
-		DAE03F781D605FF50054CDEB /* VCreateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F211D605FF50054CDEB /* VCreateHeader.swift */; };
 		DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F241D605FF50054CDEB /* VMainBar.swift */; };
 		DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F251D605FF50054CDEB /* VMainBarBack.swift */; };
 		DAE03F7B1D605FF50054CDEB /* VMainBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F261D605FF50054CDEB /* VMainBarCell.swift */; };
 		DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F281D605FF50054CDEB /* VMainAlert.swift */; };
 		DAE03F7D1D605FF50054CDEB /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F291D605FF50054CDEB /* VMainLoader.swift */; };
-		DAE03F7E1D605FF50054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F2A1D605FF50054CDEB /* VMainShadow.swift */; };
 		DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F2C1D605FF50054CDEB /* VProjects.swift */; };
+		DAE03F801D6061960054CDEB /* infraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F191D605FF50054CDEB /* infraTests.swift */; };
+		DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F811D6068040054CDEB /* VMainShadow.swift */; };
+		DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,11 +106,6 @@
 		DAE03EE41D605FF50054CDEB /* MMainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNav.swift; sourceTree = "<group>"; };
 		DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItem.swift; sourceTree = "<group>"; };
 		DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemCreate.swift; sourceTree = "<group>"; };
-		DAE03EE71D605FF50054CDEB /* MMainNavItemHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemHome.swift; sourceTree = "<group>"; };
-		DAE03EE81D605FF50054CDEB /* MMainNavItemLiked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemLiked.swift; sourceTree = "<group>"; };
-		DAE03EE91D605FF50054CDEB /* MMainNavItemNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemNotifications.swift; sourceTree = "<group>"; };
-		DAE03EEA1D605FF50054CDEB /* MMainNavItemProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemProfile.swift; sourceTree = "<group>"; };
-		DAE03EEB1D605FF50054CDEB /* MMainNavItemRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemRoot.swift; sourceTree = "<group>"; };
 		DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemState.swift; sourceTree = "<group>"; };
 		DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateActive.swift; sourceTree = "<group>"; };
 		DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateNone.swift; sourceTree = "<group>"; };
@@ -151,41 +119,19 @@
 		DAE03EF71D605FF50054CDEB /* MMainTransitionReplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionReplace.swift; sourceTree = "<group>"; };
 		DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollLeft.swift; sourceTree = "<group>"; };
 		DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollRight.swift; sourceTree = "<group>"; };
-		DAE03EFE1D605FF50054CDEB /* MRootPoemsListItemAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemAction.swift; sourceTree = "<group>"; };
-		DAE03EFF1D605FF50054CDEB /* MRootPoemsListItemActionAccept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemActionAccept.swift; sourceTree = "<group>"; };
-		DAE03F001D605FF50054CDEB /* MRootPoemsListItemActionReject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemActionReject.swift; sourceTree = "<group>"; };
-		DAE03F011D605FF50054CDEB /* MRootPoemsListItemActionRevision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemActionRevision.swift; sourceTree = "<group>"; };
-		DAE03F031D605FF50054CDEB /* MRootPoems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoems.swift; sourceTree = "<group>"; };
-		DAE03F041D605FF50054CDEB /* MRootPoemsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsList.swift; sourceTree = "<group>"; };
-		DAE03F051D605FF50054CDEB /* MRootPoemsListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItem.swift; sourceTree = "<group>"; };
-		DAE03F061D605FF50054CDEB /* MRootPoemsState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsState.swift; sourceTree = "<group>"; };
-		DAE03F071D605FF50054CDEB /* MRootPoemsStateNeedsRevision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsStateNeedsRevision.swift; sourceTree = "<group>"; };
-		DAE03F081D605FF50054CDEB /* MRootPoemsStateReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsStateReady.swift; sourceTree = "<group>"; };
-		DAE03F091D605FF50054CDEB /* MRootPoemsStateRejected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsStateRejected.swift; sourceTree = "<group>"; };
-		DAE03F0A1D605FF50054CDEB /* MRootPoemsStateReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsStateReview.swift; sourceTree = "<group>"; };
-		DAE03F0B1D605FF50054CDEB /* MRootPoemsStateUploading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsStateUploading.swift; sourceTree = "<group>"; };
-		DAE03F0D1D605FF50054CDEB /* MRootPoemsListItemStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemStatus.swift; sourceTree = "<group>"; };
-		DAE03F0E1D605FF50054CDEB /* MRootPoemsListItemStatusDownloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemStatusDownloading.swift; sourceTree = "<group>"; };
-		DAE03F0F1D605FF50054CDEB /* MRootPoemsListItemStatusError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemStatusError.swift; sourceTree = "<group>"; };
-		DAE03F101D605FF50054CDEB /* MRootPoemsListItemStatusNone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemStatusNone.swift; sourceTree = "<group>"; };
-		DAE03F111D605FF50054CDEB /* MRootPoemsListItemStatusReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRootPoemsListItemStatusReady.swift; sourceTree = "<group>"; };
 		DAE03F141D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE03F161D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE03F181D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE03F191D605FF50054CDEB /* infraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infraTests.swift; sourceTree = "<group>"; };
 		DAE03F1C1D605FF50054CDEB /* VCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreate.swift; sourceTree = "<group>"; };
-		DAE03F1D1D605FF50054CDEB /* VCreateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateCell.swift; sourceTree = "<group>"; };
-		DAE03F1E1D605FF50054CDEB /* VCreateCellPublish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateCellPublish.swift; sourceTree = "<group>"; };
-		DAE03F1F1D605FF50054CDEB /* VCreateCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateCellText.swift; sourceTree = "<group>"; };
-		DAE03F201D605FF50054CDEB /* VCreateCellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateCellTitle.swift; sourceTree = "<group>"; };
-		DAE03F211D605FF50054CDEB /* VCreateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHeader.swift; sourceTree = "<group>"; };
 		DAE03F241D605FF50054CDEB /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 		DAE03F251D605FF50054CDEB /* VMainBarBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarBack.swift; sourceTree = "<group>"; };
 		DAE03F261D605FF50054CDEB /* VMainBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarCell.swift; sourceTree = "<group>"; };
 		DAE03F281D605FF50054CDEB /* VMainAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainAlert.swift; sourceTree = "<group>"; };
 		DAE03F291D605FF50054CDEB /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
-		DAE03F2A1D605FF50054CDEB /* VMainShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainShadow.swift; sourceTree = "<group>"; };
 		DAE03F2C1D605FF50054CDEB /* VProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjects.swift; sourceTree = "<group>"; };
+		DAE03F811D6068040054CDEB /* VMainShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainShadow.swift; sourceTree = "<group>"; };
+		DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemProjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,7 +300,6 @@
 				DAE03EE01D605FF50054CDEB /* Create */,
 				DAE03EE21D605FF50054CDEB /* Main */,
 				DAE03EFA1D605FF50054CDEB /* Projects */,
-				DAE03EFB1D605FF50054CDEB /* Root */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,12 +326,8 @@
 			children = (
 				DAE03EE41D605FF50054CDEB /* MMainNav.swift */,
 				DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */,
+				DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */,
 				DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */,
-				DAE03EE71D605FF50054CDEB /* MMainNavItemHome.swift */,
-				DAE03EE81D605FF50054CDEB /* MMainNavItemLiked.swift */,
-				DAE03EE91D605FF50054CDEB /* MMainNavItemNotifications.swift */,
-				DAE03EEA1D605FF50054CDEB /* MMainNavItemProfile.swift */,
-				DAE03EEB1D605FF50054CDEB /* MMainNavItemRoot.swift */,
 				DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */,
 				DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */,
 				DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */,
@@ -416,63 +357,6 @@
 			children = (
 			);
 			path = Projects;
-			sourceTree = "<group>";
-		};
-		DAE03EFB1D605FF50054CDEB /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03EFC1D605FF50054CDEB /* Poems */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
-		DAE03EFC1D605FF50054CDEB /* Poems */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03EFD1D605FF50054CDEB /* Actions */,
-				DAE03F021D605FF50054CDEB /* Base */,
-				DAE03F0C1D605FF50054CDEB /* Status */,
-			);
-			path = Poems;
-			sourceTree = "<group>";
-		};
-		DAE03EFD1D605FF50054CDEB /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03EFE1D605FF50054CDEB /* MRootPoemsListItemAction.swift */,
-				DAE03EFF1D605FF50054CDEB /* MRootPoemsListItemActionAccept.swift */,
-				DAE03F001D605FF50054CDEB /* MRootPoemsListItemActionReject.swift */,
-				DAE03F011D605FF50054CDEB /* MRootPoemsListItemActionRevision.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		DAE03F021D605FF50054CDEB /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F031D605FF50054CDEB /* MRootPoems.swift */,
-				DAE03F041D605FF50054CDEB /* MRootPoemsList.swift */,
-				DAE03F051D605FF50054CDEB /* MRootPoemsListItem.swift */,
-				DAE03F061D605FF50054CDEB /* MRootPoemsState.swift */,
-				DAE03F071D605FF50054CDEB /* MRootPoemsStateNeedsRevision.swift */,
-				DAE03F081D605FF50054CDEB /* MRootPoemsStateReady.swift */,
-				DAE03F091D605FF50054CDEB /* MRootPoemsStateRejected.swift */,
-				DAE03F0A1D605FF50054CDEB /* MRootPoemsStateReview.swift */,
-				DAE03F0B1D605FF50054CDEB /* MRootPoemsStateUploading.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		DAE03F0C1D605FF50054CDEB /* Status */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F0D1D605FF50054CDEB /* MRootPoemsListItemStatus.swift */,
-				DAE03F0E1D605FF50054CDEB /* MRootPoemsListItemStatusDownloading.swift */,
-				DAE03F0F1D605FF50054CDEB /* MRootPoemsListItemStatusError.swift */,
-				DAE03F101D605FF50054CDEB /* MRootPoemsListItemStatusNone.swift */,
-				DAE03F111D605FF50054CDEB /* MRootPoemsListItemStatusReady.swift */,
-			);
-			path = Status;
 			sourceTree = "<group>";
 		};
 		DAE03F121D605FF50054CDEB /* Resource */ = {
@@ -507,11 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				DAE03F1C1D605FF50054CDEB /* VCreate.swift */,
-				DAE03F1D1D605FF50054CDEB /* VCreateCell.swift */,
-				DAE03F1E1D605FF50054CDEB /* VCreateCellPublish.swift */,
-				DAE03F1F1D605FF50054CDEB /* VCreateCellText.swift */,
-				DAE03F201D605FF50054CDEB /* VCreateCellTitle.swift */,
-				DAE03F211D605FF50054CDEB /* VCreateHeader.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -538,9 +417,9 @@
 		DAE03F271D605FF50054CDEB /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				DAE03F811D6068040054CDEB /* VMainShadow.swift */,
 				DAE03F281D605FF50054CDEB /* VMainAlert.swift */,
 				DAE03F291D605FF50054CDEB /* VMainLoader.swift */,
-				DAE03F2A1D605FF50054CDEB /* VMainShadow.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -657,26 +536,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */,
-				DAE03F7E1D605FF50054CDEB /* VMainShadow.swift in Sources */,
-				DAE03F6D1D605FF50054CDEB /* MRootPoemsListItemStatusNone.swift in Sources */,
 				DAE03F571D605FF50054CDEB /* MMainTransitionFade.swift in Sources */,
 				DAE03F7B1D605FF50054CDEB /* VMainBarCell.swift in Sources */,
 				DAE03F531D605FF50054CDEB /* MMainNavPos.swift in Sources */,
 				DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */,
-				DAE03F4E1D605FF50054CDEB /* MMainNavItemProfile.swift in Sources */,
 				DAE03F3A1D605FF50054CDEB /* CMainController.swift in Sources */,
 				DAE03F451D605FF50054CDEB /* DInfraUser.swift in Sources */,
-				DAE03F4D1D605FF50054CDEB /* MMainNavItemNotifications.swift in Sources */,
 				DAE03F421D605FF50054CDEB /* DInfraPoem+CoreDataProperties.swift in Sources */,
 				DAE03F581D605FF50054CDEB /* MMainTransitionPop.swift in Sources */,
 				DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */,
 				DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */,
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
-				DAE03F721D605FF50054CDEB /* infraTests.swift in Sources */,
-				DAE03F771D605FF50054CDEB /* VCreateCellTitle.swift in Sources */,
-				DAE03F5D1D605FF50054CDEB /* MRootPoemsListItemAction.swift in Sources */,
-				DAE03F661D605FF50054CDEB /* MRootPoemsStateReady.swift in Sources */,
-				DAE03F4C1D605FF50054CDEB /* MMainNavItemLiked.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
 				DAE03F441D605FF50054CDEB /* DInfraUser+CoreDataProperties.swift in Sources */,
@@ -688,47 +558,28 @@
 				DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */,
 				DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */,
 				DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */,
-				DAE03F691D605FF50054CDEB /* MRootPoemsStateUploading.swift in Sources */,
-				DAE03F681D605FF50054CDEB /* MRootPoemsStateReview.swift in Sources */,
 				DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */,
-				DAE03F5F1D605FF50054CDEB /* MRootPoemsListItemActionReject.swift in Sources */,
-				DAE03F6C1D605FF50054CDEB /* MRootPoemsListItemStatusError.swift in Sources */,
-				DAE03F741D605FF50054CDEB /* VCreateCell.swift in Sources */,
-				DAE03F761D605FF50054CDEB /* VCreateCellText.swift in Sources */,
-				DAE03F781D605FF50054CDEB /* VCreateHeader.swift in Sources */,
-				DAE03F651D605FF50054CDEB /* MRootPoemsStateNeedsRevision.swift in Sources */,
 				DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */,
 				DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */,
 				DAE03F431D605FF50054CDEB /* DInfraPoem.swift in Sources */,
-				DAE03F5E1D605FF50054CDEB /* MRootPoemsListItemActionAccept.swift in Sources */,
-				DAE03F611D605FF50054CDEB /* MRootPoems.swift in Sources */,
-				DAE03F631D605FF50054CDEB /* MRootPoemsListItem.swift in Sources */,
 				DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */,
 				DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */,
-				DAE03F621D605FF50054CDEB /* MRootPoemsList.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
-				DAE03F751D605FF50054CDEB /* VCreateCellPublish.swift in Sources */,
 				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
 				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
-				DAE03F4B1D605FF50054CDEB /* MMainNavItemHome.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
-				DAE03F6A1D605FF50054CDEB /* MRootPoemsListItemStatus.swift in Sources */,
-				DAE03F671D605FF50054CDEB /* MRootPoemsStateRejected.swift in Sources */,
+				DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */,
 				DAE03F391D605FF50054CDEB /* CMain.swift in Sources */,
-				DAE03F601D605FF50054CDEB /* MRootPoemsListItemActionRevision.swift in Sources */,
-				DAE03F6B1D605FF50054CDEB /* MRootPoemsListItemStatusDownloading.swift in Sources */,
 				DAE03F561D605FF50054CDEB /* MMainTransition.swift in Sources */,
 				DAE03F7D1D605FF50054CDEB /* VMainLoader.swift in Sources */,
-				DAE03F6E1D605FF50054CDEB /* MRootPoemsListItemStatusReady.swift in Sources */,
 				DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */,
-				DAE03F4F1D605FF50054CDEB /* MMainNavItemRoot.swift in Sources */,
 				DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */,
-				DAE03F641D605FF50054CDEB /* MRootPoemsState.swift in Sources */,
 				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
+				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
 				DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */,
 				DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
@@ -740,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE03F801D6061960054CDEB /* infraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepassTests/Info.plist;
+				INFOPLIST_FILE = pokepass/Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -902,7 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepassTests/Info.plist;
+				INFOPLIST_FILE = pokepass/Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
