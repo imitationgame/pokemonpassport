@@ -70,6 +70,10 @@
 		DAE03FA51D6111180054CDEB /* VCreateMapPinLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */; };
 		DAE03FA71D6111200054CDEB /* VCreateMapPinNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */; };
 		DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */; };
+		DAE03FAB1D6116580054CDEB /* VCreateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAA1D6116580054CDEB /* VCreateLocations.swift */; };
+		DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */; };
+		DAE03FAF1D611AD70054CDEB /* VCreateLocationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAE1D611AD70054CDEB /* VCreateLocationsCell.swift */; };
+		DAE03FB11D611AE30054CDEB /* VCreateOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +154,10 @@
 		DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPinLimit.swift; sourceTree = "<group>"; };
 		DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPinNode.swift; sourceTree = "<group>"; };
 		DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryMKAnnotationView.swift; sourceTree = "<group>"; };
+		DAE03FAA1D6116580054CDEB /* VCreateLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateLocations.swift; sourceTree = "<group>"; };
+		DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptions.swift; sourceTree = "<group>"; };
+		DAE03FAE1D611AD70054CDEB /* VCreateLocationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateLocationsCell.swift; sourceTree = "<group>"; };
+		DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptionsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +413,10 @@
 			children = (
 				DAE03F1C1D605FF50054CDEB /* VCreate.swift */,
 				DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */,
+				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
+				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
+				DAE03FAA1D6116580054CDEB /* VCreateLocations.swift */,
+				DAE03FAE1D611AD70054CDEB /* VCreateLocationsCell.swift */,
 				DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */,
 				DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */,
 				DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */,
@@ -577,6 +589,7 @@
 				DAE03F581D605FF50054CDEB /* MMainTransitionPop.swift in Sources */,
 				DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */,
 				DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */,
+				DAE03FB11D611AE30054CDEB /* VCreateOptionsCell.swift in Sources */,
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
@@ -606,6 +619,7 @@
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
 				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
+				DAE03FAF1D611AD70054CDEB /* VCreateLocationsCell.swift in Sources */,
 				DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
@@ -620,10 +634,12 @@
 				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
 				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
 				DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */,
+				DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */,
 				DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
 				DAE03F591D605FF50054CDEB /* MMainTransitionPush.swift in Sources */,
 				DAE03FA71D6111200054CDEB /* VCreateMapPinNode.swift in Sources */,
+				DAE03FAB1D6116580054CDEB /* VCreateLocations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
