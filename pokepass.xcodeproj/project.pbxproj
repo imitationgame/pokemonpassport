@@ -45,7 +45,6 @@
 		DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF71D605FF50054CDEB /* MMainTransitionReplace.swift */; };
 		DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */; };
 		DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */; };
-		DAE03F6F1D605FF50054CDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F131D605FF50054CDEB /* LaunchScreen.storyboard */; };
 		DAE03F701D605FF50054CDEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F151D605FF50054CDEB /* Localizable.strings */; };
 		DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F1C1D605FF50054CDEB /* VCreate.swift */; };
 		DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F241D605FF50054CDEB /* VMainBar.swift */; };
@@ -61,6 +60,8 @@
 		DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */; };
 		DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F901D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift */; };
 		DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */; };
+		DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */; };
+		DAE03F991D6080C70054CDEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE03F981D6080C70054CDEB /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +116,6 @@
 		DAE03EF71D605FF50054CDEB /* MMainTransitionReplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionReplace.swift; sourceTree = "<group>"; };
 		DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollLeft.swift; sourceTree = "<group>"; };
 		DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollRight.swift; sourceTree = "<group>"; };
-		DAE03F141D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE03F161D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE03F181D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE03F191D605FF50054CDEB /* infraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infraTests.swift; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 		DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassLocation.swift; sourceTree = "<group>"; };
 		DAE03F901D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPokePassProject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassProject.swift; sourceTree = "<group>"; };
+		DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAE03F981D6080C70054CDEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE03F991D6080C70054CDEB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +158,7 @@
 		DA2602931D5E8EC000C3A280 = {
 			isa = PBXGroup;
 			children = (
+				DAE03F981D6080C70054CDEB /* MapKit.framework */,
 				DAE03EB81D605FF40054CDEB /* pokepass */,
 				DA26029D1D5E8EC000C3A280 /* Products */,
 			);
@@ -351,7 +355,7 @@
 		DAE03F121D605FF50054CDEB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				DAE03F131D605FF50054CDEB /* LaunchScreen.storyboard */,
+				DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */,
 				DAE03F151D605FF50054CDEB /* Localizable.strings */,
 			);
 			path = Resource;
@@ -483,6 +487,11 @@
 					DA26029B1D5E8EC000C3A280 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7AMWG3RLHN;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DA2602B21D5E8EC000C3A280 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -496,7 +505,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = DA2602931D5E8EC000C3A280;
 			productRefGroup = DA26029D1D5E8EC000C3A280 /* Products */;
@@ -515,8 +523,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE03F701D605FF50054CDEB /* Localizable.strings in Resources */,
+				DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */,
 				DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */,
-				DAE03F6F1D605FF50054CDEB /* LaunchScreen.storyboard in Resources */,
 				DAE03F2E1D605FF50054CDEB /* ui.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,14 +614,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DAE03F131D605FF50054CDEB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DAE03F141D605FF50054CDEB /* en */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		DAE03F151D605FF50054CDEB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -662,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -702,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

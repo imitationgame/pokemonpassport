@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
     <entity name="Location" representedClassName="DPokePassLocation" syncable="YES">
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="locationProject" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="projectLocations" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="DPokePassProject" syncable="YES">
