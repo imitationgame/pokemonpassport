@@ -14,7 +14,7 @@ class VCreate:UIView
         self.init()
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.complement()
         
         let map:VCreateMap = VCreateMap(controller:controller)
         self.map = map
@@ -74,7 +74,7 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[pointer]-0-[loader]",
+            "V:[pointer]-0-[loader]-0-|",
             options:[],
             metrics:metrics,
             views:views))

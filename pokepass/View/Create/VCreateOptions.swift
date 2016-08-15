@@ -14,7 +14,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.clearColor()
         self.controller = controller
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
