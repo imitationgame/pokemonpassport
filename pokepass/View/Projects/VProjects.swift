@@ -6,6 +6,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
+    private let kCellHeight:CGFloat = 60
     
     convenience init(controller:CProjects)
     {
@@ -23,7 +24,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.Vertical
-        flow.sectionInset = UIEdgeInsetsZero
+        flow.sectionInset = UIEdgeInsetsMake(0, 0, kCollectionBottom, 0)
         
         let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
         collection.clipsToBounds = true
@@ -35,9 +36,9 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collection.dataSource = self
         collection.delegate = self
         collection.registerClass(
-            VCreateOptionsCell.self,
+            VProjectsCell.self,
             forCellWithReuseIdentifier:
-            VCreateOptionsCell.reusableIdentifier())
+            VProjectsCell.reusableIdentifier())
         self.collection = collection
         
         addSubview(spinner)
@@ -88,6 +89,14 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: col del
     
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    {
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSizeMake(width, kCellHeight)
+        
+        return size
+    }
+    
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {
         return 1
@@ -98,5 +107,17 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         let count:Int = controller.model.items.count
         
         return count
+    }
+    
+    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    {
+        let item:MProjectsItem = modelAtIndex(indexPath)
+        let cell:VProjectsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+            VProjectsCell.reusableIdentifier(),
+            forIndexPath:
+            indexPath) as! VProjectsCell
+        cell.config(item)
+        
+        return cell
     }
 }

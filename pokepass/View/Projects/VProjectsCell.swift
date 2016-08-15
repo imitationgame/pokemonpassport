@@ -38,7 +38,7 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: public
     
-    func config()
+    func config(model:MProjectsItem)
     {
         
     }
