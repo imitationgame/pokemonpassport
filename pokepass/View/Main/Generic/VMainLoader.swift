@@ -9,6 +9,11 @@ class VMainLoader:UIImageView
         super.init(frame:CGRectZero)
         
         let images:[UIImage] = [
+            UIImage(named:"loader0")!,
+            UIImage(named:"loader1")!,
+            UIImage(named:"loader2")!,
+            UIImage(named:"loader3")!,
+            UIImage(named:"loader4")!
         ]
         
         userInteractionEnabled = false
