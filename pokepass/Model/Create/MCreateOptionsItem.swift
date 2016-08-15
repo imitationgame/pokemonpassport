@@ -2,6 +2,9 @@ import Foundation
 
 class MCreateOptionsItem
 {
+    let image:String
+    let title:String
+    
     class func Save() -> MCreateOptionsItemSave
     {
         let model:MCreateOptionsItemSave = MCreateOptionsItemSave()
@@ -28,5 +31,11 @@ class MCreateOptionsItem
         let model:MCreateOptionsItemAdd = MCreateOptionsItemAdd()
         
         return model
+    }
+    
+    init(image:String, title:String)
+    {
+        self.image = image
+        self.title = title
     }
 }

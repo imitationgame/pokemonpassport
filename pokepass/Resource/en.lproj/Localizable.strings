@@ -1,30 +1,4 @@
-"general_errorDownload"="Error connecting to server";
-
-"CCreate_errorSaveFile"="Error saving poem";
-"CCreate_poemSaved"="Poem saved and waiting for revision";
-"COnboardingItemUser_defaultName"="Anonymous";
-"CRootListUploading_done"="Remove success!";
-
-"VAccessBanned_label"="Your account has been suspended, please contact support if you want more information";
-"VCreateHeader_title"="Add a poem";
-"VCreateCellTitle_label"="Title";
-"VCreateCellTitle_fieldPlaceholder"="Unnamed poem";
-"VCreateCellText_label"="Poem";
-"VCreateCellPublish_button"="Publish";
-"VOnboardingItemHistoryDescr_label"="Infra first issue got published on October 1977\n\nAiming to widespread infrarealism poetic movement";
-"VOnboardingItemApp_label"="Now you can browse through\ninfrarealism poetry\nor share yours";
-"VOnboardingItemUser_label"="Nom de plume";
-"VOnboardingItemUser_placeholder"="Pen name";
-"VOnboardingItemUser_button"="Start";
-"VRootListUploading_button"="Remove";
-"VRootListReviewHeader_labelUser"="\nBy %@";
-
-"MCreateItemTitle_minCharacters"="Poem needs a title";
-"MCreateItemTitle_maxCharacters"="Title should have %@ characters max";
-"MCreateItemText_minCharacters"="Poem missing!";
-"MCreateItemText_maxCharacters"="Poem can't be longer than %@ characters";
-"MRootPoemsListItemActionAccept_title"="Accept";
-"MRootPoemsListItemActionAccept_accept"="Accept";
-"MRootPoemsListItemActionAccept_cancel"="Cancel";
-
-"FStoragePoem_errorSaving"="Error saving, try again";
+"MCreateOptionsItemSave_title"="Save";
+"MCreateOptionsItemClear_title"="Save";
+"MCreateOptionsItemRemoveLast_title"="Save";
+"MCreateOptionsItemAdd_title"="Save";
