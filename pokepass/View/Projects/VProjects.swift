@@ -89,6 +89,22 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: col del
     
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
+    {
+        let size:CGSize
+        
+        if controller.model.items.isEmpty
+        {
+            size = collectionView.bounds.size
+        }
+        else
+        {
+            size = CGSizeZero
+        }
+        
+        return size
+    }
+    
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
     {
         let width:CGFloat = collectionView.bounds.maxX

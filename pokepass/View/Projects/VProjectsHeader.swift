@@ -19,6 +19,22 @@ class VProjectsHeader:UICollectionReusableView
         label.text = NSLocalizedString("VProjectsHeader_label", comment:"")
         
         addSubview(label)
+        
+        let views:[String:AnyObject] = [
+            "label":label]
+        
+        let metrics:[String:AnyObject] = [:]
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-20-[label]-20-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[label]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     required init?(coder:NSCoder)
