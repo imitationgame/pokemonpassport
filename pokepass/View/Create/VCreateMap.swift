@@ -27,7 +27,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         showsPointsOfInterest = true
         showsCompass = true
         showsScale = true
-        showsTraffic = true
+        showsTraffic = false
         delegate = self
     }
     

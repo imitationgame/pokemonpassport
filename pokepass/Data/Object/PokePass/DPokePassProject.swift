@@ -11,4 +11,6 @@ class DPokePassProject:NSManagedObject
     {
         return "Project"
     }
+    
+    
 }
