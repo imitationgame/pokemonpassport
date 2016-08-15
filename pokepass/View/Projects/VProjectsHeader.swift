@@ -6,13 +6,14 @@ class VProjectsHeader:UICollectionReusableView
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.clearColor()
         userInteractionEnabled = false
         
         let label:UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.regular(15)
+        label.font = UIFont.regular(17)
         label.textColor = UIColor.blackColor()
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
@@ -26,7 +27,7 @@ class VProjectsHeader:UICollectionReusableView
         let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[label]-20-|",
+            "H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))

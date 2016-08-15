@@ -6,13 +6,14 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
+    private let kHeaderHeight:CGFloat = 100
     private let kCellHeight:CGFloat = 60
     
     convenience init(controller:CProjects)
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.complement()
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
@@ -45,6 +46,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             VProjectsCell.self,
             forCellWithReuseIdentifier:
             VProjectsCell.reusableIdentifier())
+        collection.hidden = true
         self.collection = collection
         
         addSubview(spinner)
@@ -93,6 +95,15 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         return item
     }
     
+    //MARK: public
+    
+    func modelLoaded()
+    {
+        spinner.stopAnimating()
+        collection.reloadData()
+        collection.hidden = false
+    }
+    
     //MARK: col del
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
@@ -101,7 +112,8 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         if controller.model.items.isEmpty
         {
-            size = collectionView.bounds.size
+            let width:CGFloat = collectionView.bounds.maxX
+            size = CGSizeMake(width, kHeaderHeight)
         }
         else
         {

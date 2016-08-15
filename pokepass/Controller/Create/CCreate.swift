@@ -66,7 +66,7 @@ class CCreate:CMainController
         }
     }
     
-    private func storeProject()
+    private func storeProject(name:String)
     {
         storeLocations = model.locations
         
@@ -74,6 +74,7 @@ class CCreate:CMainController
             DPokePassProject.self)
         { [weak self] (modelProject) in
             
+            modelProject.name = name
             self?.project = modelProject
             self?.storeRoute()
         }
@@ -88,7 +89,7 @@ class CCreate:CMainController
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         { [weak self] in
         
-            self?.storeProject()
+            self?.storeProject(name)
         }
     }
     
