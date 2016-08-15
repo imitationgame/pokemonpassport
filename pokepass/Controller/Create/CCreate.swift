@@ -24,11 +24,24 @@ class CCreate:CMainController
         view = viewCreate
     }
     
+    //MARK: private
+    
+    private func storeRoute()
+    {
+        
+    }
+    
     //MARK: public
     
     func save(name:String)
     {
-        //TODO
+        viewCreate.showLoading()
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
+        
+            self?.storeRoute()
+        }
     }
     
     func clear()
