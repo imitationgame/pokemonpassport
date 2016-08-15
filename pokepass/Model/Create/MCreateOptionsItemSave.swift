@@ -12,7 +12,11 @@ class MCreateOptionsItemSave:MCreateOptionsItem
     
     override func selected(controller:CCreate)
     {
-        if !controller.model.locations.isEmpty
+        if controller.model.locations.isEmpty
+        {
+            VMainAlert.Message(NSLocalizedString("MCreateOptionsItemSave_empty", comment:""))
+        }
+        else
         {
             let alert:UIAlertController = UIAlertController(
                 title:
