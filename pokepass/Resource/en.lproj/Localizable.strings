@@ -7,3 +7,5 @@
 "MCreateOptionsItemSave_cancel"="Cancel";
 "MCreateOptionsItemSave_accept"="Accept";
 "MCreateOptionsItemSave_noName"="Unnamed project";
+
+"CMainController_saved"="Project saved!";

@@ -4,6 +4,7 @@ class CCreate:CMainController
 {
     weak var viewCreate:VCreate!
     let model:MCreate
+    private var project:DPokePassProject?
     
     init()
     {
@@ -28,24 +29,50 @@ class CCreate:CMainController
     
     private func finishStoring()
     {
+        DManager.sharedInstance.managerPokePass.saver.save(false)
+        VMainAlert.Message(NSLocalizedString("CMainController_saved", comment:""))
         
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.clear()
+            self?.viewCreate
+        }
     }
     
     private func storeRoute()
     {
         if model.locations.isEmpty
         {
-            
+            finishStoring()
         }
         else
         {
+            let annotation:MCreateAnnotation = model.locations.removeFirst()
+            let latitude:Double = annotation.coordinate.latitude
+            let longitude:Double = annotation.coordinate.longitude
             
+            DManager.sharedInstance.managerPokePass.createManagedObject(
+                DPokePassLocation.self)
+            { [weak self] (model) in
+                
+                model.latitude = latitude
+                model.longitude = longitude
+                model.locationProject = self?.project
+                self?.storeRoute()
+            }
         }
     }
     
     private func storeProject()
     {
-        DManager.sharedInstance
+        DManager.sharedInstance.managerPokePass.createManagedObject(
+            DPokePassProject.self)
+        { [weak self] (model) in
+            
+            self?.project = model
+            self?.storeRoute()
+        }
     }
     
     //MARK: public

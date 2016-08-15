@@ -85,4 +85,10 @@ class VCreate:UIView
         loader.startAnimating()
         options.hidden = true
     }
+    
+    func hideLoading()
+    {
+        loader.stopAnimating()
+        options.hidden = false
+    }
 }
