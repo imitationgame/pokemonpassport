@@ -63,11 +63,7 @@
 		DAE03F991D6080C70054CDEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE03F981D6080C70054CDEB /* MapKit.framework */; };
 		DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */; };
 		DAE03F9D1D610F430054CDEB /* MCreateAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F9C1D610F430054CDEB /* MCreateAnnotation.swift */; };
-		DAE03F9F1D610F8E0054CDEB /* MCreateAnnotationLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F9E1D610F8E0054CDEB /* MCreateAnnotationLimit.swift */; };
-		DAE03FA11D610F970054CDEB /* MCreateAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA01D610F970054CDEB /* MCreateAnnotationNode.swift */; };
 		DAE03FA31D6110590054CDEB /* VCreateMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */; };
-		DAE03FA51D6111180054CDEB /* VCreateMapPinLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */; };
-		DAE03FA71D6111200054CDEB /* VCreateMapPinNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */; };
 		DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */; };
 		DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */; };
 		DAE03FB11D611AE30054CDEB /* VCreateOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */; };
@@ -152,11 +148,7 @@
 		DAE03F981D6080C70054CDEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMap.swift; sourceTree = "<group>"; };
 		DAE03F9C1D610F430054CDEB /* MCreateAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateAnnotation.swift; sourceTree = "<group>"; };
-		DAE03F9E1D610F8E0054CDEB /* MCreateAnnotationLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateAnnotationLimit.swift; sourceTree = "<group>"; };
-		DAE03FA01D610F970054CDEB /* MCreateAnnotationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateAnnotationNode.swift; sourceTree = "<group>"; };
 		DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPin.swift; sourceTree = "<group>"; };
-		DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPinLimit.swift; sourceTree = "<group>"; };
-		DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPinNode.swift; sourceTree = "<group>"; };
 		DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryMKAnnotationView.swift; sourceTree = "<group>"; };
 		DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptions.swift; sourceTree = "<group>"; };
 		DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateOptionsCell.swift; sourceTree = "<group>"; };
@@ -337,8 +329,6 @@
 			children = (
 				DAE03EE11D605FF50054CDEB /* MCreate.swift */,
 				DAE03F9C1D610F430054CDEB /* MCreateAnnotation.swift */,
-				DAE03F9E1D610F8E0054CDEB /* MCreateAnnotationLimit.swift */,
-				DAE03FA01D610F970054CDEB /* MCreateAnnotationNode.swift */,
 				DAE03FBD1D6137200054CDEB /* MCreateOptions.swift */,
 				DAE03FBF1D61372C0054CDEB /* MCreateOptionsItem.swift */,
 				DAE03FC11D6138820054CDEB /* MCreateOptionsItemSave.swift */,
@@ -433,8 +423,6 @@
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
 				DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */,
-				DAE03FA41D6111180054CDEB /* VCreateMapPinLimit.swift */,
-				DAE03FA61D6111200054CDEB /* VCreateMapPinNode.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -600,7 +588,6 @@
 				DAE03F531D605FF50054CDEB /* MMainNavPos.swift in Sources */,
 				DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */,
 				DAE03F3A1D605FF50054CDEB /* CMainController.swift in Sources */,
-				DAE03FA11D610F970054CDEB /* MCreateAnnotationNode.swift in Sources */,
 				DAE03F581D605FF50054CDEB /* MMainTransitionPop.swift in Sources */,
 				DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */,
 				DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */,
@@ -610,11 +597,9 @@
 				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
 				DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
-				DAE03F9F1D610F8E0054CDEB /* MCreateAnnotationLimit.swift in Sources */,
 				DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */,
 				DAE03FBE1D6137200054CDEB /* MCreateOptions.swift in Sources */,
 				DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */,
-				DAE03FA51D6111180054CDEB /* VCreateMapPinLimit.swift in Sources */,
 				DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */,
 				DAE03FC81D6138E90054CDEB /* MCreateOptionsItemAdd.swift in Sources */,
 				DAE03F321D605FF50054CDEB /* CategoryNSNotification.swift in Sources */,
@@ -659,7 +644,6 @@
 				DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
 				DAE03F591D605FF50054CDEB /* MMainTransitionPush.swift in Sources */,
-				DAE03FA71D6111200054CDEB /* VCreateMapPinNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

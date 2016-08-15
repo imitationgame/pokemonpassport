@@ -3,7 +3,7 @@ import CoreLocation
 
 class MCreate
 {
-    var locations:[CLLocationCoordinate2D]
+    var locations:[MCreateAnnotation]
         
     init()
     {

@@ -6,24 +6,10 @@ class MCreateAnnotation:NSObject, MKAnnotation
     let coordinate:CLLocationCoordinate2D
     let reusableIdentifier:String
     
-    class func Node(coordinate:CLLocationCoordinate2D) -> MCreateAnnotationNode
+    init(coordinate:CLLocationCoordinate2D)
     {
-        let annotation:MCreateAnnotationNode = MCreateAnnotationNode(coordinate:coordinate)
-        
-        return annotation
-    }
-    
-    class func Limit(coordinate:CLLocationCoordinate2D, name:String) -> MCreateAnnotationLimit
-    {
-        let annotation:MCreateAnnotationLimit = MCreateAnnotationLimit(coordinate:coordinate)
-        
-        return annotation
-    }
-    
-    init(coordinate:CLLocationCoordinate2D, reusableIdentifier:String)
-    {
+        reusableIdentifier = VCreateMapPin.reusableIdentifier()
         self.coordinate = coordinate
-        self.reusableIdentifier = reusableIdentifier
         
         super.init()
     }
@@ -32,6 +18,8 @@ class MCreateAnnotation:NSObject, MKAnnotation
     
     func view() -> MKAnnotationView
     {
-        fatalError()
+        let view:MKAnnotationView = VCreateMapPin(annotation:self)
+        
+        return view
     }
 }

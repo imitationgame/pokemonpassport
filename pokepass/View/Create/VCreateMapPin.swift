@@ -3,26 +3,14 @@ import MapKit
 
 class VCreateMapPin:MKPinAnnotationView
 {
-    class func Limit(annotation:MCreateAnnotation) -> VCreateMapPin
+    init(annotation:MCreateAnnotation)
     {
-        let view:VCreateMapPin = VCreateMapPinLimit(annotation:annotation)
+        let reuseIdentifier:String = VCreateMapPin.reusableIdentifier()
         
-        return view
-    }
-    
-    class func Node(annotation:MCreateAnnotation) -> VCreateMapPin
-    {
-        let view:VCreateMapPin = VCreateMapPinNode(annotation:annotation)
-        
-        return view
-    }
-    
-    init(annotation:MCreateAnnotation, reuseIdentifier:String, color:UIColor)
-    {
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
-        pinTintColor = color
+        pinTintColor = UIColor.main()
         animatesDrop = true
-        canShowCallout = true
+        canShowCallout = false
     }
     
     override init(frame:CGRect)

@@ -40,12 +40,13 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: public
     
-    func coordinatesAtCenter() -> CLLocationCoordinate2D
+    func coordinatesAtCenter() -> MCreateAnnotation
     {
         let point:CGPoint = center
         let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
+        let annotation:MCreateAnnotation = MCreateAnnotation(coordinate:location)
         
-        return location
+        return annotation
     }
     
     func centerLocation(locationCoordinate:CLLocationCoordinate2D)

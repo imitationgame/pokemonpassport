@@ -9,4 +9,13 @@ class MCreateOptionsItemClear:MCreateOptionsItem
         let title:String = NSLocalizedString("MCreateOptionsItemClear_title", comment:"")
         super.init(image:kImage, title:title)
     }
+    
+    override func selected(controller:CCreate)
+    {
+        if !controller.model.locations.isEmpty
+        {
+            controller.viewCreate.map.removeAnnotations(controller.model.locations)
+            controller.model.locations.removeAll()
+        }
+    }
 }
