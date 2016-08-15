@@ -5,7 +5,7 @@ import CoreData
 class DPokePassProject:NSManagedObject
 {
     @NSManaged var name:String?
-    @NSManaged var projectLocations:NSOrderedSet
+    @NSManaged var projectLocations:[DPokePassLocation]
     
     override class func entityName() -> String
     {

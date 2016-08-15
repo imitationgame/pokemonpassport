@@ -80,15 +80,25 @@ class VCreate:UIView
             views:views))
     }
     
+    //MARK: private
+    
+    private func hideLoading()
+    {
+        loader.stopAnimating()
+        options.hidden = false
+    }
+    
+    //MARK: public
+    
     func showLoading()
     {
         loader.startAnimating()
         options.hidden = true
     }
     
-    func hideLoading()
+    func restart()
     {
-        loader.stopAnimating()
-        options.hidden = false
+        hideLoading()
+        map.regenerateRoute()
     }
 }
