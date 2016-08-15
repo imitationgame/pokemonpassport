@@ -22,4 +22,11 @@ class CCreate:CMainController
         self.viewCreate = viewCreate
         view = viewCreate
     }
+    
+    //MARK: public
+    
+    func save(name:String)
+    {
+        
+    }
 }
