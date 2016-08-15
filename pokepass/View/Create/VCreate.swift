@@ -6,6 +6,7 @@ class VCreate:UIView
     weak var map:VCreateMap!
     weak var pointer:VCreateMapPointer!
     weak var options:VCreateOptions!
+    weak var loader:VMainLoader!
     private let kOptionsHeight:CGFloat = 60
     
     convenience init(controller:CCreate)
@@ -24,6 +25,11 @@ class VCreate:UIView
         let options:VCreateOptions = VCreateOptions(controller:controller)
         self.options = options
         
+        let loader:VMainLoader = VMainLoader()
+        loader.stopAnimating()
+        self.loader = loader
+        
+        addSubview(loader)
         addSubview(map)
         addSubview(pointer)
         addSubview(options)
@@ -31,11 +37,17 @@ class VCreate:UIView
         let views:[String:AnyObject] = [
             "map":map,
             "pointer":pointer,
-            "options":options]
+            "options":options,
+            "loader":loader]
         
         let metrics:[String:AnyObject] = [
             "optionsHeight":kOptionsHeight]
         
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[loader]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[map]-0-|",
             options:[],
@@ -61,5 +73,16 @@ class VCreate:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[pointer]-0-[loader]",
+            options:[],
+            metrics:metrics,
+            views:views))
+    }
+    
+    func showLoading()
+    {
+        loader.startAnimating()
+        options.hidden = true
     }
 }
