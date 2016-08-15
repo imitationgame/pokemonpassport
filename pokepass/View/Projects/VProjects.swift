@@ -36,6 +36,12 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collection.dataSource = self
         collection.delegate = self
         collection.registerClass(
+            VProjectsHeader.self,
+            forSupplementaryViewOfKind:
+            UICollectionElementKindSectionHeader,
+            withReuseIdentifier:
+            VProjectsHeader.reusableIdentifier())
+        collection.registerClass(
             VProjectsCell.self,
             forCellWithReuseIdentifier:
             VProjectsCell.reusableIdentifier())
@@ -123,6 +129,18 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         let count:Int = controller.model.items.count
         
         return count
+    }
+    
+    func collectionView(collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, atIndexPath indexPath:NSIndexPath) -> UICollectionReusableView
+    {
+        let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(
+            kind,
+            withReuseIdentifier:
+            VProjectsHeader.reusableIdentifier(),
+            forIndexPath:
+            indexPath)
+        
+        return reusable
     }
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
