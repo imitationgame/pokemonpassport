@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA9AC69A1D6246EA00F0F5C8 /* VProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		DA26029C1D5E8EC000C3A280 /* pokepass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokepass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsCell.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE03F2C1D605FF50054CDEB /* VProjects.swift */,
+				DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */,
 				DAE03FBE1D6137200054CDEB /* MCreateOptions.swift in Sources */,
 				DAE03F5C1D605FF50054CDEB /* MMainTransitionScrollRight.swift in Sources */,
+				DA9AC69A1D6246EA00F0F5C8 /* VProjectsCell.swift in Sources */,
 				DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */,
 				DAE03FC81D6138E90054CDEB /* MCreateOptionsItemAdd.swift in Sources */,
 				DAE03F321D605FF50054CDEB /* CategoryNSNotification.swift in Sources */,

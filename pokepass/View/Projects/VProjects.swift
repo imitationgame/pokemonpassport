@@ -4,6 +4,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
 {
     weak var controller:CProjects!
     weak var spinner:VMainLoader!
+    weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
     
     convenience init(controller:CProjects)
@@ -30,8 +31,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        collection.scrollEnabled = false
-        collection.bounces = false
+        collection.alwaysBounceVertical = true
         collection.dataSource = self
         collection.delegate = self
         collection.registerClass(
@@ -44,7 +44,8 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         addSubview(collection)
         
         let views:[String:AnyObject] = [
-            "spinner":spinner]
+            "spinner":spinner,
+            "collection":collection]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -58,11 +59,27 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[collection]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[collection]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     //MARK: col del
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        <#code#>
+    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        let count:Int = controller.model
     }
 }
