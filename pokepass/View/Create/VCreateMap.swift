@@ -40,6 +40,14 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: public
     
+    func coordinatesAtCenter() -> CLLocationCoordinate2D
+    {
+        let point:CGPoint = center
+        let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
+        
+        return location
+    }
+    
     func centerLocation(locationCoordinate:CLLocationCoordinate2D)
     {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)

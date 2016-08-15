@@ -78,6 +78,7 @@
 		DAE03FC41D6138C30054CDEB /* MCreateOptionsItemClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC31D6138C30054CDEB /* MCreateOptionsItemClear.swift */; };
 		DAE03FC61D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC51D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift */; };
 		DAE03FC81D6138E90054CDEB /* MCreateOptionsItemAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC71D6138E90054CDEB /* MCreateOptionsItemAdd.swift */; };
+		DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		DAE03FC31D6138C30054CDEB /* MCreateOptionsItemClear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemClear.swift; sourceTree = "<group>"; };
 		DAE03FC51D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemRemoveLast.swift; sourceTree = "<group>"; };
 		DAE03FC71D6138E90054CDEB /* MCreateOptionsItemAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemAdd.swift; sourceTree = "<group>"; };
+		DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPointer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +429,7 @@
 			children = (
 				DAE03F1C1D605FF50054CDEB /* VCreate.swift */,
 				DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */,
+				DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */,
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
 				DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */,
@@ -636,6 +639,7 @@
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
 				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
+				DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */,
 				DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,

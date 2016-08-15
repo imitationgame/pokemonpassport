@@ -4,6 +4,7 @@ class VCreate:UIView
 {
     weak var controller:CCreate!
     weak var map:VCreateMap!
+    weak var pointer:VCreateMapPointer!
     weak var options:VCreateOptions!
     private let kOptionsHeight:CGFloat = 60
     
@@ -17,14 +18,19 @@ class VCreate:UIView
         let map:VCreateMap = VCreateMap(controller:controller)
         self.map = map
         
+        let pointer:VCreateMapPointer = VCreateMapPointer()
+        self.pointer = pointer
+        
         let options:VCreateOptions = VCreateOptions(controller:controller)
         self.options = options
         
         addSubview(map)
+        addSubview(pointer)
         addSubview(options)
         
         let views:[String:AnyObject] = [
             "map":map,
+            "pointer":pointer,
             "options":options]
         
         let metrics:[String:AnyObject] = [
@@ -36,12 +42,22 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[pointer]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[options]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-0-[map]-0-[options(optionsHeight)]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[pointer]-0-[options]",
             options:[],
             metrics:metrics,
             views:views))
