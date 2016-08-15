@@ -71,6 +71,21 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             views:views))
     }
     
+    override func layoutSubviews()
+    {
+        self.collection.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
+    }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:NSIndexPath) -> MProjectsItem
+    {
+        let item:MProjectsItem = controller.model.items[index.item]
+        
+        return item
+    }
+    
     //MARK: col del
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
@@ -80,6 +95,8 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = controller.model
+        let count:Int = controller.model.items.count
+        
+        return count
     }
 }
