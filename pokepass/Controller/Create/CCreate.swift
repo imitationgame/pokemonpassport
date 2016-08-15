@@ -26,7 +26,24 @@ class CCreate:CMainController
     
     //MARK: private
     
+    private func finishStoring()
+    {
+        
+    }
+    
     private func storeRoute()
+    {
+        if model.locations.isEmpty
+        {
+            
+        }
+        else
+        {
+            
+        }
+    }
+    
+    private func storeProject()
     {
         
     }
@@ -40,7 +57,7 @@ class CCreate:CMainController
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         { [weak self] in
         
-            self?.storeRoute()
+            self?.storeProject()
         }
     }
     
