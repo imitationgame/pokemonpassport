@@ -36,7 +36,7 @@ class CProjects:CMainController
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         {
-            let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:false)
+            let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:true)
             let sorters:[NSSortDescriptor] = [sorter]
             DManager.sharedInstance.managerPokePass.fetchManagedObjects(
                 DPokePassProject.self,

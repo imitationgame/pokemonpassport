@@ -8,6 +8,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     private let kCollectionBottom:CGFloat = 40
     private let kHeaderHeight:CGFloat = 100
     private let kCellHeight:CGFloat = 60
+    private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjects)
     {
@@ -18,11 +19,12 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         self.controller = controller
         
         let spinner:VMainLoader = VMainLoader()
+        self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.headerReferenceSize = CGSizeZero
         flow.footerReferenceSize = CGSizeZero
-        flow.minimumLineSpacing = 0
+        flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.Vertical
         flow.sectionInset = UIEdgeInsetsMake(0, 0, kCollectionBottom, 0)
@@ -165,5 +167,16 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.config(item)
         
         return cell
+    }
+    
+    func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    {
+        let item:MProjectsItem = modelAtIndex(indexPath)
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * 300)), dispatch_get_main_queue())
+        { [weak collectionView] in
+            
+            collectionView?.selectItemAtIndexPath(nil, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
+        }
     }
 }

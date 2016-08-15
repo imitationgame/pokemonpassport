@@ -8,14 +8,15 @@ class VProjectsCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor(white:1, alpha:0.5)
         
         let label:UILabel = UILabel()
         label.userInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(14)
+        label.font = UIFont.bold(17)
         label.textColor = UIColor.main()
+        self.label = label
         
         addSubview(label)
         
@@ -29,6 +30,11 @@ class VProjectsCell:UICollectionViewCell
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[label]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     required init?(coder:NSCoder)
@@ -36,10 +42,40 @@ class VProjectsCell:UICollectionViewCell
         fatalError()
     }
     
+    override var selected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var highlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if selected || highlighted
+        {
+            alpha = 0.1
+        }
+        else
+        {
+            alpha = 1
+        }
+    }
+    
     //MARK: public
     
     func config(model:MProjectsItem)
     {
-        
+        label.text = model.name
     }
 }

@@ -122,7 +122,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let item:MCreateOptionsItem = modelAtIndex(indexPath)
         item.selected(controller)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * 300)), dispatch_get_main_queue())
         { [weak collectionView] in
             
             collectionView?.selectItemAtIndexPath(nil, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
