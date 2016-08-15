@@ -29,11 +29,6 @@ class CCreate:CMainController
     
     private func finishStoring()
     {
-        for item:DPokePassLocation in project!.projectLocations
-        {
-            print("lat:\(item.latitude) lon:\(item.longitude)")
-        }
-        
         DManager.sharedInstance.managerPokePass.saver.save(false)
         project = nil
         VMainAlert.Message(NSLocalizedString("CMainController_saved", comment:""))
