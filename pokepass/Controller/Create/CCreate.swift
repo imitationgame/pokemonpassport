@@ -45,7 +45,7 @@ class CCreate:CMainController
     
     private func storeProject()
     {
-        
+        DManager.sharedInstance
     }
     
     //MARK: public
