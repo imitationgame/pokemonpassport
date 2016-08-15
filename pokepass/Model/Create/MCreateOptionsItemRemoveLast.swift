@@ -12,10 +12,6 @@ class MCreateOptionsItemRemoveLast:MCreateOptionsItem
     
     override func selected(controller:CCreate)
     {
-        if !controller.model.locations.isEmpty
-        {
-            let annotation:MCreateAnnotation = controller.model.locations.removeLast()
-            controller.viewCreate.map.removeAnnotation(annotation)
-        }
+        controller.removeLast()
     }
 }

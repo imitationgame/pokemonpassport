@@ -32,8 +32,12 @@ class CCreate:CMainController
     
     func clear()
     {
-        viewCreate.map.removeAnnotations(model.locations)
-        model.locations.removeAll()
+        if !model.locations.isEmpty
+        {
+            viewCreate.map.removeAnnotations(model.locations)
+            model.locations.removeAll()
+            viewCreate.map.regenerateRoute()
+        }
     }
     
     func addLocation()
@@ -41,5 +45,16 @@ class CCreate:CMainController
         let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
         model.locations.append(annotation)
         viewCreate.map.addAnnotation(annotation)
+        viewCreate.map.regenerateRoute()
+    }
+    
+    func removeLast()
+    {
+        if !model.locations.isEmpty
+        {
+            let annotation:MCreateAnnotation = model.locations.removeLast()
+            viewCreate.map.removeAnnotation(annotation)
+            viewCreate.map.regenerateRoute()
+        }
     }
 }

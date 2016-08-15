@@ -12,9 +12,6 @@ class MCreateOptionsItemClear:MCreateOptionsItem
     
     override func selected(controller:CCreate)
     {
-        if !controller.model.locations.isEmpty
-        {
-            controller.clear()
-        }
+        controller.clear()
     }
 }
