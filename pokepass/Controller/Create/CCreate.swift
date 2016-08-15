@@ -35,4 +35,11 @@ class CCreate:CMainController
         viewCreate.map.removeAnnotations(model.locations)
         model.locations.removeAll()
     }
+    
+    func addLocation()
+    {
+        let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
+        model.locations.append(annotation)
+        viewCreate.map.addAnnotation(annotation)
+    }
 }

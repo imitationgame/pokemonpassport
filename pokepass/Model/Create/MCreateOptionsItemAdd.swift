@@ -12,9 +12,6 @@ class MCreateOptionsItemAdd:MCreateOptionsItem
     
     override func selected(controller:CCreate)
     {
-        let annotation:MCreateAnnotation = controller.viewCreate.map.coordinatesAtCenter()
-        controller.model.locations.append(annotation)
-        controller.viewCreate.map.addAnnotation(annotation)
-        
+        controller.addLocation()
     }
 }

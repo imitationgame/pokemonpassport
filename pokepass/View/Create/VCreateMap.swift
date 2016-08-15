@@ -49,6 +49,29 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         return annotation
     }
     
+    func regenerateRoute()
+    {
+        if polyLine != nil
+        {
+            removeOverlay(polyLine!)
+        }
+        
+        let count:Int = controller.model.locations.count
+        
+        if count > 0
+        {
+            var coordinates:[CLLocationCoordinate2D] = []
+            
+            for item:MCreateAnnotation in controller.model.locations
+            {
+                coordinates.append(item.coordinate)
+            }
+            
+            polyLine = MKPolyline(coordinates:&coordinates, count:count)
+            addOverlay(polyLine!, level:MKOverlayLevel.AboveRoads)
+        }
+    }
+    
     func centerLocation(locationCoordinate:CLLocationCoordinate2D)
     {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)
