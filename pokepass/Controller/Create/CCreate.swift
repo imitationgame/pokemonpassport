@@ -27,6 +27,12 @@ class CCreate:CMainController
     
     func save(name:String)
     {
-        
+        //TODO
+    }
+    
+    func clear()
+    {
+        viewCreate.map.removeAnnotations(model.locations)
+        model.locations.removeAll()
     }
 }

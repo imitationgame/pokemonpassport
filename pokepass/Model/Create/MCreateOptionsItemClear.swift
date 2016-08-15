@@ -14,8 +14,7 @@ class MCreateOptionsItemClear:MCreateOptionsItem
     {
         if !controller.model.locations.isEmpty
         {
-            controller.viewCreate.map.removeAnnotations(controller.model.locations)
-            controller.model.locations.removeAll()
+            controller.clear()
         }
     }
 }
