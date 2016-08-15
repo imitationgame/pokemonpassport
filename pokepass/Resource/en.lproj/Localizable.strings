@@ -1,4 +1,4 @@
 "MCreateOptionsItemSave_title"="Save";
-"MCreateOptionsItemClear_title"="Save";
-"MCreateOptionsItemRemoveLast_title"="Save";
-"MCreateOptionsItemAdd_title"="Save";
+"MCreateOptionsItemClear_title"="Clear";
+"MCreateOptionsItemRemoveLast_title"="Remove";
+"MCreateOptionsItemAdd_title"="Add";
