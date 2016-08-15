@@ -5,6 +5,7 @@ class CCreate:CMainController
     weak var viewCreate:VCreate!
     let model:MCreate
     private var project:DPokePassProject?
+    private var storeLocations:[MCreateAnnotation]?
     
     init()
     {
@@ -36,29 +37,30 @@ class CCreate:CMainController
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
             
-            self?.viewCreate.restart()
+            self?.clear()
+            self?.viewCreate.hideLoading()
         }
     }
     
     private func storeRoute()
     {
-        if model.locations.isEmpty
+        if storeLocations!.isEmpty
         {
             finishStoring()
         }
         else
         {
-            let annotation:MCreateAnnotation = model.locations.removeFirst()
+            let annotation:MCreateAnnotation = storeLocations!.removeFirst()
             let latitude:Double = annotation.coordinate.latitude
             let longitude:Double = annotation.coordinate.longitude
             
             DManager.sharedInstance.managerPokePass.createManagedObject(
                 DPokePassLocation.self)
-            { [weak self] (model) in
+            { [weak self] (modelLocation) in
                 
-                model.latitude = latitude
-                model.longitude = longitude
-                model.locationProject = self?.project
+                modelLocation.latitude = latitude
+                modelLocation.longitude = longitude
+                modelLocation.locationProject = self?.project
                 self?.storeRoute()
             }
         }
@@ -66,11 +68,13 @@ class CCreate:CMainController
     
     private func storeProject()
     {
+        storeLocations = model.locations
+        
         DManager.sharedInstance.managerPokePass.createManagedObject(
             DPokePassProject.self)
-        { [weak self] (model) in
+        { [weak self] (modelProject) in
             
-            self?.project = model
+            self?.project = modelProject
             self?.storeRoute()
         }
     }
