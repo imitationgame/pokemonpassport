@@ -10,6 +10,7 @@
 		DA9AC69A1D6246EA00F0F5C8 /* VProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */; };
 		DA9AC69C1D62498700F0F5C8 /* MProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC69B1D62498700F0F5C8 /* MProjects.swift */; };
 		DA9AC69E1D6249AD00F0F5C8 /* MProjectsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */; };
+		DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC69F1D62512A00F0F5C8 /* VProjectsHeader.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -96,6 +97,7 @@
 		DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsCell.swift; sourceTree = "<group>"; };
 		DA9AC69B1D62498700F0F5C8 /* MProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjects.swift; sourceTree = "<group>"; };
 		DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsItem.swift; sourceTree = "<group>"; };
+		DA9AC69F1D62512A00F0F5C8 /* VProjectsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsHeader.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 			children = (
 				DAE03F2C1D605FF50054CDEB /* VProjects.swift */,
 				DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */,
+				DA9AC69F1D62512A00F0F5C8 /* VProjectsHeader.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
+				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
 				DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */,
