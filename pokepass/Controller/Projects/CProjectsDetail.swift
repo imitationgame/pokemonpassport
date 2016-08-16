@@ -30,9 +30,10 @@ class CProjectsDetail:CMainController
     
     private func createGPX()
     {
-        
+        let maxDistance:Double = model.sectionSpeed.selectedItem.maxDistance
+        item.getLocations(maxDistance)
     }
-    
+    /*
     func poemFile() -> NSURL?
     {
         let poemText:String = itemText.text
@@ -49,7 +50,7 @@ class CProjectsDetail:CMainController
         
         return poemUrl
     }
-    
+    */
     //MARK: public
     
     func share()

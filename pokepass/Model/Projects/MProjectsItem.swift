@@ -58,7 +58,7 @@ class MProjectsItem
                 if maxDelta > maxDistance
                 {
                     let difference:Double = ceil(maxDelta / maxDistance)
-                    let maxSteps:Int = Int(difference)
+                    let maxSteps:Int = Int(difference) - 1
                     var sumLatitude:Double = startingLatitude
                     var sumLongitude:Double = startingLongitude
                     let unsignedIncreaseLatitude:Double = deltaLatitude / difference

@@ -172,7 +172,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     {
         let item:MProjectsItem = modelAtIndex(indexPath)
         let transition:MMainTransition = MMainTransition.Push(item.name)
-        let detail:CProjectsDetail = CProjectsDetail()
+        let detail:CProjectsDetail = CProjectsDetail(item:item)
         controller.parent.pushController(detail, transition:transition)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
