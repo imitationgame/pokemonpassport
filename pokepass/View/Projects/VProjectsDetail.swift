@@ -5,9 +5,9 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     weak var controller:CProjectsDetail!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
-    private let kCollectionBottom:CGFloat = 40
-    private let kHeaderHeight:CGFloat = 100
-    private let kCellHeight:CGFloat = 60
+    private let kFooterHeight:CGFloat = 100
+    private let kHeaderHeight:CGFloat = 50
+    private let kCellHeight:CGFloat = 50
     private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjectsDetail)
@@ -27,7 +27,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.Vertical
-        flow.sectionInset = UIEdgeInsetsMake(0, 0, kCollectionBottom, 0)
+        flow.sectionInset = UIEdgeInsetsZero
         
         let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
         collection.clipsToBounds = true
@@ -39,11 +39,17 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         collection.dataSource = self
         collection.delegate = self
         collection.registerClass(
-            VProjectsHeader.self,
+            VProjectsDetailHeader.self,
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionHeader,
             withReuseIdentifier:
-            VProjectsHeader.reusableIdentifier())
+            VProjectsDetailHeader.reusableIdentifier())
+        collection.registerClass(
+            VProjectsDetailFooter.self,
+            forSupplementaryViewOfKind:
+            UICollectionElementKindSectionFooter,
+            withReuseIdentifier:
+            VProjectsDetailFooter.reusableIdentifier())
         collection.registerClass(
             VProjectsCell.self,
             forCellWithReuseIdentifier:

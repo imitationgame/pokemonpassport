@@ -25,6 +25,7 @@
 		DAABC8141D62A5B900807DA9 /* VProjectsDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */; };
 		DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */; };
 		DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */; };
+		DAABC81A1D62A89000807DA9 /* VProjectsDetailCellDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8191D62A89000807DA9 /* VProjectsDetailCellDistance.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -126,6 +127,7 @@
 		DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailHeader.swift; sourceTree = "<group>"; };
 		DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailFooter.swift; sourceTree = "<group>"; };
 		DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCell.swift; sourceTree = "<group>"; };
+		DAABC8191D62A89000807DA9 /* VProjectsDetailCellDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCellDistance.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */,
 				DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */,
 				DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */,
+				DAABC8191D62A89000807DA9 /* VProjectsDetailCellDistance.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				DAE03F321D605FF50054CDEB /* CategoryNSNotification.swift in Sources */,
 				DAE03F9D1D610F430054CDEB /* MCreateAnnotation.swift in Sources */,
 				DAE03F351D605FF50054CDEB /* CategoryUIFont.swift in Sources */,
+				DAABC81A1D62A89000807DA9 /* VProjectsDetailCellDistance.swift in Sources */,
 				DAE03FC61D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift in Sources */,
 				DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */,
 				DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */,
