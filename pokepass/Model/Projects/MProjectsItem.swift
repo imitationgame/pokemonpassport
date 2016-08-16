@@ -19,6 +19,11 @@ class MProjectsItem
         let latitude:Double = location.latitude
         let longitude:Double = location.longitude
         
+        itemFor(latitude, longitude:longitude)
+    }
+    
+    private func itemFor(latitude:Double, longitude:Double)
+    {
         let item:MProjectItemLocation = MProjectItemLocation(latitude:latitude, longitude:longitude)
         locations!.append(item)
     }
@@ -79,15 +84,16 @@ class MProjectsItem
                         increaseLongitude = unsignedIncreaseLongitude
                     }
                     
-                    for step:Int in 0 ..< maxSteps
+                    for _:Int in 0 ..< maxSteps
                     {
+                        sumLatitude += increaseLatitude
+                        sumLongitude += increaseLongitude
                         
+                        itemFor(sumLatitude, longitude:sumLongitude)
                     }
                 }
-                else
-                {
-                    itemForLocation(locationB!)
-                }
+                
+                itemForLocation(locationB!)
             }
             
             let newLocationA:DPokePassLocation? = locationB
@@ -104,7 +110,7 @@ class MProjectsItem
                 newLocationB = nil
             }
             
-            pointsBetweenLocations(nextIndex, locationA:newLocationA, locationB:newLocationA, maxDistance:maxDistance)
+            pointsBetweenLocations(nextIndex, locationA:newLocationA, locationB:newLocationB, maxDistance:maxDistance)
         }
     }
     
@@ -113,22 +119,7 @@ class MProjectsItem
     func getLocations(maxDistance:Double)
     {
         locations = []
-        var previousDbLocation:DPokePassLocation?
-        
-        for dbLocation:DPokePassLocation in model.projectLocations
-        {
-            let latitude:Double = dbLocation.latitude
-            let longitude:Double = dbLocation.longitude
-            
-            if previousDbLocation == nil
-            {
-                previousDbLocation = dbLocation
-                
-            }
-            else
-            {
-                
-            }
-        }
+        let firstLocation:DPokePassLocation? = model.projectLocations.first
+        pointsBetweenLocations(0, locationA:nil, locationB:firstLocation, maxDistance:maxDistance)
     }
 }
