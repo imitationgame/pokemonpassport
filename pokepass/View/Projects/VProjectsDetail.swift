@@ -2,7 +2,7 @@ import UIKit
 
 class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    weak var controller:CProjects!
+    weak var controller:CProjectsDetail!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
@@ -10,7 +10,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     private let kCellHeight:CGFloat = 60
     private let kInterLine:CGFloat = 1
     
-    convenience init(controller:CProjects)
+    convenience init(controller:CProjectsDetail)
     {
         self.init()
         clipsToBounds = true
@@ -90,12 +90,6 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: private
     
-    private func modelAtIndex(index:NSIndexPath) -> MProjectsItem
-    {
-        let item:MProjectsItem = controller.model.items[index.item]
-        
-        return item
-    }
     
     //MARK: public
     
@@ -110,17 +104,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
     {
-        let size:CGSize
-        
-        if controller.model.items.isEmpty
-        {
-            let width:CGFloat = collectionView.bounds.maxX
-            size = CGSizeMake(width, kHeaderHeight)
-        }
-        else
-        {
-            size = CGSizeZero
-        }
+        let size:CGSize = CGSizeZero
         
         return size
     }
@@ -140,7 +124,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = controller.model.items.count
+        let count:Int = 0
         
         return count
     }
@@ -159,18 +143,15 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
-        let item:MProjectsItem = modelAtIndex(indexPath)
         let cell:VProjectsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
             VProjectsCell.reusableIdentifier(),
             forIndexPath:
             indexPath) as! VProjectsCell
-        cell.config(item)
         
         return cell
     }
     
     func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
-        let item:MProjectsItem = modelAtIndex(indexPath)
     }
 }

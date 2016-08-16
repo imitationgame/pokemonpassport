@@ -172,5 +172,14 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
         let item:MProjectsItem = modelAtIndex(indexPath)
+        let transition:MMainTransition = MMainTransition.Push(item.name)
+        let detail:CProjectsDetail = CProjectsDetail()
+        controller.parent.pushController(detail, transition:transition)
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
+        { [weak collectionView] in
+            
+            collectionView?.selectItemAtIndexPath(nil, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
+        }
     }
 }
