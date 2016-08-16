@@ -18,10 +18,18 @@ class VProjectsDetailFooter:UICollectionReusableView
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")
         
+        let button:UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named:"share"), forState:UIControlState.Normal)
+        button.imageView?.contentMode = UIViewContentMode.Center
+        button.imageView?.clipsToBounds = true
+        
         addSubview(label)
+        addSubview(button)
         
         let views:[String:AnyObject] = [
-            "label":label]
+            "label":label,
+            "button":button]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -31,7 +39,12 @@ class VProjectsDetailFooter:UICollectionReusableView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[label]-0-|",
+            "H:|-100-[button]-100-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[label(20)]-5-[button(40)]-40-|",
             options:[],
             metrics:metrics,
             views:views))
