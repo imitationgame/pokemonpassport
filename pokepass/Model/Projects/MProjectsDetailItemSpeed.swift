@@ -6,6 +6,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
     let title:String
     let maxDistance:Double
     private let kCellHeight:CGFloat = 42
+    private let kSelectable:Bool = true
     
     init(index:Int, title:String, maxDistance:Double)
     {
@@ -14,7 +15,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         self.maxDistance = maxDistance
         let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier()
         
-        super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
+        super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight, selectable:kSelectable)
     }
     
     override func config(cell:VProjectsDetailCell, controller:CProjectsDetail)
