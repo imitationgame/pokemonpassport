@@ -25,6 +25,7 @@ class VProjectsDetailFooter:UICollectionReusableView
         button.setImage(UIImage(named:"share"), forState:UIControlState.Normal)
         button.imageView?.contentMode = UIViewContentMode.Center
         button.imageView?.clipsToBounds = true
+        button.addTarget(self, action:#selector(self.actionShare(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         addSubview(label)
         addSubview(button)
@@ -60,6 +61,14 @@ class VProjectsDetailFooter:UICollectionReusableView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: actions
+    
+    func actionShare(sender button:UIButton)
+    {
+        button.userInteractionEnabled = false
+        controller.share()
     }
     
     //MARK: public

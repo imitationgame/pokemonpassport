@@ -23,4 +23,11 @@ class CProjectsDetail:CMainController
         self.viewDetail = viewDetail
         view = viewDetail
     }
+    
+    //MARK: public
+    
+    func share()
+    {
+        
+    }
 }
