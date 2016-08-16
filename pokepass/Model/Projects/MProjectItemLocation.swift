@@ -16,7 +16,9 @@ class MProjectItemLocation
     
     func print() -> String
     {
-        let string:String = String(format:kPrint, latitude, longitude)
+        let latitudeString:String = "\(latitude)"
+        let longitudeString:String = "\(longitude)"
+        let string:String = String(format:kPrint, latitudeString, longitudeString)
         
         return string
     }
