@@ -7,7 +7,6 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     weak var collection:UICollectionView!
     private let kFooterHeight:CGFloat = 100
     private let kHeaderHeight:CGFloat = 50
-    private let kCellHeight:CGFloat = 50
     private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjectsDetail)
@@ -104,6 +103,15 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         spinner.stopAnimating()
         collection.reloadData()
         collection.hidden = false
+    }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:NSIndexPath) -> MProjectsDetailItem
+    {
+        let item:MProjectsDetailItem = controller.model.sections[index.section].items[index.item]
+        
+        return item
     }
     
     //MARK: col del
