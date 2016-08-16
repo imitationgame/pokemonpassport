@@ -9,6 +9,10 @@
 "MCreateOptionsItemSave_noName"="Unnamed project";
 "MCreateOptionsItemSave_empty"="Add at least 1 point";
 "MProjectsDetailSectionSpeed_title"="Speed";
+"MProjectsDetailItemSpeedSlowWalk_title"="Slow walk";
+"MProjectsDetailItemSpeedWalk_title"="Walking";
+"MProjectsDetailItemSpeedSlowRun_title"="Running";
+"MProjectsDetailItemSpeedSlowVehicle_title"="Vehicle";
 
 "CMainController_saved"="Project saved!";
 
