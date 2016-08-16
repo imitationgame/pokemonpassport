@@ -8,6 +8,7 @@
 "MCreateOptionsItemSave_accept"="Accept";
 "MCreateOptionsItemSave_noName"="Unnamed project";
 "MCreateOptionsItemSave_empty"="Add at least 1 point";
+"MProjectsDetailSectionSpeed_title"="Speed";
 
 "CMainController_saved"="Project saved!";
 
