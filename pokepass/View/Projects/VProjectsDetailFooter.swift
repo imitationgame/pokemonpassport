@@ -2,6 +2,8 @@ import UIKit
 
 class VProjectsDetailFooter:UICollectionReusableView
 {
+    weak var controller:CProjectsDetail!
+    
     override init(frame:CGRect)
     {
         super.init(frame:frame)
@@ -12,8 +14,8 @@ class VProjectsDetailFooter:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(15)
-        label.textColor = UIColor.blackColor()
+        label.font = UIFont.bold(12)
+        label.textColor = UIColor.main()
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")
@@ -44,7 +46,12 @@ class VProjectsDetailFooter:UICollectionReusableView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label(20)]-5-[button(40)]-40-|",
+            "V:[button(80)]-15-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[label(20)]-(-25)-[button]",
             options:[],
             metrics:metrics,
             views:views))
@@ -59,5 +66,6 @@ class VProjectsDetailFooter:UICollectionReusableView
     
     func config(controller:CProjectsDetail)
     {
+        self.controller = controller
     }
 }
