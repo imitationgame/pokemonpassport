@@ -92,6 +92,14 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         super.layoutSubviews()
     }
     
+    //MARK: public
+    
+    func showLoading()
+    {
+        collection.hidden = true
+        spinner.startAnimating()
+    }
+    
     //MARK: private
     
     private func modelAtIndex(index:NSIndexPath) -> MProjectsDetailItem

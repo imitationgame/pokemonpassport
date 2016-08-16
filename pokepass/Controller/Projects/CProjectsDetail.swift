@@ -28,6 +28,6 @@ class CProjectsDetail:CMainController
     
     func share()
     {
-        
+        viewDetail.showLoading()
     }
 }
