@@ -15,8 +15,8 @@ class VProjectsDetailHeader:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(16)
-        label.textColor = UIColor.main()
+        label.font = UIFont.bold(15)
+        label.textColor = UIColor.blackColor()
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
         self.label = label

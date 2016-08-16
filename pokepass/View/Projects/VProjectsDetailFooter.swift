@@ -12,8 +12,8 @@ class VProjectsDetailFooter:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(18)
-        label.textColor = UIColor(white:0.2, alpha:1)
+        label.font = UIFont.bold(15)
+        label.textColor = UIColor.blackColor()
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")

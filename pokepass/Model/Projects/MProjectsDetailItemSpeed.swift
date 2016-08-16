@@ -31,7 +31,13 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         else
         {
             cellSpeed.backgroundColor = UIColor(white:1, alpha:0.2)
-            cellSpeed.label.textColor = UIColor.main().colorWithAlphaComponent(0.6)
+            cellSpeed.label.textColor = UIColor.main().colorWithAlphaComponent(0.4)
         }
+    }
+    
+    override func selected(controller:CProjectsDetail)
+    {
+        controller.model.sectionSpeed.selectedItem = self
+        controller.viewDetail.collection.reloadData()
     }
 }
