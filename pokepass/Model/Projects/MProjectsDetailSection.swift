@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MProjectsDetailSection
 {
@@ -16,5 +16,12 @@ class MProjectsDetailSection
     {
         self.title = title
         self.items = items
+    }
+    
+    //MARK: public
+    
+    func config(header:VProjectsDetailHeader)
+    {
+        header.label.text = title
     }
 }

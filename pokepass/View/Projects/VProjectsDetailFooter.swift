@@ -41,4 +41,10 @@ class VProjectsDetailFooter:UICollectionReusableView
     {
         fatalError()
     }
+    
+    //MARK: public
+    
+    func config(controller:CProjectsDetail)
+    {
+    }
 }

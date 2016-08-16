@@ -22,7 +22,6 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSizeZero
         flow.footerReferenceSize = CGSizeZero
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0

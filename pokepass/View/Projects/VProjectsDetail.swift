@@ -18,11 +18,11 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         self.controller = controller
         
         let spinner:VMainLoader = VMainLoader()
+        spinner.stopAnimating()
         self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSizeZero
-        flow.footerReferenceSize = CGSizeZero
+        flow.headerReferenceSize = CGSizeMake(0, kHeaderHeight)
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.Vertical
@@ -53,7 +53,6 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
             VProjectsCell.self,
             forCellWithReuseIdentifier:
             VProjectsCell.reusableIdentifier())
-        collection.hidden = true
         self.collection = collection
         
         addSubview(spinner)
@@ -95,18 +94,6 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: private
     
-    
-    //MARK: public
-    
-    func modelLoaded()
-    {
-        spinner.stopAnimating()
-        collection.reloadData()
-        collection.hidden = false
-    }
-    
-    //MARK: private
-    
     private func modelAtIndex(index:NSIndexPath) -> MProjectsDetailItem
     {
         let item:MProjectsDetailItem = controller.model.sections[index.section].items[index.item]
@@ -116,9 +103,19 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: col del
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
     {
-        let size:CGSize = CGSizeZero
+        let count:Int = controller.model.sections.count
+        let size:CGSize
+        
+        if section == count - 1
+        {
+            size = CGSizeMake(0, kFooterHeight)
+        }
+        else
+        {
+            size = CGSizeZero
+        }
         
         return size
     }
@@ -139,19 +136,40 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = 0
+        let count:Int = controller.model.sections[section].items.count
         
         return count
     }
     
     func collectionView(collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, atIndexPath indexPath:NSIndexPath) -> UICollectionReusableView
     {
-        let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(
-            kind,
-            withReuseIdentifier:
-            VProjectsHeader.reusableIdentifier(),
-            forIndexPath:
-            indexPath)
+        let reusable:UICollectionReusableView
+        
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let header:VProjectsDetailHeader = collectionView.dequeueReusableSupplementaryViewOfKind(
+                kind,
+                withReuseIdentifier:
+                VProjectsDetailHeader.reusableIdentifier(),
+                forIndexPath:
+                indexPath) as! VProjectsDetailHeader
+            let headerModel:MProjectsDetailSection = controller.model.sections[indexPath.section]
+            headerModel.config(header)
+            
+            reusable = header
+        }
+        else
+        {
+            let footer:VProjectsDetailFooter = collectionView.dequeueReusableSupplementaryViewOfKind(
+                kind,
+                withReuseIdentifier:
+                VProjectsDetailFooter.reusableIdentifier(),
+                forIndexPath:
+                indexPath) as! VProjectsDetailFooter
+            footer.config(controller)
+            
+            reusable = footer
+        }
         
         return reusable
     }
