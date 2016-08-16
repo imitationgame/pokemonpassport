@@ -33,7 +33,31 @@ class MProjectsItem
             }
             else
             {
+                let startingLatitude:Double = locationA!.latitude
+                let startingLongitude:Double = locationA!.longitude
+                let endingLatitude:Double = locationB!.latitude
+                let endingLongitude:Double = locationB!.longitude
+                let deltaLatitude:Double = abs(startingLatitude - endingLatitude)
+                let deltaLongitude:Double = abs(startingLongitude - endingLongitude)
+                let maxDelta:Double
                 
+                if deltaLatitude > deltaLongitude
+                {
+                    maxDelta = deltaLatitude
+                }
+                else
+                {
+                    maxDelta = deltaLongitude
+                }
+                
+                if maxDelta > maxDistance
+                {
+                    
+                }
+                else
+                {
+                    itemForLocation(locationB!)
+                }
             }
             
             let newLocationA:DPokePassLocation? = locationB
