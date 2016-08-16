@@ -10,4 +10,10 @@ class MProjectsDetailItem
         self.reusableIdentifier = reusableIdentifier
         self.cellHeight = cellHeight
     }
+    
+    //MARK: public
+    
+    func config(cell:VProjectsDetailCell, controller:CProjectsDetail)
+    {
+    }
 }

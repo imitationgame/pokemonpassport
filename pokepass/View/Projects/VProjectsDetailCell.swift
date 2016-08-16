@@ -6,7 +6,6 @@ class VProjectsDetailCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.whiteColor()
     }
     
     required init?(coder:NSCoder)

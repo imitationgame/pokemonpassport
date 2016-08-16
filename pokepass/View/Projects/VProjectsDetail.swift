@@ -5,8 +5,8 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     weak var controller:CProjectsDetail!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
-    private let kFooterHeight:CGFloat = 100
-    private let kHeaderHeight:CGFloat = 50
+    private let kFooterHeight:CGFloat = 150
+    private let kHeaderHeight:CGFloat = 60
     private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjectsDetail)
@@ -50,9 +50,9 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
             withReuseIdentifier:
             VProjectsDetailFooter.reusableIdentifier())
         collection.registerClass(
-            VProjectsCell.self,
+            VProjectsDetailCellSpeed.self,
             forCellWithReuseIdentifier:
-            VProjectsCell.reusableIdentifier())
+            VProjectsDetailCellSpeed.reusableIdentifier())
         self.collection = collection
         
         addSubview(spinner)
@@ -176,10 +176,12 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
-        let cell:VProjectsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            VProjectsCell.reusableIdentifier(),
+        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let cell:VProjectsDetailCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+            item.reusableIdentifier,
             forIndexPath:
-            indexPath) as! VProjectsCell
+            indexPath) as! VProjectsDetailCell
+        item.config(cell, controller:controller)
         
         return cell
     }

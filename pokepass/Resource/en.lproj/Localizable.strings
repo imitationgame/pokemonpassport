@@ -11,8 +11,8 @@
 "MProjectsDetailSectionSpeed_title"="Speed";
 "MProjectsDetailItemSpeedSlowWalk_title"="Slow walk";
 "MProjectsDetailItemSpeedWalk_title"="Walking";
-"MProjectsDetailItemSpeedSlowRun_title"="Running";
-"MProjectsDetailItemSpeedSlowVehicle_title"="Vehicle";
+"MProjectsDetailItemSpeedRun_title"="Running";
+"MProjectsDetailItemSpeedVehicle_title"="Vehicle";
 
 "CMainController_saved"="Project saved!";
 

@@ -5,15 +5,32 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
     let index:Int
     let title:String
     let maxDistance:Double
-    private let kCellHeight:CGFloat = 48
+    private let kCellHeight:CGFloat = 42
     
     init(index:Int, title:String, maxDistance:Double)
     {
         self.index = index
         self.title = title
         self.maxDistance = maxDistance
-        let reusableIdentifier:String = VProjectsDetailCellDistance.reusableIdentifier()
+        let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier()
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
+    }
+    
+    override func config(cell:VProjectsDetailCell, controller:CProjectsDetail)
+    {
+        let cellSpeed:VProjectsDetailCellSpeed = cell as! VProjectsDetailCellSpeed
+        cellSpeed.label.text = title
+        
+        if controller.model.sectionSpeed.selectedItem === self
+        {
+            cellSpeed.backgroundColor = UIColor.whiteColor()
+            cellSpeed.label.textColor = UIColor.main()
+        }
+        else
+        {
+            cellSpeed.backgroundColor = UIColor(white:1, alpha:0.2)
+            cellSpeed.label.textColor = UIColor.main().colorWithAlphaComponent(0.6)
+        }
     }
 }

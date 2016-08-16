@@ -1,22 +1,22 @@
 import UIKit
 
-class VProjectsDetailFooter:UICollectionReusableView
+class VProjectsDetailCellSpeed:VProjectsDetailCell
 {
+    weak var label:UILabel!
+    
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(18)
-        label.textColor = UIColor(white:0.2, alpha:1)
+        label.font = UIFont.bold(14)
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
-        label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")
+        self.label = label
         
         addSubview(label)
         
@@ -40,11 +40,5 @@ class VProjectsDetailFooter:UICollectionReusableView
     required init?(coder:NSCoder)
     {
         fatalError()
-    }
-    
-    //MARK: public
-    
-    func config(controller:CProjectsDetail)
-    {
     }
 }
