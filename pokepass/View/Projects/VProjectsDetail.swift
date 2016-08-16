@@ -125,8 +125,9 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
     {
+        let item:MProjectsDetailItem = modelAtIndex(indexPath)
         let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSizeMake(width, kCellHeight)
+        let size:CGSize = CGSizeMake(width, item.cellHeight)
         
         return size
     }
