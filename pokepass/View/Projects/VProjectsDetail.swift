@@ -186,7 +186,25 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(collectionView:UICollectionView, shouldSelectItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    {
+        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let selectable:Bool = item.selectable
+        
+        return selectable
+    }
+    
+    func collectionView(collectionView:UICollectionView, shouldHighlightItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    {
+        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let highlightable:Bool = item.selectable
+        
+        return highlightable
+    }
+    
     func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
+        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        item.selected(controller)
     }
 }
