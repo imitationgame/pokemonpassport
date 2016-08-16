@@ -4,7 +4,7 @@ class MProjectItemLocation
 {
     let latitude:Double
     let longitude:Double
-    private let kPrint:String = "<wpt lat=\"%@\" lon=\"%@\" />"
+    private let kPrint:String = "<wpt lat=\"%@\" lon=\"%@\" />\n"
     
     init(latitude:Double, longitude:Double)
     {

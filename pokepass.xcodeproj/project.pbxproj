@@ -425,6 +425,7 @@
 			children = (
 				DA9AC69B1D62498700F0F5C8 /* MProjects.swift */,
 				DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */,
+				DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */,
 				DAABC8011D629DC400807DA9 /* MProjectsDetail.swift */,
 				DAABC8031D629DD100807DA9 /* MProjectsDetailSection.swift */,
 				DAABC8071D629FF500807DA9 /* MProjectsDetailSectionSpeed.swift */,
@@ -434,7 +435,6 @@
 				DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */,
 				DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */,
 				DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */,
-				DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";

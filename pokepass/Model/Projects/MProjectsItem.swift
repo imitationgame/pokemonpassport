@@ -5,6 +5,9 @@ class MProjectsItem
     let name:String
     let model:DPokePassProject
     var locations:[MProjectItemLocation]?
+    private let kHeader:String = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n"
+    private let kItemGroup:String = "<gpx>\n"
+    private let kItemGroupClose:String = "</gpx>"
     
     init(model:DPokePassProject)
     {
@@ -121,5 +124,20 @@ class MProjectsItem
         locations = []
         let firstLocation:DPokePassLocation? = model.projectLocations.first
         pointsBetweenLocations(0, locationA:nil, locationB:firstLocation, maxDistance:maxDistance)
+    }
+    
+    func print() -> String
+    {
+        var string:String = kHeader
+        string += kItemGroup
+        
+        for location:MProjectItemLocation in locations!
+        {
+            string += location.print()
+        }
+        
+        string += kItemGroupClose
+        
+        return string
     }
 }
