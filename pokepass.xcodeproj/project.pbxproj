@@ -22,6 +22,9 @@
 		DAABC80E1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */; };
 		DAABC8101D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */; };
 		DAABC8121D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */; };
+		DAABC8141D62A5B900807DA9 /* VProjectsDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */; };
+		DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */; };
+		DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -120,6 +123,9 @@
 		DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedWalk.swift; sourceTree = "<group>"; };
 		DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedRun.swift; sourceTree = "<group>"; };
 		DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedVehicle.swift; sourceTree = "<group>"; };
+		DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailHeader.swift; sourceTree = "<group>"; };
+		DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailFooter.swift; sourceTree = "<group>"; };
+		DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCell.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -505,6 +511,9 @@
 				DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */,
 				DA9AC69F1D62512A00F0F5C8 /* VProjectsHeader.swift */,
 				DAABC7FF1D629AEE00807DA9 /* VProjectsDetail.swift */,
+				DAABC8131D62A5B900807DA9 /* VProjectsDetailHeader.swift */,
+				DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */,
+				DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
+				DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */,
 				DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
 				DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */,
@@ -681,6 +691,7 @@
 				DAE03F941D607BAA0054CDEB /* DPokePassProject+CoreDataProperties.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
+				DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */,
 				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
@@ -689,6 +700,7 @@
 				DAABC8001D629AEE00807DA9 /* VProjectsDetail.swift in Sources */,
 				DAABC8041D629DD100807DA9 /* MProjectsDetailSection.swift in Sources */,
 				DAABC80E1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift in Sources */,
+				DAABC8141D62A5B900807DA9 /* VProjectsDetailHeader.swift in Sources */,
 				DAE03FC41D6138C30054CDEB /* MCreateOptionsItemClear.swift in Sources */,
 				DAE03F561D605FF50054CDEB /* MMainTransition.swift in Sources */,
 				DAABC8081D629FF500807DA9 /* MProjectsDetailSectionSpeed.swift in Sources */,
