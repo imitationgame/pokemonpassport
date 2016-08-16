@@ -75,7 +75,6 @@ class CCreate:CMainController
         { [weak self] (modelProject) in
             
             modelProject.name = name
-            print("name \(name)")
             self?.project = modelProject
             self?.storeRoute()
         }
