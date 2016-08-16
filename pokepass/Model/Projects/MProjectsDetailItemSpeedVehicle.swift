@@ -4,9 +4,9 @@ class MProjectsDetailItemSpeedVehicle:MProjectsDetailItemSpeed
 {
     private let kMaxDistance:Double = 0.00015
     
-    init()
+    init(index:Int)
     {
         let title:String = NSLocalizedString("MProjectsDetailItemSpeedVehicle_title", comment:"")
-        super.init(title:title, maxDistance:kMaxDistance)
+        super.init(index:index, title:title, maxDistance:kMaxDistance)
     }
 }

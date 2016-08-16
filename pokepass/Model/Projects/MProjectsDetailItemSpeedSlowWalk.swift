@@ -4,9 +4,9 @@ class MProjectsDetailItemSpeedSlowWalk:MProjectsDetailItemSpeed
 {
     private let kMaxDistance:Double = 0.00002
     
-    init()
+    init(index:Int)
     {
         let title:String = NSLocalizedString("MProjectsDetailItemSpeedSlowWalk_title", comment:"")
-        super.init(title:title, maxDistance:kMaxDistance)
+        super.init(index:index, title:title, maxDistance:kMaxDistance)
     }
 }
