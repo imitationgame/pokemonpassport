@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0977B01D63652100DBE72A /* MProjectItemLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */; };
 		DA9AC69A1D6246EA00F0F5C8 /* VProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */; };
 		DA9AC69C1D62498700F0F5C8 /* MProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC69B1D62498700F0F5C8 /* MProjects.swift */; };
 		DA9AC69E1D6249AD00F0F5C8 /* MProjectsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectItemLocation.swift; sourceTree = "<group>"; };
 		DA26029C1D5E8EC000C3A280 /* pokepass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokepass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsCell.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */,
 				DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */,
 				DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */,
+				DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
 				DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */,
+				DA0977B01D63652100DBE72A /* MProjectItemLocation.swift in Sources */,
 				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
