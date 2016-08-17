@@ -9,7 +9,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="projectLocations" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="locationProject" inverseEntity="Location" syncable="YES"/>
     </entity>
-    <entity name="Settings" syncable="YES">
+    <entity name="Settings" representedClassName="DPokePassSettings" syncable="YES">
         <attribute name="measures" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
