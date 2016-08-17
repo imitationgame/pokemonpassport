@@ -37,9 +37,11 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         showSelected()
     }
     
-    func actionSegmented(sender segmented:UISegmentedControl)
+    @objc func actionSegmented(sender segmented:UISegmentedControl)
     {
-        
+        let selected:Int = segmented.selectedSegmentIndex
+        let optionSelected:MSettingsMenuItemMetricsOption = options[selected]
+        MSettings.sharedInstance.model!.measures = optionSelected.measure
     }
     
     //MARK: private
