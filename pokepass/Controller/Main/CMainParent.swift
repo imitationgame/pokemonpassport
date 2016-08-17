@@ -24,6 +24,8 @@ class CMainParent:UIViewController
         let projects:CProjects = CProjects()
         loadBar()
         pushController(projects, transition:MMainTransition.Replace())
+        
+        MSettings.sharedInstance.load()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
