@@ -5,7 +5,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
     let index:Int
     let title:String
     let maxDistance:Double
-    private let kCellHeight:CGFloat = 42
+    private let kCellHeight:CGFloat = 36
     private let kSelectable:Bool = true
     
     init(index:Int, title:String, maxDistance:Double)
