@@ -13,6 +13,8 @@
 "MProjectsDetailItemSpeedWalk_title"="Walking";
 "MProjectsDetailItemSpeedRun_title"="Running";
 "MProjectsDetailItemSpeedVehicle_title"="Vehicle";
+"MSettingsMenuItemMetricsOptionInternational_name"="International";
+"MSettingsMenuItemMetricsOptionUs_name"="US";
 
 "CMainController_saved"="Project saved!";
 

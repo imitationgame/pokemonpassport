@@ -3,13 +3,25 @@ import Foundation
 class MSettingsMenuItemMetricsOption
 {
     let name:String
-    
-    init(name:String)
+    let measure:DPokePassSettings.DPokePassSettingsMeasure
+ 
+    class func International() -> MSettingsMenuItemMetricsOptionInternational
     {
-        self.name = name
+        let item:MSettingsMenuItemMetricsOptionInternational = MSettingsMenuItemMetricsOptionInternational()
+        
+        return item
     }
     
-    //MARK: public
+    class func Us() -> MSettingsMenuItemMetricsOptionUs
+    {
+        let item:MSettingsMenuItemMetricsOptionUs = MSettingsMenuItemMetricsOptionUs()
+        
+        return item
+    }
     
-    
+    init(name:String, measure:DPokePassSettings.DPokePassSettingsMeasure)
+    {
+        self.name = name
+        self.measure = measure
+    }
 }
