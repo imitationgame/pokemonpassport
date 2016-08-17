@@ -35,6 +35,7 @@
 		DAB088541D64D54C00C3A083 /* MSettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */; };
 		DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */; };
 		DAB088581D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088571D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift */; };
+		DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088591D64D71500C3A083 /* VSettingsCell.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -144,6 +145,7 @@
 		DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenu.swift; sourceTree = "<group>"; };
 		DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItem.swift; sourceTree = "<group>"; };
 		DAB088571D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetrics.swift; sourceTree = "<group>"; };
+		DAB088591D64D71500C3A083 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB088511D64D37F00C3A083 /* VSettings.swift */,
+				DAB088591D64D71500C3A083 /* VSettingsCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */,
 				DAABC8021D629DC400807DA9 /* MProjectsDetail.swift in Sources */,
 				DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */,
+				DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */,
 				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
 				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
 				DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */,
