@@ -1,6 +1,6 @@
 import UIKit
 
-class  VSettings:UIView
+class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     weak var controller:CSettings!
     
@@ -11,5 +11,21 @@ class  VSettings:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    //MARK: col del
+    
+    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        
+    }
+    
+    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    {
     }
 }
