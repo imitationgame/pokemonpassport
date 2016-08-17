@@ -40,6 +40,7 @@
 		DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885D1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift */; };
 		DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */; };
 		DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */; };
+		DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088631D6509ED00C3A083 /* VCreateFinder.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -154,6 +155,7 @@
 		DAB0885D1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOption.swift; sourceTree = "<group>"; };
 		DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionInternational.swift; sourceTree = "<group>"; };
 		DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionUs.swift; sourceTree = "<group>"; };
+		DAB088631D6509ED00C3A083 /* VCreateFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateFinder.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
 				DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */,
+				DAB088631D6509ED00C3A083 /* VCreateFinder.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				DA0977B01D63652100DBE72A /* MProjectItemLocation.swift in Sources */,
 				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
+				DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */,
 				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
 				DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */,
 				DAE03F391D605FF50054CDEB /* CMain.swift in Sources */,

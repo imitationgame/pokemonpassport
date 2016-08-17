@@ -105,4 +105,9 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         
         return view
     }
+    
+    func mapView(mapView:MKMapView, didSelectAnnotationView view:MKAnnotationView)
+    {
+        let viewPointer:VCreateMapPin = view as! VCreateMapPin
+    }
 }
