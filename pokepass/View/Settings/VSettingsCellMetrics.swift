@@ -5,7 +5,7 @@ class VSettingsCellMetrics:VSettingsCell
     weak var segmented:UISegmentedControl!
     weak var layoutSegmentedLeft:NSLayoutConstraint!
     private let kSegmentedWidth:CGFloat = 250
-    private let kSegmentedHeight:CGFloat = 34
+    private let kSegmentedHeight:CGFloat = 32
     
     override init(frame:CGRect)
     {

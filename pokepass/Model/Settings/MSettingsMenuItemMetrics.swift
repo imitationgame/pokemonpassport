@@ -4,7 +4,7 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
 {
     weak var cellMetrics:VSettingsCellMetrics!
     let options:[MSettingsMenuItemMetricsOption]
-    private let kCellHeight:CGFloat = 120
+    private let kCellHeight:CGFloat = 80
     
     init()
     {
@@ -25,6 +25,7 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         let countOptions:Int = options.count
         cellMetrics = cell as! VSettingsCellMetrics
         cellMetrics.segmented.removeAllSegments()
+        cellMetrics.segmented.addTarget(self, action:#selector(self.actionSegmented(sender:)), forControlEvents:UIControlEvents.ValueChanged)
         
         for index:Int in 0 ..< countOptions
         {
@@ -34,6 +35,11 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         }
         
         showSelected()
+    }
+    
+    func actionSegmented(sender segmented:UISegmentedControl)
+    {
+        
     }
     
     //MARK: private
