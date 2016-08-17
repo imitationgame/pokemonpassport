@@ -21,3 +21,5 @@
 "VProjectsHeader_label"="No projects created";
 "VProjectsDetailFooter_label"="Export";
 "VSettingsCellMetrics_label"="Metrics";
+"VCreateFinder_fieldPlaceholder"="Search";
+"VCreateFinder_searchButton"="Search";
