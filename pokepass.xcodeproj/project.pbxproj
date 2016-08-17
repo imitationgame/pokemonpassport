@@ -30,6 +30,7 @@
 		DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */; };
 		DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */; };
 		DAB088491D64B7EE00C3A083 /* DPokePassSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088471D64B7EE00C3A083 /* DPokePassSettings+CoreDataProperties.swift */; };
+		DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884D1D64BAB100C3A083 /* MSettings.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -136,6 +137,7 @@
 		DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemSettings.swift; sourceTree = "<group>"; };
 		DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassSettings.swift; sourceTree = "<group>"; };
 		DAB088471D64B7EE00C3A083 /* DPokePassSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPokePassSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAB0884D1D64BAB100C3A083 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -245,6 +247,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DAB0884A1D64BA4B00C3A083 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DAB0884D1D64BAB100C3A083 /* MSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DAB0884B1D64BA5600C3A083 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DAB0884C1D64BA6100C3A083 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		DAE03EB81D605FF40054CDEB /* pokepass */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +314,7 @@
 		DAE03EC61D605FF50054CDEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAB0884B1D64BA5600C3A083 /* Settings */,
 				DAE03EC71D605FF50054CDEB /* Create */,
 				DAE03EC91D605FF50054CDEB /* Main */,
 				DAE03ECD1D605FF50054CDEB /* Projects */,
@@ -364,6 +389,7 @@
 		DAE03EDF1D605FF50054CDEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB0884A1D64BA4B00C3A083 /* Settings */,
 				DAE03EE01D605FF50054CDEB /* Create */,
 				DAE03EE21D605FF50054CDEB /* Main */,
 				DAE03EFA1D605FF50054CDEB /* Projects */,
@@ -467,6 +493,7 @@
 		DAE03F1A1D605FF50054CDEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAB0884C1D64BA6100C3A083 /* Settings */,
 				DAE03F1B1D605FF50054CDEB /* Create */,
 				DAE03F221D605FF50054CDEB /* Main */,
 				DAE03F2B1D605FF50054CDEB /* Projects */,
@@ -701,6 +728,7 @@
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
 				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
+				DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */,
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
