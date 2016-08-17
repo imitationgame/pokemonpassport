@@ -11,8 +11,8 @@ class MMainNavItemSettings:MMainNavItem
     
     override func controller() -> UIViewController
     {
-        let projects:CProjects = CProjects()
+        let settings:CSettings = CSettings()
         
-        return projects
+        return settings
     }
 }

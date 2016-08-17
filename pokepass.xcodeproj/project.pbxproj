@@ -37,6 +37,9 @@
 		DAB088581D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088571D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift */; };
 		DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088591D64D71500C3A083 /* VSettingsCell.swift */; };
 		DAB0885C1D64DE2A00C3A083 /* VSettingsCellMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885B1D64DE2A00C3A083 /* VSettingsCellMetrics.swift */; };
+		DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885D1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift */; };
+		DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */; };
+		DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -148,6 +151,9 @@
 		DAB088571D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetrics.swift; sourceTree = "<group>"; };
 		DAB088591D64D71500C3A083 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAB0885B1D64DE2A00C3A083 /* VSettingsCellMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellMetrics.swift; sourceTree = "<group>"; };
+		DAB0885D1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOption.swift; sourceTree = "<group>"; };
+		DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionInternational.swift; sourceTree = "<group>"; };
+		DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionUs.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -262,6 +268,9 @@
 				DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */,
 				DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */,
 				DAB088571D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift */,
+				DAB0885D1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift */,
+				DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */,
+				DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -740,6 +749,7 @@
 				DAE03FC21D6138820054CDEB /* MCreateOptionsItemSave.swift in Sources */,
 				DA9AC69E1D6249AD00F0F5C8 /* MProjectsItem.swift in Sources */,
 				DAABC8061D629DEB00807DA9 /* MProjectsDetailItem.swift in Sources */,
+				DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
@@ -771,6 +781,7 @@
 				DAABC80A1D62A18A00807DA9 /* MProjectsDetailItemSpeed.swift in Sources */,
 				DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */,
 				DAABC8021D629DC400807DA9 /* MProjectsDetail.swift in Sources */,
+				DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */,
 				DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */,
 				DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */,
 				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
@@ -779,6 +790,7 @@
 				DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */,
 				DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
+				DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */,
 				DAE03F591D605FF50054CDEB /* MMainTransitionPush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,6 +3,7 @@ import UIKit
 class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     weak var controller:CSettings!
+    private let kCollectionTop:CGFloat = 10
     private let kCollectionBottom:CGFloat = 40
     
     convenience init(controller:CSettings)
@@ -10,7 +11,7 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.complement()
         translatesAutoresizingMaskIntoConstraints = false
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -19,7 +20,7 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.Vertical
-        flow.sectionInset = UIEdgeInsetsMake(0, 0, kCollectionBottom, 0)
+        flow.sectionInset = UIEdgeInsetsMake(kCollectionTop, 0, kCollectionBottom, 0)
         
         let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
         collection.clipsToBounds = true
