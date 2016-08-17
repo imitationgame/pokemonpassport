@@ -21,6 +21,15 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         addSubview(collection)
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:NSIndexPath) -> MSettingsMenuItem
+    {
+        let item:MSettingsMenuItem = controller.model.items[index.item]
+        
+        return item
+    }
+    
     //MARK: col del
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
@@ -37,5 +46,14 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
+        let item:MSettingsMenuItem = modelAtIndex(indexPath)
+        let cell:VSettingsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+            item.reusableIdentifier,
+            forIndexPath:
+            indexPath) as! VSettingsCell
+        
+        item.config(cell, controller:self)
+        
+        return cell
     }
 }
