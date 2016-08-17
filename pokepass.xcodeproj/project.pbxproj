@@ -531,12 +531,12 @@
 			isa = PBXGroup;
 			children = (
 				DAE03F1C1D605FF50054CDEB /* VCreate.swift */,
+				DAB088631D6509ED00C3A083 /* VCreateFinder.swift */,
 				DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */,
 				DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */,
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
 				DAE03FA21D6110590054CDEB /* VCreateMapPin.swift */,
-				DAB088631D6509ED00C3A083 /* VCreateFinder.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";

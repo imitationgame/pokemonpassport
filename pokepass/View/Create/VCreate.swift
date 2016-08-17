@@ -7,7 +7,9 @@ class VCreate:UIView
     weak var pointer:VCreateMapPointer!
     weak var options:VCreateOptions!
     weak var loader:VMainLoader!
+    weak var finder:VCreateFinder!
     private let kOptionsHeight:CGFloat = 60
+    private let kFinderHeight:CGFloat = 40
     
     convenience init(controller:CCreate)
     {
@@ -25,11 +27,15 @@ class VCreate:UIView
         let options:VCreateOptions = VCreateOptions(controller:controller)
         self.options = options
         
+        let finder:VCreateFinder = VCreateFinder(controller:controller)
+        self.finder = finder
+        
         let loader:VMainLoader = VMainLoader()
         loader.stopAnimating()
         self.loader = loader
         
         addSubview(loader)
+        addSubview(finder)
         addSubview(map)
         addSubview(pointer)
         addSubview(options)
@@ -38,10 +44,12 @@ class VCreate:UIView
             "map":map,
             "pointer":pointer,
             "options":options,
-            "loader":loader]
+            "loader":loader,
+            "finder":finder]
         
         let metrics:[String:AnyObject] = [
-            "optionsHeight":kOptionsHeight]
+            "optionsHeight":kOptionsHeight,
+            "finderHeight":kFinderHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[loader]-0-|",
@@ -64,12 +72,17 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[map]-0-[options(optionsHeight)]-0-|",
+            "H:|-0-[finder]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[pointer]-0-[options]",
+            "V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[finder]-0-[pointer]-0-[options]",
             options:[],
             metrics:metrics,
             views:views))
