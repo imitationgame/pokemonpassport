@@ -2,10 +2,12 @@ import UIKit
 
 class CSettings:CMainController
 {
-    weak var 
+    weak var viewSettings:VSettings!
     
-    override func viewDidLoad()
+    override func loadView()
     {
-        
+        let viewSettings:VSettings = VSettings(controller:self)
+        self.viewSettings = viewSettings
+        view = viewSettings
     }
 }
