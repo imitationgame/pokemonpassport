@@ -18,6 +18,8 @@ class MSettings
         { (object) in
             
             self.model = object
+            
+            DManager.sharedInstance.managerPokePass.saver.save(false)
         }
     }
     

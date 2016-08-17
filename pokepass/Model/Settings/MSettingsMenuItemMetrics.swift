@@ -42,6 +42,7 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         let selected:Int = segmented.selectedSegmentIndex
         let optionSelected:MSettingsMenuItemMetricsOption = options[selected]
         MSettings.sharedInstance.model!.measures = optionSelected.measure
+        DManager.sharedInstance.managerPokePass.saver.save(false)
     }
     
     //MARK: private
