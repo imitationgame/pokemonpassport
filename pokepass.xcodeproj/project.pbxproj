@@ -33,6 +33,7 @@
 		DAB088501D64D30800C3A083 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884F1D64D30800C3A083 /* CSettings.swift */; };
 		DAB088521D64D37F00C3A083 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088511D64D37F00C3A083 /* VSettings.swift */; };
 		DAB088541D64D54C00C3A083 /* MSettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */; };
+		DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
@@ -140,6 +141,7 @@
 		DAB0884F1D64D30800C3A083 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAB088511D64D37F00C3A083 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
 		DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenu.swift; sourceTree = "<group>"; };
+		DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItem.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				DAB0884D1D64BAB100C3A083 /* MSettings.swift */,
 				DAB088531D64D54C00C3A083 /* MSettingsMenu.swift */,
+				DAB088551D64D59600C3A083 /* MSettingsMenuItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
 				DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
+				DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */,
 				DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */,
 				DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */,
 				DA0977B01D63652100DBE72A /* MProjectItemLocation.swift in Sources */,
