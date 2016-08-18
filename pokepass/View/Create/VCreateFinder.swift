@@ -8,6 +8,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
     convenience init(controller:CCreate)
     {
         self.init()
+        self.controller = controller
         clipsToBounds = true
         backgroundColor = UIColor(white:0.95, alpha:1)
         translatesAutoresizingMaskIntoConstraints = false

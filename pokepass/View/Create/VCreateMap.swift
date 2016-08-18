@@ -89,9 +89,16 @@ class VCreateMap:MKMapView, MKMapViewDelegate
             
             if error == nil && response != nil
             {
-                for item in response!.mapItems
+                if !response!.mapItems.isEmpty
                 {
-                    print(item.name)
+                    let firstLocation:MKMapItem = response!.mapItems.first!
+                    let location:CLLocationCoordinate2D = firstLocation.placemark.coordinate
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    { [weak self] in
+                        
+                        self?.centerLocation(location)
+                    }
                 }
             }
         }
