@@ -10,12 +10,22 @@ class VCreateMapPin:MKAnnotationView
     {
         let reuseIdentifier:String = VCreateMapPin.reusableIdentifier()
         let offsetY:CGFloat = kImageHeight / -2
+        let leftCallOut:UIButton = UIButton(frame:CGRectMake(0, 0, 30, 30))
+        leftCallOut.setImage(UIImage(named:"mapAnnotationDelete"), forState:UIControlState.Normal)
+        leftCallOut.imageView?.contentMode = UIViewContentMode.Center
+        leftCallOut.imageView?.clipsToBounds = true
+        
+        let rightCallOut:UIButton = UIButton(frame:CGRectMake(0, 0, 30, 30))
+        rightCallOut.setImage(UIImage(named:"mapAnnotationMove"), forState:UIControlState.Normal)
+        rightCallOut.imageView?.contentMode = UIViewContentMode.Center
+        rightCallOut.imageView?.clipsToBounds = true
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
-        canShowCallout = false
+        canShowCallout = true
         image = UIImage(named:"mapAnnotation")
         centerOffset = CGPointMake(0, offsetY)
-        callouta
+        leftCalloutAccessoryView = leftCallOut
+        rightCalloutAccessoryView = rightCallOut
     }
     
     override init(frame:CGRect)
@@ -26,35 +36,5 @@ class VCreateMapPin:MKAnnotationView
     required init?(coder:NSCoder)
     {
         fatalError()
-    }
-    
-    override var selected:Bool
-    {
-        didSet
-        {
-            hover()
-        }
-    }
-    
-    override var highlighted:Bool
-    {
-        didSet
-        {
-            hover()
-        }
-    }
-    
-    //MARK: private
-    
-    private func hover()
-    {
-        if selected || highlighted
-        {
-            alpha = 0.1
-        }
-        else
-        {
-            alpha = 1
-        }
     }
 }

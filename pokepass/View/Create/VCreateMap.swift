@@ -142,4 +142,9 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     {
         let viewPointer:VCreateMapPin = view as! VCreateMapPin
     }
+    
+    func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
+    {
+        print("control tapped")
+    }
 }

@@ -5,11 +5,13 @@ class MCreateAnnotation:NSObject, MKAnnotation
 {
     let coordinate:CLLocationCoordinate2D
     let reusableIdentifier:String
+    var title:String?
     
     init(coordinate:CLLocationCoordinate2D)
     {
         reusableIdentifier = VCreateMapPin.reusableIdentifier()
         self.coordinate = coordinate
+        title = " "
         
         super.init()
     }
