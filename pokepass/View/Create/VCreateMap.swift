@@ -78,6 +78,27 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         setRegion(region, animated:true)
     }
     
+    func searchLocation(query:String)
+    {
+        let searchRequest:MKLocalSearchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = query
+        
+        let localSearch:MKLocalSearch = MKLocalSearch(request:searchRequest)
+        localSearch.startWithCompletionHandler
+        { (response, error) in
+            
+            if error == nil && response != nil
+            {
+                for item in response!.mapItems
+                {
+                    print(item.name)
+                }
+            }
+        }
+    }
+    
+    //MARK: map delegate
+    
     func mapView(mapView:MKMapView, rendererForOverlay overlay:MKOverlay) -> MKOverlayRenderer
     {
         let polyline:MKPolyline = overlay as! MKPolyline

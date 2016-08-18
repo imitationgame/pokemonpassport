@@ -35,6 +35,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         buttonSearch.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
         buttonSearch.setTitleColor(UIColor(white:1, alpha:0.2), forState:UIControlState.Highlighted)
         buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), forState:UIControlState.Normal)
+        buttonSearch.addTarget(self, action:#selector(self.actionSearch(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         let field:UITextField = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +50,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         field.autocorrectionType = UITextAutocorrectionType.No
         field.spellCheckingType = UITextSpellCheckingType.No
         field.autocapitalizationType = UITextAutocapitalizationType.Words
-        field.clearButtonMode = UITextFieldViewMode.WhileEditing
+        field.clearButtonMode = UITextFieldViewMode.Never
         field.placeholder = NSLocalizedString("VCreateFinder_fieldPlaceholder", comment:"")
         field.delegate = self
         self.field = field
@@ -123,24 +124,25 @@ class VCreateFinder:UIView, UITextFieldDelegate
         field.becomeFirstResponder()
     }
     
-    //MARK: field delegate
-    
-    func textField(textField:UITextField, shouldChangeCharactersInRange range:NSRange, replacementString string:String) -> Bool
+    func actionSearch(sender button:UIButton)
     {
-        let nsString:NSString = textField.text! as NSString
-        let query:String = textField.text!.stringByReplacingCharactersInRange(range, withString:string)
-        
+        performSearch()
+    }
+    
+    //MARK: private
+    
+    private func performSearch()
+    {
+        let text:String = field.text!
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         { [weak self] in
             
-            let newString:String = nsString.stringByReplacingCharactersInRange(range, withString:string)
-            self?.searchQuery(newString)
+            self?.controller.viewCreate.map.searchLocation(text)
         }
-        
-        
-        return true
     }
+    
+    //MARK: field delegate
     
     func textFieldShouldReturn(textField:UITextField) -> Bool
     {
