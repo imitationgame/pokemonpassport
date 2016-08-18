@@ -3,6 +3,12 @@ import MapKit
 
 class VCreateMapPin:MKAnnotationView
 {
+    @objc enum VCreateMapPinCallout:Int
+    {
+        case Left
+        case Right
+    }
+    
     private let kImageWidth:CGFloat = 40
     private let kImageHeight:CGFloat = 40
     
@@ -14,11 +20,13 @@ class VCreateMapPin:MKAnnotationView
         leftCallOut.setImage(UIImage(named:"mapAnnotationDelete"), forState:UIControlState.Normal)
         leftCallOut.imageView?.contentMode = UIViewContentMode.Center
         leftCallOut.imageView?.clipsToBounds = true
+        leftCallOut.tag = VCreateMapPinCallout.Left.rawValue
         
         let rightCallOut:UIButton = UIButton(frame:CGRectMake(0, 0, 30, 30))
         rightCallOut.setImage(UIImage(named:"mapAnnotationMove"), forState:UIControlState.Normal)
         rightCallOut.imageView?.contentMode = UIViewContentMode.Center
         rightCallOut.imageView?.clipsToBounds = true
+        rightCallOut.tag = VCreateMapPinCallout.Right.rawValue
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
         canShowCallout = true
