@@ -145,6 +145,23 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
-        print("control tapped")
+        let tag:Int = control.tag
+        let callOut:VCreateMapPin.VCreateMapPinCallout = VCreateMapPin.VCreateMapPinCallout(rawValue:tag)!
+        let annotation:MCreateAnnotation = view.annotation as! MCreateAnnotation
+        
+        switch callOut
+        {
+            case VCreateMapPin.VCreateMapPinCallout.Delete:
+                
+                controller.removeLocation(annotation)
+                
+                break
+                
+            case VCreateMapPin.VCreateMapPinCallout.Move:
+                
+                
+                
+                break
+        }
     }
 }

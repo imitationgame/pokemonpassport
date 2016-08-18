@@ -128,7 +128,7 @@ class CCreate:CMainController
         
         for inIndex:Int in 0 ..< countLocations
         {
-            let inLocation:MCreateAnnotation = model.locations[index]
+            let inLocation:MCreateAnnotation = model.locations[inIndex]
             
             if inLocation === location
             {
