@@ -142,4 +142,9 @@ class CCreate:CMainController
         viewCreate.map.removeAnnotation(location)
         viewCreate.map.regenerateRoute()
     }
+    
+    func moveLocation(location:MCreateAnnotation)
+    {
+        viewCreate.pointer.showMoving()
+    }
 }

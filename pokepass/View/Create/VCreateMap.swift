@@ -157,7 +157,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
                 
             case VCreateMapPin.VCreateMapPinCallout.Move:
                 
-                
+                controller.moveLocation(annotation)
                 
                 break
         }
