@@ -120,4 +120,26 @@ class CCreate:CMainController
             viewCreate.map.regenerateRoute()
         }
     }
+    
+    func removeLocation(location:MCreateAnnotation)
+    {
+        let countLocations:Int = model.locations.count
+        var index:Int = 0
+        
+        for inIndex:Int in 0 ..< countLocations
+        {
+            let inLocation:MCreateAnnotation = model.locations[index]
+            
+            if inLocation === location
+            {
+                index = inIndex
+                
+                break
+            }
+        }
+        
+        model.locations.removeAtIndex(index)
+        viewCreate.map.removeAnnotation(location)
+        viewCreate.map.regenerateRoute()
+    }
 }
