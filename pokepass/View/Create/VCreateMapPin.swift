@@ -3,8 +3,8 @@ import MapKit
 
 class VCreateMapPin:MKAnnotationView
 {
-    private let kImageWidth:CGFloat = 35
-    private let kImageHeight:CGFloat = 35
+    private let kImageWidth:CGFloat = 40
+    private let kImageHeight:CGFloat = 40
     
     init(annotation:MCreateAnnotation)
     {
@@ -15,6 +15,7 @@ class VCreateMapPin:MKAnnotationView
         canShowCallout = false
         image = UIImage(named:"mapAnnotation")
         centerOffset = CGPointMake(0, offsetY)
+        callouta
     }
     
     override init(frame:CGRect)
@@ -25,5 +26,35 @@ class VCreateMapPin:MKAnnotationView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override var selected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var highlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if selected || highlighted
+        {
+            alpha = 0.1
+        }
+        else
+        {
+            alpha = 1
+        }
     }
 }

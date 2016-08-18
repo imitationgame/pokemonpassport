@@ -8,7 +8,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     var polyLine:MKPolyline?
     private var userCoordinate:CLLocationCoordinate2D!
     private let kSpanSize:CLLocationDegrees = 0.01
-    private let kPolylineWidth:CGFloat = 7
+    private let kPolylineWidth:CGFloat = 6
     
     init(controller:CCreate)
     {
