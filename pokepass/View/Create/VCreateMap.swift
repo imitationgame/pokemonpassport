@@ -36,8 +36,6 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         fatalError()
     }
     
-    //MARK: private
-    
     //MARK: public
     
     func coordinatesAtCenter() -> MCreateAnnotation
