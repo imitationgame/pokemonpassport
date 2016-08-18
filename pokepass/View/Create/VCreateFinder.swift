@@ -10,7 +10,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor(white:0.95, alpha:1)
+        backgroundColor = UIColor.complement()
         translatesAutoresizingMaskIntoConstraints = false
         
         let image:UIImageView = UIImageView()
@@ -32,9 +32,9 @@ class VCreateFinder:UIView, UITextFieldDelegate
         
         let buttonSearch:UIButton = UIButton()
         buttonSearch.translatesAutoresizingMaskIntoConstraints = false
-        buttonSearch.backgroundColor = UIColor.main()
-        buttonSearch.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
-        buttonSearch.setTitleColor(UIColor(white:1, alpha:0.2), forState:UIControlState.Highlighted)
+        buttonSearch.titleLabel?.font = UIFont.bold(13)
+        buttonSearch.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
+        buttonSearch.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
         buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), forState:UIControlState.Normal)
         buttonSearch.addTarget(self, action:#selector(self.actionSearch(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
@@ -54,6 +54,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         field.clearButtonMode = UITextFieldViewMode.Never
         field.placeholder = NSLocalizedString("VCreateFinder_fieldPlaceholder", comment:"")
         field.delegate = self
+        field.clearsOnBeginEditing = true
         self.field = field
         
         addSubview(border)
@@ -82,7 +83,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[field]-0-[buttonSearch(60)]-0-|",
+            "H:|-30-[field]-0-[buttonSearch(70)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -127,6 +128,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
     
     func actionSearch(sender button:UIButton)
     {
+        field.resignFirstResponder()
         performSearch()
     }
     
@@ -148,6 +150,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
     func textFieldShouldReturn(textField:UITextField) -> Bool
     {
         textField.resignFirstResponder()
+        performSearch()
         
         return true
     }
