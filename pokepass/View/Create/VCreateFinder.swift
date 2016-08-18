@@ -83,7 +83,12 @@ class VCreateFinder:UIView, UITextFieldDelegate
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[field]-0-[buttonSearch(70)]-0-|",
+            "H:[buttonSearch(70)]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[field(200)]",
             options:[],
             metrics:metrics,
             views:views))

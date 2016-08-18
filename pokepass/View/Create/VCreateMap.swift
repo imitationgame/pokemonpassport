@@ -42,7 +42,11 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func coordinatesAtCenter() -> MCreateAnnotation
     {
-        let point:CGPoint = center
+        let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        let centerX:CGFloat = width / 2
+        let centerY:CGFloat = height / 2
+        let point:CGPoint = CGPointMake(centerX, centerY)
         let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
         let annotation:MCreateAnnotation = MCreateAnnotation(coordinate:location)
         
