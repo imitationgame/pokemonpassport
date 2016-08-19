@@ -146,5 +146,6 @@ class CCreate:CMainController
     func moveLocation(location:MCreateAnnotation)
     {
         viewCreate.pointer.showMoving()
+        viewCreate.map.removeAnnotation(location)
     }
 }

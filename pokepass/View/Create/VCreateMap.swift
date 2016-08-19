@@ -51,12 +51,17 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         return annotation
     }
     
-    func regenerateRoute()
+    func clearRoute()
     {
         if polyLine != nil
         {
             removeOverlay(polyLine!)
         }
+    }
+    
+    func regenerateRoute()
+    {
+        clearRoute()
         
         let count:Int = controller.model.locations.count
         
