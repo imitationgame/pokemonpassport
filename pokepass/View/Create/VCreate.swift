@@ -8,8 +8,12 @@ class VCreate:UIView
     weak var options:VCreateOptions!
     weak var loader:VMainLoader!
     weak var finder:VCreateFinder!
+    weak var button:UIButton!
+    weak var layoutButtonLeft:NSLayoutConstraint!
+    weak var layoutButtonTop:NSLayoutConstraint!
     private let kOptionsHeight:CGFloat = 60
     private let kFinderHeight:CGFloat = 40
+    private let kButtonSize:CGFloat = 60
     
     convenience init(controller:CCreate)
     {
@@ -34,22 +38,29 @@ class VCreate:UIView
         loader.stopAnimating()
         self.loader = loader
         
+        let button:UIButton = UIButton()
+        button.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.3)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(loader)
         addSubview(finder)
         addSubview(map)
         addSubview(pointer)
         addSubview(options)
+        addSubview(button)
         
         let views:[String:AnyObject] = [
             "map":map,
             "pointer":pointer,
             "options":options,
             "loader":loader,
-            "finder":finder]
+            "finder":finder,
+            "button":button]
         
         let metrics:[String:AnyObject] = [
             "optionsHeight":kOptionsHeight,
-            "finderHeight":kFinderHeight]
+            "finderHeight":kFinderHeight,
+            "buttonSize":kButtonSize]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[loader]-0-|",
@@ -91,6 +102,49 @@ class VCreate:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[button(buttonSize)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[button(buttonSize)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        
+        layoutButtonLeft = NSLayoutConstraint(
+            item:button,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        layoutButtonTop = NSLayoutConstraint(
+            item:button,
+            attribute:NSLayoutAttribute.Top,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Top,
+            multiplier:1,
+            constant:0)
+        
+        addConstraint(layoutButtonLeft)
+        addConstraint(layoutButtonTop)
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        let centerX:CGFloat = width / 2.0
+        let centerY:CGFloat = height / 2.0
+        layoutButtonLeft.constant = centerX
+        layoutButtonTop.constant = centerY
+        
+        super.layoutSubviews()
     }
     
     //MARK: public
