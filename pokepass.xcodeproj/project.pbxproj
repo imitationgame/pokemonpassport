@@ -104,8 +104,6 @@
 		DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FBF1D61372C0054CDEB /* MCreateOptionsItem.swift */; };
 		DAE03FC21D6138820054CDEB /* MCreateOptionsItemSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC11D6138820054CDEB /* MCreateOptionsItemSave.swift */; };
 		DAE03FC41D6138C30054CDEB /* MCreateOptionsItemClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC31D6138C30054CDEB /* MCreateOptionsItemClear.swift */; };
-		DAE03FC61D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC51D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift */; };
-		DAE03FC81D6138E90054CDEB /* MCreateOptionsItemAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC71D6138E90054CDEB /* MCreateOptionsItemAdd.swift */; };
 		DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */; };
 /* End PBXBuildFile section */
 
@@ -221,8 +219,6 @@
 		DAE03FBF1D61372C0054CDEB /* MCreateOptionsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItem.swift; sourceTree = "<group>"; };
 		DAE03FC11D6138820054CDEB /* MCreateOptionsItemSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemSave.swift; sourceTree = "<group>"; };
 		DAE03FC31D6138C30054CDEB /* MCreateOptionsItemClear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemClear.swift; sourceTree = "<group>"; };
-		DAE03FC51D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemRemoveLast.swift; sourceTree = "<group>"; };
-		DAE03FC71D6138E90054CDEB /* MCreateOptionsItemAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreateOptionsItemAdd.swift; sourceTree = "<group>"; };
 		DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMapPointer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -432,8 +428,6 @@
 				DAE03FBF1D61372C0054CDEB /* MCreateOptionsItem.swift */,
 				DAE03FC11D6138820054CDEB /* MCreateOptionsItemSave.swift */,
 				DAE03FC31D6138C30054CDEB /* MCreateOptionsItemClear.swift */,
-				DAE03FC51D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift */,
-				DAE03FC71D6138E90054CDEB /* MCreateOptionsItemAdd.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -732,12 +726,10 @@
 				DA9AC69A1D6246EA00F0F5C8 /* VProjectsCell.swift in Sources */,
 				DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */,
 				DAABC7FE1D629ACC00807DA9 /* CProjectsDetail.swift in Sources */,
-				DAE03FC81D6138E90054CDEB /* MCreateOptionsItemAdd.swift in Sources */,
 				DAE03F321D605FF50054CDEB /* CategoryNSNotification.swift in Sources */,
 				DAE03F9D1D610F430054CDEB /* MCreateAnnotation.swift in Sources */,
 				DAE03F351D605FF50054CDEB /* CategoryUIFont.swift in Sources */,
 				DAABC81A1D62A89000807DA9 /* VProjectsDetailCellSpeed.swift in Sources */,
-				DAE03FC61D6138DB0054CDEB /* MCreateOptionsItemRemoveLast.swift in Sources */,
 				DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */,
 				DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */,
 				DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */,

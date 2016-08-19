@@ -80,6 +80,19 @@ class CCreate:CMainController
         }
     }
     
+    private func regenerateRoute()
+    {
+        let countLocations:Int = model.locations.count
+        
+        for index:Int in 0 ..< countLocations
+        {
+            let location:MCreateAnnotation = model.locations[index]
+            location.index = index
+        }
+        
+        viewCreate.map.regenerateRoute()
+    }
+    
     //MARK: public
     
     func save(name:String)
@@ -99,7 +112,7 @@ class CCreate:CMainController
         {
             viewCreate.map.removeAnnotations(model.locations)
             model.locations.removeAll()
-            viewCreate.map.regenerateRoute()
+            regenerateRoute()
         }
     }
     
@@ -108,39 +121,14 @@ class CCreate:CMainController
         let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
         model.locations.append(annotation)
         viewCreate.map.addAnnotation(annotation)
-        viewCreate.map.regenerateRoute()
-    }
-    
-    func removeLast()
-    {
-        if !model.locations.isEmpty
-        {
-            let annotation:MCreateAnnotation = model.locations.removeLast()
-            viewCreate.map.removeAnnotation(annotation)
-            viewCreate.map.regenerateRoute()
-        }
+        regenerateRoute()
     }
     
     func removeLocation(location:MCreateAnnotation)
     {
-        let countLocations:Int = model.locations.count
-        var index:Int = 0
-        
-        for inIndex:Int in 0 ..< countLocations
-        {
-            let inLocation:MCreateAnnotation = model.locations[inIndex]
-            
-            if inLocation === location
-            {
-                index = inIndex
-                
-                break
-            }
-        }
-        
-        model.locations.removeAtIndex(index)
+        model.locations.removeAtIndex(location.index)
         viewCreate.map.removeAnnotation(location)
-        viewCreate.map.regenerateRoute()
+        regenerateRoute()
     }
     
     func moveLocation(location:MCreateAnnotation)
