@@ -150,19 +150,12 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(mapView:MKMapView, didSelectAnnotationView view:MKAnnotationView)
     {
-        let viewPointer:VCreateMapPin = view as! VCreateMapPin
+        controller.viewCreate.showingCallout()
     }
     
     func mapView(mapView:MKMapView, didDeselectAnnotationView view:MKAnnotationView)
     {
-        if mapView.selectedAnnotations.isEmpty
-        {
-            print("is empty")
-        }
-        else
-        {
-            print("not empty")
-        }
+        controller.viewCreate.notShowingCallout()
     }
     
     func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
