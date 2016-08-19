@@ -38,7 +38,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: public
     
-    func coordinatesAtCenter() -> MCreateAnnotation
+    func coordinatesAtCenter() -> CLLocationCoordinate2D
     {
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
@@ -46,6 +46,13 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         let centerY:CGFloat = height / 2
         let point:CGPoint = CGPointMake(centerX, centerY)
         let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
+        
+        return location
+    }
+    
+    func annotationAtCenter() -> MCreateAnnotation
+    {
+        let location:CLLocationCoordinate2D = coordinatesAtCenter()
         let annotation:MCreateAnnotation = MCreateAnnotation(coordinate:location)
         
         return annotation

@@ -3,7 +3,7 @@ import MapKit
 
 class MCreateAnnotation:NSObject, MKAnnotation
 {
-    let coordinate:CLLocationCoordinate2D
+    var coordinate:CLLocationCoordinate2D
     let reusableIdentifier:String
     var title:String?
     var index:Int

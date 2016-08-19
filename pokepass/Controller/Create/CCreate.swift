@@ -7,6 +7,7 @@ class CCreate:CMainController
     private var project:DPokePassProject?
     private var storeLocations:[MCreateAnnotation]?
     private let kShutterTimeout:UInt64 = 250
+    private weak var movingAnnotation:MCreateAnnotation?
     
     init()
     {
@@ -94,6 +95,19 @@ class CCreate:CMainController
         viewCreate.map.regenerateRoute()
     }
     
+    private func beforeAddLocation(location:MCreateAnnotation)
+    {
+        viewCreate.map.addAnnotation(location)
+        regenerateRoute()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kShutterTimeout)),
+                       dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.afterAddLocation()
+        }
+    }
+    
     private func afterAddLocation()
     {
         viewCreate.pointer.showPointer()
@@ -128,17 +142,20 @@ class CCreate:CMainController
         viewCreate.pointer.showShutter()
         viewCreate.button.hidden = true
         
-        let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
-        model.locations.append(annotation)
-        viewCreate.map.addAnnotation(annotation)
-        regenerateRoute()
+        let annotation:MCreateAnnotation
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kShutterTimeout)),
-                       dispatch_get_main_queue())
-        { [weak self] in
-            
-            self?.afterAddLocation()
+        if movingAnnotation == nil
+        {
+            annotation = viewCreate.map.annotationAtCenter()
+            model.locations.append(annotation)
         }
+        else
+        {
+            annotation = movingAnnotation!
+            annotation.coordinate = viewCreate.map.coordinatesAtCenter()
+        }
+        
+        beforeAddLocation(annotation)
     }
     
     func removeLocation(location:MCreateAnnotation)
@@ -150,6 +167,7 @@ class CCreate:CMainController
     
     func moveLocation(location:MCreateAnnotation)
     {
+        movingAnnotation = location
         viewCreate.pointer.showMoving()
         viewCreate.map.removeAnnotation(location)
         viewCreate.map.clearRoute()
