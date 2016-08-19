@@ -8,11 +8,11 @@ class MCreateAnnotation:NSObject, MKAnnotation
     var title:String?
     var index:Int
     
-    init(coordinate:CLLocationCoordinate2D, index:Int)
+    init(coordinate:CLLocationCoordinate2D)
     {
         reusableIdentifier = VCreateMapPin.reusableIdentifier()
         self.coordinate = coordinate
-        self.index = index
+        index = 0
         title = " "
         
         super.init()

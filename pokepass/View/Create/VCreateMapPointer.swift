@@ -3,13 +3,14 @@ import UIKit
 class VCreateMapPointer:UIView
 {
     weak var cross:UIImageView!
+    weak var button:UIButton!
+    private let kButtonSize:CGFloat = 60
     
     init()
     {
         super.init(frame:CGRectZero)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        userInteractionEnabled = false
         
         let cross:UIImageView = UIImageView()
         cross.userInteractionEnabled = false
@@ -18,10 +19,16 @@ class VCreateMapPointer:UIView
         cross.contentMode = UIViewContentMode.Center
         self.cross = cross
         
+        let button:UIButton = UIButton()
+        button.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.3)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(cross)
+        addSubview(button)
         
         let views:[String:AnyObject] = [
-            "cross":cross]
+            "cross":cross,
+            "button":button]
         
         let metrics:[String:AnyObject] = [:]
         

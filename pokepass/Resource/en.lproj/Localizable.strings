@@ -1,7 +1,5 @@
 "MCreateOptionsItemSave_title"="Save";
 "MCreateOptionsItemClear_title"="Clear";
-"MCreateOptionsItemRemoveLast_title"="Remove";
-"MCreateOptionsItemAdd_title"="Add";
 "MCreateOptionsItemSave_alertTitle"="Save";
 "MCreateOptionsItemSave_alertMessage"="Project name";
 "MCreateOptionsItemSave_cancel"="Cancel";
