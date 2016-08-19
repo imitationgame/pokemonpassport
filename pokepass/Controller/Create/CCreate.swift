@@ -147,5 +147,6 @@ class CCreate:CMainController
     {
         viewCreate.pointer.showMoving()
         viewCreate.map.removeAnnotation(location)
+        viewCreate.map.clearRoute()
     }
 }
