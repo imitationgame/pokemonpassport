@@ -153,6 +153,18 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         let viewPointer:VCreateMapPin = view as! VCreateMapPin
     }
     
+    func mapView(mapView:MKMapView, didDeselectAnnotationView view:MKAnnotationView)
+    {
+        if mapView.selectedAnnotations.isEmpty
+        {
+            print("is empty")
+        }
+        else
+        {
+            print("not empty")
+        }
+    }
+    
     func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
         mapView.deselectAnnotation(view.annotation, animated:true)

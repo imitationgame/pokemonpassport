@@ -155,6 +155,18 @@ class VCreate:UIView
     
     //MARK: public
     
+    func showingCallout()
+    {
+        pointer.hidden = true
+        button.hidden = true
+    }
+    
+    func notShowingCallout()
+    {
+        pointer.hidden = false
+        button.hidden = false
+    }
+    
     func showLoading()
     {
         loader.startAnimating()
