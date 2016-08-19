@@ -143,6 +143,8 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
+        mapView.deselectAnnotation(view.annotation, animated:true)
+        
         let tag:Int = control.tag
         let callOut:VCreateMapPin.VCreateMapPinCallout = VCreateMapPin.VCreateMapPinCallout(rawValue:tag)!
         let annotation:MCreateAnnotation = view.annotation as! MCreateAnnotation
