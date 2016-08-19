@@ -4,6 +4,8 @@ class VCreateMapPointer:UIView
 {
     weak var cross:UIImageView!
     weak var button:UIButton!
+    weak var layoutButtonLeft:NSLayoutConstraint!
+    weak var layoutButtonTop:NSLayoutConstraint!
     private let kButtonSize:CGFloat = 60
     
     init()
@@ -30,7 +32,8 @@ class VCreateMapPointer:UIView
             "cross":cross,
             "button":button]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:AnyObject] = [
+            "buttonSize":kButtonSize]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[cross]-0-|",
@@ -42,6 +45,37 @@ class VCreateMapPointer:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[button(buttonSize)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[button(buttonSize)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        
+        layoutButtonLeft = NSLayoutConstraint(
+            item:button,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        layoutButtonTop = NSLayoutConstraint(
+            item:button,
+            attribute:NSLayoutAttribute.Top,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Top,
+            multiplier:1,
+            constant:0)
+        
+        addConstraint(layoutButtonLeft)
+        addConstraint(layoutButtonTop)
         
         showPointer()
     }
