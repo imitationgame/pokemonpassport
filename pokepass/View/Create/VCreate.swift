@@ -21,6 +21,7 @@ class VCreate:UIView
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.complement()
+        self.controller = controller
         
         let map:VCreateMap = VCreateMap(controller:controller)
         self.map = map
@@ -41,6 +42,7 @@ class VCreate:UIView
         let button:UIButton = UIButton()
         button.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.3)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action:#selector(self.actionButton(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         addSubview(loader)
         addSubview(finder)
@@ -137,14 +139,18 @@ class VCreate:UIView
     
     override func layoutSubviews()
     {
-        let width:CGFloat = bounds.maxX
-        let height:CGFloat = bounds.maxY
-        let centerX:CGFloat = width / 2.0
-        let centerY:CGFloat = height / 2.0
-        layoutButtonLeft.constant = centerX
-        layoutButtonTop.constant = centerY
+        let center:CGPoint = pointer.center
+        layoutButtonLeft.constant = center.x
+        layoutButtonTop.constant = center.y
         
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionButton(sender button:UIButton)
+    {
+        controller.addLocation()
     }
     
     //MARK: public
