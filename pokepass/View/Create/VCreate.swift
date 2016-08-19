@@ -40,7 +40,6 @@ class VCreate:UIView
         self.loader = loader
         
         let button:UIButton = UIButton()
-        button.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.3)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action:#selector(self.actionButton(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         self.button = button
