@@ -6,6 +6,7 @@ class CCreate:CMainController
     let model:MCreate
     private var project:DPokePassProject?
     private var storeLocations:[MCreateAnnotation]?
+    private let kShutterTimeout:UInt64 = 250
     
     init()
     {
@@ -93,6 +94,12 @@ class CCreate:CMainController
         viewCreate.map.regenerateRoute()
     }
     
+    private func afterAddLocation()
+    {
+        viewCreate.pointer.showPointer()
+        viewCreate.button.hidden = false
+    }
+    
     //MARK: public
     
     func save(name:String)
@@ -118,10 +125,20 @@ class CCreate:CMainController
     
     func addLocation()
     {
+        viewCreate.pointer.showShutter()
+        viewCreate.button.hidden = true
+        
         let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
         model.locations.append(annotation)
         viewCreate.map.addAnnotation(annotation)
         regenerateRoute()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kShutterTimeout)),
+                       dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.afterAddLocation()
+        }
     }
     
     func removeLocation(location:MCreateAnnotation)

@@ -43,6 +43,7 @@ class VCreate:UIView
         button.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.3)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action:#selector(self.actionButton(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        self.button = button
         
         addSubview(loader)
         addSubview(finder)
