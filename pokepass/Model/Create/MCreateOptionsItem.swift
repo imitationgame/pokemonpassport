@@ -19,20 +19,6 @@ class MCreateOptionsItem
         return model
     }
     
-    class func RemoveLast() -> MCreateOptionsItemRemoveLast
-    {
-        let model:MCreateOptionsItemRemoveLast = MCreateOptionsItemRemoveLast()
-        
-        return model
-    }
-    
-    class func Add() -> MCreateOptionsItemAdd
-    {
-        let model:MCreateOptionsItemAdd = MCreateOptionsItemAdd()
-        
-        return model
-    }
-    
     init(image:String, title:String)
     {
         self.image = image

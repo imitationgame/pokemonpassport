@@ -9,8 +9,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="projectLocations" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="locationProject" inverseEntity="Location" syncable="YES"/>
     </entity>
+    <entity name="Settings" representedClassName="DPokePassSettings" syncable="YES">
+        <attribute name="measures" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Project" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Location" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Settings" positionX="-63" positionY="18" width="128" height="60"/>
     </elements>
 </model>

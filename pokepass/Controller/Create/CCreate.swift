@@ -6,6 +6,8 @@ class CCreate:CMainController
     let model:MCreate
     private var project:DPokePassProject?
     private var storeLocations:[MCreateAnnotation]?
+    private let kShutterTimeout:UInt64 = 250
+    private weak var movingAnnotation:MCreateAnnotation?
     
     init()
     {
@@ -80,6 +82,38 @@ class CCreate:CMainController
         }
     }
     
+    private func regenerateRoute()
+    {
+        let countLocations:Int = model.locations.count
+        
+        for index:Int in 0 ..< countLocations
+        {
+            let location:MCreateAnnotation = model.locations[index]
+            location.index = index
+        }
+        
+        viewCreate.map.regenerateRoute()
+    }
+    
+    private func beforeAddLocation(location:MCreateAnnotation)
+    {
+        viewCreate.map.addAnnotation(location)
+        regenerateRoute()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kShutterTimeout)),
+                       dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.afterAddLocation()
+        }
+    }
+    
+    private func afterAddLocation()
+    {
+        viewCreate.pointer.showPointer()
+        viewCreate.button.hidden = false
+    }
+    
     //MARK: public
     
     func save(name:String)
@@ -99,25 +133,43 @@ class CCreate:CMainController
         {
             viewCreate.map.removeAnnotations(model.locations)
             model.locations.removeAll()
-            viewCreate.map.regenerateRoute()
+            regenerateRoute()
         }
     }
     
     func addLocation()
     {
-        let annotation:MCreateAnnotation = viewCreate.map.coordinatesAtCenter()
-        model.locations.append(annotation)
-        viewCreate.map.addAnnotation(annotation)
-        viewCreate.map.regenerateRoute()
+        viewCreate.pointer.showShutter()
+        viewCreate.button.hidden = true
+        
+        let annotation:MCreateAnnotation
+        
+        if movingAnnotation == nil
+        {
+            annotation = viewCreate.map.annotationAtCenter()
+            model.locations.append(annotation)
+        }
+        else
+        {
+            annotation = movingAnnotation!
+            annotation.coordinate = viewCreate.map.coordinatesAtCenter()
+        }
+        
+        beforeAddLocation(annotation)
     }
     
-    func removeLast()
+    func removeLocation(location:MCreateAnnotation)
     {
-        if !model.locations.isEmpty
-        {
-            let annotation:MCreateAnnotation = model.locations.removeLast()
-            viewCreate.map.removeAnnotation(annotation)
-            viewCreate.map.regenerateRoute()
-        }
+        model.locations.removeAtIndex(location.index)
+        viewCreate.map.removeAnnotation(location)
+        regenerateRoute()
+    }
+    
+    func moveLocation(location:MCreateAnnotation)
+    {
+        movingAnnotation = location
+        viewCreate.pointer.showMoving()
+        viewCreate.map.removeAnnotation(location)
+        viewCreate.map.clearRoute()
     }
 }

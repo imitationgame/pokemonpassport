@@ -13,7 +13,7 @@ class VProjectsDetailCellSpeed:VProjectsDetailCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.userInteractionEnabled = false
         label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(14)
+        label.font = UIFont.bold(13)
         label.textAlignment = NSTextAlignment.Center
         label.numberOfLines = 0
         self.label = label

@@ -21,6 +21,13 @@ class MMainNavItem
         return item
     }
     
+    class func Settings(index:Int) -> MMainNavItem
+    {
+        let item:MMainNavItem = MMainNavItemSettings(index:index)
+        
+        return item
+    }
+    
     init(image:String, index:Int)
     {
         self.image = image

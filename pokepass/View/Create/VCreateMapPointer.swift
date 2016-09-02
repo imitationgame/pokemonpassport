@@ -15,7 +15,6 @@ class VCreateMapPointer:UIView
         cross.userInteractionEnabled = false
         cross.translatesAutoresizingMaskIntoConstraints = false
         cross.clipsToBounds = true
-        cross.image = UIImage(named:"mapPointer")
         cross.contentMode = UIViewContentMode.Center
         self.cross = cross
         
@@ -36,10 +35,29 @@ class VCreateMapPointer:UIView
             options:[],
             metrics:metrics,
             views:views))
+        
+        showPointer()
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: public
+    
+    func showPointer()
+    {
+        cross.image = UIImage(named:"mapPointer")
+    }
+    
+    func showMoving()
+    {
+        cross.image = UIImage(named:"mapPointerMoving")
+    }
+    
+    func showShutter()
+    {
+        cross.image = UIImage(named:"mapPointerShutter")
     }
 }
