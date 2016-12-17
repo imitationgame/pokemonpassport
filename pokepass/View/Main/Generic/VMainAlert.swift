@@ -10,7 +10,7 @@ class VMainAlert:UIView
     fileprivate let kAlertHeight:CGFloat = 64
     fileprivate let kLabelTop:CGFloat = 20
     
-    class func Message(_ message:String)
+    class func Message(message:String)
     {
         DispatchQueue.main.async
         {
