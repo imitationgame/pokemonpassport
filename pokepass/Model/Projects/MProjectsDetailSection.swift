@@ -20,7 +20,7 @@ class MProjectsDetailSection
     
     //MARK: public
     
-    func config(header:VProjectsDetailHeader)
+    func config(_ header:VProjectsDetailHeader)
     {
         header.label.text = title
     }

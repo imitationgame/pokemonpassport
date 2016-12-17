@@ -2,7 +2,7 @@ import UIKit
 
 class MCreateOptionsItemSave:MCreateOptionsItem
 {
-    private let kImage:String = "optionsSave"
+    fileprivate let kImage:String = "optionsSave"
     
     init()
     {
@@ -10,7 +10,7 @@ class MCreateOptionsItemSave:MCreateOptionsItem
         super.init(image:kImage, title:title)
     }
     
-    override func selected(controller:CCreate)
+    override func selected(_ controller:CCreate)
     {
         if controller.model.locations.isEmpty
         {
@@ -23,13 +23,13 @@ class MCreateOptionsItemSave:MCreateOptionsItem
                 NSLocalizedString("MCreateOptionsItemSave_alertTitle", comment:""),
                 message:
                 NSLocalizedString("MCreateOptionsItemSave_alertMessage", comment:""),
-                preferredStyle:UIAlertControllerStyle.Alert)
+                preferredStyle:UIAlertControllerStyle.alert)
             
             let actionAccept:UIAlertAction = UIAlertAction(
                 title:
                 NSLocalizedString("MCreateOptionsItemSave_accept", comment:""),
                 style:
-                UIAlertActionStyle.Default)
+                UIAlertActionStyle.default)
             { [weak controller] (action) in
                 
                 var projectName:String = alert.textFields!.last!.text!
@@ -46,22 +46,22 @@ class MCreateOptionsItemSave:MCreateOptionsItem
                 title:
                 NSLocalizedString("MCreateOptionsItemSave_cancel", comment:""),
                 style:
-                UIAlertActionStyle.Cancel, handler:nil)
+                UIAlertActionStyle.cancel, handler:nil)
             
             alert.addAction(actionAccept)
             alert.addAction(actionCancel)
-            alert.addTextFieldWithConfigurationHandler
+            alert.addTextField
                 { (field) in
                     
                     field.font = UIFont.regular(18)
-                    field.keyboardAppearance = UIKeyboardAppearance.Light
-                    field.autocorrectionType = UITextAutocorrectionType.No
-                    field.spellCheckingType = UITextSpellCheckingType.No
-                    field.autocapitalizationType = UITextAutocapitalizationType.Words
+                    field.keyboardAppearance = UIKeyboardAppearance.light
+                    field.autocorrectionType = UITextAutocorrectionType.no
+                    field.spellCheckingType = UITextSpellCheckingType.no
+                    field.autocapitalizationType = UITextAutocapitalizationType.words
                     field.placeholder = NSLocalizedString("MCreateOptionsItemSave_noName", comment:"")
             }
             
-            controller.presentViewController(alert, animated:true, completion:nil)
+            controller.present(alert, animated:true, completion:nil)
         }
     }
 }

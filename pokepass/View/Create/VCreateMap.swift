@@ -6,23 +6,23 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     weak var controller:CCreate!
     let span:MKCoordinateSpan
     var polyLine:MKPolyline?
-    private var userCoordinate:CLLocationCoordinate2D!
-    private let kSpanSize:CLLocationDegrees = 0.01
-    private let kPolylineWidth:CGFloat = 6
+    fileprivate var userCoordinate:CLLocationCoordinate2D!
+    fileprivate let kSpanSize:CLLocationDegrees = 0.01
+    fileprivate let kPolylineWidth:CGFloat = 6
     
     init(controller:CCreate)
     {
         span = MKCoordinateSpan(latitudeDelta:kSpanSize, longitudeDelta:kSpanSize)
         
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         self.controller = controller
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        rotateEnabled = false
-        scrollEnabled = true
-        zoomEnabled = true
-        pitchEnabled = false
-        mapType = MKMapType.Standard
+        isRotateEnabled = false
+        isScrollEnabled = true
+        isZoomEnabled = true
+        isPitchEnabled = false
+        mapType = MKMapType.standard
         showsBuildings = true
         showsPointsOfInterest = true
         showsCompass = true
@@ -44,8 +44,8 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         let height:CGFloat = bounds.maxY
         let centerX:CGFloat = width / 2
         let centerY:CGFloat = height / 2
-        let point:CGPoint = CGPointMake(centerX, centerY)
-        let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
+        let point:CGPoint = CGPoint(x: centerX, y: centerY)
+        let location:CLLocationCoordinate2D = convert(point, toCoordinateFrom:self)
         
         return location
     }
@@ -62,7 +62,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     {
         if polyLine != nil
         {
-            removeOverlay(polyLine!)
+            remove(polyLine!)
         }
     }
     
@@ -82,23 +82,23 @@ class VCreateMap:MKMapView, MKMapViewDelegate
             }
             
             polyLine = MKPolyline(coordinates:&coordinates, count:count)
-            addOverlay(polyLine!, level:MKOverlayLevel.AboveRoads)
+            add(polyLine!, level:MKOverlayLevel.aboveRoads)
         }
     }
     
-    func centerLocation(locationCoordinate:CLLocationCoordinate2D)
+    func centerLocation(_ locationCoordinate:CLLocationCoordinate2D)
     {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)
         setRegion(region, animated:true)
     }
     
-    func searchLocation(query:String)
+    func searchLocation(_ query:String)
     {
         let searchRequest:MKLocalSearchRequest = MKLocalSearchRequest()
         searchRequest.naturalLanguageQuery = query
         
         let localSearch:MKLocalSearch = MKLocalSearch(request:searchRequest)
-        localSearch.startWithCompletionHandler
+        localSearch.start
         { (response, error) in
             
             if error == nil && response != nil
@@ -108,7 +108,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
                     let firstLocation:MKMapItem = response!.mapItems.first!
                     let location:CLLocationCoordinate2D = firstLocation.placemark.coordinate
                     
-                    dispatch_async(dispatch_get_main_queue())
+                    DispatchQueue.main.async
                     { [weak self] in
                         
                         self?.centerLocation(location)
@@ -120,7 +120,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: map delegate
     
-    func mapView(mapView:MKMapView, rendererForOverlay overlay:MKOverlay) -> MKOverlayRenderer
+    func mapView(_ mapView:MKMapView, rendererFor overlay:MKOverlay) -> MKOverlayRenderer
     {
         let polyline:MKPolyline = overlay as! MKPolyline
         let renderer:MKPolylineRenderer = MKPolylineRenderer(polyline:polyline)
@@ -130,11 +130,11 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         return renderer
     }
     
-    func mapView(mapView:MKMapView, viewForAnnotation annotation:MKAnnotation) -> MKAnnotationView?
+    func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?
     {
         let modelAnnotation:MCreateAnnotation = annotation as! MCreateAnnotation
         let reusableIdentifier:String = modelAnnotation.reusableIdentifier
-        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(reusableIdentifier)
+        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: reusableIdentifier)
         
         if view == nil
         {
@@ -148,17 +148,17 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         return view
     }
     
-    func mapView(mapView:MKMapView, didSelectAnnotationView view:MKAnnotationView)
+    func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
     {
         controller.viewCreate.showingCallout()
     }
     
-    func mapView(mapView:MKMapView, didDeselectAnnotationView view:MKAnnotationView)
+    func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
         controller.viewCreate.notShowingCallout()
     }
     
-    func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
+    func mapView(_ mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
         mapView.deselectAnnotation(view.annotation, animated:true)
         
@@ -168,13 +168,13 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         
         switch callOut
         {
-            case VCreateMapPin.VCreateMapPinCallout.Delete:
+            case VCreateMapPin.VCreateMapPinCallout.delete:
                 
                 controller.removeLocation(annotation)
                 
                 break
                 
-            case VCreateMapPin.VCreateMapPinCallout.Move:
+            case VCreateMapPin.VCreateMapPinCallout.move:
                 
                 controller.moveLocation(annotation)
                 

@@ -1,13 +1,13 @@
 import Foundation
 
-extension NSDate
+extension Date
 {
-    func beginningOfDay() -> NSDate
+    func beginningOfDay() -> Date
     {
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        let components:NSDateComponents = calendar.components(calendarUnits, fromDate:self)
-        let beginning:NSDate = calendar.dateFromComponents(components)!
+        let calendar:Calendar = Calendar.current
+        let calendarUnits:NSCalendar.Unit = [NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day]
+        let components:DateComponents = (calendar as NSCalendar).components(calendarUnits, from:self)
+        let beginning:Date = calendar.date(from: components)!
         
         return beginning
     }

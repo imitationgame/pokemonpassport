@@ -3,7 +3,7 @@ import CoreData
 
 class DManagerModelPokePass:DManagerModel
 {
-    private let kModelName:String = "DPokePassModel"
+    fileprivate let kModelName:String = "DPokePassModel"
     
     init()
     {

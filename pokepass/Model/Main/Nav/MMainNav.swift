@@ -20,7 +20,7 @@ class MMainNav
     
     //MARK: public
     
-    func selectItem(selected:MMainNavItem)
+    func selectItem(_ selected:MMainNavItem)
     {
         current = selected
         

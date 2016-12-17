@@ -2,7 +2,7 @@ import Foundation
 
 class MProjectsDetailItemSpeedRun:MProjectsDetailItemSpeed
 {
-    private let kMaxDistance:Double = 0.00007
+    fileprivate let kMaxDistance:Double = 0.00007
     
     init(index:Int)
     {

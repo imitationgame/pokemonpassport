@@ -11,9 +11,9 @@ class VProjectsCell:UICollectionViewCell
         backgroundColor = UIColor(white:1, alpha:0.5)
         
         let label:UILabel = UILabel()
-        label.userInteractionEnabled = false
+        label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor.clearColor()
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(17)
         label.textColor = UIColor.main()
         self.label = label
@@ -25,13 +25,13 @@ class VProjectsCell:UICollectionViewCell
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label(250)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-10-[label(250)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -42,7 +42,7 @@ class VProjectsCell:UICollectionViewCell
         fatalError()
     }
     
-    override var selected:Bool
+    override var isSelected:Bool
     {
         didSet
         {
@@ -50,7 +50,7 @@ class VProjectsCell:UICollectionViewCell
         }
     }
     
-    override var highlighted:Bool
+    override var isHighlighted:Bool
     {
         didSet
         {
@@ -60,9 +60,9 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: private
     
-    private func hover()
+    fileprivate func hover()
     {
-        if selected || highlighted
+        if isSelected || isHighlighted
         {
             alpha = 0.1
         }
@@ -74,7 +74,7 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(model:MProjectsItem)
+    func config(_ model:MProjectsItem)
     {
         label.text = model.name
     }

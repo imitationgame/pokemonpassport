@@ -27,13 +27,13 @@ class MCreateOptionsItem
     
     //MARK: public
     
-    func config(cell:VCreateOptionsCell)
+    func config(_ cell:VCreateOptionsCell)
     {
         cell.label.text = title
         cell.image.image = UIImage(named:image)
     }
     
-    func selected(controller:CCreate)
+    func selected(_ controller:CCreate)
     {
     }
 }

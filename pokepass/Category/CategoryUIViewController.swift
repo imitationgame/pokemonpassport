@@ -6,7 +6,7 @@ extension UIViewController
     {
         get
         {
-            return self.parentViewController as! CMainParent
+            return self.parent as! CMainParent
         }
     }
 }

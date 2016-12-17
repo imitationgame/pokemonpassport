@@ -5,7 +5,7 @@ class DManager
     static let sharedInstance = DManager()
     let managerPokePass:DManagerModelPokePass
     
-    private init()
+    fileprivate init()
     {
         managerPokePass = DManagerModelPokePass()
     }

@@ -3,8 +3,8 @@ import UIKit
 class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     weak var controller:CSettings!
-    private let kCollectionTop:CGFloat = 10
-    private let kCollectionBottom:CGFloat = 40
+    fileprivate let kCollectionTop:CGFloat = 10
+    fileprivate let kCollectionBottom:CGFloat = 40
     
     convenience init(controller:CSettings)
     {
@@ -15,23 +15,23 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         translatesAutoresizingMaskIntoConstraints = false
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSizeZero
-        flow.footerReferenceSize = CGSizeZero
+        flow.headerReferenceSize = CGSize.zero
+        flow.footerReferenceSize = CGSize.zero
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
-        flow.scrollDirection = UICollectionViewScrollDirection.Vertical
+        flow.scrollDirection = UICollectionViewScrollDirection.vertical
         flow.sectionInset = UIEdgeInsetsMake(kCollectionTop, 0, kCollectionBottom, 0)
         
-        let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
+        let collection:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
         collection.clipsToBounds = true
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = UIColor.clearColor()
+        collection.backgroundColor = UIColor.clear
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
         collection.alwaysBounceVertical = true
         collection.delegate = self
         collection.dataSource = self
-        collection.registerClass(
+        collection.register(
             VSettingsCellMetrics.self,
             forCellWithReuseIdentifier:
             VSettingsCellMetrics.reusableIdentifier())
@@ -43,13 +43,13 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -57,7 +57,7 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: private
     
-    private func modelAtIndex(index:NSIndexPath) -> MSettingsMenuItem
+    fileprivate func modelAtIndex(_ index:IndexPath) -> MSettingsMenuItem
     {
         let item:MSettingsMenuItem = controller.model.items[index.item]
         
@@ -66,33 +66,33 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: col del
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let item:MSettingsMenuItem = modelAtIndex(indexPath)
         let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSizeMake(width, item.cellHeight)
+        let size:CGSize = CGSize(width: width, height: item.cellHeight)
         
         return size
     }
     
-    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
     }
     
-    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
         let count:Int = controller.model.items.count
         
         return count
     }
     
-    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
         let item:MSettingsMenuItem = modelAtIndex(indexPath)
-        let cell:VSettingsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            item.reusableIdentifier,
-            forIndexPath:
+        let cell:VSettingsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: item.reusableIdentifier,
+            for:
             indexPath) as! VSettingsCell
         
         item.config(cell, controller:controller)

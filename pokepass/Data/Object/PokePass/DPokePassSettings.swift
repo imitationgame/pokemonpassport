@@ -6,8 +6,8 @@ class DPokePassSettings:NSManagedObject
 {
     @objc enum DPokePassSettingsMeasure:Int16
     {
-        case Metric = 0
-        case Imperial
+        case metric = 0
+        case imperial
     }
  
     override class func entityName() -> String

@@ -4,17 +4,17 @@ class VMainShadow:UIView
 {
     init()
     {
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
-        userInteractionEnabled = false
+        backgroundColor = UIColor.clear
+        isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
         alpha = 0
         
-        let visualEffect:UIVisualEffect = UIBlurEffect(style:UIBlurEffectStyle.Dark)
+        let visualEffect:UIVisualEffect = UIBlurEffect(style:UIBlurEffectStyle.dark)
         let blur:UIVisualEffectView = UIVisualEffectView(effect:visualEffect)
         blur.translatesAutoresizingMaskIntoConstraints = false
-        blur.userInteractionEnabled = false
+        blur.isUserInteractionEnabled = false
         blur.clipsToBounds = true
         
         addSubview(blur)
@@ -24,13 +24,13 @@ class VMainShadow:UIView
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[blur]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[blur]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[blur]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[blur]-0-|",
             options:[],
             metrics:metrics,
             views:views))

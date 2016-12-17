@@ -1,11 +1,11 @@
 import Foundation
 
-extension NSFileManager
+extension FileManager
 {
-    class func appDirectory() -> NSURL
+    class func appDirectory() -> URL
     {
-        let urls:[NSURL] = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains:NSSearchPathDomainMask.UserDomainMask)
-        let appDirectory:NSURL = urls.last!
+        let urls:[URL] = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:FileManager.SearchPathDomainMask.userDomainMask)
+        let appDirectory:URL = urls.last!
         
         return appDirectory
     }

@@ -7,24 +7,24 @@ class VCreateOptionsCell:UICollectionViewCell
     
     override init(frame:CGRect)
     {
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         let label:UILabel = UILabel()
-        label.userInteractionEnabled = false
+        label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.regular(10)
-        label.textColor = UIColor.blackColor()
-        label.textAlignment = NSTextAlignment.Center
-        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.black
+        label.textAlignment = NSTextAlignment.center
+        label.backgroundColor = UIColor.clear
         self.label = label
         
         let image:UIImageView = UIImageView()
-        image.userInteractionEnabled = false
+        image.isUserInteractionEnabled = false
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.contentMode = UIViewContentMode.Center
+        image.contentMode = UIViewContentMode.center
         self.image = image
         
         addSubview(label)
@@ -36,23 +36,23 @@ class VCreateOptionsCell:UICollectionViewCell
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[image]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label(13)]-6-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[label(13)]-6-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-6-[image(40)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-6-[image(40)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -63,7 +63,7 @@ class VCreateOptionsCell:UICollectionViewCell
         fatalError()
     }
     
-    override var selected:Bool
+    override var isSelected:Bool
     {
         didSet
         {
@@ -71,7 +71,7 @@ class VCreateOptionsCell:UICollectionViewCell
         }
     }
     
-    override var highlighted:Bool
+    override var isHighlighted:Bool
     {
         didSet
         {
@@ -81,9 +81,9 @@ class VCreateOptionsCell:UICollectionViewCell
     
     //MARK: private
     
-    private func hover()
+    fileprivate func hover()
     {
-        if selected || highlighted
+        if isSelected || isHighlighted
         {
             alpha = 0.1
         }

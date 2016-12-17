@@ -2,7 +2,7 @@ import Foundation
 
 class MCreateOptionsItemClear:MCreateOptionsItem
 {
-    private let kImage:String = "optionsClear"
+    fileprivate let kImage:String = "optionsClear"
     
     init()
     {
@@ -10,7 +10,7 @@ class MCreateOptionsItemClear:MCreateOptionsItem
         super.init(image:kImage, title:title)
     }
     
-    override func selected(controller:CCreate)
+    override func selected(_ controller:CCreate)
     {
         controller.clear()
     }

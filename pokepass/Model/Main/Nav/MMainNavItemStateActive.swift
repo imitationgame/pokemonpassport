@@ -2,8 +2,8 @@ import UIKit
 
 class MMainNavItemStateActive:MMainNavItemState
 {
-    private let kSelectable:Bool = false
-    private let kHighlightable:Bool = false
+    fileprivate let kSelectable:Bool = false
+    fileprivate let kHighlightable:Bool = false
     
     init()
     {

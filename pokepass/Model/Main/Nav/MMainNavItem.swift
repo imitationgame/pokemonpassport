@@ -4,24 +4,24 @@ class MMainNavItem
 {
     let image:String
     let index:Int
-    private(set) var state:MMainNavItemState
+    fileprivate(set) var state:MMainNavItemState
     weak var cell:VMainBarCell?
     
-    class func Projects(index:Int) -> MMainNavItem
+    class func Projects(_ index:Int) -> MMainNavItem
     {
         let item:MMainNavItem = MMainNavItemProjects(index:index)
         
         return item
     }
     
-    class func Create(index:Int) -> MMainNavItem
+    class func Create(_ index:Int) -> MMainNavItem
     {
         let item:MMainNavItem = MMainNavItemCreate(index:index)
         
         return item
     }
     
-    class func Settings(index:Int) -> MMainNavItem
+    class func Settings(_ index:Int) -> MMainNavItem
     {
         let item:MMainNavItem = MMainNavItemSettings(index:index)
         
@@ -37,16 +37,16 @@ class MMainNavItem
     
     //MARK: public
  
-    func restate(state:MMainNavItemState)
+    func restate(_ state:MMainNavItemState)
     {
         self.state = state
         cell?.image.tintColor = state.color
     }
     
-    func config(cell:VMainBarCell)
+    func config(_ cell:VMainBarCell)
     {
         self.cell = cell
-        cell.image.image = UIImage(named:image)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cell.image.image = UIImage(named:image)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         cell.image.tintColor = state.color
     }
     

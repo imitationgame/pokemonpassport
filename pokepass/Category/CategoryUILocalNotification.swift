@@ -4,7 +4,7 @@ extension UILocalNotification
 {
     class func cancelAll()
     {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UIApplication.shared.cancelAllLocalNotifications()
     }
     
     class func postRemainder()
@@ -20,29 +20,29 @@ extension UILocalNotification
     
     //MARK: private
     
-    private class func Remainder() -> UILocalNotification
+    fileprivate class func Remainder() -> UILocalNotification
     {
-        let kRemainderMinHour:NSTimeInterval = 7
-        let kRemainderMaxHour:NSTimeInterval = 21
-        let kSecondsInterval:NSTimeInterval = 3600
+        let kRemainderMinHour:TimeInterval = 7
+        let kRemainderMaxHour:TimeInterval = 21
+        let kSecondsInterval:TimeInterval = 3600
         
-        let now:NSDate = NSDate()
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let hour:NSTimeInterval = NSTimeInterval(calendar.component(NSCalendarUnit.Hour, fromDate:now))
-        let addedSeconds:NSTimeInterval
+        let now:Date = Date()
+        let calendar:Calendar = Calendar.current
+        let hour:TimeInterval = TimeInterval((calendar as NSCalendar).component(NSCalendar.Unit.hour, from:now))
+        let addedSeconds:TimeInterval
         
         if hour > kRemainderMaxHour
         {
-            let untilMidnight:NSTimeInterval = 24 - hour
-            let morning:NSTimeInterval = kRemainderMinHour + 1
-            let nextHourRemainder:NSTimeInterval = untilMidnight + morning
-            let nextHourInSeconds:NSTimeInterval = nextHourRemainder * kSecondsInterval
+            let untilMidnight:TimeInterval = 24 - hour
+            let morning:TimeInterval = kRemainderMinHour + 1
+            let nextHourRemainder:TimeInterval = untilMidnight + morning
+            let nextHourInSeconds:TimeInterval = nextHourRemainder * kSecondsInterval
             addedSeconds = nextHourInSeconds
         }
         else if hour < kRemainderMinHour
         {
-            let untilMorning:NSTimeInterval = (kRemainderMinHour + 1) - hour
-            let morningInSeconds:NSTimeInterval = untilMorning * kSecondsInterval
+            let untilMorning:TimeInterval = (kRemainderMinHour + 1) - hour
+            let morningInSeconds:TimeInterval = untilMorning * kSecondsInterval
             addedSeconds = morningInSeconds
         }
         else
@@ -50,7 +50,7 @@ extension UILocalNotification
             addedSeconds = kSecondsInterval
         }
         
-        let fireDate:NSDate = NSDate.init(timeIntervalSinceNow:addedSeconds)
+        let fireDate:Date = Date.init(timeIntervalSinceNow:addedSeconds)
         
         let notification:UILocalNotification = UILocalNotification()
         notification.alertBody = NSLocalizedString("UILocalNotification_remainder", comment:"")

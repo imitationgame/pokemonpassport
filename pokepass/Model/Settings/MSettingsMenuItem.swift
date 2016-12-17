@@ -22,7 +22,7 @@ class MSettingsMenuItem
     
     //MARK: public
     
-    func config(cell:VSettingsCell, controller:CSettings)
+    func config(_ cell:VSettingsCell, controller:CSettings)
     {
         self.cell = cell
         self.controller = controller

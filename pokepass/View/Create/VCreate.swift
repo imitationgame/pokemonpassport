@@ -11,9 +11,9 @@ class VCreate:UIView
     weak var button:UIButton!
     weak var layoutButtonLeft:NSLayoutConstraint!
     weak var layoutButtonTop:NSLayoutConstraint!
-    private let kOptionsHeight:CGFloat = 60
-    private let kFinderHeight:CGFloat = 40
-    private let kButtonSize:CGFloat = 50
+    fileprivate let kOptionsHeight:CGFloat = 60
+    fileprivate let kFinderHeight:CGFloat = 40
+    fileprivate let kButtonSize:CGFloat = 50
     
     convenience init(controller:CCreate)
     {
@@ -41,7 +41,7 @@ class VCreate:UIView
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action:#selector(self.actionButton(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        button.addTarget(self, action:#selector(self.actionButton(sender:)), for:UIControlEvents.touchUpInside)
         self.button = button
         
         addSubview(loader)
@@ -60,76 +60,76 @@ class VCreate:UIView
             "button":button]
         
         let metrics:[String:AnyObject] = [
-            "optionsHeight":kOptionsHeight,
-            "finderHeight":kFinderHeight,
-            "buttonSize":kButtonSize]
+            "optionsHeight":kOptionsHeight as AnyObject,
+            "finderHeight":kFinderHeight as AnyObject,
+            "buttonSize":kButtonSize as AnyObject]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[loader]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[loader]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[map]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[map]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[pointer]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[pointer]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[options]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[options]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[finder]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[finder]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[finder]-0-[pointer]-0-[options]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[finder]-0-[pointer]-0-[options]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[pointer]-0-[loader]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[pointer]-0-[loader]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[button(buttonSize)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[button(buttonSize)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[button(buttonSize)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[button(buttonSize)]",
             options:[],
             metrics:metrics,
             views:views))
         
         layoutButtonLeft = NSLayoutConstraint(
             item:button,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         
         layoutButtonTop = NSLayoutConstraint(
             item:button,
-            attribute:NSLayoutAttribute.Top,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Top,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:0)
         
@@ -139,9 +139,8 @@ class VCreate:UIView
     
     override func layoutSubviews()
     {
-        let center:CGPoint = pointer.center
-        layoutButtonLeft.constant = center.x
-        layoutButtonTop.constant = center.y
+        layoutButtonLeft.constant = bounds.maxX / 2.0
+        layoutButtonTop.constant = bounds.maxY / 2.0
         
         super.layoutSubviews()
     }
@@ -157,25 +156,25 @@ class VCreate:UIView
     
     func showingCallout()
     {
-        pointer.hidden = true
-        button.hidden = true
+        pointer.isHidden = true
+        button.isHidden = true
     }
     
     func notShowingCallout()
     {
-        pointer.hidden = false
-        button.hidden = false
+        pointer.isHidden = false
+        button.isHidden = false
     }
     
     func showLoading()
     {
         loader.startAnimating()
-        options.hidden = true
+        options.isHidden = true
     }
     
     func hideLoading()
     {
         loader.stopAnimating()
-        options.hidden = false
+        options.isHidden = false
     }
 }

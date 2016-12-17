@@ -4,8 +4,8 @@ class VSettingsCellMetrics:VSettingsCell
 {
     weak var segmented:UISegmentedControl!
     weak var layoutSegmentedLeft:NSLayoutConstraint!
-    private let kSegmentedWidth:CGFloat = 250
-    private let kSegmentedHeight:CGFloat = 32
+    fileprivate let kSegmentedWidth:CGFloat = 250
+    fileprivate let kSegmentedHeight:CGFloat = 32
     
     override init(frame:CGRect)
     {
@@ -13,11 +13,11 @@ class VSettingsCellMetrics:VSettingsCell
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor.clearColor()
-        label.userInteractionEnabled = false
-        label.textAlignment = NSTextAlignment.Center
+        label.backgroundColor = UIColor.clear
+        label.isUserInteractionEnabled = false
+        label.textAlignment = NSTextAlignment.center
         label.font = UIFont.bold(14)
-        label.textColor = UIColor.main().colorWithAlphaComponent(0.7)
+        label.textColor = UIColor.main().withAlphaComponent(0.7)
         label.text = NSLocalizedString("VSettingsCellMetrics_label", comment:"")
         
         let segmented:UISegmentedControl = UISegmentedControl()
@@ -33,31 +33,31 @@ class VSettingsCellMetrics:VSettingsCell
             "segmented":segmented]
         
         let metrics:[String:AnyObject] = [
-            "segmentedWidth":kSegmentedWidth,
-            "segmentedHeight":kSegmentedHeight]
+            "segmentedWidth":kSegmentedWidth as AnyObject,
+            "segmentedHeight":kSegmentedHeight as AnyObject]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[segmented(segmentedWidth)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[segmented(segmentedWidth)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-5-[label(20)]-5-[segmented(segmentedHeight)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-5-[label(20)]-5-[segmented(segmentedHeight)]",
             options:[],
             metrics:metrics,
             views:views))
         
         layoutSegmentedLeft = NSLayoutConstraint(
             item:segmented,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         

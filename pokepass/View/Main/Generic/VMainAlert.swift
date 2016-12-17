@@ -2,21 +2,21 @@ import UIKit
 
 class VMainAlert:UIView
 {
-    private weak var timer:NSTimer?
-    private weak var layoutTop:NSLayoutConstraint!
-    private weak var parentView:UIView?
-    private let kAnimationDuration:NSTimeInterval = 0.2
-    private let kTimeOut:NSTimeInterval = 3
-    private let kAlertHeight:CGFloat = 64
-    private let kLabelTop:CGFloat = 20
+    fileprivate weak var timer:Timer?
+    fileprivate weak var layoutTop:NSLayoutConstraint!
+    fileprivate weak var parentView:UIView?
+    fileprivate let kAnimationDuration:TimeInterval = 0.2
+    fileprivate let kTimeOut:TimeInterval = 3
+    fileprivate let kAlertHeight:CGFloat = 64
+    fileprivate let kLabelTop:CGFloat = 20
     
-    class func Message(message:String)
+    class func Message(_ message:String)
     {
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         {
-            UIApplication.sharedApplication().keyWindow!.endEditing(true)
+            UIApplication.shared.keyWindow!.endEditing(true)
             let alert:VMainAlert = VMainAlert(message:message)
-            alert.parentView = UIApplication.sharedApplication().keyWindow!.rootViewController!.view
+            alert.parentView = UIApplication.shared.keyWindow!.rootViewController!.view
             alert.addToParent()
             alert.animateShow()
         }
@@ -27,15 +27,15 @@ class VMainAlert:UIView
         self.init()
         backgroundColor = UIColor.complement()
         clipsToBounds = true
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
         
         let label:UILabel = UILabel()
-        label.backgroundColor = UIColor.clearColor()
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(14)
-        label.textColor = UIColor.blackColor()
+        label.textColor = UIColor.black
         label.numberOfLines = 0
-        label.textAlignment = NSTextAlignment.Center
+        label.textAlignment = NSTextAlignment.center
         label.text = message
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -48,18 +48,18 @@ class VMainAlert:UIView
             "labelHeight":(kAlertHeight - kLabelTop),
             "labelTop":kLabelTop]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(labelTop)-[label(labelHeight)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-(labelTop)-[label(labelHeight)]",
             options:[],
             metrics:metrics,
             views:views))
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(kTimeOut, target:self, selector:#selector(self.timeOut(sender:)), userInfo:self, repeats:false)
+        timer = Timer.scheduledTimer(timeInterval: kTimeOut, target:self, selector:#selector(self.timeOut(sender:)), userInfo:self, repeats:false)
     }
     
     deinit
@@ -67,7 +67,7 @@ class VMainAlert:UIView
         timer?.invalidate()
     }
     
-    func timeOut(sender timer:NSTimer)
+    func timeOut(sender timer:Timer)
     {
         timer.invalidate()
         animateHide()
@@ -75,7 +75,7 @@ class VMainAlert:UIView
     
     //MARK: private
     
-    private func addToParent()
+    fileprivate func addToParent()
     {
         parentView!.addSubview(self)
         
@@ -83,55 +83,55 @@ class VMainAlert:UIView
             "alert":self]
         
         let metrics:[String:AnyObject] = [
-            "alertHeight":kAlertHeight]
+            "alertHeight":kAlertHeight as AnyObject]
         
-        parentView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[alert]-0-|",
+        parentView!.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[alert]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        parentView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[alert(alertHeight)]",
+        parentView!.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[alert(alertHeight)]",
             options:[],
             metrics:metrics,
             views:views))
         
         layoutTop = NSLayoutConstraint(
             item:self,
-            attribute:NSLayoutAttribute.Top,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parentView!,
-            attribute:NSLayoutAttribute.Top,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:-kAlertHeight)
         
         parentView!.addConstraint(layoutTop)
     }
     
-    private func animateShow()
+    fileprivate func animateShow()
     {
         parentView?.layoutIfNeeded()
         layoutTop.constant = 0
         
-        UIView.animateWithDuration(kAnimationDuration)
-        { [weak self] in
-            
-            self?.parentView?.layoutIfNeeded()
-        }
-    }
-    
-    private func animateHide()
-    {
-        layoutTop.constant = -kAlertHeight
-        
-        UIView.animateWithDuration(kAnimationDuration, animations:
-        { [weak self] in
+        UIView.animate(withDuration: kAnimationDuration, animations: { [weak self] in
             
             self?.parentView?.layoutIfNeeded()
         })
-        { [weak self] (done) in
+        
+    }
+    
+    fileprivate func animateHide()
+    {
+        layoutTop.constant = -kAlertHeight
+        
+        UIView.animate(withDuration: kAnimationDuration, animations:
+        { [weak self] in
+            
+            self?.parentView?.layoutIfNeeded()
+        }, completion: { [weak self] (done) in
             
             self?.removeFromSuperview()
-        }
+        })
+        
     }
 }

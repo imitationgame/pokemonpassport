@@ -3,15 +3,15 @@ import Foundation
 class MSettings
 {
     static let sharedInstance = MSettings()
-    private(set) var model:DPokePassSettings?
+    fileprivate(set) var model:DPokePassSettings?
     
-    private init()
+    fileprivate init()
     {
     }
     
     //MARK: private
     
-    private func createModel()
+    fileprivate func createModel()
     {
         DManager.sharedInstance.managerPokePass.createManagedObject(
             DPokePassSettings.self)

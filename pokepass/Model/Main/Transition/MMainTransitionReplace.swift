@@ -2,7 +2,7 @@ import UIKit
 
 class MMainTransitionReplace:MMainTransition
 {
-    private let kAnimationDuration:NSTimeInterval = 0
+    fileprivate let kAnimationDuration:TimeInterval = 0
     
     init()
     {
@@ -24,34 +24,34 @@ class MMainTransitionReplace:MMainTransition
 
         parent.layoutTopTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Top,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Top,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:barHeight)
         parent.layoutBottomTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Bottom,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Bottom,
+            attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
         parent.layoutLeftTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         parent.layoutRightTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Right,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Right,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
         

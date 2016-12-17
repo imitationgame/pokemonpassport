@@ -4,7 +4,7 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
 {
     weak var cellMetrics:VSettingsCellMetrics!
     let options:[MSettingsMenuItemMetricsOption]
-    private let kCellHeight:CGFloat = 80
+    fileprivate let kCellHeight:CGFloat = 80
     
     init()
     {
@@ -20,18 +20,18 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }
     
-    override func config(cell:VSettingsCell, controller:CSettings)
+    override func config(_ cell:VSettingsCell, controller:CSettings)
     {
         let countOptions:Int = options.count
         cellMetrics = cell as! VSettingsCellMetrics
         cellMetrics.segmented.removeAllSegments()
-        cellMetrics.segmented.addTarget(self, action:#selector(self.actionSegmented(sender:)), forControlEvents:UIControlEvents.ValueChanged)
+        cellMetrics.segmented.addTarget(self, action:#selector(self.actionSegmented(sender:)), for:UIControlEvents.valueChanged)
         
         for index:Int in 0 ..< countOptions
         {
             let option:MSettingsMenuItemMetricsOption = options[index]
             let optionName:String = option.name
-            cellMetrics.segmented.insertSegmentWithTitle(optionName, atIndex:index, animated:false)
+            cellMetrics.segmented.insertSegment(withTitle: optionName, at:index, animated:false)
         }
         
         showSelected()
@@ -47,7 +47,7 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
     
     //MARK: private
     
-    private func showSelected()
+    fileprivate func showSelected()
     {
         let measures:DPokePassSettings.DPokePassSettingsMeasure = MSettings.sharedInstance.model!.measures
         let countOptions:Int = options.count

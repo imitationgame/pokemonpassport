@@ -2,12 +2,12 @@ import UIKit
 
 class MMainTransition
 {
-    let animationDuration:NSTimeInterval
+    let animationDuration:TimeInterval
     weak var parent:CMainParent!
     weak var current:UIViewController?
     weak var next:UIViewController!
     
-    class func transition(fromIndex:Int, toIndex:Int) -> MMainTransition
+    class func transition(_ fromIndex:Int, toIndex:Int) -> MMainTransition
     {
         let scrollTransition:MMainTransition
         
@@ -51,7 +51,7 @@ class MMainTransition
         return transition
     }
     
-    class func Push(pushed:String) -> MMainTransition
+    class func Push(_ pushed:String) -> MMainTransition
     {
         let transition:MMainTransition = MMainTransitionPush(pushed:pushed)
         
@@ -65,14 +65,14 @@ class MMainTransition
         return transition
     }
     
-    init(animationDuration:NSTimeInterval)
+    init(animationDuration:TimeInterval)
     {
         self.animationDuration = animationDuration
     }
     
     //MARK: public
     
-    func prepare(parent:CMainParent, current:UIViewController?, next:UIViewController)
+    func prepare(_ parent:CMainParent, current:UIViewController?, next:UIViewController)
     {
         self.parent = parent
         self.current = current

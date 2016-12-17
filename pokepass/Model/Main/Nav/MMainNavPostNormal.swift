@@ -2,7 +2,7 @@ import UIKit
 
 class MMainNavPosNormal:MMainNavPos
 {
-    override func adjust(bar:VMainBar)
+    override func adjust(_ bar:VMainBar)
     {
         let width:CGFloat = bar.bounds.maxX
         bar.layoutCollectionLeft.constant = 0

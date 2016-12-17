@@ -5,9 +5,9 @@ class MProjectsItem
     let name:String
     let model:DPokePassProject
     var locations:[MProjectItemLocation]?
-    private let kHeader:String = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n"
-    private let kItemGroup:String = "<gpx>\n"
-    private let kItemGroupClose:String = "</gpx>"
+    fileprivate let kHeader:String = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n"
+    fileprivate let kItemGroup:String = "<gpx>\n"
+    fileprivate let kItemGroupClose:String = "</gpx>"
     
     init(model:DPokePassProject)
     {
@@ -17,7 +17,7 @@ class MProjectsItem
     
     //MARK: private
     
-    private func itemForLocation(location:DPokePassLocation)
+    fileprivate func itemForLocation(_ location:DPokePassLocation)
     {
         let latitude:Double = location.latitude
         let longitude:Double = location.longitude
@@ -25,13 +25,13 @@ class MProjectsItem
         itemFor(latitude, longitude:longitude)
     }
     
-    private func itemFor(latitude:Double, longitude:Double)
+    fileprivate func itemFor(_ latitude:Double, longitude:Double)
     {
         let item:MProjectItemLocation = MProjectItemLocation(latitude:latitude, longitude:longitude)
         locations!.append(item)
     }
     
-    private func pointsBetweenLocations(index:Int, locationA:DPokePassLocation?, locationB:DPokePassLocation?, maxDistance:Double)
+    fileprivate func pointsBetweenLocations(_ index:Int, locationA:DPokePassLocation?, locationB:DPokePassLocation?, maxDistance:Double)
     {
         if locationB != nil
         {
@@ -119,7 +119,7 @@ class MProjectsItem
     
     //MARK: public
     
-    func getLocations(maxDistance:Double)
+    func getLocations(_ maxDistance:Double)
     {
         locations = []
         let firstLocation:DPokePassLocation? = model.projectLocations.first

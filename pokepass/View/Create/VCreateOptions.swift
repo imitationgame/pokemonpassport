@@ -10,32 +10,32 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         model = MCreateOptions()
         
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         self.controller = controller
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSizeZero
-        flow.footerReferenceSize = CGSizeZero
+        flow.headerReferenceSize = CGSize.zero
+        flow.footerReferenceSize = CGSize.zero
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
-        flow.scrollDirection = UICollectionViewScrollDirection.Horizontal
-        flow.sectionInset = UIEdgeInsetsZero
+        flow.scrollDirection = UICollectionViewScrollDirection.horizontal
+        flow.sectionInset = UIEdgeInsets.zero
         
-        let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
+        let collection:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
         collection.clipsToBounds = true
-        collection.backgroundColor = UIColor.clearColor()
+        collection.backgroundColor = UIColor.clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        collection.scrollEnabled = false
+        collection.isScrollEnabled = false
         collection.bounces = false
         collection.dataSource = self
         collection.delegate = self
-        collection.registerClass(
+        collection.register(
             VCreateOptionsCell.self,
             forCellWithReuseIdentifier:
             VCreateOptionsCell.reusableIdentifier())
@@ -48,13 +48,13 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -73,7 +73,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     //MARK: private
     
-    private func modelAtIndex(index:NSIndexPath) -> MCreateOptionsItem
+    fileprivate func modelAtIndex(_ index:IndexPath) -> MCreateOptionsItem
     {
         let item:MCreateOptionsItem = model.items[index.item]
         
@@ -82,50 +82,50 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     //MARK: col del
 
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let count:CGFloat = CGFloat(model.items.count)
         let width:CGFloat = collectionView.bounds.maxX
         let height:CGFloat = collectionView.bounds.maxY
         let widthPerCell:CGFloat = width / count
-        let size:CGSize = CGSizeMake(widthPerCell, height)
+        let size:CGSize = CGSize(width: widthPerCell, height: height)
         
         return size
     }
     
-    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
     }
     
-    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
         let count:Int = model.items.count
         
         return count
     }
     
-    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
         let item:MCreateOptionsItem = modelAtIndex(indexPath)
-        let cell:VCreateOptionsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            VCreateOptionsCell.reusableIdentifier(),
-            forIndexPath:
+        let cell:VCreateOptionsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: VCreateOptionsCell.reusableIdentifier(),
+            for:
             indexPath) as! VCreateOptionsCell
         item.config(cell)
         
         return cell
     }
     
-    func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         let item:MCreateOptionsItem = modelAtIndex(indexPath)
         item.selected(controller)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * 300)), dispatch_get_main_queue())
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(NSEC_PER_MSEC * 300)) / Double(NSEC_PER_SEC))
         { [weak collectionView] in
             
-            collectionView?.selectItemAtIndexPath(nil, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
+            collectionView?.selectItem(at: nil, animated:false, scrollPosition:UICollectionViewScrollPosition())
         }
     }
 }

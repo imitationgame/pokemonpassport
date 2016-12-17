@@ -5,8 +5,8 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
     let index:Int
     let title:String
     let maxDistance:Double
-    private let kCellHeight:CGFloat = 36
-    private let kSelectable:Bool = true
+    fileprivate let kCellHeight:CGFloat = 36
+    fileprivate let kSelectable:Bool = true
     
     init(index:Int, title:String, maxDistance:Double)
     {
@@ -18,24 +18,24 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight, selectable:kSelectable)
     }
     
-    override func config(cell:VProjectsDetailCell, controller:CProjectsDetail)
+    override func config(_ cell:VProjectsDetailCell, controller:CProjectsDetail)
     {
         let cellSpeed:VProjectsDetailCellSpeed = cell as! VProjectsDetailCellSpeed
         cellSpeed.label.text = title
         
         if controller.model.sectionSpeed.selectedItem === self
         {
-            cellSpeed.backgroundColor = UIColor.whiteColor()
+            cellSpeed.backgroundColor = UIColor.white
             cellSpeed.label.textColor = UIColor.main()
         }
         else
         {
             cellSpeed.backgroundColor = UIColor(white:1, alpha:0.2)
-            cellSpeed.label.textColor = UIColor.main().colorWithAlphaComponent(0.4)
+            cellSpeed.label.textColor = UIColor.main().withAlphaComponent(0.4)
         }
     }
     
-    override func selected(controller:CProjectsDetail)
+    override func selected(_ controller:CProjectsDetail)
     {
         controller.model.sectionSpeed.selectedItem = self
         controller.viewDetail.collection.reloadData()

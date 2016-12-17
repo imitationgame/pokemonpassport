@@ -6,16 +6,16 @@ class VCreateMapPointer:UIView
     
     init()
     {
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         
         let cross:UIImageView = UIImageView()
-        cross.userInteractionEnabled = false
+        cross.isUserInteractionEnabled = false
         cross.translatesAutoresizingMaskIntoConstraints = false
         cross.clipsToBounds = true
-        cross.contentMode = UIViewContentMode.Center
+        cross.contentMode = UIViewContentMode.center
         self.cross = cross
         
         addSubview(cross)
@@ -25,13 +25,13 @@ class VCreateMapPointer:UIView
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[cross]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[cross]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))

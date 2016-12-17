@@ -18,7 +18,7 @@ class MMainNavPos
     
     //MARK: public
     
-    func adjust(bar:VMainBar)
+    func adjust(_ bar:VMainBar)
     {
     }
 }

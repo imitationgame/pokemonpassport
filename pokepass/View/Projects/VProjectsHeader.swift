@@ -6,16 +6,16 @@ class VProjectsHeader:UICollectionReusableView
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
-        userInteractionEnabled = false
+        backgroundColor = UIColor.clear
+        isUserInteractionEnabled = false
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.userInteractionEnabled = false
-        label.backgroundColor = UIColor.clearColor()
+        label.isUserInteractionEnabled = false
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.regular(17)
-        label.textColor = UIColor.blackColor()
-        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.black
+        label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsHeader_label", comment:"")
         
@@ -26,13 +26,13 @@ class VProjectsHeader:UICollectionReusableView
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))

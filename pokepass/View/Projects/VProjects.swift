@@ -5,10 +5,10 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var controller:CProjects!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
-    private let kCollectionBottom:CGFloat = 40
-    private let kHeaderHeight:CGFloat = 100
-    private let kCellHeight:CGFloat = 60
-    private let kInterLine:CGFloat = 1
+    fileprivate let kCollectionBottom:CGFloat = 40
+    fileprivate let kHeaderHeight:CGFloat = 100
+    fileprivate let kCellHeight:CGFloat = 60
+    fileprivate let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjects)
     {
@@ -22,32 +22,32 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.footerReferenceSize = CGSizeZero
+        flow.footerReferenceSize = CGSize.zero
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
-        flow.scrollDirection = UICollectionViewScrollDirection.Vertical
+        flow.scrollDirection = UICollectionViewScrollDirection.vertical
         flow.sectionInset = UIEdgeInsetsMake(0, 0, kCollectionBottom, 0)
         
-        let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
+        let collection:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
         collection.clipsToBounds = true
-        collection.backgroundColor = UIColor.clearColor()
+        collection.backgroundColor = UIColor.clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
         collection.alwaysBounceVertical = true
         collection.dataSource = self
         collection.delegate = self
-        collection.registerClass(
+        collection.register(
             VProjectsHeader.self,
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionHeader,
             withReuseIdentifier:
             VProjectsHeader.reusableIdentifier())
-        collection.registerClass(
+        collection.register(
             VProjectsCell.self,
             forCellWithReuseIdentifier:
             VProjectsCell.reusableIdentifier())
-        collection.hidden = true
+        collection.isHidden = true
         self.collection = collection
         
         addSubview(spinner)
@@ -59,23 +59,23 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[spinner]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[spinner]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -89,7 +89,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: private
     
-    private func modelAtIndex(index:NSIndexPath) -> MProjectsItem
+    fileprivate func modelAtIndex(_ index:IndexPath) -> MProjectsItem
     {
         let item:MProjectsItem = controller.model.items[index.item]
         
@@ -102,83 +102,83 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     {
         spinner.stopAnimating()
         collection.reloadData()
-        collection.hidden = false
+        collection.isHidden = false
     }
     
     //MARK: col del
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
     {
         let size:CGSize
         
         if controller.model.items.isEmpty
         {
             let width:CGFloat = collectionView.bounds.maxX
-            size = CGSizeMake(width, kHeaderHeight)
+            size = CGSize(width: width, height: kHeaderHeight)
         }
         else
         {
-            size = CGSizeZero
+            size = CGSize.zero
         }
         
         return size
     }
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSizeMake(width, kCellHeight)
+        let size:CGSize = CGSize(width: width, height: kCellHeight)
         
         return size
     }
     
-    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
     }
     
-    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
         let count:Int = controller.model.items.count
         
         return count
     }
     
-    func collectionView(collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, atIndexPath indexPath:NSIndexPath) -> UICollectionReusableView
+    func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(
-            kind,
+        let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
             withReuseIdentifier:
             VProjectsHeader.reusableIdentifier(),
-            forIndexPath:
+            for:
             indexPath)
         
         return reusable
     }
     
-    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
         let item:MProjectsItem = modelAtIndex(indexPath)
-        let cell:VProjectsCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            VProjectsCell.reusableIdentifier(),
-            forIndexPath:
+        let cell:VProjectsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: VProjectsCell.reusableIdentifier(),
+            for:
             indexPath) as! VProjectsCell
         cell.config(item)
         
         return cell
     }
     
-    func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         let item:MProjectsItem = modelAtIndex(indexPath)
         let transition:MMainTransition = MMainTransition.Push(item.name)
         let detail:CProjectsDetail = CProjectsDetail(item:item)
         controller.parent.pushController(detail, transition:transition)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC))
         { [weak collectionView] in
             
-            collectionView?.selectItemAtIndexPath(nil, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
+            collectionView?.selectItem(at: nil, animated:false, scrollPosition:UICollectionViewScrollPosition())
         }
     }
 }

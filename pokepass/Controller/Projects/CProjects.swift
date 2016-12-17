@@ -32,9 +32,9 @@ class CProjects:CMainController
     
     //MARK: private
     
-    private func loadProjects()
+    fileprivate func loadProjects()
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async
         {
             let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:true, selector:#selector(NSString.caseInsensitiveCompare))
             let sorters:[NSSortDescriptor] = [sorter]
@@ -53,7 +53,7 @@ class CProjects:CMainController
                 
                 self?.model.items = projects
                 
-                dispatch_async(dispatch_get_main_queue())
+                DispatchQueue.main.async
                 { [weak self] in
                     
                     self?.viewProjects.modelLoaded()

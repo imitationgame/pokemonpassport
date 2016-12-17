@@ -8,24 +8,24 @@ class VProjectsDetailFooter:UICollectionReusableView
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.userInteractionEnabled = false
-        label.backgroundColor = UIColor.clearColor()
+        label.isUserInteractionEnabled = false
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(12)
         label.textColor = UIColor.main()
-        label.textAlignment = NSTextAlignment.Center
+        label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named:"share"), forState:UIControlState.Normal)
-        button.imageView?.contentMode = UIViewContentMode.Center
+        button.setImage(UIImage(named:"share"), for:UIControlState())
+        button.imageView?.contentMode = UIViewContentMode.center
         button.imageView?.clipsToBounds = true
-        button.addTarget(self, action:#selector(self.actionShare(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        button.addTarget(self, action:#selector(self.actionShare(sender:)), for:UIControlEvents.touchUpInside)
         
         addSubview(label)
         addSubview(button)
@@ -36,23 +36,23 @@ class VProjectsDetailFooter:UICollectionReusableView
         
         let metrics:[String:AnyObject] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-100-[button]-100-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-100-[button]-100-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[button(80)]-15-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[button(80)]-15-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label(20)]-(-25)-[button]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[label(20)]-(-25)-[button]",
             options:[],
             metrics:metrics,
             views:views))
@@ -67,13 +67,13 @@ class VProjectsDetailFooter:UICollectionReusableView
     
     func actionShare(sender button:UIButton)
     {
-        button.userInteractionEnabled = false
+        button.isUserInteractionEnabled = false
         controller.share()
     }
     
     //MARK: public
     
-    func config(controller:CProjectsDetail)
+    func config(_ controller:CProjectsDetail)
     {
         self.controller = controller
     }
