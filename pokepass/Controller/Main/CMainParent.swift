@@ -15,7 +15,7 @@ class CMainParent:UIViewController
     weak var layoutBottomTemporal:NSLayoutConstraint?
     weak var shadow:VMainShadow?
     var previous:UIViewController?
-    fileprivate var statusBarStyle:UIStatusBarStyle = UIStatusBarStyle.lightContent
+    private var statusBarStyle:UIStatusBarStyle = UIStatusBarStyle.lightContent
     
     override func viewDidLoad()
     {
@@ -23,17 +23,17 @@ class CMainParent:UIViewController
         
         let projects:CProjects = CProjects()
         loadBar()
-        pushController(projects, transition:MMainTransition.Replace())
+        pushController(controller:projects, transition:MMainTransition.Replace())
         
         MSettings.sharedInstance.load()
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle
+    override var preferredStatusBarStyle:UIStatusBarStyle
     {
         return statusBarStyle
     }
     
-    override var prefersStatusBarHidden : Bool
+    override var prefersStatusBarHidden:Bool
     {
         return false
     }
@@ -59,11 +59,11 @@ class CMainParent:UIViewController
         
         view.addSubview(bar)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "bar":bar]
         
-        let metrics:[String:AnyObject] = [
-            "barHeight":kBarHeight as AnyObject]
+        let metrics:[String:CGFloat] = [
+            "barHeight":kBarHeight]
         
         view.addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[bar]-0-|",
@@ -77,7 +77,7 @@ class CMainParent:UIViewController
             views:views))
     }
     
-    func pushController(_ controller:UIViewController, transition:MMainTransition)
+    func pushController(controller:UIViewController, transition:MMainTransition)
     {
         transition.prepare(self, current:current, next:controller)
         addChildViewController(controller)
@@ -89,16 +89,16 @@ class CMainParent:UIViewController
             transition.positionAfter()
             
             view.addSubview(controller.view)
-            controller.didMove(toParentViewController: self)
+            controller.didMove(toParentViewController:self)
             current = controller
         }
         else
         {
-            current!.willMove(toParentViewController: nil)
+            current!.willMove(toParentViewController:nil)
             transition.animationBefore()
             transition.positionAfter()
             
-            UIView.animate(withDuration: transition.animationDuration, animations:
+            UIView.animate(withDuration:transition.animationDuration, animations:
             {
                 transition.animationAfter()
                 
@@ -109,7 +109,7 @@ class CMainParent:UIViewController
                 
                 self.current!.view.removeFromSuperview()
                 self.current!.removeFromParentViewController()
-                controller.didMove(toParentViewController: self)
+                controller.didMove(toParentViewController:self)
                 self.current = controller
                 self.layoutRight = self.layoutRightTemporal
                 self.layoutLeft = self.layoutLeftTemporal
@@ -125,7 +125,7 @@ class CMainParent:UIViewController
         {
             let controller:UIViewController = previous!
             let transition:MMainTransition = MMainTransition.Pop()
-            pushController(controller, transition:transition)
+            pushController(controller:controller, transition:transition)
         }
     }
 }

@@ -4,7 +4,7 @@ import UIKit
 class AppDelegate:UIResponder, UIApplicationDelegate
 {
     var window:UIWindow?
-    fileprivate weak var parent:CMainParent!
+    private weak var parent:CMainParent!
 
     func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {

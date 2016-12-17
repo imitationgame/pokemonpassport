@@ -19,12 +19,12 @@ class CMainController:UIViewController
         automaticallyAdjustsScrollViewInsets = false
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle
+    override var preferredStatusBarStyle:UIStatusBarStyle
     {
         return UIStatusBarStyle.default
     }
     
-    override var prefersStatusBarHidden : Bool
+    override var prefersStatusBarHidden:Bool
     {
         return false
     }
