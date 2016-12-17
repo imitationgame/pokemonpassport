@@ -2,6 +2,14 @@ import UIKit
 
 class CMainController:UIViewController
 {
+    var parentController:CMainParent
+    {
+        get
+        {
+            return self.parent as! CMainParent
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
