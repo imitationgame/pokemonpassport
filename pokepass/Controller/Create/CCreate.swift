@@ -120,7 +120,7 @@ class CCreate:CMainController
     {
         viewCreate.showLoading()
         
-        DispatchQueue.global(priority:DispatchQueue.GlobalQueuePriority.background).async
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).sync
         { [weak self] in
         
             self?.storeProject(name:name)
