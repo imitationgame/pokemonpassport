@@ -2,7 +2,7 @@ import UIKit
 
 extension UIViewController
 {
-    var parent:CMainParent
+    var parentController:CMainParent
     {
         get
         {

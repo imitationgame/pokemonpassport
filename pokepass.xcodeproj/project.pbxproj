@@ -48,7 +48,6 @@
 		DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */; };
 		DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */; };
 		DAE03F351D605FF50054CDEB /* CategoryUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */; };
-		DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */; };
 		DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */; };
 		DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC81D605FF50054CDEB /* CCreate.swift */; };
 		DAE03F391D605FF50054CDEB /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECA1D605FF50054CDEB /* CMain.swift */; };
@@ -160,7 +159,6 @@
 		DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUICollectionReusableView.swift; sourceTree = "<group>"; };
 		DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIColor.swift; sourceTree = "<group>"; };
 		DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIFont.swift; sourceTree = "<group>"; };
-		DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUILocalNotification.swift; sourceTree = "<group>"; };
 		DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIViewController.swift; sourceTree = "<group>"; };
 		DAE03EC81D605FF50054CDEB /* CCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCreate.swift; sourceTree = "<group>"; };
 		DAE03ECA1D605FF50054CDEB /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -323,7 +321,6 @@
 				DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */,
 				DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */,
 				DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */,
-				DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */,
 				DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */,
 				DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */,
 			);
@@ -777,7 +774,6 @@
 				DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */,
 				DAABC8021D629DC400807DA9 /* MProjectsDetail.swift in Sources */,
 				DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */,
-				DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */,
 				DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */,
 				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
 				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
