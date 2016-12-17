@@ -32,16 +32,16 @@ class CProjects:CMainController
     
     //MARK: private
     
-    fileprivate func loadProjects()
+    private func loadProjects()
     {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
             let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:true, selector:#selector(NSString.caseInsensitiveCompare))
             let sorters:[NSSortDescriptor] = [sorter]
             DManager.sharedInstance.managerPokePass.fetchManagedObjects(
                 DPokePassProject.self,
                 sorters:sorters)
-            { [weak self] (modelProjects) in
+            { [weak self] (modelProjects:[DPokePassProject]) in
                 
                 var projects:[MProjectsItem] = []
                 
