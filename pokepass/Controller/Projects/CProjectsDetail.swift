@@ -50,7 +50,7 @@ class CProjectsDetail:CMainController
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.sendFile(fileUrl)
+            self?.sendFile(file:fileUrl)
         }
     }
     
