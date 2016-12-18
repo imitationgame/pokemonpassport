@@ -34,7 +34,8 @@ class CCreate:CMainController
     {
         DManager.sharedInstance.save()
         project = nil
-        VMainAlert.Message(message:NSLocalizedString("CMainController_saved", comment:""))
+        VMainAlert.Message(message:
+            NSLocalizedString("CMainController_saved", comment:""))
         
         DispatchQueue.main.async
         { [weak self] in
@@ -136,9 +137,11 @@ class CCreate:CMainController
     {
         if !model.locations.isEmpty
         {
+            movingAnnotation = nil
             viewCreate.map.removeAnnotations(model.locations)
             model.locations.removeAll()
             regenerateRoute()
+            viewCreate.pointer.showPointer()
         }
     }
     
@@ -158,6 +161,7 @@ class CCreate:CMainController
         {
             annotation = movingAnnotation!
             annotation.coordinate = viewCreate.map.coordinatesAtCenter()
+            movingAnnotation = nil
         }
         
         beforeAddLocation(location:annotation)
