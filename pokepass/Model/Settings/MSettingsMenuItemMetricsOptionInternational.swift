@@ -2,7 +2,7 @@ import Foundation
 
 class MSettingsMenuItemMetricsOptionInternational:MSettingsMenuItemMetricsOption
 {
-    fileprivate let kMeasure:DPokePassSettings.DPokePassSettingsMeasure = DPokePassSettings.DPokePassSettingsMeasure.metric
+    private let kMeasure:MSettings.Measures = MSettings.Measures.metric
     
     init()
     {

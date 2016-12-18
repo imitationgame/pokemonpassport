@@ -4,11 +4,11 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
 {
     weak var cellMetrics:VSettingsCellMetrics!
     let options:[MSettingsMenuItemMetricsOption]
-    fileprivate let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 80
     
     init()
     {
-        let reusableIdentifier:String = VSettingsCellMetrics.reusableIdentifier()
+        let reusableIdentifier:String = VSettingsCellMetrics.reusableIdentifier
         let optionInternational:MSettingsMenuItemMetricsOptionInternational = MSettingsMenuItemMetricsOption.International()
         let optionUs:MSettingsMenuItemMetricsOptionUs = MSettingsMenuItemMetricsOption.Us()
         

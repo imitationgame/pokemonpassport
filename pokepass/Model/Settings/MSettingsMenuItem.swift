@@ -7,13 +7,6 @@ class MSettingsMenuItem
     let reusableIdentifier:String
     let cellHeight:CGFloat
     
-    class func Metrics() -> MSettingsMenuItemMetrics
-    {
-        let item:MSettingsMenuItemMetrics = MSettingsMenuItemMetrics()
-        
-        return item
-    }
-    
     init(reusableIdentifier:String, cellHeight:CGFloat)
     {
         self.reusableIdentifier = reusableIdentifier
@@ -22,7 +15,7 @@ class MSettingsMenuItem
     
     //MARK: public
     
-    func config(_ cell:VSettingsCell, controller:CSettings)
+    func config(cell:VSettingsCell, controller:CSettings)
     {
         self.cell = cell
         self.controller = controller
