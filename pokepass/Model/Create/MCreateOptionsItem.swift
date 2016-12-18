@@ -16,7 +16,7 @@ class MCreateOptionsItem
     func config(cell:VCreateOptionsCell)
     {
         cell.label.text = title
-        cell.image.image = UIImage(named:image)
+        cell.image.image = UIImage(named:image)!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
     }
     
     func selected(controller:CCreate)

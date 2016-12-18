@@ -14,8 +14,8 @@ class VCreateOptionsCell:UICollectionViewCell
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.regular(size:10)
-        label.textColor = UIColor.black
+        label.font = UIFont.regular(size:12)
+        label.textColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
         label.backgroundColor = UIColor.clear
         self.label = label
@@ -24,7 +24,9 @@ class VCreateOptionsCell:UICollectionViewCell
         image.isUserInteractionEnabled = false
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.contentMode = UIViewContentMode.center
+        image.contentMode = UIViewContentMode.scaleAspectFit
+        image.clipsToBounds = true
+        image.tintColor = UIColor.white
         self.image = image
         
         addSubview(label)
@@ -47,7 +49,7 @@ class VCreateOptionsCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-20-[image(30)]-0-[label(13)]",
+            withVisualFormat:"V:|-22-[image(23)]-0-[label(15)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -80,7 +82,7 @@ class VCreateOptionsCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            alpha = 0.1
+            alpha = 0.2
         }
         else
         {

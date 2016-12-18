@@ -6,7 +6,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     weak var collection:UICollectionView!
     let model:MCreateOptions
     private let kDeselectTime:TimeInterval = 0.3
-    private let kCollectionWidth:CGFloat = 120
+    private let kCollectionWidth:CGFloat = 150
     
     init(controller:CCreate)
     {
