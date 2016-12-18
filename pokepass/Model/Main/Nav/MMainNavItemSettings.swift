@@ -2,7 +2,7 @@ import UIKit
 
 class MMainNavItemSettings:MMainNavItem
 {
-    fileprivate let kImage:String = "navigationSettings"
+    private let kImage:String = "navigationSettings"
     
     init(index:Int)
     {

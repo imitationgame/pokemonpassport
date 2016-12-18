@@ -8,11 +8,11 @@ class MMainNav
     init()
     {
         var items:[MMainNavItem] = []
-        let itemSettings:MMainNavItem = MMainNavItem.Settings(items.count)
+        let itemSettings:MMainNavItem = MMainNavItemSettings(items.count)
         items.append(itemSettings)
-        let itemProjects:MMainNavItem = MMainNavItem.Projects(items.count)
+        let itemProjects:MMainNavItem = MMainNavItemProjects(items.count)
         items.append(itemProjects)
-        let itemCreate:MMainNavItem = MMainNavItem.Create(items.count)
+        let itemCreate:MMainNavItem = MMainNavItemCreate(items.count)
         items.append(itemCreate)
         self.items = items
         selectItem(itemProjects)
@@ -20,7 +20,7 @@ class MMainNav
     
     //MARK: public
     
-    func selectItem(_ selected:MMainNavItem)
+    func selectItem(selected:MMainNavItem)
     {
         current = selected
         
@@ -30,11 +30,11 @@ class MMainNav
             
             if item === selected
             {
-                state = MMainNavItemState.Active()
+                state = MMainNavItemStateActive()
             }
             else
             {
-                state = MMainNavItemState.None()
+                state = MMainNavItemStateNone()
             }
             
             item.restate(state)
