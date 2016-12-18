@@ -43,6 +43,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLongitude.textColor = UIColor.black
         self.labelLongitude = labelLongitude
         
+        addSubview(labelIndex)
         addSubview(labelLatitude)
         addSubview(labelLongitude)
         
