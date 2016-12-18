@@ -17,6 +17,10 @@ class MCreateOptionsItemSave:MCreateOptionsItem
             VMainAlert.Message(
                 message:NSLocalizedString("MCreateOptionsItemSave_empty", comment:""))
         }
+        else if controller.loadedProject != nil
+        {
+            controller.update()
+        }
         else
         {
             let alert:UIAlertController = UIAlertController(

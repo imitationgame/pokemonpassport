@@ -159,6 +159,20 @@ class CCreate:CMainController
         parentController.backController()
     }
     
+    func update()
+    {
+        viewCreate.showLoading()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).sync
+        { [weak self] in
+            
+            self?.storeLocations = self?.model.locations
+            self?.project = self?.loadedProject?.model
+            self?.project?.projectLocations = NSOrderedSet()
+            self?.storeRoute()
+        }
+    }
+    
     func save(name:String)
     {
         viewCreate.showLoading()
