@@ -13,10 +13,9 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         model = MCreateOptions()
         
         super.init(frame:CGRect.zero)
-        
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.main
         self.controller = controller
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -43,14 +42,37 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             VCreateOptionsCell.reusableIdentifier)
         self.collection = collection
         
+        let button:UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named:"genericBack"), for:UIControlState())
+        button.imageView?.contentMode = UIViewContentMode.center
+        button.imageView?.clipsToBounds = true
+        button.imageEdgeInsets = UIEdgeInsetsMake(20, 0, 0, 25)
+        button.addTarget(
+            self,
+            action:#selector(self.actionBack(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         addSubview(collection)
+        addSubview(button)
         
         let views:[String:UIView] = [
-            "collection":collection]
+            "collection":collection,
+            "button":button]
         
         let metrics:[String:CGFloat] = [
             "collectionWidth":kCollectionWidth]
         
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[button(65)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[button]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat:"H:[collection(collectionWidth)]-0-|",
             options:[],
@@ -72,6 +94,13 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         self.collection.collectionViewLayout.invalidateLayout()
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionBack(sender button:UIButton)
+    {
+        controller.back()
     }
     
     //MARK: private

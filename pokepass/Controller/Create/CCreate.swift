@@ -116,6 +116,11 @@ class CCreate:CMainController
     
     //MARK: public
     
+    func back()
+    {
+        parentController.backController()
+    }
+    
     func save(name:String)
     {
         viewCreate.showLoading()
