@@ -73,4 +73,11 @@ class CProjects:CMainController
         let transition:MMainTransition = MMainTransitionPushTop()
         parentController.pushController(controller:controller, transition:transition)
     }
+    
+    func export(item:MProjectsItem)
+    {
+        let transition:MMainTransition = MMainTransitionPush(pushed:item.name)
+        let detail:CProjectsDetail = CProjectsDetail(item:item)
+        parentController.pushController(controller:detail, transition:transition)
+    }
 }

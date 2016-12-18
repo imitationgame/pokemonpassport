@@ -7,9 +7,8 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
     private let kHeaderHeight:CGFloat = 130
-    private let kCellHeight:CGFloat = 60
+    private let kCellHeight:CGFloat = 90
     private let kInterLine:CGFloat = 1
-    private let kDeselectTime:TimeInterval = 1
     
     convenience init(controller:CProjects)
     {
@@ -153,21 +152,13 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         return cell
     }
     
-    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MProjectsItem = modelAtIndex(index:indexPath)
-        let transition:MMainTransition = MMainTransitionPush(pushed:item.name)
-        let detail:CProjectsDetail = CProjectsDetail(item:item)
-        controller.parentController.pushController(controller:detail, transition:transition)
-        
-        DispatchQueue.main.asyncAfter(
-            deadline:DispatchTime.now() + kDeselectTime)
-        { [weak collectionView] in
-            
-            collectionView?.selectItem(
-                at:nil,
-                animated:false,
-                scrollPosition:UICollectionViewScrollPosition())
-        }
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }

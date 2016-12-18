@@ -14,7 +14,7 @@ class VProjectsCell:UICollectionViewCell
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:17)
+        label.font = UIFont.medium(size:16)
         label.textColor = UIColor.main
         self.label = label
         
@@ -40,36 +40,6 @@ class VProjectsCell:UICollectionViewCell
     required init?(coder:NSCoder)
     {
         fatalError()
-    }
-    
-    override var isSelected:Bool
-    {
-        didSet
-        {
-            hover()
-        }
-    }
-    
-    override var isHighlighted:Bool
-    {
-        didSet
-        {
-            hover()
-        }
-    }
-    
-    //MARK: private
-    
-    private func hover()
-    {
-        if isSelected || isHighlighted
-        {
-            alpha = 0.1
-        }
-        else
-        {
-            alpha = 1
-        }
     }
     
     //MARK: public
