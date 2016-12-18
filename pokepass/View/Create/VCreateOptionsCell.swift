@@ -14,7 +14,7 @@ class VCreateOptionsCell:UICollectionViewCell
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.regular(10)
+        label.font = UIFont.regular(size:10)
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.center
         label.backgroundColor = UIColor.clear
@@ -30,29 +30,29 @@ class VCreateOptionsCell:UICollectionViewCell
         addSubview(label)
         addSubview(image)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "image":image,
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[image]-0-|",
+            withVisualFormat:"H:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[label]-0-|",
+            withVisualFormat:"H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[label(13)]-6-|",
+            withVisualFormat:"V:[label(13)]-6-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-6-[image(40)]",
+            withVisualFormat:"V:|-6-[image(40)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -81,7 +81,7 @@ class VCreateOptionsCell:UICollectionViewCell
     
     //MARK: private
     
-    fileprivate func hover()
+    private func hover()
     {
         if isSelected || isHighlighted
         {
