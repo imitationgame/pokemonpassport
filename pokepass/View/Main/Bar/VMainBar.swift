@@ -17,10 +17,10 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     init(controllerParent:CMainParent)
     {
         model = MMainNav()
-        pos = MMainNavPos.Normal()
+        pos = MMainNavPosNormal()
         
         super.init(frame:CGRect.zero)
-        backgroundColor = UIColor.main()
+        backgroundColor = UIColor.main
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         self.controllerParent = controllerParent
@@ -111,7 +111,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         addConstraint(layoutBackRight)
         addConstraint(layoutBackLeft)
         
-        pos.adjust(self)
+        pos.adjust(bar:self)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)
@@ -137,7 +137,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     override func layoutSubviews()
     {
         collection.collectionViewLayout.invalidateLayout()
-        pos.adjust(self)
+        pos.adjust(bar:self)
         
         DispatchQueue.main.async
         { [weak self] in
@@ -170,14 +170,14 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func pushed(name:String)
     {
         pos = MMainNavPosPushed()
-        pos.adjust(self)
+        pos.adjust(bar:self)
         back.label.text = name
     }
     
     func poped()
     {
         pos = MMainNavPosNormal()
-        pos.adjust(self)
+        pos.adjust(bar:self)
     }
     
     //MARK: col del
@@ -232,10 +232,10 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     {
         let item:MMainNavItem = modelAtIndex(index:indexPath)
         let cell:VMainBarCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: VMainBarCell.reusableIdentifier(),
+            withReuseIdentifier: VMainBarCell.reusableIdentifier,
             for:
             indexPath) as! VMainBarCell
-        item.config(cell)
+        item.config(cell:cell)
         
         return cell
     }
@@ -252,6 +252,6 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
             toIndex:item.index)
         let controller:UIViewController = item.controller()
         controllerParent.pushController(controller:controller, transition:transition)
-        model.selectItem(item)
+        model.selectItem(selected:item)
     }
 }

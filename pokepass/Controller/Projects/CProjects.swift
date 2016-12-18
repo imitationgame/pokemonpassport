@@ -38,17 +38,20 @@ class CProjects:CMainController
         {
             let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:true, selector:#selector(NSString.caseInsensitiveCompare))
             let sorters:[NSSortDescriptor] = [sorter]
-            DManager.sharedInstance.managerPokePass.fetchManagedObjects(
-                DPokePassProject.self,
+            DManager.sharedInstance.fetchManagedObjects(
+                modelType:DObjectProject.self,
                 sorters:sorters)
-            { [weak self] (modelProjects:[DPokePassProject]) in
+            { [weak self] (modelProjects:[DObjectProject]?) in
                 
                 var projects:[MProjectsItem] = []
                 
-                for project:DPokePassProject in modelProjects
+                if let objectProjects:[DObjectProject] = modelProjects
                 {
-                    let item:MProjectsItem = MProjectsItem(model:project)
-                    projects.append(item)
+                    for project:DObjectProject in objectProjects
+                    {
+                        let item:MProjectsItem = MProjectsItem(model:project)
+                        projects.append(item)
+                    }
                 }
                 
                 self?.model.items = projects

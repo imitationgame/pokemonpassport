@@ -15,7 +15,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
@@ -172,9 +172,9 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         let item:MProjectsItem = modelAtIndex(index:indexPath)
-        let transition:MMainTransition = MMainTransition.Push(item.name)
+        let transition:MMainTransition = MMainTransitionPush(pushed:item.name)
         let detail:CProjectsDetail = CProjectsDetail(item:item)
-        controller.parent.pushController(controller:detail, transition:transition)
+        controller.parentController.pushController(controller:detail, transition:transition)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)

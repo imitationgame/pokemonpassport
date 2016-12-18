@@ -10,7 +10,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         translatesAutoresizingMaskIntoConstraints = false
         
         let image:UIImageView = UIImageView()
@@ -21,7 +21,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         image.contentMode = UIViewContentMode.center
         
         let border:UIView = UIView()
-        border.backgroundColor = UIColor.main()
+        border.backgroundColor = UIColor.main
         border.isUserInteractionEnabled = false
         border.translatesAutoresizingMaskIntoConstraints = false
         border.clipsToBounds = true
@@ -35,9 +35,9 @@ class VCreateFinder:UIView, UITextFieldDelegate
         
         let buttonSearch:UIButton = UIButton()
         buttonSearch.translatesAutoresizingMaskIntoConstraints = false
-        buttonSearch.titleLabel?.font = UIFont.bold(13)
-        buttonSearch.setTitleColor(UIColor.main(), for:UIControlState())
-        buttonSearch.setTitleColor(UIColor.main().withAlphaComponent(0.2), for:UIControlState.highlighted)
+        buttonSearch.titleLabel?.font = UIFont.bold(size:13)
+        buttonSearch.setTitleColor(UIColor.main, for:UIControlState())
+        buttonSearch.setTitleColor(UIColor.main.withAlphaComponent(0.2), for:UIControlState.highlighted)
         buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), for:UIControlState())
         buttonSearch.addTarget(
             self,
@@ -49,7 +49,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         field.clipsToBounds = true
         field.backgroundColor = UIColor.clear
         field.borderStyle = UITextBorderStyle.none
-        field.font = UIFont.regular(16)
+        field.font = UIFont.regular(size:16)
         field.textColor = UIColor.black
         field.tintColor = UIColor.black
         field.returnKeyType = UIReturnKeyType.search
@@ -152,7 +152,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.controller.viewCreate.map.searchLocation(text)
+            self?.controller.viewCreate.map.searchLocation(query:text)
         }
     }
     

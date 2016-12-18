@@ -4,7 +4,7 @@ class CCreate:CMainController
 {
     weak var viewCreate:VCreate!
     let model:MCreate
-    private var project:DPokePassProject?
+    private var project:DObjectProject?
     private var storeLocations:[MCreateAnnotation]?
     private let kShutterTimeout:TimeInterval = 0.25
     private weak var movingAnnotation:MCreateAnnotation?
@@ -32,7 +32,7 @@ class CCreate:CMainController
     
     private func finishStoring()
     {
-        DManager.sharedInstance.managerPokePass.saver.save(false)
+        DManager.sharedInstance.save()
         project = nil
         VMainAlert.Message(message:NSLocalizedString("CMainController_saved", comment:""))
         
@@ -56,9 +56,9 @@ class CCreate:CMainController
             let latitude:Double = annotation.coordinate.latitude
             let longitude:Double = annotation.coordinate.longitude
             
-            DManager.sharedInstance.managerPokePass.createManagedObject(
-                DPokePassLocation.self)
-            { [weak self] (modelLocation:DPokePassLocation) in
+            DManager.sharedInstance.createManagedObject(
+                modelType:DObjectLocation.self)
+            { [weak self] (modelLocation:DObjectLocation) in
                 
                 modelLocation.latitude = latitude
                 modelLocation.longitude = longitude
@@ -72,9 +72,9 @@ class CCreate:CMainController
     {
         storeLocations = model.locations
         
-        DManager.sharedInstance.managerPokePass.createManagedObject(
-            DPokePassProject.self)
-        { [weak self] (modelProject:DPokePassProject) in
+        DManager.sharedInstance.createManagedObject(
+            modelType:DObjectProject.self)
+        { [weak self] (modelProject:DObjectProject) in
             
             modelProject.name = name
             self?.project = modelProject

@@ -10,7 +10,7 @@ class MCreateAnnotation:NSObject, MKAnnotation
     
     init(coordinate:CLLocationCoordinate2D)
     {
-        reusableIdentifier = VCreateMapPin.reusableIdentifier()
+        reusableIdentifier = VCreateMapPin.reusableIdentifier
         self.coordinate = coordinate
         index = 0
         title = " "

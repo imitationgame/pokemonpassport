@@ -125,7 +125,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         let polyline:MKPolyline = overlay as! MKPolyline
         let renderer:MKPolylineRenderer = MKPolylineRenderer(polyline:polyline)
         renderer.lineWidth = kPolylineWidth
-        renderer.strokeColor = UIColor.main()
+        renderer.strokeColor = UIColor.main
         
         return renderer
     }
@@ -168,15 +168,15 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         
         switch callOut
         {
-            case VCreateMapPin.VCreateMapPinCallout.delete:
+            case VCreateMapPin.Callout.delete:
                 
-                controller.removeLocation(annotation)
+                controller.removeLocation(location:annotation)
                 
                 break
                 
-            case VCreateMapPin.VCreateMapPinCallout.move:
+            case VCreateMapPin.Callout.move:
                 
-                controller.moveLocation(annotation)
+                controller.moveLocation(location:annotation)
                 
                 break
         }

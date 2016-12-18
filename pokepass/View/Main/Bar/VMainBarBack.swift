@@ -28,7 +28,7 @@ class VMainBarBack:UIView
         label.backgroundColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.bold(15)
+        label.font = UIFont.bold(size:15)
         label.textColor = UIColor.white
         self.label = label
         

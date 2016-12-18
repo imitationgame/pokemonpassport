@@ -14,7 +14,7 @@ class VProjectsCell:UICollectionViewCell
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(17)
+        label.font = UIFont.bold(size:17)
         label.textColor = UIColor.main
         self.label = label
         

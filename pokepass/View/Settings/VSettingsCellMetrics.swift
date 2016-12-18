@@ -16,13 +16,13 @@ class VSettingsCellMetrics:VSettingsCell
         label.backgroundColor = UIColor.clear
         label.isUserInteractionEnabled = false
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.bold(14)
-        label.textColor = UIColor.main().withAlphaComponent(0.7)
+        label.font = UIFont.bold(size:14)
+        label.textColor = UIColor.main.withAlphaComponent(0.7)
         label.text = NSLocalizedString("VSettingsCellMetrics_label", comment:"")
         
         let segmented:UISegmentedControl = UISegmentedControl()
         segmented.translatesAutoresizingMaskIntoConstraints = false
-        segmented.tintColor = UIColor.main()
+        segmented.tintColor = UIColor.main
         self.segmented = segmented
         
         addSubview(label)

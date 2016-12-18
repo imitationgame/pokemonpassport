@@ -32,7 +32,7 @@ class CProjectsDetail:CMainController
     private func createGPX()
     {
         let maxDistance:Double = model.sectionSpeed.selectedItem.maxDistance
-        item.getLocations(maxDistance)
+        item.getLocations(maxDistance:maxDistance)
         
         let gpxFile:String = item.print()
         let fileName:String = item.name.replacingOccurrences(of:" ", with:"")

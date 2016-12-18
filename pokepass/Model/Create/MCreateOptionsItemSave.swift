@@ -14,7 +14,8 @@ class MCreateOptionsItemSave:MCreateOptionsItem
     {
         if controller.model.locations.isEmpty
         {
-            VMainAlert.Message(NSLocalizedString("MCreateOptionsItemSave_empty", comment:""))
+            VMainAlert.Message(
+                message:NSLocalizedString("MCreateOptionsItemSave_empty", comment:""))
         }
         else
         {
@@ -39,7 +40,7 @@ class MCreateOptionsItemSave:MCreateOptionsItem
                     projectName = NSLocalizedString("MCreateOptionsItemSave_noName", comment:"")
                 }
                 
-                controller?.save(projectName)
+                controller?.save(name:projectName)
             }
             
             let actionCancel:UIAlertAction = UIAlertAction(
@@ -53,7 +54,7 @@ class MCreateOptionsItemSave:MCreateOptionsItem
             alert.addTextField
                 { (field) in
                     
-                    field.font = UIFont.regular(18)
+                    field.font = UIFont.regular(size:18)
                     field.keyboardAppearance = UIKeyboardAppearance.light
                     field.autocorrectionType = UITextAutocorrectionType.no
                     field.spellCheckingType = UITextSpellCheckingType.no

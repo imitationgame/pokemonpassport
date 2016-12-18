@@ -113,7 +113,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             withReuseIdentifier:VCreateOptionsCell.reusableIdentifier,
             for:
             indexPath) as! VCreateOptionsCell
-        item.config(cell)
+        item.config(cell:cell)
         
         return cell
     }
@@ -121,7 +121,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         let item:MCreateOptionsItem = modelAtIndex(index:indexPath)
-        item.selected(controller)
+        item.selected(controller:controller)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)

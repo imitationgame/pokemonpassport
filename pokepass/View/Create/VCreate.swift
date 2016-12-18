@@ -20,7 +20,7 @@ class VCreate:UIView
         self.init()
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         self.controller = controller
         
         let map:VCreateMap = VCreateMap(controller:controller)

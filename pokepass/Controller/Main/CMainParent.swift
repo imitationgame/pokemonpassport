@@ -23,7 +23,7 @@ class CMainParent:UIViewController
         
         let projects:CProjects = CProjects()
         loadBar()
-        pushController(controller:projects, transition:MMainTransition.Replace())
+        pushController(controller:projects, transition:MMainTransitionReplace())
         
         MSettings.sharedInstance.load()
     }
@@ -79,7 +79,7 @@ class CMainParent:UIViewController
     
     func pushController(controller:UIViewController, transition:MMainTransition)
     {
-        transition.prepare(self, current:current, next:controller)
+        transition.prepare(parent:self, current:current, next:controller)
         addChildViewController(controller)
         view.addSubview(controller.view)
         transition.positionBefore()
@@ -124,7 +124,7 @@ class CMainParent:UIViewController
         if previous != nil
         {
             let controller:UIViewController = previous!
-            let transition:MMainTransition = MMainTransition.Pop()
+            let transition:MMainTransition = MMainTransitionPop()
             pushController(controller:controller, transition:transition)
         }
     }

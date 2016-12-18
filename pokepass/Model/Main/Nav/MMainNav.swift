@@ -8,14 +8,14 @@ class MMainNav
     init()
     {
         var items:[MMainNavItem] = []
-        let itemSettings:MMainNavItem = MMainNavItemSettings(items.count)
+        let itemSettings:MMainNavItem = MMainNavItemSettings(index:items.count)
         items.append(itemSettings)
-        let itemProjects:MMainNavItem = MMainNavItemProjects(items.count)
+        let itemProjects:MMainNavItem = MMainNavItemProjects(index:items.count)
         items.append(itemProjects)
-        let itemCreate:MMainNavItem = MMainNavItemCreate(items.count)
+        let itemCreate:MMainNavItem = MMainNavItemCreate(index:items.count)
         items.append(itemCreate)
         self.items = items
-        selectItem(itemProjects)
+        selectItem(selected:itemProjects)
     }
     
     //MARK: public
@@ -37,7 +37,7 @@ class MMainNav
                 state = MMainNavItemStateNone()
             }
             
-            item.restate(state)
+            item.restate(state:state)
         }
     }
 }

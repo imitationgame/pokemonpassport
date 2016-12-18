@@ -13,7 +13,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         self.index = index
         self.title = title
         self.maxDistance = maxDistance
-        let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier()
+        let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight, selectable:kSelectable)
     }
@@ -26,12 +26,12 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         if controller.model.sectionSpeed.selectedItem === self
         {
             cellSpeed.backgroundColor = UIColor.white
-            cellSpeed.label.textColor = UIColor.main()
+            cellSpeed.label.textColor = UIColor.main
         }
         else
         {
             cellSpeed.backgroundColor = UIColor(white:1, alpha:0.2)
-            cellSpeed.label.textColor = UIColor.main().withAlphaComponent(0.4)
+            cellSpeed.label.textColor = UIColor.main.withAlphaComponent(0.4)
         }
     }
     

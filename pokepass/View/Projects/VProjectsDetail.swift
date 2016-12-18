@@ -162,7 +162,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
                 for:
                 indexPath) as! VProjectsDetailHeader
             let headerModel:MProjectsDetailSection = controller.model.sections[indexPath.section]
-            headerModel.config(header)
+            headerModel.config(header:header)
             
             reusable = header
         }
@@ -174,7 +174,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
                 VProjectsDetailFooter.reusableIdentifier,
                 for:
                 indexPath) as! VProjectsDetailFooter
-            footer.config(controller)
+            footer.config(controller:controller)
             
             reusable = footer
         }
@@ -212,7 +212,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
-        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let item:MProjectsDetailItem = modelAtIndex(index:indexPath)
         item.selected(controller:controller)
     }
 }

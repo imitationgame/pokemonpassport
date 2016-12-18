@@ -41,7 +41,7 @@ class MProjectsItem
         {
             if locationA == nil
             {
-                itemForLocation(locationB!)
+                itemForLocation(location:locationB!)
             }
             else
             {
@@ -100,7 +100,7 @@ class MProjectsItem
                     }
                 }
                 
-                itemForLocation(locationB!)
+                itemForLocation(location:locationB!)
             }
             
             let newLocationA:DObjectLocation? = locationB
@@ -110,7 +110,7 @@ class MProjectsItem
             
             if nextIndex < countLocations
             {
-                newLocationB = model.projectLocations[nextIndex] as! DObjectLocation
+                newLocationB = model.projectLocations?[nextIndex] as? DObjectLocation
             }
             else
             {
@@ -130,7 +130,7 @@ class MProjectsItem
     func getLocations(maxDistance:Double)
     {
         locations = []
-        let firstLocation:DObjectLocation? = model.projectLocations?.first as? DObjectLocation
+        let firstLocation:DObjectLocation? = model.projectLocations?.firstObject as? DObjectLocation
         pointsBetweenLocations(
             index:0,
             locationA:nil,
