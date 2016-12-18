@@ -203,11 +203,11 @@ class VCreate:UIView
     
     func showLoading()
     {
-        options.isHidden = true
+        options.isUserInteractionEnabled = false
     }
     
     func hideLoading()
     {
-        options.isHidden = false
+        options.isUserInteractionEnabled = true
     }
 }

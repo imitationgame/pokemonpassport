@@ -8,6 +8,7 @@ class CCreate:CMainController
     let model:MCreate
     private var project:DObjectProject?
     private var storeLocations:[MCreateAnnotation]?
+    private var removeLocations:[DObjectLocation]?
     private let kShutterTimeout:TimeInterval = 0.25
     
     init()
@@ -103,6 +104,25 @@ class CCreate:CMainController
         }
     }
     
+    private func releaseOldRoute()
+    {
+        if removeLocations!.isEmpty
+        {
+            storeRoute()
+        }
+        else
+        {
+            let location:DObjectLocation = removeLocations!.removeLast()
+            
+            DManager.sharedInstance.delete(
+                object:location)
+            { [weak self] in
+                
+                self?.releaseOldRoute()
+            }
+        }
+    }
+    
     private func storeProject(name:String)
     {
         storeLocations = model.locations
@@ -166,8 +186,8 @@ class CCreate:CMainController
             
             self?.storeLocations = self?.model.locations
             self?.project = self?.loadedProject?.model
-            self?.project?.projectLocations = NSOrderedSet()
-            self?.storeRoute()
+            self?.removeLocations = self?.project?.projectLocations?.array as? [DObjectLocation]
+            self?.releaseOldRoute()
         }
     }
     
