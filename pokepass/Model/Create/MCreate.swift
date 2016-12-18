@@ -10,7 +10,9 @@ class MCreate
         locations = []
     }
     
-    init(project:MProjectsItem)
+    //MARK: public
+    
+    func load(project:MProjectsItem)
     {
         var locations:[MCreateAnnotation] = []
         

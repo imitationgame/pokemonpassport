@@ -4,6 +4,7 @@ class CCreate:CMainController
 {
     weak var viewCreate:VCreate!
     weak var movingAnnotation:MCreateAnnotation?
+    weak var loadedProject:MProjectsItem?
     let model:MCreate
     private var project:DObjectProject?
     private var storeLocations:[MCreateAnnotation]?
@@ -18,7 +19,8 @@ class CCreate:CMainController
     
     init(project:MProjectsItem)
     {
-        model = MCreate(project:project)
+        self.loadedProject = project
+        model = MCreate()
         
         super.init(nibName:nil, bundle:nil)
     }
@@ -26,6 +28,26 @@ class CCreate:CMainController
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        if let loadedProject:MProjectsItem = self.loadedProject
+        {
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            { [weak self] in
+                
+                self?.model.load(project:loadedProject)
+                
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.addAllAnnotations()
+                }
+            }
+        }
     }
     
     override func loadView()
@@ -36,6 +58,13 @@ class CCreate:CMainController
     }
     
     //MARK: private
+    
+    private func addAllAnnotations()
+    {
+        viewCreate.map.addAnnotations(model.locations)
+        viewCreate.history.refresh()
+        regenerateRoute()
+    }
     
     private func finishStoring()
     {
