@@ -45,6 +45,7 @@
 		DABA400F1E06686F005E932B /* MMainTransitionPushTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */; };
 		DABA40111E067807005E932B /* VCreateHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40101E067807005E932B /* VCreateHistory.swift */; };
 		DABA40131E067835005E932B /* VCreateHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40121E067835005E932B /* VCreateHistoryCell.swift */; };
+		DABA40151E073A36005E932B /* MProjectsDetailItemSpeedFastVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
 		DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */; };
@@ -139,6 +140,7 @@
 		DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionPushTop.swift; sourceTree = "<group>"; };
 		DABA40101E067807005E932B /* VCreateHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistory.swift; sourceTree = "<group>"; };
 		DABA40121E067835005E932B /* VCreateHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistoryCell.swift; sourceTree = "<group>"; };
+		DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedFastVehicle.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */,
 				DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */,
 				DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */,
+				DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
+				DABA40151E073A36005E932B /* MProjectsDetailItemSpeedFastVehicle.swift in Sources */,
 				DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */,

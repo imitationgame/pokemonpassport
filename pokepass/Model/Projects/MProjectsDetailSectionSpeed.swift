@@ -23,6 +23,9 @@ class MProjectsDetailSectionSpeed:MProjectsDetailSection
         let itemVehicle:MProjectsDetailItemSpeed = MProjectsDetailItemSpeedVehicle(index:items.count)
         items.append(itemVehicle)
         
+        let itemFastVehicle:MProjectsDetailItemSpeed = MProjectsDetailItemSpeedFastVehicle(index:items.count)
+        items.append(itemFastVehicle)
+        
         super.init(title:title, items:items)
     }
 }

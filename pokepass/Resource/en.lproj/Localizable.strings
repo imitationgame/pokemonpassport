@@ -11,6 +11,7 @@
 "MProjectsDetailItemSpeedWalk_title"="Walking";
 "MProjectsDetailItemSpeedRun_title"="Running";
 "MProjectsDetailItemSpeedVehicle_title"="Vehicle";
+"MProjectsDetailItemSpeedFastVehicle_title"="Fast Vehicle";
 "MSettingsMenuItemMetricsOptionInternational_name"="International";
 "MSettingsMenuItemMetricsOptionUs_name"="US";
 
