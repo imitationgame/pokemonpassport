@@ -11,9 +11,9 @@ class VCreate:UIView
     weak var button:UIButton!
     weak var layoutButtonLeft:NSLayoutConstraint!
     weak var layoutButtonTop:NSLayoutConstraint!
-    fileprivate let kOptionsHeight:CGFloat = 60
-    fileprivate let kFinderHeight:CGFloat = 40
-    fileprivate let kButtonSize:CGFloat = 50
+    private let kOptionsHeight:CGFloat = 60
+    private let kFinderHeight:CGFloat = 40
+    private let kButtonSize:CGFloat = 50
     
     convenience init(controller:CCreate)
     {
@@ -41,7 +41,10 @@ class VCreate:UIView
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action:#selector(self.actionButton(sender:)), for:UIControlEvents.touchUpInside)
+        button.addTarget(
+            self,
+            action:#selector(self.actionButton(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.button = button
         
         addSubview(loader)
@@ -51,7 +54,7 @@ class VCreate:UIView
         addSubview(options)
         addSubview(button)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "map":map,
             "pointer":pointer,
             "options":options,
@@ -59,58 +62,58 @@ class VCreate:UIView
             "finder":finder,
             "button":button]
         
-        let metrics:[String:AnyObject] = [
-            "optionsHeight":kOptionsHeight as AnyObject,
-            "finderHeight":kFinderHeight as AnyObject,
-            "buttonSize":kButtonSize as AnyObject]
+        let metrics:[String:CGFloat] = [
+            "optionsHeight":kOptionsHeight,
+            "finderHeight":kFinderHeight,
+            "buttonSize":kButtonSize]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[loader]-0-|",
+            withVisualFormat:"H:|-0-[loader]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[map]-0-|",
+            withVisualFormat:"H:|-0-[map]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[pointer]-0-|",
+            withVisualFormat:"H:|-0-[pointer]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[options]-0-|",
+            withVisualFormat:"H:|-0-[options]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[finder]-0-|",
+            withVisualFormat:"H:|-0-[finder]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
+            withVisualFormat:"V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[finder]-0-[pointer]-0-[options]",
+            withVisualFormat:"V:[finder]-0-[pointer]-0-[options]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[pointer]-0-[loader]-0-|",
+            withVisualFormat:"V:[pointer]-0-[loader]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:[button(buttonSize)]",
+            withVisualFormat:"H:[button(buttonSize)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[button(buttonSize)]",
+            withVisualFormat:"V:[button(buttonSize)]",
             options:[],
             metrics:metrics,
             views:views))
