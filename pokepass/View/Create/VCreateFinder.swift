@@ -28,7 +28,10 @@ class VCreateFinder:UIView, UITextFieldDelegate
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action:#selector(self.actionButton(sender:)), for:UIControlEvents.touchUpInside)
+        button.addTarget(
+            self,
+            action:#selector(self.actionButton(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let buttonSearch:UIButton = UIButton()
         buttonSearch.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +39,10 @@ class VCreateFinder:UIView, UITextFieldDelegate
         buttonSearch.setTitleColor(UIColor.main(), for:UIControlState())
         buttonSearch.setTitleColor(UIColor.main().withAlphaComponent(0.2), for:UIControlState.highlighted)
         buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), for:UIControlState())
-        buttonSearch.addTarget(self, action:#selector(self.actionSearch(sender:)), for:UIControlEvents.touchUpInside)
+        buttonSearch.addTarget(
+            self,
+            action:#selector(self.actionSearch(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let field:UITextField = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
@@ -63,62 +69,62 @@ class VCreateFinder:UIView, UITextFieldDelegate
         addSubview(field)
         addSubview(buttonSearch)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "border":border,
             "image":image,
             "button":button,
             "buttonSearch":buttonSearch,
             "field":field]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[border]-0-|",
+            withVisualFormat:"H:|-0-[border]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[button]-0-|",
+            withVisualFormat:"H:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:[buttonSearch(70)]-0-|",
+            withVisualFormat:"H:[buttonSearch(70)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-30-[field(200)]",
+            withVisualFormat:"H:|-30-[field(200)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-5-[image(20)]",
+            withVisualFormat:"H:|-5-[image(20)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[border(1)]-0-|",
+            withVisualFormat:"V:[border(1)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[image]-0-|",
+            withVisualFormat:"V:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[button]-0-|",
+            withVisualFormat:"V:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[field]-0-|",
+            withVisualFormat:"V:|-0-[field]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[buttonSearch]-0-|",
+            withVisualFormat:"V:|-0-[buttonSearch]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -139,11 +145,11 @@ class VCreateFinder:UIView, UITextFieldDelegate
     
     //MARK: private
     
-    fileprivate func performSearch()
+    private func performSearch()
     {
         let text:String = field.text!
         
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
             self?.controller.viewCreate.map.searchLocation(text)
