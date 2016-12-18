@@ -45,6 +45,14 @@ class VCreate:UIView
             self,
             action:#selector(self.actionButton(sender:)),
             for:UIControlEvents.touchUpInside)
+        button.addTarget(
+            self,
+            action:#selector(self.actionHover(sender:)),
+            for:UIControlEvents.touchDown)
+        button.addTarget(
+            self,
+            action:#selector(self.actionUnHover(sender:)),
+            for:UIControlEvents.touchUpOutside)
         self.button = button
         
         addSubview(loader)
@@ -149,6 +157,16 @@ class VCreate:UIView
     }
     
     //MARK: actions
+    
+    func actionHover(sender button:UIButton)
+    {
+        controller.viewCreate.pointer.showSelected()
+    }
+    
+    func actionUnHover(sender button:UIButton)
+    {
+        controller.viewCreate.pointer.showPointer()
+    }
     
     func actionButton(sender button:UIButton)
     {
