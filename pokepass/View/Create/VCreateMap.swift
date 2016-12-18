@@ -38,6 +38,20 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: public
     
+    func deselectAll()
+    {
+        guard
+        
+            let annotation:MKAnnotation = selectedAnnotations.first
+        
+        else
+        {
+            return
+        }
+        
+        deselectAnnotation(annotation, animated:true)
+    }
+    
     func coordinatesAtCenter() -> CLLocationCoordinate2D
     {
         let width:CGFloat = bounds.maxX
@@ -150,16 +164,20 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
         controller.viewCreate.showingCallout()
     }
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
         controller.viewCreate.notShowingCallout()
     }
     
     func mapView(_ mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         mapView.deselectAnnotation(view.annotation, animated:true)
         
         let tag:Int = control.tag

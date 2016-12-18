@@ -159,6 +159,11 @@ class VCreateFinder:UIView, UITextFieldDelegate
     
     //MARK: field delegate
     
+    func textFieldDidBeginEditing(_ textField:UITextField)
+    {
+        controller.viewCreate.map.deselectAll()
+    }
+    
     func textFieldShouldReturn(_ textField:UITextField) -> Bool
     {
         textField.resignFirstResponder()
