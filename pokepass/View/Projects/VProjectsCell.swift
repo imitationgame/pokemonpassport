@@ -50,7 +50,7 @@ class VProjectsCell:UICollectionViewCell
         let buttonShare:UIButton = UIButton()
         buttonShare.translatesAutoresizingMaskIntoConstraints = false
         buttonShare.setImage(
-            #imageLiteral(resourceName: "share"),
+            #imageLiteral(resourceName: "projectShare"),
             for:UIControlState.normal)
         buttonShare.imageView!.clipsToBounds = true
         buttonShare.imageView!.contentMode = UIViewContentMode.center
