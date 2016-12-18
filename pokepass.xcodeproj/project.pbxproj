@@ -57,7 +57,6 @@
 		DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE11D605FF50054CDEB /* MCreate.swift */; };
 		DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE41D605FF50054CDEB /* MMainNav.swift */; };
 		DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */; };
-		DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */; };
 		DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */; };
 		DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */; };
 		DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */; };
@@ -150,7 +149,6 @@
 		DAE03EE11D605FF50054CDEB /* MCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreate.swift; sourceTree = "<group>"; };
 		DAE03EE41D605FF50054CDEB /* MMainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNav.swift; sourceTree = "<group>"; };
 		DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItem.swift; sourceTree = "<group>"; };
-		DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemCreate.swift; sourceTree = "<group>"; };
 		DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemState.swift; sourceTree = "<group>"; };
 		DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateActive.swift; sourceTree = "<group>"; };
 		DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateNone.swift; sourceTree = "<group>"; };
@@ -375,7 +373,6 @@
 				DAE03EE41D605FF50054CDEB /* MMainNav.swift */,
 				DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */,
 				DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */,
-				DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */,
 				DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */,
 				DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */,
 				DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */,
@@ -625,7 +622,6 @@
 				DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */,
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
-				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
 				DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */,
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,

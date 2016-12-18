@@ -12,8 +12,6 @@ class MMainNav
         items.append(itemSettings)
         let itemProjects:MMainNavItem = MMainNavItemProjects(index:items.count)
         items.append(itemProjects)
-        let itemCreate:MMainNavItem = MMainNavItemCreate(index:items.count)
-        items.append(itemCreate)
         self.items = items
         selectItem(selected:itemProjects)
     }

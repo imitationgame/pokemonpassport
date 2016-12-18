@@ -6,12 +6,11 @@ class VCreate:UIView
     weak var map:VCreateMap!
     weak var pointer:VCreateMapPointer!
     weak var options:VCreateOptions!
-    weak var loader:VMainLoader!
     weak var finder:VCreateFinder!
     weak var button:UIButton!
     weak var layoutButtonLeft:NSLayoutConstraint!
     weak var layoutButtonTop:NSLayoutConstraint!
-    private let kOptionsHeight:CGFloat = 60
+    private let kOptionsHeight:CGFloat = 64
     private let kFinderHeight:CGFloat = 44
     private let kButtonSize:CGFloat = 50
     
@@ -35,10 +34,6 @@ class VCreate:UIView
         let finder:VCreateFinder = VCreateFinder(controller:controller)
         self.finder = finder
         
-        let loader:VMainLoader = VMainLoader()
-        loader.stopAnimating()
-        self.loader = loader
-        
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(
@@ -53,9 +48,12 @@ class VCreate:UIView
             self,
             action:#selector(self.actionUnHover(sender:)),
             for:UIControlEvents.touchUpOutside)
+        button.addTarget(
+            self,
+            action:#selector(self.actionUnHover(sender:)),
+            for:UIControlEvents.touchDragOutside)
         self.button = button
         
-        addSubview(loader)
         addSubview(finder)
         addSubview(map)
         addSubview(pointer)
@@ -66,7 +64,6 @@ class VCreate:UIView
             "map":map,
             "pointer":pointer,
             "options":options,
-            "loader":loader,
             "finder":finder,
             "button":button]
         
@@ -75,11 +72,6 @@ class VCreate:UIView
             "finderHeight":kFinderHeight,
             "buttonSize":kButtonSize]
         
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[loader]-0-|",
-            options:[],
-            metrics:metrics,
-            views:views))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat:"H:|-0-[map]-0-|",
             options:[],
@@ -101,17 +93,12 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-0-[finder(finderHeight)]-0-[map]-0-[options(optionsHeight)]-0-|",
+            withVisualFormat:"V:|-0-[options(optionsHeight)]-0-[finder(finderHeight)]-0-[map]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[finder]-0-[pointer]-0-[options]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[pointer]-0-[loader]-0-|",
+            withVisualFormat:"V:[finder]-0-[pointer]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -151,7 +138,7 @@ class VCreate:UIView
     override func layoutSubviews()
     {
         layoutButtonLeft.constant = bounds.maxX / 2.0
-        layoutButtonTop.constant = bounds.maxY / 2.0
+        layoutButtonTop.constant = (bounds.maxY + kOptionsHeight + kFinderHeight) / 2.0
         
         super.layoutSubviews()
     }
@@ -189,13 +176,11 @@ class VCreate:UIView
     
     func showLoading()
     {
-        loader.startAnimating()
         options.isHidden = true
     }
     
     func hideLoading()
     {
-        loader.stopAnimating()
         options.isHidden = false
     }
 }

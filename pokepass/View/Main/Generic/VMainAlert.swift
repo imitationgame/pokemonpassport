@@ -25,7 +25,7 @@ class VMainAlert:UIView
     convenience init(message:String)
     {
         self.init()
-        backgroundColor = UIColor.complement
+        backgroundColor = UIColor(white:0, alpha:0.8)
         clipsToBounds = true
         isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +33,7 @@ class VMainAlert:UIView
         let label:UILabel = UILabel()
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:14)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
         label.text = message
