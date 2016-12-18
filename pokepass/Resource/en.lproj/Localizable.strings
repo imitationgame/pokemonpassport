@@ -16,7 +16,7 @@
 
 "CMainController_saved"="Project saved!";
 
-"VProjectsHeader_label"="No projects created";
+"VProjectsHeader_label"="New project";
 "VProjectsDetailFooter_label"="Export";
 "VSettingsCellMetrics_label"="Metrics";
 "VCreateFinder_fieldPlaceholder"="Search";

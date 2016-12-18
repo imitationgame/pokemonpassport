@@ -6,7 +6,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
-    private let kHeaderHeight:CGFloat = 100
+    private let kHeaderHeight:CGFloat = 120
     private let kCellHeight:CGFloat = 60
     private let kInterLine:CGFloat = 1
     private let kDeselectTime:TimeInterval = 1
@@ -23,6 +23,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flow.headerReferenceSize = CGSize(width:0, height:kHeaderHeight)
         flow.footerReferenceSize = CGSize.zero
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
@@ -107,23 +108,6 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     //MARK: col del
-    
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
-    {
-        let size:CGSize
-        
-        if controller.model.items.isEmpty
-        {
-            let width:CGFloat = collectionView.bounds.maxX
-            size = CGSize(width:width, height:kHeaderHeight)
-        }
-        else
-        {
-            size = CGSize.zero
-        }
-        
-        return size
-    }
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
