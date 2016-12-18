@@ -111,12 +111,33 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let itemPrevious:MCreateAnnotation?
+        let index:Int = indexPath.item
+        let indexPrev:Int = index - 1
+        let indexNext:Int = index + 1
+        
+        if index > 0
+        {
+            let indexPathPrev:IndexPath = IndexPath(
+                item:indexPrev,
+                section:0)
+            
+            itemPrevious = modelAtIndex(index:indexPathPrev)
+        }
+        else
+        {
+            itemPrevious = nil
+        }
+        
         let item:MCreateAnnotation = modelAtIndex(index:indexPath)
         let cell:VCreateHistoryCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             VCreateHistoryCell.reusableIdentifier,
             for:indexPath) as! VCreateHistoryCell
-        cell.config(model:item)
+        cell.config(
+            index:indexNext,
+            model:item,
+            modelPrevious:itemPrevious)
         
         return cell
     }

@@ -13,7 +13,7 @@ class VCreate:UIView
     weak var layoutButtonTop:NSLayoutConstraint!
     private let kOptionsHeight:CGFloat = 64
     private let kFinderHeight:CGFloat = 44
-    private let kHistoryHeight:CGFloat = 60
+    private let kHistoryHeight:CGFloat = 65
     private let kButtonSize:CGFloat = 50
     
     convenience init(controller:CCreate)
@@ -40,7 +40,6 @@ class VCreate:UIView
         self.history = history
         
         let button:UIButton = UIButton()
-        button.backgroundColor = UIColor.red.withAlphaComponent(0.3)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(
             self,

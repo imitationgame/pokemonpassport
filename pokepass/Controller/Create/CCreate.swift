@@ -94,7 +94,7 @@ class CCreate:CMainController
         }
         
         viewCreate.map.regenerateRoute()
-        viewCreate.history.collectionView.reloadData()
+        viewCreate.history.refresh()
     }
     
     private func beforeAddLocation(location:MCreateAnnotation)
