@@ -3,13 +3,13 @@ import Foundation
 class MProjectsItem
 {
     let name:String
-    let model:DPokePassProject
+    let model:DObjectProject
     var locations:[MProjectItemLocation]?
     fileprivate let kHeader:String = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n"
     fileprivate let kItemGroup:String = "<gpx>\n"
     fileprivate let kItemGroupClose:String = "</gpx>"
     
-    init(model:DPokePassProject)
+    init(model:DObjectProject)
     {
         name = model.name!
         self.model = model
@@ -17,21 +17,25 @@ class MProjectsItem
     
     //MARK: private
     
-    fileprivate func itemForLocation(_ location:DPokePassLocation)
+    private func itemForLocation(location:DObjectLocation)
     {
         let latitude:Double = location.latitude
         let longitude:Double = location.longitude
         
-        itemFor(latitude, longitude:longitude)
+        itemFor(latitude:latitude, longitude:longitude)
     }
     
-    fileprivate func itemFor(_ latitude:Double, longitude:Double)
+    private func itemFor(latitude:Double, longitude:Double)
     {
         let item:MProjectItemLocation = MProjectItemLocation(latitude:latitude, longitude:longitude)
         locations!.append(item)
     }
     
-    fileprivate func pointsBetweenLocations(_ index:Int, locationA:DPokePassLocation?, locationB:DPokePassLocation?, maxDistance:Double)
+    private func pointsBetweenLocations(
+        index:Int,
+        locationA:DObjectLocation?,
+        locationB:DObjectLocation?,
+        maxDistance:Double)
     {
         if locationB != nil
         {
@@ -92,38 +96,46 @@ class MProjectsItem
                         sumLatitude += increaseLatitude
                         sumLongitude += increaseLongitude
                         
-                        itemFor(sumLatitude, longitude:sumLongitude)
+                        itemFor(latitude:sumLatitude, longitude:sumLongitude)
                     }
                 }
                 
                 itemForLocation(locationB!)
             }
             
-            let newLocationA:DPokePassLocation? = locationB
-            let newLocationB:DPokePassLocation?
-            let countLocations:Int = model.projectLocations.count
+            let newLocationA:DObjectLocation? = locationB
+            let newLocationB:DObjectLocation?
+            let countLocations:Int = model.projectLocations!.count
             let nextIndex:Int = index + 1
             
             if nextIndex < countLocations
             {
-                newLocationB = model.projectLocations[nextIndex]
+                newLocationB = model.projectLocations[nextIndex] as! DObjectLocation
             }
             else
             {
                 newLocationB = nil
             }
             
-            pointsBetweenLocations(nextIndex, locationA:newLocationA, locationB:newLocationB, maxDistance:maxDistance)
+            pointsBetweenLocations(
+                index:nextIndex,
+                locationA:newLocationA,
+                locationB:newLocationB,
+                maxDistance:maxDistance)
         }
     }
     
     //MARK: public
     
-    func getLocations(_ maxDistance:Double)
+    func getLocations(maxDistance:Double)
     {
         locations = []
-        let firstLocation:DPokePassLocation? = model.projectLocations.first
-        pointsBetweenLocations(0, locationA:nil, locationB:firstLocation, maxDistance:maxDistance)
+        let firstLocation:DObjectLocation? = model.projectLocations?.first as? DObjectLocation
+        pointsBetweenLocations(
+            index:0,
+            locationA:nil,
+            locationB:firstLocation,
+            maxDistance:maxDistance)
     }
     
     func print() -> String
