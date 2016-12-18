@@ -9,23 +9,23 @@ class MSettings
     }
     
     static let sharedInstance = MSettings()
-    fileprivate(set) var model:DPokePassSettings?
+    private(set) var model:DObjectSettings?
     
-    fileprivate init()
+    private init()
     {
     }
     
     //MARK: private
     
-    fileprivate func createModel()
+    private func createModel()
     {
-        DManager.sharedInstance.managerPokePass.createManagedObject(
-            DPokePassSettings.self)
-        { (object) in
+        DManager.sharedInstance.createManagedObject(
+            modelType:DObjectSettings.self)
+        { (object:DObjectSettings) in
             
             self.model = object
             
-            DManager.sharedInstance.managerPokePass.saver.save(false)
+            DManager.sharedInstance.save()
         }
     }
     
@@ -35,19 +35,22 @@ class MSettings
     {
         if model == nil
         {
-            DManager.sharedInstance.managerPokePass.fetchManagedObjects(
-                DPokePassSettings.self,
+            DManager.sharedInstance.fetchManagedObjects(
+                modelType:DObjectSettings.self,
                 limit:1)
-            { (objects) in
+            { (objects:[DObjectSettings]?) in
                 
-                if objects.isEmpty
-                {
-                    self.createModel()
-                }
+                guard
+                
+                    let object:DObjectSettings = objects?.first
+                
                 else
                 {
-                    self.model = objects.first
+                    self.createModel()
+                    return
                 }
+                
+                self.model = object
             }
         }
     }

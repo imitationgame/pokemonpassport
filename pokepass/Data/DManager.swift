@@ -5,7 +5,7 @@ class DManager
 {
     static let sharedInstance:DManager = DManager()
     private let managedObjectContext:NSManagedObjectContext
-    private let kModelName:String = "DHyperborea"
+    private let kModelName:String = "DGPX"
     private let kModelExtension:String = "momd"
     private let kSQLiteExtension:String = "%@.sqlite"
     
