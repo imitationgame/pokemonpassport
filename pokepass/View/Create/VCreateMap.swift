@@ -166,11 +166,23 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     {
         UIApplication.shared.keyWindow!.endEditing(true)
         controller.viewCreate.showingCallout()
+        
+        guard
+        
+            let annotation:MCreateAnnotation = view.annotation as? MCreateAnnotation
+        
+        else
+        {
+            return
+        }
+        
+        controller.viewCreate.history.selectLocation(item:annotation)
     }
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
         controller.viewCreate.notShowingCallout()
+        controller.viewCreate.history.clearSelection()
     }
     
     func mapView(_ mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)

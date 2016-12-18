@@ -34,7 +34,6 @@ class VCreateHistoryCell:UICollectionViewCell
         labelIndex.translatesAutoresizingMaskIntoConstraints = false
         labelIndex.backgroundColor = UIColor.clear
         labelIndex.font = UIFont.bold(size:11)
-        labelIndex.textColor = UIColor.main
         self.labelIndex = labelIndex
         
         let labelDistance:UILabel = UILabel()
@@ -42,11 +41,6 @@ class VCreateHistoryCell:UICollectionViewCell
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
         labelDistance.font = UIFont.medium(size:14)
-        labelDistance.textColor = UIColor(
-            red:0.55,
-            green:0.7,
-            blue:0,
-            alpha:1)
         self.labelDistance = labelDistance
         
         let labelLatitude:UILabel = UILabel()
@@ -54,7 +48,6 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLatitude.translatesAutoresizingMaskIntoConstraints = false
         labelLatitude.backgroundColor = UIColor.clear
         labelLatitude.font = UIFont.regular(size:10)
-        labelLatitude.textColor = UIColor(white:0, alpha:0.5)
         self.labelLatitude = labelLatitude
         
         let labelLongitude:UILabel = UILabel()
@@ -62,7 +55,6 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLongitude.translatesAutoresizingMaskIntoConstraints = false
         labelLongitude.backgroundColor = UIColor.clear
         labelLongitude.font = UIFont.regular(size:10)
-        labelLongitude.textColor = UIColor(white:0, alpha:0.5)
         self.labelLongitude = labelLongitude
         
         addSubview(labelIndex)
@@ -132,11 +124,23 @@ class VCreateHistoryCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            alpha = 0.2
+            labelIndex.textColor = UIColor.white
+            labelDistance.textColor = UIColor.white
+            labelLatitude.textColor = UIColor.white
+            labelLongitude.textColor = UIColor.white
+            backgroundColor = UIColor.main
         }
         else
         {
-            alpha = 1
+            labelIndex.textColor = UIColor.main
+            labelDistance.textColor = UIColor(
+                red:0.55,
+                green:0.7,
+                blue:0,
+                alpha:1)
+            labelLatitude.textColor = UIColor(white:0, alpha:0.4)
+            labelLongitude.textColor = UIColor(white:0, alpha:0.4)
+            backgroundColor = UIColor.white
         }
     }
     
@@ -144,6 +148,7 @@ class VCreateHistoryCell:UICollectionViewCell
     
     func config(index:Int, model:MCreateAnnotation, modelPrevious:MCreateAnnotation?)
     {
+        hover()
         let latitude:CLLocationDegrees = model.coordinate.latitude
         let longitude:CLLocationDegrees = model.coordinate.longitude
         let numberIndex:NSNumber = index as NSNumber

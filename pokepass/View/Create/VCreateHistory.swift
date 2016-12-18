@@ -84,11 +84,49 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         if last >= 0
         {
             let index:IndexPath = IndexPath(item:last, section:0)
-            collectionView.selectItem(
+            collectionView.scrollToItem(
                 at:index,
+                at:UICollectionViewScrollPosition.centeredHorizontally,
+                animated:true)
+        }
+    }
+    
+    func selectLocation(item:MCreateAnnotation)
+    {
+        var index:Int?
+        let count:Int = controller.model.locations.count
+        
+        for indexAnnotation:Int in 0 ..< count
+        {
+            let annotation:MCreateAnnotation = controller.model.locations[indexAnnotation]
+            
+            if annotation === item
+            {
+                index = indexAnnotation
+                
+                break
+            }
+        }
+        
+        if let foundIndex:Int = index
+        {
+            let indexPath:IndexPath = IndexPath(
+                item:foundIndex,
+                section:0)
+            
+            collectionView.selectItem(
+                at:indexPath,
                 animated:true,
                 scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
         }
+    }
+    
+    func clearSelection()
+    {
+        collectionView.selectItem(
+            at:nil,
+            animated:true,
+            scrollPosition:UICollectionViewScrollPosition())
     }
     
     //MARK: collectionView delegate
@@ -145,5 +183,16 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             modelPrevious:itemPrevious)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        let item:MCreateAnnotation = modelAtIndex(index:indexPath)
+        controller.viewCreate.map.selectAnnotation(item, animated:true)
+        
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.centeredHorizontally,
+            animated:true)
     }
 }
