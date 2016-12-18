@@ -6,6 +6,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     weak var collection:UICollectionView!
     let model:MCreateOptions
     private let kDeselectTime:TimeInterval = 0.3
+    private let kCollectionWidth:CGFloat = 120
     
     init(controller:CCreate)
     {
@@ -47,10 +48,11 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let views:[String:UIView] = [
             "collection":collection]
         
-        let metrics:[String:CGFloat] = [:]
+        let metrics:[String:CGFloat] = [
+            "collectionWidth":kCollectionWidth]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[collection]-0-|",
+            withVisualFormat:"H:[collection(collectionWidth)]-0-|",
             options:[],
             metrics:metrics,
             views:views))

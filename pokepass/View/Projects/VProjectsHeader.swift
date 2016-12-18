@@ -25,7 +25,11 @@ class VProjectsHeader:UICollectionReusableView
         buttonCreate.imageView!.clipsToBounds = true
         buttonCreate.imageView!.contentMode = UIViewContentMode.center
         buttonCreate.imageView!.tintColor = UIColor.white
-        buttonCreate.layer.cornerRadius = kButtonSize / 2
+        buttonCreate.layer.cornerRadius = kButtonSize / 2.0
+        buttonCreate.addTarget(
+            self,
+            action:#selector(self.actionCreate(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -88,6 +92,13 @@ class VProjectsHeader:UICollectionReusableView
         
         layoutButtonLeft.constant = margin
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionCreate(sender button:UIButton)
+    {
+        controller?.createProject()
     }
     
     //MARK: public

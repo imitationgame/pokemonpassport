@@ -131,12 +131,12 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
+        let reusable:VProjectsHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind:kind,
             withReuseIdentifier:
             VProjectsHeader.reusableIdentifier,
-            for:
-            indexPath)
+            for:indexPath) as! VProjectsHeader
+        reusable.config(controller:controller)
         
         return reusable
     }
