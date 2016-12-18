@@ -6,7 +6,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
-    private let kHeaderHeight:CGFloat = 120
+    private let kHeaderHeight:CGFloat = 130
     private let kCellHeight:CGFloat = 60
     private let kInterLine:CGFloat = 1
     private let kDeselectTime:TimeInterval = 1

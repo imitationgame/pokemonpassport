@@ -64,12 +64,12 @@ class MMainTransitionPush:MMainTransition
         let metrics:[String:AnyObject] = [:]
         
         current?.view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[shadow]-0-|",
+            withVisualFormat:"H:|-0-[shadow]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         current?.view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[shadow]-0-|",
+            withVisualFormat:"V:|-0-[shadow]-0-|",
             options:[],
             metrics:metrics,
             views:views))

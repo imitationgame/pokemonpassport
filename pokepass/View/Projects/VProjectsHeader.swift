@@ -11,7 +11,6 @@ class VProjectsHeader:UICollectionReusableView
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.clear
-        isUserInteractionEnabled = false
         
         let buttonCreate:UIButton = UIButton()
         buttonCreate.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +31,7 @@ class VProjectsHeader:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.regular(size:15)
+        label.font = UIFont.regular(size:13)
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
@@ -59,7 +58,7 @@ class VProjectsHeader:UICollectionReusableView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-20-[buttonCreate(buttonSize)]-0-[label(22)]",
+            withVisualFormat:"V:|-20-[buttonCreate(buttonSize)]-0-[label(24)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -89,5 +88,12 @@ class VProjectsHeader:UICollectionReusableView
         
         layoutButtonLeft.constant = margin
         super.layoutSubviews()
+    }
+    
+    //MARK: public
+    
+    func config(controller:CProjects)
+    {
+        self.controller = controller
     }
 }

@@ -64,4 +64,13 @@ class CProjects:CMainController
             }
         }
     }
+    
+    //MARK: public
+    
+    func createProject()
+    {
+        let controller:CCreate = CCreate()
+        let transition:MMainTransition = MMainTransitionPush(pushed:controller.na)
+        parentController.pushController(controller:controller, transition:transition)
+    }
 }
