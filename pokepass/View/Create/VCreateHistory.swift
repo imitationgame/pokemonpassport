@@ -50,4 +50,39 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             metrics:metrics,
             views:views))
     }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MCreateAnnotation
+    {
+        let item:MCreateAnnotation = controller.model.locations[index.item]
+        
+        return item
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        let count:Int = controller.model.locations.count
+        
+        return count
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+    {
+        let item:MCreateAnnotation = modelAtIndex(index:indexPath)
+        let cell:VCreateHistoryCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VCreateHistoryCell.reusableIdentifier,
+            for:indexPath) as! VCreateHistoryCell
+        cell.config(model:item)
+        
+        return cell
+    }
 }
