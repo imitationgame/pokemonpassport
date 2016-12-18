@@ -139,7 +139,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         let polyline:MKPolyline = overlay as! MKPolyline
         let renderer:MKPolylineRenderer = MKPolylineRenderer(polyline:polyline)
         renderer.lineWidth = kPolylineWidth
-        renderer.strokeColor = UIColor.main
+        renderer.strokeColor = UIColor(red:0.3, green:0.5, blue:0.7, alpha:1)
         
         return renderer
     }
