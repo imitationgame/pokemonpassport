@@ -83,8 +83,8 @@ class CProjects:CMainController
     
     func edit(item:MProjectsItem)
     {
-        let transition:MMainTransition = MMainTransitionPush(pushed:item.name)
-        let detail:CCreate = CCreate()
+        let transition:MMainTransition = MMainTransitionPushTop()
+        let detail:CCreate = CCreate(project:item)
         parentController.pushController(controller:detail, transition:transition)
     }
 }

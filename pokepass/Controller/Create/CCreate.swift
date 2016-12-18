@@ -16,6 +16,13 @@ class CCreate:CMainController
         super.init(nibName:nil, bundle:nil)
     }
     
+    init(project:MProjectsItem)
+    {
+        model = MCreate(project:project)
+        
+        super.init(nibName:nil, bundle:nil)
+    }
+    
     required init?(coder:NSCoder)
     {
         fatalError()
