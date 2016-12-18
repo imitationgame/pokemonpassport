@@ -6,11 +6,13 @@ class VCreateHistoryCell:UICollectionViewCell
     private weak var labelLatitude:UILabel!
     private weak var labelLongitude:UILabel!
     private let numberFormatter:NumberFormatter
+    private let kMaxDecimal:Int = 5
     
     override init(frame:CGRect)
     {
         numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        numberFormatter.maximumFractionDigits = kMaxDecimal
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -20,7 +22,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLatitude.isUserInteractionEnabled = false
         labelLatitude.translatesAutoresizingMaskIntoConstraints = false
         labelLatitude.backgroundColor = UIColor.clear
-        labelLatitude.font = UIFont.regular(size:12)
+        labelLatitude.font = UIFont.regular(size:11)
         labelLatitude.textColor = UIColor.black
         self.labelLatitude = labelLatitude
         
@@ -28,7 +30,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLongitude.isUserInteractionEnabled = false
         labelLongitude.translatesAutoresizingMaskIntoConstraints = false
         labelLongitude.backgroundColor = UIColor.clear
-        labelLongitude.font = UIFont.regular(size:12)
+        labelLongitude.font = UIFont.regular(size:11)
         labelLongitude.textColor = UIColor.black
         self.labelLongitude = labelLongitude
         
@@ -52,7 +54,7 @@ class VCreateHistoryCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-30-[labelLatitude(16)]-0-[labelLongitude(16)]",
+            withVisualFormat:"V:|-20-[labelLatitude(14)]-0-[labelLongitude(14)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -81,7 +83,6 @@ class VCreateHistoryCell:UICollectionViewCell
         {
             return
         }
-        
         
         labelLatitude.text = stringLat
         labelLongitude.text = stringLon

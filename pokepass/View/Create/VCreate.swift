@@ -112,7 +112,7 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[finder]-0-[pointer]-0-|",
+            withVisualFormat:"V:[finder]-0-[pointer]-0-[history]",
             options:[],
             metrics:metrics,
             views:views))
