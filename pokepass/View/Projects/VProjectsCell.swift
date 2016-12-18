@@ -43,7 +43,7 @@ class VProjectsCell:UICollectionViewCell
         labelDistance.isUserInteractionEnabled = false
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
-        labelDistance.font = UIFont.regular(size:14)
+        labelDistance.font = UIFont.regular(size:13)
         labelDistance.textColor = UIColor.black
         self.labelDistance = labelDistance
         
@@ -55,36 +55,46 @@ class VProjectsCell:UICollectionViewCell
         buttonShare.imageView!.clipsToBounds = true
         buttonShare.imageView!.contentMode = UIViewContentMode.center
         
+        let buttonEdit:UIButton = UIButton()
+        buttonEdit.translatesAutoresizingMaskIntoConstraints = false
+        buttonEdit.setImage(
+            #imageLiteral(resourceName: "projectEdit"),
+            for:UIControlState.normal)
+        buttonEdit.imageView!.clipsToBounds = true
+        buttonEdit.imageView!.contentMode = UIViewContentMode.center
+        
         addSubview(label)
         addSubview(labelPoints)
         addSubview(labelDistance)
         addSubview(buttonShare)
+        addSubview(buttonEdit)
         
         let views:[String:UIView] = [
             "label":label,
             "labelPoints":labelPoints,
             "labelDistance":labelDistance,
-            "buttonShare":buttonShare]
+            "buttonShare":buttonShare,
+            "buttonEdit":buttonEdit]
         
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[label(200)]",
+            withVisualFormat:"H:|-10-[label]-0-[buttonEdit]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelPoints(200)]",
+            withVisualFormat:"H:|-10-[labelPoints]-0-[buttonEdit]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelDistance(200)]",
+            withVisualFormat:"H:|-10-[labelDistance]-0-[buttonEdit]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:[buttonShare(60)]-0-|",
+            withVisualFormat:"H:[buttonEdit(70)]-0-[buttonShare(70)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -94,7 +104,12 @@ class VProjectsCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-10-[label(21)]-5-[labelPoints(17)]-0-[labelDistance(18)]",
+            withVisualFormat:"V:|-0-[buttonEdit]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-10-[label(21)]-7-[labelPoints(17)]-0-[labelDistance(17)]",
             options:[],
             metrics:metrics,
             views:views))
