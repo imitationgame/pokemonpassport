@@ -61,6 +61,11 @@ class VCreateMapPointer:UIView
         cross.image = UIImage(named:"mapPointerMoving")
     }
     
+    func showMovingSelected()
+    {
+        cross.image = UIImage(named:"mapPointerMovingSelected")
+    }
+    
     func showShutter()
     {
         cross.image = UIImage(named:"mapPointerShutter")

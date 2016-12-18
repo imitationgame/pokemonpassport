@@ -147,12 +147,26 @@ class VCreate:UIView
     
     func actionHover(sender button:UIButton)
     {
-        controller.viewCreate.pointer.showSelected()
+        if controller.movingAnnotation == nil
+        {
+            controller.viewCreate.pointer.showSelected()
+        }
+        else
+        {
+            controller.viewCreate.pointer.showMovingSelected()
+        }
     }
     
     func actionUnHover(sender button:UIButton)
     {
-        controller.viewCreate.pointer.showPointer()
+        if controller.movingAnnotation == nil
+        {
+            controller.viewCreate.pointer.showPointer()
+        }
+        else
+        {
+            controller.viewCreate.pointer.showMoving()
+        }
     }
     
     func actionButton(sender button:UIButton)

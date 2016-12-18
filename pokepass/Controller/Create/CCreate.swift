@@ -3,11 +3,11 @@ import UIKit
 class CCreate:CMainController
 {
     weak var viewCreate:VCreate!
+    weak var movingAnnotation:MCreateAnnotation?
     let model:MCreate
     private var project:DObjectProject?
     private var storeLocations:[MCreateAnnotation]?
     private let kShutterTimeout:TimeInterval = 0.25
-    private weak var movingAnnotation:MCreateAnnotation?
     
     init()
     {
