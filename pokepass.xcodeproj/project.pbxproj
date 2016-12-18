@@ -141,6 +141,7 @@
 		DABA40101E067807005E932B /* VCreateHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistory.swift; sourceTree = "<group>"; };
 		DABA40121E067835005E932B /* VCreateHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistoryCell.swift; sourceTree = "<group>"; };
 		DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedFastVehicle.swift; sourceTree = "<group>"; };
+		DABA401A1E073B27005E932B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
@@ -555,6 +556,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = DA2602931D5E8EC000C3A280;
 			productRefGroup = DA26029D1D5E8EC000C3A280 /* Products */;
@@ -681,6 +683,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DAE03F161D605FF50054CDEB /* en */,
+				DABA401A1E073B27005E932B /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
