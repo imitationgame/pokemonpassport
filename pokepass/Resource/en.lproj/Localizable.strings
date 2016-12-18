@@ -21,3 +21,5 @@
 "VSettingsCellMetrics_label"="Metrics";
 "VCreateFinder_fieldPlaceholder"="Search";
 "VCreateFinder_searchButton"="Search";
+"VCreateHistoryCell_km"="Km";
+"VCreateHistoryCell_mile"="mi";

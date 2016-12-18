@@ -9,6 +9,8 @@ class VCreateHistoryCell:UICollectionViewCell
     private weak var labelIndex:UILabel!
     private let numberFormatter:NumberFormatter
     private let distanceFormatter:NumberFormatter
+    private let kKiloMeter:Double = 0.001
+    private let kMile:Double = 0.000621371
     private let kMaxDecimal:Int = 7
     private let kMaxDistanceDecimal:Int = 2
     private let kEmpty:String = ""
@@ -31,7 +33,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelIndex.isUserInteractionEnabled = false
         labelIndex.translatesAutoresizingMaskIntoConstraints = false
         labelIndex.backgroundColor = UIColor.clear
-        labelIndex.font = UIFont.bold(size:13)
+        labelIndex.font = UIFont.bold(size:11)
         labelIndex.textColor = UIColor.main
         self.labelIndex = labelIndex
         
@@ -77,27 +79,27 @@ class VCreateHistoryCell:UICollectionViewCell
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelIndex(50)]",
+            withVisualFormat:"H:|-8-[labelIndex(50)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelDistance]-2-|",
+            withVisualFormat:"H:|-8-[labelDistance]-2-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelLatitude]-2-|",
+            withVisualFormat:"H:|-8-[labelLatitude]-2-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelLongitude]-2-|",
+            withVisualFormat:"H:|-8-[labelLongitude]-2-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-4-[labelIndex(16)]-0-[labelDistance(18)]-0-[labelLatitude(12)]-0-[labelLongitude(12)]",
+            withVisualFormat:"V:|-4-[labelIndex(14)]-0-[labelDistance(20)]-0-[labelLatitude(12)]-0-[labelLongitude(12)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -145,7 +147,21 @@ class VCreateHistoryCell:UICollectionViewCell
                 latitude:previous.latitude,
                 longitude:previous.longitude)
             let distance:CLLocationDistance = location.distance(from:locationPrev)
-            let distanceNum:NSNumber = distance as NSNumber
+            let distanceShort:Double
+            let name:String
+            
+            if MSettings.sharedInstance.model?.measures == MSettings.Measures.metric.rawValue
+            {
+                name = NSLocalizedString("VCreateHistoryCell_km", comment:"")
+                distanceShort = distance * kKiloMeter
+            }
+            else
+            {
+                name = NSLocalizedString("VCreateHistoryCell_mile", comment:"")
+                distanceShort = distance * kMile
+            }
+            
+            let distanceNum:NSNumber = distanceShort as NSNumber
             
             guard
             
@@ -159,7 +175,7 @@ class VCreateHistoryCell:UICollectionViewCell
                 return
             }
             
-            let completeString:String = "+ \(distanceString) Km"
+            let completeString:String = "+\(distanceString) \(name)"
             labelDistance.text = completeString
         }
         else
