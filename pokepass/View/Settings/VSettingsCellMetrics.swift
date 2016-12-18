@@ -4,8 +4,8 @@ class VSettingsCellMetrics:VSettingsCell
 {
     weak var segmented:UISegmentedControl!
     weak var layoutSegmentedLeft:NSLayoutConstraint!
-    fileprivate let kSegmentedWidth:CGFloat = 250
-    fileprivate let kSegmentedHeight:CGFloat = 32
+    private let kSegmentedWidth:CGFloat = 250
+    private let kSegmentedHeight:CGFloat = 32
     
     override init(frame:CGRect)
     {
@@ -28,26 +28,26 @@ class VSettingsCellMetrics:VSettingsCell
         addSubview(label)
         addSubview(segmented)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label,
             "segmented":segmented]
         
-        let metrics:[String:AnyObject] = [
-            "segmentedWidth":kSegmentedWidth as AnyObject,
-            "segmentedHeight":kSegmentedHeight as AnyObject]
+        let metrics:[String:CGFloat] = [
+            "segmentedWidth":kSegmentedWidth,
+            "segmentedHeight":kSegmentedHeight]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[label]-0-|",
+            withVisualFormat:"H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:[segmented(segmentedWidth)]",
+            withVisualFormat:"H:[segmented(segmentedWidth)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-5-[label(20)]-5-[segmented(segmentedHeight)]",
+            withVisualFormat:"V:|-5-[label(20)]-5-[segmented(segmentedHeight)]",
             options:[],
             metrics:metrics,
             views:views))
