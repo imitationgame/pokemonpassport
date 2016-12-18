@@ -5,7 +5,7 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var collectionView:UICollectionView!
     private weak var controller:CCreate!
     private let kInterline:CGFloat = 1
-    private let kCellWidth:CGFloat = 100
+    private let kCellWidth:CGFloat = 115
     
     convenience init(controller:CCreate)
     {
@@ -79,11 +79,16 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.reloadData()
         
         let count:Int = controller.model.locations.count
-        let index:IndexPath = IndexPath(item:count - 1, section:0)
-        collectionView.selectItem(
-            at:index,
-            animated:true,
-            scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+        let last:Int = count - 1
+        
+        if last >= 0
+        {
+            let index:IndexPath = IndexPath(item:last, section:0)
+            collectionView.selectItem(
+                at:index,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+        }
     }
     
     //MARK: collectionView delegate

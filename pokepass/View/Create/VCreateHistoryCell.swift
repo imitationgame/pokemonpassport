@@ -54,7 +54,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLatitude.translatesAutoresizingMaskIntoConstraints = false
         labelLatitude.backgroundColor = UIColor.clear
         labelLatitude.font = UIFont.regular(size:10)
-        labelLatitude.textColor = UIColor.black
+        labelLatitude.textColor = UIColor(white:0, alpha:0.5)
         self.labelLatitude = labelLatitude
         
         let labelLongitude:UILabel = UILabel()
@@ -62,7 +62,7 @@ class VCreateHistoryCell:UICollectionViewCell
         labelLongitude.translatesAutoresizingMaskIntoConstraints = false
         labelLongitude.backgroundColor = UIColor.clear
         labelLongitude.font = UIFont.regular(size:10)
-        labelLongitude.textColor = UIColor.black
+        labelLongitude.textColor = UIColor(white:0, alpha:0.5)
         self.labelLongitude = labelLongitude
         
         addSubview(labelIndex)
@@ -79,27 +79,27 @@ class VCreateHistoryCell:UICollectionViewCell
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-8-[labelIndex(50)]",
+            withVisualFormat:"H:|-10-[labelIndex(50)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-8-[labelDistance]-2-|",
+            withVisualFormat:"H:|-10-[labelDistance]-1-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-8-[labelLatitude]-2-|",
+            withVisualFormat:"H:|-10-[labelLatitude]-1-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-8-[labelLongitude]-2-|",
+            withVisualFormat:"H:|-10-[labelLongitude]-1-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-4-[labelIndex(14)]-0-[labelDistance(20)]-0-[labelLatitude(12)]-0-[labelLongitude(12)]",
+            withVisualFormat:"V:|-3-[labelIndex(13)]-0-[labelDistance(22)]-0-[labelLatitude(12)]-0-[labelLongitude(12)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -108,6 +108,36 @@ class VCreateHistoryCell:UICollectionViewCell
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            alpha = 0.2
+        }
+        else
+        {
+            alpha = 1
+        }
     }
     
     //MARK: public
