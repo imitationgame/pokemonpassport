@@ -15,11 +15,11 @@ class MProjectsDetailItem
     
     //MARK: public
     
-    func config(_ cell:VProjectsDetailCell, controller:CProjectsDetail)
+    func config(cell:VProjectsDetailCell, controller:CProjectsDetail)
     {
     }
     
-    func selected(_ controller:CProjectsDetail)
+    func selected(controller:CProjectsDetail)
     {
     }
 }

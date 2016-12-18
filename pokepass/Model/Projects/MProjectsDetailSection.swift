@@ -4,13 +4,6 @@ class MProjectsDetailSection
 {
     let title:String
     let items:[MProjectsDetailItem]
- 
-    class func Speed() -> MProjectsDetailSectionSpeed
-    {
-        let section:MProjectsDetailSectionSpeed = MProjectsDetailSectionSpeed()
-        
-        return section
-    }
     
     init(title:String, items:[MProjectsDetailItem])
     {
@@ -20,7 +13,7 @@ class MProjectsDetailSection
     
     //MARK: public
     
-    func config(_ header:VProjectsDetailHeader)
+    func config(header:VProjectsDetailHeader)
     {
         header.label.text = title
     }
