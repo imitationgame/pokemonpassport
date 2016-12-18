@@ -7,32 +7,11 @@ class MMainNavItem
     private(set) var state:MMainNavItemState
     weak var cell:VMainBarCell?
     
-    class func Projects(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemProjects(index:index)
-        
-        return item
-    }
-    
-    class func Create(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemCreate(index:index)
-        
-        return item
-    }
-    
-    class func Settings(index:Int) -> MMainNavItem
-    {
-        let item:MMainNavItem = MMainNavItemSettings(index:index)
-        
-        return item
-    }
-    
     init(image:String, index:Int)
     {
         self.image = image
         self.index = index
-        state = MMainNavItemState.None()
+        state = MMainNavItemStateNone()
     }
     
     //MARK: public
@@ -46,7 +25,7 @@ class MMainNavItem
     func config(cell:VMainBarCell)
     {
         self.cell = cell
-        cell.image.image = UIImage(named:image)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cell.image.image = UIImage(named:image)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         cell.image.tintColor = state.color
     }
     

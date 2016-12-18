@@ -3,11 +3,13 @@ import UIKit
 class CCreate:CMainController
 {
     weak var viewCreate:VCreate!
+    weak var movingAnnotation:MCreateAnnotation?
+    weak var loadedProject:MProjectsItem?
     let model:MCreate
-    private var project:DPokePassProject?
+    private var project:DObjectProject?
     private var storeLocations:[MCreateAnnotation]?
-    private let kShutterTimeout:UInt64 = 250
-    private weak var movingAnnotation:MCreateAnnotation?
+    private var removeLocations:[DObjectLocation]?
+    private let kShutterTimeout:TimeInterval = 0.25
     
     init()
     {
@@ -16,9 +18,37 @@ class CCreate:CMainController
         super.init(nibName:nil, bundle:nil)
     }
     
+    init(project:MProjectsItem)
+    {
+        self.loadedProject = project
+        model = MCreate()
+        
+        super.init(nibName:nil, bundle:nil)
+    }
+    
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        if let loadedProject:MProjectsItem = self.loadedProject
+        {
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            { [weak self] in
+                
+                self?.model.load(project:loadedProject)
+                
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.addAllAnnotations()
+                }
+            }
+        }
     }
     
     override func loadView()
@@ -30,17 +60,23 @@ class CCreate:CMainController
     
     //MARK: private
     
+    private func addAllAnnotations()
+    {
+        viewCreate.map.addAnnotations(model.locations)
+        viewCreate.history.refresh()
+        regenerateRoute()
+    }
+    
     private func finishStoring()
     {
-        DManager.sharedInstance.managerPokePass.saver.save(false)
-        project = nil
-        VMainAlert.Message(NSLocalizedString("CMainController_saved", comment:""))
+        DManager.sharedInstance.save()
+        VMainAlert.Message(message:
+            NSLocalizedString("CMainController_saved", comment:""))
         
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         { [weak self] in
             
-            self?.clear()
-            self?.viewCreate.hideLoading()
+            self?.parentController.backController()
         }
     }
     
@@ -56,9 +92,9 @@ class CCreate:CMainController
             let latitude:Double = annotation.coordinate.latitude
             let longitude:Double = annotation.coordinate.longitude
             
-            DManager.sharedInstance.managerPokePass.createManagedObject(
-                DPokePassLocation.self)
-            { [weak self] (modelLocation) in
+            DManager.sharedInstance.createManagedObject(
+                modelType:DObjectLocation.self)
+            { [weak self] (modelLocation:DObjectLocation) in
                 
                 modelLocation.latitude = latitude
                 modelLocation.longitude = longitude
@@ -68,13 +104,32 @@ class CCreate:CMainController
         }
     }
     
+    private func releaseOldRoute()
+    {
+        if removeLocations!.isEmpty
+        {
+            storeRoute()
+        }
+        else
+        {
+            let location:DObjectLocation = removeLocations!.removeLast()
+            
+            DManager.sharedInstance.delete(
+                object:location)
+            { [weak self] in
+                
+                self?.releaseOldRoute()
+            }
+        }
+    }
+    
     private func storeProject(name:String)
     {
         storeLocations = model.locations
         
-        DManager.sharedInstance.managerPokePass.createManagedObject(
-            DPokePassProject.self)
-        { [weak self] (modelProject) in
+        DManager.sharedInstance.createManagedObject(
+            modelType:DObjectProject.self)
+        { [weak self] (modelProject:DObjectProject) in
             
             modelProject.name = name
             self?.project = modelProject
@@ -93,6 +148,7 @@ class CCreate:CMainController
         }
         
         viewCreate.map.regenerateRoute()
+        viewCreate.history.refresh()
     }
     
     private func beforeAddLocation(location:MCreateAnnotation)
@@ -100,8 +156,8 @@ class CCreate:CMainController
         viewCreate.map.addAnnotation(location)
         regenerateRoute()
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kShutterTimeout)),
-                       dispatch_get_main_queue())
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kShutterTimeout)
         { [weak self] in
             
             self?.afterAddLocation()
@@ -111,19 +167,38 @@ class CCreate:CMainController
     private func afterAddLocation()
     {
         viewCreate.pointer.showPointer()
-        viewCreate.button.hidden = false
+        viewCreate.button.isHidden = false
     }
     
     //MARK: public
+    
+    func back()
+    {
+        parentController.backController()
+    }
+    
+    func update()
+    {
+        viewCreate.showLoading()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).sync
+        { [weak self] in
+            
+            self?.storeLocations = self?.model.locations
+            self?.project = self?.loadedProject?.model
+            self?.removeLocations = self?.project?.projectLocations?.array as? [DObjectLocation]
+            self?.releaseOldRoute()
+        }
+    }
     
     func save(name:String)
     {
         viewCreate.showLoading()
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).sync
         { [weak self] in
         
-            self?.storeProject(name)
+            self?.storeProject(name:name)
         }
     }
     
@@ -131,16 +206,18 @@ class CCreate:CMainController
     {
         if !model.locations.isEmpty
         {
+            movingAnnotation = nil
             viewCreate.map.removeAnnotations(model.locations)
             model.locations.removeAll()
             regenerateRoute()
+            viewCreate.pointer.showPointer()
         }
     }
     
     func addLocation()
     {
         viewCreate.pointer.showShutter()
-        viewCreate.button.hidden = true
+        viewCreate.button.isHidden = true
         
         let annotation:MCreateAnnotation
         
@@ -153,14 +230,26 @@ class CCreate:CMainController
         {
             annotation = movingAnnotation!
             annotation.coordinate = viewCreate.map.coordinatesAtCenter()
+            movingAnnotation = nil
         }
         
-        beforeAddLocation(annotation)
+        beforeAddLocation(location:annotation)
+    }
+    
+    func cancelMove()
+    {
+        if let movingAnnotation:MCreateAnnotation = self.movingAnnotation
+        {
+            self.movingAnnotation = nil
+            viewCreate.map.addAnnotation(movingAnnotation)
+            regenerateRoute()
+            viewCreate.pointer.showPointer()
+        }
     }
     
     func removeLocation(location:MCreateAnnotation)
     {
-        model.locations.removeAtIndex(location.index)
+        model.locations.remove(at:location.index)
         viewCreate.map.removeAnnotation(location)
         regenerateRoute()
     }

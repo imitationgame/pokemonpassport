@@ -8,29 +8,29 @@ class VMainBarCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         let image:UIImageView = UIImageView()
-        image.userInteractionEnabled = false
+        image.isUserInteractionEnabled = false
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = UIViewContentMode.Center
+        image.contentMode = UIViewContentMode.center
         self.image = image
         
         addSubview(image)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "image":image]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[image]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[image]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-20-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))

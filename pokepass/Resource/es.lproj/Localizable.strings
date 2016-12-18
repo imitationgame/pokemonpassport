@@ -1,0 +1,29 @@
+"MCreateOptionsItemSave_title"="Guardar";
+"MCreateOptionsItemClear_title"="Reiniciar";
+"MCreateOptionsItemSave_alertTitle"="Guardar";
+"MCreateOptionsItemSave_alertMessage"="Proyecto";
+"MCreateOptionsItemSave_cancel"="Cancelar";
+"MCreateOptionsItemSave_accept"="Aceptar";
+"MCreateOptionsItemSave_noName"="Sin nombre";
+"MCreateOptionsItemSave_empty"="Agrega al menos 1 punto";
+"MProjectsDetailSectionSpeed_title"="Velocidad";
+"MProjectsDetailItemSpeedSlowWalk_title"="Caminar lento";
+"MProjectsDetailItemSpeedWalk_title"="Caminar";
+"MProjectsDetailItemSpeedRun_title"="Correr";
+"MProjectsDetailItemSpeedVehicle_title"="Vehículo";
+"MProjectsDetailItemSpeedFastVehicle_title"="Vehículo veloz";
+"MSettingsMenuItemMetricsOptionInternational_name"="Internacional";
+"MSettingsMenuItemMetricsOptionUs_name"="Estados Unidos";
+
+"CMainController_saved"="Proyecto guardado!";
+
+"VProjectsHeader_label"="Nuevo proyecto";
+"VProjectsDetailFooter_label"="Exportar";
+"VSettingsCellMetrics_label"="Medidas";
+"VCreateFinder_fieldPlaceholder"="Buscar";
+"VCreateFinder_searchButton"="Buscar";
+"VCreateHistoryCell_km"="Km";
+"VCreateHistoryCell_mile"="mi";
+"VProjectsCell_points"="%@ puntos";
+"VProjectsCell_km"="%@ Km";
+"VProjectsCell_mile"="%@ mi";

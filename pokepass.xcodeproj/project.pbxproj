@@ -27,8 +27,9 @@
 		DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */; };
 		DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */; };
 		DAABC81A1D62A89000807DA9 /* VProjectsDetailCellSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */; };
+		DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */; };
+		DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307E1E06263700AFAA98 /* DManager.swift */; };
 		DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */; };
-		DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */; };
 		DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884D1D64BAB100C3A083 /* MSettings.swift */; };
 		DAB088501D64D30800C3A083 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884F1D64D30800C3A083 /* CSettings.swift */; };
 		DAB088521D64D37F00C3A083 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088511D64D37F00C3A083 /* VSettings.swift */; };
@@ -41,30 +42,25 @@
 		DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */; };
 		DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */; };
 		DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088631D6509ED00C3A083 /* VCreateFinder.swift */; };
+		DABA400F1E06686F005E932B /* MMainTransitionPushTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */; };
+		DABA40111E067807005E932B /* VCreateHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40101E067807005E932B /* VCreateHistory.swift */; };
+		DABA40131E067835005E932B /* VCreateHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40121E067835005E932B /* VCreateHistoryCell.swift */; };
+		DABA40151E073A36005E932B /* MProjectsDetailItemSpeedFastVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
-		DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
 		DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */; };
 		DAE03F321D605FF50054CDEB /* CategoryNSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC01D605FF40054CDEB /* CategoryNSNotification.swift */; };
 		DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */; };
 		DAE03F341D605FF50054CDEB /* CategoryUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */; };
 		DAE03F351D605FF50054CDEB /* CategoryUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */; };
-		DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */; };
-		DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */; };
 		DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EC81D605FF50054CDEB /* CCreate.swift */; };
 		DAE03F391D605FF50054CDEB /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECA1D605FF50054CDEB /* CMain.swift */; };
 		DAE03F3A1D605FF50054CDEB /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECB1D605FF50054CDEB /* CMainController.swift */; };
 		DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECC1D605FF50054CDEB /* CMainParent.swift */; };
 		DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECE1D605FF50054CDEB /* CProjects.swift */; };
-		DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED11D605FF50054CDEB /* DManager.swift */; };
-		DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED21D605FF50054CDEB /* DManagerModel.swift */; };
-		DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */; };
-		DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */; };
-		DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */; };
 		DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE11D605FF50054CDEB /* MCreate.swift */; };
 		DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE41D605FF50054CDEB /* MMainNav.swift */; };
 		DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */; };
-		DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */; };
 		DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */; };
 		DAE03F511D605FF50054CDEB /* MMainNavItemStateActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */; };
 		DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */; };
@@ -86,11 +82,8 @@
 		DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F281D605FF50054CDEB /* VMainAlert.swift */; };
 		DAE03F7D1D605FF50054CDEB /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F291D605FF50054CDEB /* VMainLoader.swift */; };
 		DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F2C1D605FF50054CDEB /* VProjects.swift */; };
-		DAE03F801D6061960054CDEB /* infraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F191D605FF50054CDEB /* infraTests.swift */; };
 		DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F811D6068040054CDEB /* VMainShadow.swift */; };
 		DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */; };
-		DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */; };
-		DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */; };
 		DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */; };
 		DAE03F991D6080C70054CDEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE03F981D6080C70054CDEB /* MapKit.framework */; };
 		DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */; };
@@ -107,20 +100,9 @@
 		DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DA2602B41D5E8EC000C3A280 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA2602941D5E8EC000C3A280 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA26029B1D5E8EC000C3A280;
-			remoteInfo = pokepass;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectItemLocation.swift; sourceTree = "<group>"; };
 		DA26029C1D5E8EC000C3A280 /* pokepass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokepass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsCell.swift; sourceTree = "<group>"; };
 		DA9AC69B1D62498700F0F5C8 /* MProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjects.swift; sourceTree = "<group>"; };
 		DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsItem.swift; sourceTree = "<group>"; };
@@ -140,8 +122,9 @@
 		DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailFooter.swift; sourceTree = "<group>"; };
 		DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCell.swift; sourceTree = "<group>"; };
 		DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCellSpeed.swift; sourceTree = "<group>"; };
+		DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPX.xcdatamodel; sourceTree = "<group>"; };
+		DAAE307E1E06263700AFAA98 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemSettings.swift; sourceTree = "<group>"; };
-		DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassSettings.swift; sourceTree = "<group>"; };
 		DAB0884D1D64BAB100C3A083 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
 		DAB0884F1D64D30800C3A083 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAB088511D64D37F00C3A083 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
@@ -154,31 +137,27 @@
 		DAB0885F1D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionInternational.swift; sourceTree = "<group>"; };
 		DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionUs.swift; sourceTree = "<group>"; };
 		DAB088631D6509ED00C3A083 /* VCreateFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateFinder.swift; sourceTree = "<group>"; };
+		DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionPushTop.swift; sourceTree = "<group>"; };
+		DABA40101E067807005E932B /* VCreateHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistory.swift; sourceTree = "<group>"; };
+		DABA40121E067835005E932B /* VCreateHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistoryCell.swift; sourceTree = "<group>"; };
+		DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsDetailItemSpeedFastVehicle.swift; sourceTree = "<group>"; };
+		DABA401A1E073B27005E932B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
-		DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
 		DAE03EC01D605FF40054CDEB /* CategoryNSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSNotification.swift; sourceTree = "<group>"; };
 		DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUICollectionReusableView.swift; sourceTree = "<group>"; };
 		DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIColor.swift; sourceTree = "<group>"; };
 		DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIFont.swift; sourceTree = "<group>"; };
-		DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUILocalNotification.swift; sourceTree = "<group>"; };
-		DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIViewController.swift; sourceTree = "<group>"; };
 		DAE03EC81D605FF50054CDEB /* CCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCreate.swift; sourceTree = "<group>"; };
 		DAE03ECA1D605FF50054CDEB /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
 		DAE03ECB1D605FF50054CDEB /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
 		DAE03ECC1D605FF50054CDEB /* CMainParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainParent.swift; sourceTree = "<group>"; };
 		DAE03ECE1D605FF50054CDEB /* CProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProjects.swift; sourceTree = "<group>"; };
-		DAE03ED11D605FF50054CDEB /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
-		DAE03ED21D605FF50054CDEB /* DManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModel.swift; sourceTree = "<group>"; };
-		DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelPokePass.swift; sourceTree = "<group>"; };
-		DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerSaver.swift; sourceTree = "<group>"; };
-		DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = infra.xcdatamodel; sourceTree = "<group>"; };
 		DAE03EDE1D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE03EE11D605FF50054CDEB /* MCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreate.swift; sourceTree = "<group>"; };
 		DAE03EE41D605FF50054CDEB /* MMainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNav.swift; sourceTree = "<group>"; };
 		DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItem.swift; sourceTree = "<group>"; };
-		DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemCreate.swift; sourceTree = "<group>"; };
 		DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemState.swift; sourceTree = "<group>"; };
 		DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateActive.swift; sourceTree = "<group>"; };
 		DAE03EEE1D605FF50054CDEB /* MMainNavItemStateNone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemStateNone.swift; sourceTree = "<group>"; };
@@ -193,8 +172,6 @@
 		DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollLeft.swift; sourceTree = "<group>"; };
 		DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollRight.swift; sourceTree = "<group>"; };
 		DAE03F161D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DAE03F181D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE03F191D605FF50054CDEB /* infraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infraTests.swift; sourceTree = "<group>"; };
 		DAE03F1C1D605FF50054CDEB /* VCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreate.swift; sourceTree = "<group>"; };
 		DAE03F241D605FF50054CDEB /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 		DAE03F251D605FF50054CDEB /* VMainBarBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarBack.swift; sourceTree = "<group>"; };
@@ -204,8 +181,6 @@
 		DAE03F2C1D605FF50054CDEB /* VProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjects.swift; sourceTree = "<group>"; };
 		DAE03F811D6068040054CDEB /* VMainShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainShadow.swift; sourceTree = "<group>"; };
 		DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemProjects.swift; sourceTree = "<group>"; };
-		DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassLocation.swift; sourceTree = "<group>"; };
-		DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassProject.swift; sourceTree = "<group>"; };
 		DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE03F981D6080C70054CDEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMap.swift; sourceTree = "<group>"; };
@@ -231,13 +206,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA2602B01D5E8EC000C3A280 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -254,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				DA26029C1D5E8EC000C3A280 /* pokepass.app */,
-				DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,7 +268,6 @@
 				DAE03EDE1D605FF50054CDEB /* Info.plist */,
 				DAE03EDF1D605FF50054CDEB /* Model */,
 				DAE03F121D605FF50054CDEB /* Resource */,
-				DAE03F171D605FF50054CDEB /* Test */,
 				DAE03F1A1D605FF50054CDEB /* View */,
 			);
 			path = pokepass;
@@ -319,15 +285,12 @@
 		DAE03EBC1D605FF40054CDEB /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				DAE03EBD1D605FF40054CDEB /* CategoryNSDate.swift */,
 				DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */,
 				DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */,
 				DAE03EC01D605FF40054CDEB /* CategoryNSNotification.swift */,
 				DAE03EC11D605FF40054CDEB /* CategoryUICollectionReusableView.swift */,
 				DAE03EC21D605FF40054CDEB /* CategoryUIColor.swift */,
 				DAE03EC31D605FF50054CDEB /* CategoryUIFont.swift */,
-				DAE03EC41D605FF50054CDEB /* CategoryUILocalNotification.swift */,
-				DAE03EC51D605FF50054CDEB /* CategoryUIViewController.swift */,
 				DAE03FA81D6111C90054CDEB /* CategoryMKAnnotationView.swift */,
 			);
 			path = Category;
@@ -374,38 +337,10 @@
 		DAE03ECF1D605FF50054CDEB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DAE03ED01D605FF50054CDEB /* Manager */,
-				DAE03ED51D605FF50054CDEB /* Model */,
-				DAE03ED81D605FF50054CDEB /* Object */,
+				DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */,
+				DAAE307E1E06263700AFAA98 /* DManager.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		DAE03ED01D605FF50054CDEB /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03ED11D605FF50054CDEB /* DManager.swift */,
-				DAE03ED21D605FF50054CDEB /* DManagerModel.swift */,
-				DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */,
-				DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		DAE03ED51D605FF50054CDEB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DAE03ED81D605FF50054CDEB /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F8D1D607BAA0054CDEB /* PokePass */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 		DAE03EDF1D605FF50054CDEB /* Model */ = {
@@ -447,7 +382,6 @@
 				DAE03EE41D605FF50054CDEB /* MMainNav.swift */,
 				DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */,
 				DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */,
-				DAE03EE61D605FF50054CDEB /* MMainNavItemCreate.swift */,
 				DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */,
 				DAE03EEC1D605FF50054CDEB /* MMainNavItemState.swift */,
 				DAE03EED1D605FF50054CDEB /* MMainNavItemStateActive.swift */,
@@ -466,6 +400,7 @@
 				DAE03EF41D605FF50054CDEB /* MMainTransitionFade.swift */,
 				DAE03EF51D605FF50054CDEB /* MMainTransitionPop.swift */,
 				DAE03EF61D605FF50054CDEB /* MMainTransitionPush.swift */,
+				DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */,
 				DAE03EF71D605FF50054CDEB /* MMainTransitionReplace.swift */,
 				DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */,
 				DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */,
@@ -488,6 +423,7 @@
 				DAABC80D1D62A1AE00807DA9 /* MProjectsDetailItemSpeedWalk.swift */,
 				DAABC80F1D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift */,
 				DAABC8111D62A1C600807DA9 /* MProjectsDetailItemSpeedVehicle.swift */,
+				DABA40141E073A35005E932B /* MProjectsDetailItemSpeedFastVehicle.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -499,15 +435,6 @@
 				DAE03F151D605FF50054CDEB /* Localizable.strings */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		DAE03F171D605FF50054CDEB /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F181D605FF50054CDEB /* Info.plist */,
-				DAE03F191D605FF50054CDEB /* infraTests.swift */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		DAE03F1A1D605FF50054CDEB /* View */ = {
@@ -531,6 +458,8 @@
 				DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */,
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
+				DABA40101E067807005E932B /* VCreateHistory.swift */,
+				DABA40121E067835005E932B /* VCreateHistoryCell.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -579,16 +508,6 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
-		DAE03F8D1D607BAA0054CDEB /* PokePass */ = {
-			isa = PBXGroup;
-			children = (
-				DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */,
-				DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */,
-				DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */,
-			);
-			path = PokePass;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -609,24 +528,6 @@
 			productReference = DA26029C1D5E8EC000C3A280 /* pokepass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA2602B21D5E8EC000C3A280 /* pokepassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA2602BF1D5E8EC000C3A280 /* Build configuration list for PBXNativeTarget "pokepassTests" */;
-			buildPhases = (
-				DA2602AF1D5E8EC000C3A280 /* Sources */,
-				DA2602B01D5E8EC000C3A280 /* Frameworks */,
-				DA2602B11D5E8EC000C3A280 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA2602B51D5E8EC000C3A280 /* PBXTargetDependency */,
-			);
-			name = pokepassTests;
-			productName = pokepassTests;
-			productReference = DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -634,21 +535,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = iturbide;
 				TargetAttributes = {
 					DA26029B1D5E8EC000C3A280 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7AMWG3RLHN;
+						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
-					};
-					DA2602B21D5E8EC000C3A280 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = DA26029B1D5E8EC000C3A280;
 					};
 				};
 			};
@@ -658,6 +556,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = DA2602931D5E8EC000C3A280;
 			productRefGroup = DA26029D1D5E8EC000C3A280 /* Products */;
@@ -665,7 +564,6 @@
 			projectRoot = "";
 			targets = (
 				DA26029B1D5E8EC000C3A280 /* pokepass */,
-				DA2602B21D5E8EC000C3A280 /* pokepassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -682,13 +580,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA2602B11D5E8EC000C3A280 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -696,10 +587,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */,
 				DAABC8101D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift in Sources */,
 				DA9AC69C1D62498700F0F5C8 /* MProjects.swift in Sources */,
 				DAE03F571D605FF50054CDEB /* MMainTransitionFade.swift in Sources */,
+				DABA400F1E06686F005E932B /* MMainTransitionPushTop.swift in Sources */,
+				DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */,
 				DAE03F7B1D605FF50054CDEB /* VMainBarCell.swift in Sources */,
 				DAE03F531D605FF50054CDEB /* MMainNavPos.swift in Sources */,
 				DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */,
@@ -711,9 +603,7 @@
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAB088501D64D30800C3A083 /* CSettings.swift in Sources */,
-				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
 				DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */,
-				DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */,
 				DAB088581D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift in Sources */,
 				DAB0885C1D64DE2A00C3A083 /* VSettingsCellMetrics.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
@@ -731,13 +621,12 @@
 				DAE03F351D605FF50054CDEB /* CategoryUIFont.swift in Sources */,
 				DAABC81A1D62A89000807DA9 /* VProjectsDetailCellSpeed.swift in Sources */,
 				DAE03F5B1D605FF50054CDEB /* MMainTransitionScrollLeft.swift in Sources */,
+				DABA40131E067835005E932B /* VCreateHistoryCell.swift in Sources */,
 				DAE03F731D605FF50054CDEB /* VCreate.swift in Sources */,
 				DAE03F501D605FF50054CDEB /* MMainNavItemState.swift in Sources */,
 				DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */,
 				DAABC80C1D62A1A100807DA9 /* MProjectsDetailItemSpeedSlowWalk.swift in Sources */,
 				DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */,
-				DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */,
-				DAE03F371D605FF50054CDEB /* CategoryUIViewController.swift in Sources */,
 				DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */,
 				DAE03FA31D6110590054CDEB /* VCreateMapPin.swift in Sources */,
 				DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */,
@@ -746,14 +635,15 @@
 				DAABC8061D629DEB00807DA9 /* MProjectsDetailItem.swift in Sources */,
 				DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
+				DABA40111E067807005E932B /* VCreateHistory.swift in Sources */,
+				DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */,
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
-				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
 				DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */,
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
-				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
+				DABA40151E073A36005E932B /* MProjectsDetailItemSpeedFastVehicle.swift in Sources */,
 				DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */,
@@ -763,7 +653,6 @@
 				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */,
-				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
 				DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */,
 				DAE03F391D605FF50054CDEB /* CMain.swift in Sources */,
 				DAABC8001D629AEE00807DA9 /* VProjectsDetail.swift in Sources */,
@@ -778,42 +667,23 @@
 				DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */,
 				DAABC8021D629DC400807DA9 /* MProjectsDetail.swift in Sources */,
 				DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */,
-				DAE03F361D605FF50054CDEB /* CategoryUILocalNotification.swift in Sources */,
 				DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */,
-				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
 				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
-				DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */,
 				DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */,
-				DAE03F2F1D605FF50054CDEB /* CategoryNSDate.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
 				DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */,
 				DAE03F591D605FF50054CDEB /* MMainTransitionPush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA2602AF1D5E8EC000C3A280 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAE03F801D6061960054CDEB /* infraTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DA2602B51D5E8EC000C3A280 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA26029B1D5E8EC000C3A280 /* pokepass */;
-			targetProxy = DA2602B41D5E8EC000C3A280 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DAE03F151D605FF50054CDEB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DAE03F161D605FF50054CDEB /* en */,
+				DABA401A1E073B27005E932B /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -835,8 +705,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Agustin Iturbide (Q3HFYLXFGT)";
@@ -882,8 +754,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agustin Iturbide (7AMWG3RLHN)";
@@ -903,6 +777,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "b46ac46e-75d5-4fc6-a19f-65ba9789a772";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -918,6 +793,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -932,32 +809,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DA2602C01D5E8EC000C3A280 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepass/Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokepass.app/pokepass";
-			};
-			name = Debug;
-		};
-		DA2602C11D5E8EC000C3A280 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepass/Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokepass.app/pokepass";
 			};
 			name = Release;
 		};
@@ -982,25 +835,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA2602BF1D5E8EC000C3A280 /* Build configuration list for PBXNativeTarget "pokepassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA2602C01D5E8EC000C3A280 /* Debug */,
-				DA2602C11D5E8EC000C3A280 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */ = {
+		DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */,
+				DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */,
 			);
-			currentVersion = DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */;
-			path = DPokePassModel.xcdatamodeld;
+			currentVersion = DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */;
+			path = DGPX.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

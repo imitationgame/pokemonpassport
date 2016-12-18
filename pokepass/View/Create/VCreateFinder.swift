@@ -10,48 +10,55 @@ class VCreateFinder:UIView, UITextFieldDelegate
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = false
         
         let image:UIImageView = UIImageView()
         image.image = UIImage(named:"search")
-        image.userInteractionEnabled = false
+        image.isUserInteractionEnabled = false
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.contentMode = UIViewContentMode.Center
+        image.contentMode = UIViewContentMode.center
         
         let border:UIView = UIView()
-        border.backgroundColor = UIColor.main()
-        border.userInteractionEnabled = false
+        border.backgroundColor = UIColor.main
+        border.isUserInteractionEnabled = false
         border.translatesAutoresizingMaskIntoConstraints = false
         border.clipsToBounds = true
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action:#selector(self.actionButton(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        button.addTarget(
+            self,
+            action:#selector(self.actionButton(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let buttonSearch:UIButton = UIButton()
         buttonSearch.translatesAutoresizingMaskIntoConstraints = false
-        buttonSearch.titleLabel?.font = UIFont.bold(13)
-        buttonSearch.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
-        buttonSearch.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
-        buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), forState:UIControlState.Normal)
-        buttonSearch.addTarget(self, action:#selector(self.actionSearch(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        buttonSearch.titleLabel?.font = UIFont.bold(size:13)
+        buttonSearch.setTitleColor(UIColor.main, for:UIControlState())
+        buttonSearch.setTitleColor(UIColor.main.withAlphaComponent(0.2), for:UIControlState.highlighted)
+        buttonSearch.setTitle(NSLocalizedString("VCreateFinder_searchButton", comment:""), for:UIControlState())
+        buttonSearch.addTarget(
+            self,
+            action:#selector(self.actionSearch(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let field:UITextField = UITextField()
+        field.keyboardType = UIKeyboardType.alphabet
         field.translatesAutoresizingMaskIntoConstraints = false
         field.clipsToBounds = true
-        field.backgroundColor = UIColor.clearColor()
-        field.borderStyle = UITextBorderStyle.None
-        field.font = UIFont.regular(16)
-        field.textColor = UIColor.blackColor()
-        field.tintColor = UIColor.blackColor()
-        field.returnKeyType = UIReturnKeyType.Search
-        field.keyboardAppearance = UIKeyboardAppearance.Light
-        field.autocorrectionType = UITextAutocorrectionType.No
-        field.spellCheckingType = UITextSpellCheckingType.No
-        field.autocapitalizationType = UITextAutocapitalizationType.Words
-        field.clearButtonMode = UITextFieldViewMode.Never
+        field.backgroundColor = UIColor.clear
+        field.borderStyle = UITextBorderStyle.none
+        field.font = UIFont.medium(size:17)
+        field.textColor = UIColor.black
+        field.tintColor = UIColor.black
+        field.returnKeyType = UIReturnKeyType.search
+        field.keyboardAppearance = UIKeyboardAppearance.light
+        field.autocorrectionType = UITextAutocorrectionType.no
+        field.spellCheckingType = UITextSpellCheckingType.no
+        field.autocapitalizationType = UITextAutocapitalizationType.words
+        field.clearButtonMode = UITextFieldViewMode.never
         field.placeholder = NSLocalizedString("VCreateFinder_fieldPlaceholder", comment:"")
         field.delegate = self
         field.clearsOnBeginEditing = true
@@ -63,62 +70,62 @@ class VCreateFinder:UIView, UITextFieldDelegate
         addSubview(field)
         addSubview(buttonSearch)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "border":border,
             "image":image,
             "button":button,
             "buttonSearch":buttonSearch,
             "field":field]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[border]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[border]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[button]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[buttonSearch(70)]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:[buttonSearch(70)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[field(200)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-30-[field(200)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-5-[image(20)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-5-[image(20)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[border(1)]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:[border(1)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[image]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[button]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[field]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[field]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[buttonSearch]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[buttonSearch]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -143,16 +150,21 @@ class VCreateFinder:UIView, UITextFieldDelegate
     {
         let text:String = field.text!
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.controller.viewCreate.map.searchLocation(text)
+            self?.controller.viewCreate.map.searchLocation(query:text)
         }
     }
     
     //MARK: field delegate
     
-    func textFieldShouldReturn(textField:UITextField) -> Bool
+    func textFieldDidBeginEditing(_ textField:UITextField)
+    {
+        controller.viewCreate.map.deselectAll()
+    }
+    
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool
     {
         textField.resignFirstResponder()
         performSearch()

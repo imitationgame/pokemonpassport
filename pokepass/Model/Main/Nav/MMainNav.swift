@@ -8,14 +8,12 @@ class MMainNav
     init()
     {
         var items:[MMainNavItem] = []
-        let itemSettings:MMainNavItem = MMainNavItem.Settings(items.count)
+        let itemSettings:MMainNavItem = MMainNavItemSettings(index:items.count)
         items.append(itemSettings)
-        let itemProjects:MMainNavItem = MMainNavItem.Projects(items.count)
+        let itemProjects:MMainNavItem = MMainNavItemProjects(index:items.count)
         items.append(itemProjects)
-        let itemCreate:MMainNavItem = MMainNavItem.Create(items.count)
-        items.append(itemCreate)
         self.items = items
-        selectItem(itemProjects)
+        selectItem(selected:itemProjects)
     }
     
     //MARK: public
@@ -30,14 +28,14 @@ class MMainNav
             
             if item === selected
             {
-                state = MMainNavItemState.Active()
+                state = MMainNavItemStateActive()
             }
             else
             {
-                state = MMainNavItemState.None()
+                state = MMainNavItemStateNone()
             }
             
-            item.restate(state)
+            item.restate(state:state)
         }
     }
 }

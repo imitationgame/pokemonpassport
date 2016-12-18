@@ -8,9 +8,9 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
     
     init()
     {
-        let reusableIdentifier:String = VSettingsCellMetrics.reusableIdentifier()
-        let optionInternational:MSettingsMenuItemMetricsOptionInternational = MSettingsMenuItemMetricsOption.International()
-        let optionUs:MSettingsMenuItemMetricsOptionUs = MSettingsMenuItemMetricsOption.Us()
+        let reusableIdentifier:String = VSettingsCellMetrics.reusableIdentifier
+        let optionInternational:MSettingsMenuItemMetricsOptionInternational = MSettingsMenuItemMetricsOptionInternational()
+        let optionUs:MSettingsMenuItemMetricsOptionUs = MSettingsMenuItemMetricsOptionUs()
         
         options = [
             optionInternational,
@@ -25,13 +25,16 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
         let countOptions:Int = options.count
         cellMetrics = cell as! VSettingsCellMetrics
         cellMetrics.segmented.removeAllSegments()
-        cellMetrics.segmented.addTarget(self, action:#selector(self.actionSegmented(sender:)), forControlEvents:UIControlEvents.ValueChanged)
+        cellMetrics.segmented.addTarget(
+            self,
+            action:#selector(self.actionSegmented(sender:)),
+            for:UIControlEvents.valueChanged)
         
         for index:Int in 0 ..< countOptions
         {
             let option:MSettingsMenuItemMetricsOption = options[index]
             let optionName:String = option.name
-            cellMetrics.segmented.insertSegmentWithTitle(optionName, atIndex:index, animated:false)
+            cellMetrics.segmented.insertSegment(withTitle:optionName, at:index, animated:false)
         }
         
         showSelected()
@@ -41,15 +44,25 @@ class MSettingsMenuItemMetrics:MSettingsMenuItem
     {
         let selected:Int = segmented.selectedSegmentIndex
         let optionSelected:MSettingsMenuItemMetricsOption = options[selected]
-        MSettings.sharedInstance.model!.measures = optionSelected.measure
-        DManager.sharedInstance.managerPokePass.saver.save(false)
+        MSettings.sharedInstance.model!.measures = optionSelected.measure.rawValue
+        DManager.sharedInstance.save()
     }
     
     //MARK: private
     
     private func showSelected()
     {
-        let measures:DPokePassSettings.DPokePassSettingsMeasure = MSettings.sharedInstance.model!.measures
+        guard
+            
+            let measuresInt:Int16 = MSettings.sharedInstance.model?.measures,
+            let measures:MSettings.Measures = MSettings.Measures(
+                rawValue:measuresInt)
+        
+        else
+        {
+            return
+        }
+        
         let countOptions:Int = options.count
         
         for index:Int in 0 ..< countOptions

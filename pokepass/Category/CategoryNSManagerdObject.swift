@@ -3,8 +3,13 @@ import CoreData
 
 extension NSManagedObject
 {
-    class func entityName() -> String
+    open class var entityName:String
     {
-        return ""
+        get
+        {
+            let classType:AnyClass = object_getClass(self)
+            
+            return NSStringFromClass(classType)
+        }
     }
 }

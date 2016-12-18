@@ -11,27 +11,27 @@ class VProjectsDetailCellSpeed:VProjectsDetailCell
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.userInteractionEnabled = false
-        label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(13)
-        label.textAlignment = NSTextAlignment.Center
+        label.isUserInteractionEnabled = false
+        label.backgroundColor = UIColor.clear
+        label.font = UIFont.bold(size:14)
+        label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         self.label = label
         
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))

@@ -8,21 +8,21 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     var polyLine:MKPolyline?
     private var userCoordinate:CLLocationCoordinate2D!
     private let kSpanSize:CLLocationDegrees = 0.01
-    private let kPolylineWidth:CGFloat = 6
+    private let kPolylineWidth:CGFloat = 5
     
     init(controller:CCreate)
     {
         span = MKCoordinateSpan(latitudeDelta:kSpanSize, longitudeDelta:kSpanSize)
         
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         self.controller = controller
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        rotateEnabled = false
-        scrollEnabled = true
-        zoomEnabled = true
-        pitchEnabled = false
-        mapType = MKMapType.Standard
+        isRotateEnabled = false
+        isScrollEnabled = true
+        isZoomEnabled = true
+        isPitchEnabled = false
+        mapType = MKMapType.standard
         showsBuildings = true
         showsPointsOfInterest = true
         showsCompass = true
@@ -38,14 +38,28 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: public
     
+    func deselectAll()
+    {
+        guard
+        
+            let annotation:MKAnnotation = selectedAnnotations.first
+        
+        else
+        {
+            return
+        }
+        
+        deselectAnnotation(annotation, animated:true)
+    }
+    
     func coordinatesAtCenter() -> CLLocationCoordinate2D
     {
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
         let centerX:CGFloat = width / 2
         let centerY:CGFloat = height / 2
-        let point:CGPoint = CGPointMake(centerX, centerY)
-        let location:CLLocationCoordinate2D = convertPoint(point, toCoordinateFromView:self)
+        let point:CGPoint = CGPoint(x: centerX, y: centerY)
+        let location:CLLocationCoordinate2D = convert(point, toCoordinateFrom:self)
         
         return location
     }
@@ -62,7 +76,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     {
         if polyLine != nil
         {
-            removeOverlay(polyLine!)
+            remove(polyLine!)
         }
     }
     
@@ -82,7 +96,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
             }
             
             polyLine = MKPolyline(coordinates:&coordinates, count:count)
-            addOverlay(polyLine!, level:MKOverlayLevel.AboveRoads)
+            add(polyLine!, level:MKOverlayLevel.aboveRoads)
         }
     }
     
@@ -98,7 +112,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         searchRequest.naturalLanguageQuery = query
         
         let localSearch:MKLocalSearch = MKLocalSearch(request:searchRequest)
-        localSearch.startWithCompletionHandler
+        localSearch.start
         { (response, error) in
             
             if error == nil && response != nil
@@ -108,10 +122,10 @@ class VCreateMap:MKMapView, MKMapViewDelegate
                     let firstLocation:MKMapItem = response!.mapItems.first!
                     let location:CLLocationCoordinate2D = firstLocation.placemark.coordinate
                     
-                    dispatch_async(dispatch_get_main_queue())
+                    DispatchQueue.main.async
                     { [weak self] in
                         
-                        self?.centerLocation(location)
+                        self?.centerLocation(locationCoordinate:location)
                     }
                 }
             }
@@ -120,21 +134,21 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     //MARK: map delegate
     
-    func mapView(mapView:MKMapView, rendererForOverlay overlay:MKOverlay) -> MKOverlayRenderer
+    func mapView(_ mapView:MKMapView, rendererFor overlay:MKOverlay) -> MKOverlayRenderer
     {
         let polyline:MKPolyline = overlay as! MKPolyline
         let renderer:MKPolylineRenderer = MKPolylineRenderer(polyline:polyline)
         renderer.lineWidth = kPolylineWidth
-        renderer.strokeColor = UIColor.main()
+        renderer.strokeColor = UIColor(red:0.3, green:0.5, blue:0.7, alpha:1)
         
         return renderer
     }
     
-    func mapView(mapView:MKMapView, viewForAnnotation annotation:MKAnnotation) -> MKAnnotationView?
+    func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?
     {
         let modelAnnotation:MCreateAnnotation = annotation as! MCreateAnnotation
         let reusableIdentifier:String = modelAnnotation.reusableIdentifier
-        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(reusableIdentifier)
+        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: reusableIdentifier)
         
         if view == nil
         {
@@ -148,37 +162,58 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         return view
     }
     
-    func mapView(mapView:MKMapView, didSelectAnnotationView view:MKAnnotationView)
+    func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
         controller.viewCreate.showingCallout()
+        
+        guard
+        
+            let annotation:MCreateAnnotation = view.annotation as? MCreateAnnotation
+        
+        else
+        {
+            return
+        }
+        
+        controller.viewCreate.history.selectLocation(item:annotation)
     }
     
-    func mapView(mapView:MKMapView, didDeselectAnnotationView view:MKAnnotationView)
+    func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
+        controller.cancelMove()
         controller.viewCreate.notShowingCallout()
+        controller.viewCreate.history.clearSelection()
     }
     
-    func mapView(mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
+    func mapView(_ mapView:MKMapView, annotationView view:MKAnnotationView, calloutAccessoryControlTapped control:UIControl)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         mapView.deselectAnnotation(view.annotation, animated:true)
         
         let tag:Int = control.tag
-        let callOut:VCreateMapPin.VCreateMapPinCallout = VCreateMapPin.VCreateMapPinCallout(rawValue:tag)!
+        let callOut:VCreateMapPin.Callout = VCreateMapPin.Callout(rawValue:tag)!
         let annotation:MCreateAnnotation = view.annotation as! MCreateAnnotation
         
         switch callOut
         {
-            case VCreateMapPin.VCreateMapPinCallout.Delete:
+            case VCreateMapPin.Callout.delete:
                 
-                controller.removeLocation(annotation)
+                controller.removeLocation(location:annotation)
                 
                 break
                 
-            case VCreateMapPin.VCreateMapPinCallout.Move:
+            case VCreateMapPin.Callout.move:
                 
-                controller.moveLocation(annotation)
+                controller.moveLocation(location:annotation)
                 
                 break
         }
+    }
+    
+    func mapView(_ mapView:MKMapView, regionDidChangeAnimated animated:Bool)
+    {
+        UIApplication.shared.keyWindow!.endEditing(true)
     }
 }

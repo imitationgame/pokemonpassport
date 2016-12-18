@@ -6,32 +6,32 @@ class VCreateMapPointer:UIView
     
     init()
     {
-        super.init(frame:CGRectZero)
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         
         let cross:UIImageView = UIImageView()
-        cross.userInteractionEnabled = false
+        cross.isUserInteractionEnabled = false
         cross.translatesAutoresizingMaskIntoConstraints = false
         cross.clipsToBounds = true
-        cross.contentMode = UIViewContentMode.Center
+        cross.contentMode = UIViewContentMode.center
         self.cross = cross
         
         addSubview(cross)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "cross":cross]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[cross]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[cross]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -51,9 +51,19 @@ class VCreateMapPointer:UIView
         cross.image = UIImage(named:"mapPointer")
     }
     
+    func showSelected()
+    {
+        cross.image = UIImage(named:"mapPointerSelected")
+    }
+    
     func showMoving()
     {
         cross.image = UIImage(named:"mapPointerMoving")
+    }
+    
+    func showMovingSelected()
+    {
+        cross.image = UIImage(named:"mapPointerMovingSelected")
     }
     
     func showShutter()

@@ -2,7 +2,7 @@ import UIKit
 
 class MMainTransitionPop:MMainTransition
 {
-    private let kAnimationDuration:NSTimeInterval = 0.4
+    private let kAnimationDuration:TimeInterval = 0.4
     
     init()
     {
@@ -12,41 +12,41 @@ class MMainTransitionPop:MMainTransition
     override func positionBefore()
     {
         parent.previous = nil
-        parent.view.bringSubviewToFront(current!.view)
+        parent.view.bringSubview(toFront: current!.view)
         
         let width:CGFloat = current!.view.bounds.maxX / -2.0
         let barHeight:CGFloat = parent.kBarHeight
         
         parent.layoutTopTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Top,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Top,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:barHeight)
         parent.layoutBottomTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Bottom,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Bottom,
+            attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
         parent.layoutLeftTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:width)
         parent.layoutRightTemporal = NSLayoutConstraint(
             item:next.view,
-            attribute:NSLayoutAttribute.Right,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
             toItem:parent.view,
-            attribute:NSLayoutAttribute.Right,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:width)
         

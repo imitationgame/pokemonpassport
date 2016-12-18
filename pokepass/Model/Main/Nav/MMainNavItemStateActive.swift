@@ -7,7 +7,7 @@ class MMainNavItemStateActive:MMainNavItemState
     
     init()
     {
-        let color:UIColor = UIColor.complement()
+        let color:UIColor = UIColor.complement
         
         super.init(color:color, selectable:kSelectable, highlightable:kHighlightable)
     }

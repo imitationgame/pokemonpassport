@@ -8,33 +8,33 @@ class VProjectsDetailHeader:UICollectionReusableView
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
-        userInteractionEnabled = false
+        backgroundColor = UIColor.clear
+        isUserInteractionEnabled = false
         
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.userInteractionEnabled = false
-        label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.bold(15)
-        label.textColor = UIColor.blackColor()
-        label.textAlignment = NSTextAlignment.Center
+        label.isUserInteractionEnabled = false
+        label.backgroundColor = UIColor.clear
+        label.font = UIFont.bold(size:15)
+        label.textColor = UIColor.black
+        label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         self.label = label
         
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label(20)]-10-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:[label(20)]-10-|",
             options:[],
             metrics:metrics,
             views:views))

@@ -17,9 +17,9 @@ class CProjects:CMainController
         fatalError()
     }
     
-    override func viewDidLoad()
+    override func viewDidAppear(_ animated:Bool)
     {
-        super.viewDidLoad()
+        super.viewDidAppear(animated)
         loadProjects()
     }
     
@@ -34,31 +34,57 @@ class CProjects:CMainController
     
     private func loadProjects()
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
             let sorter:NSSortDescriptor = NSSortDescriptor(key:"name", ascending:true, selector:#selector(NSString.caseInsensitiveCompare))
             let sorters:[NSSortDescriptor] = [sorter]
-            DManager.sharedInstance.managerPokePass.fetchManagedObjects(
-                DPokePassProject.self,
+            DManager.sharedInstance.fetchManagedObjects(
+                modelType:DObjectProject.self,
                 sorters:sorters)
-            { [weak self] (modelProjects) in
+            { [weak self] (modelProjects:[DObjectProject]?) in
                 
                 var projects:[MProjectsItem] = []
                 
-                for project:DPokePassProject in modelProjects
+                if let objectProjects:[DObjectProject] = modelProjects
                 {
-                    let item:MProjectsItem = MProjectsItem(model:project)
-                    projects.append(item)
+                    for project:DObjectProject in objectProjects
+                    {
+                        let item:MProjectsItem = MProjectsItem(model:project)
+                        projects.append(item)
+                    }
                 }
                 
                 self?.model.items = projects
                 
-                dispatch_async(dispatch_get_main_queue())
+                DispatchQueue.main.async
                 { [weak self] in
                     
                     self?.viewProjects.modelLoaded()
                 }
             }
         }
+    }
+    
+    //MARK: public
+    
+    func createProject()
+    {
+        let controller:CCreate = CCreate()
+        let transition:MMainTransition = MMainTransitionPushTop()
+        parentController.pushController(controller:controller, transition:transition)
+    }
+    
+    func export(item:MProjectsItem)
+    {
+        let transition:MMainTransition = MMainTransitionPush(pushed:item.name)
+        let detail:CProjectsDetail = CProjectsDetail(item:item)
+        parentController.pushController(controller:detail, transition:transition)
+    }
+    
+    func edit(item:MProjectsItem)
+    {
+        let transition:MMainTransition = MMainTransitionPushTop()
+        let detail:CCreate = CCreate(project:item)
+        parentController.pushController(controller:detail, transition:transition)
     }
 }

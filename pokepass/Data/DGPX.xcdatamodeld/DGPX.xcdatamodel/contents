@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DObjectLocation" representedClassName="DObjectLocation" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="locationProject" maxCount="1" deletionRule="Nullify" destinationEntity="DObjectProject" inverseName="projectLocations" inverseEntity="DObjectProject" syncable="YES"/>
+    </entity>
+    <entity name="DObjectProject" representedClassName="DObjectProject" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="projectLocations" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DObjectLocation" inverseName="locationProject" inverseEntity="DObjectLocation" syncable="YES"/>
+    </entity>
+    <entity name="DObjectSettings" representedClassName="DObjectSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="measures" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DObjectLocation" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="DObjectProject" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="DObjectSettings" positionX="-36" positionY="9" width="128" height="60"/>
+    </elements>
+</model>

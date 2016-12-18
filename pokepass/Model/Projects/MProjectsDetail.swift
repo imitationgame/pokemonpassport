@@ -7,7 +7,7 @@ class MProjectsDetail
     
     init()
     {
-        let sectionSpeed:MProjectsDetailSectionSpeed = MProjectsDetailSection.Speed()
+        let sectionSpeed:MProjectsDetailSectionSpeed = MProjectsDetailSectionSpeed()
         self.sectionSpeed = sectionSpeed
         
         sections = [

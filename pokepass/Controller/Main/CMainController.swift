@@ -2,21 +2,29 @@ import UIKit
 
 class CMainController:UIViewController
 {
+    var parentController:CMainParent
+    {
+        get
+        {
+            return self.parent as! CMainParent
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        edgesForExtendedLayout = UIRectEdge.None
+        edgesForExtendedLayout = UIRectEdge()
         extendedLayoutIncludesOpaqueBars = false
         automaticallyAdjustsScrollViewInsets = false
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    override var preferredStatusBarStyle:UIStatusBarStyle
     {
-        return UIStatusBarStyle.Default
+        return UIStatusBarStyle.default
     }
     
-    override func prefersStatusBarHidden() -> Bool
+    override var prefersStatusBarHidden:Bool
     {
         return false
     }

@@ -11,53 +11,53 @@ class VMainBarBack:UIView
         self.init()
         self.main = main
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named:"genericBack"), forState:UIControlState.Normal)
-        button.imageView?.contentMode = UIViewContentMode.Center
+        button.setImage(UIImage(named:"genericBack"), for:UIControlState())
+        button.imageView?.contentMode = UIViewContentMode.center
         button.imageView?.clipsToBounds = true
         button.imageEdgeInsets = UIEdgeInsetsMake(20, 0, 0, 25)
-        button.addTarget(self, action:#selector(self.actionBack(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        button.addTarget(self, action:#selector(self.actionBack(sender:)), for:UIControlEvents.touchUpInside)
         self.button = button
         
         let label:UILabel = UILabel()
-        label.userInteractionEnabled = false
-        label.backgroundColor = UIColor.clearColor()
+        label.isUserInteractionEnabled = false
+        label.backgroundColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.bold(15)
-        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.bold(size:15)
+        label.textColor = UIColor.white
         self.label = label
         
         addSubview(button)
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "button":button,
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[button(65)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[button(65)]",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[button]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[label]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[label(44)]",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-20-[label(44)]",
             options:[],
             metrics:metrics,
             views:views))

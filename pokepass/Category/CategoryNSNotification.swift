@@ -1,21 +1,6 @@
 import Foundation
 
-extension NSNotification
+extension Notification
 {
-    class func observeUserSynced(receiver:AnyObject, sel:Selector)
-    {
-        NSNotificationCenter.defaultCenter().addObserver(receiver, selector:sel, name:userSyncedName(), object:nil)
-    }
-    
-    class func postUserSynced()
-    {
-        NSNotificationCenter.defaultCenter().postNotificationName(userSyncedName(), object:nil)
-    }
-    
-    //MARK: private
-    
-    private class func userSyncedName() -> String
-    {
-        return "userSynced"
-    }
+    static let userSynced:Notification.Name = Notification.Name("userSynced")
 }

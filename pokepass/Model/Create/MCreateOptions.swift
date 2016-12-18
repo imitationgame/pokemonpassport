@@ -6,8 +6,8 @@ class MCreateOptions
     
     init()
     {
-        let itemClear:MCreateOptionsItemClear = MCreateOptionsItem.Clear()
-        let itemSave:MCreateOptionsItemSave = MCreateOptionsItem.Save()
+        let itemClear:MCreateOptionsItemClear = MCreateOptionsItemClear()
+        let itemSave:MCreateOptionsItemSave = MCreateOptionsItemSave()
         
         items = [
             itemClear,

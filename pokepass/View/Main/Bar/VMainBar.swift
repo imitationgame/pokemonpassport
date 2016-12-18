@@ -12,40 +12,41 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private let model:MMainNav
     private var pos:MMainNavPos
     private let kButtonWidth:CGFloat = 70
+    private let kSelectTime:TimeInterval = 0.2
     
     init(controllerParent:CMainParent)
     {
         model = MMainNav()
-        pos = MMainNavPos.Normal()
+        pos = MMainNavPosNormal()
         
-        super.init(frame:CGRectZero)
-        backgroundColor = UIColor.main()
+        super.init(frame:CGRect.zero)
+        backgroundColor = UIColor.main
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         self.controllerParent = controllerParent
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSizeZero
-        flow.footerReferenceSize = CGSizeZero
+        flow.headerReferenceSize = CGSize.zero
+        flow.footerReferenceSize = CGSize.zero
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
-        flow.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        flow.scrollDirection = UICollectionViewScrollDirection.horizontal
         
-        let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
+        let collection:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
         collection.clipsToBounds = true
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = UIColor.clearColor()
+        collection.backgroundColor = UIColor.clear
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        collection.scrollEnabled = false
+        collection.isScrollEnabled = false
         collection.bounces = false
         collection.dataSource = self
         collection.delegate = self
-        collection.hidden = true
-        collection.registerClass(
+        collection.isHidden = true
+        collection.register(
             VMainBarCell.self,
             forCellWithReuseIdentifier:
-            VMainBarCell.reusableIdentifier()
+            VMainBarCell.reusableIdentifier
         )
         self.collection = collection
         
@@ -55,53 +56,53 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         addSubview(collection)
         addSubview(back)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "collection":collection,
             "back":back]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[collection]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[back]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[back]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         
         layoutCollectionRight = NSLayoutConstraint(
             item:collection,
-            attribute:NSLayoutAttribute.Right,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Right,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
         layoutCollectionLeft = NSLayoutConstraint(
             item:collection,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         layoutBackRight = NSLayoutConstraint(
             item:back,
-            attribute:NSLayoutAttribute.Right,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Right,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
         layoutBackLeft = NSLayoutConstraint(
             item:back,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.Left,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         
@@ -110,16 +111,20 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         addConstraint(layoutBackRight)
         addConstraint(layoutBackLeft)
         
-        pos.adjust(self)
+        pos.adjust(bar:self)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kSelectTime)
         { [weak collection, weak model] in
             
             if model != nil
             {
-                let indexPath:NSIndexPath = NSIndexPath(forItem:model!.current.index, inSection:0)
-                collection?.selectItemAtIndexPath(indexPath, animated:false, scrollPosition:UICollectionViewScrollPosition.CenteredHorizontally)
-                collection?.hidden = false
+                let indexPath:IndexPath = IndexPath(item:model!.current.index, section:0)
+                collection?.selectItem(
+                    at:indexPath,
+                    animated:false,
+                    scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+                collection?.isHidden = false
             }
         }
     }
@@ -132,16 +137,19 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     override func layoutSubviews()
     {
         collection.collectionViewLayout.invalidateLayout()
-        pos.adjust(self)
+        pos.adjust(bar:self)
         
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         { [weak self] in
             
             if self != nil
             {
                 let selected:Int = self!.model.current.index
-                let selectedIndexPath:NSIndexPath = NSIndexPath(forItem:selected, inSection:0)
-                self!.collection.scrollToItemAtIndexPath(selectedIndexPath, atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+                let selectedIndexPath:IndexPath = IndexPath(item:selected, section:0)
+                self!.collection.scrollToItem(
+                    at:selectedIndexPath,
+                    at:UICollectionViewScrollPosition.centeredHorizontally,
+                    animated:true)
             }
         }
         
@@ -150,7 +158,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     //MARK: private
     
-    private func modelAtIndex(index:NSIndexPath) -> MMainNavItem
+    private func modelAtIndex(index:IndexPath) -> MMainNavItem
     {
         let item:MMainNavItem = model.items[index.item]
         
@@ -161,20 +169,20 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func pushed(name:String)
     {
-        pos = MMainNavPos.Pushed()
-        pos.adjust(self)
+        pos = MMainNavPosPushed()
+        pos.adjust(bar:self)
         back.label.text = name
     }
     
     func poped()
     {
-        pos = MMainNavPos.Normal()
-        pos.adjust(self)
+        pos = MMainNavPosNormal()
+        pos.adjust(bar:self)
     }
     
     //MARK: col del
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAtIndex section:Int) -> UIEdgeInsets
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section:Int) -> UIEdgeInsets
     {
         let width:CGFloat = collectionView.bounds.maxX
         let remain:CGFloat = width - kButtonWidth
@@ -184,61 +192,66 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return insets
     }
     
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let height:CGFloat = collectionView.bounds.maxY
-        let size:CGSize = CGSizeMake(kButtonWidth, height)
+        let size:CGSize = CGSize(width:kButtonWidth, height:height)
         
         return size
     }
     
-    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
     }
     
-    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
         let count:Int = model.items.count
         
         return count
     }
     
-    func collectionView(collectionView:UICollectionView, shouldHighlightItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
         let should:Bool = item.state.highlightable
         
         return should
     }
     
-    func collectionView(collectionView:UICollectionView, shouldSelectItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
         let should:Bool = item.state.selectable
         
         return should
     }
     
-    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
-        let cell:VMainBarCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            VMainBarCell.reusableIdentifier(),
-            forIndexPath:
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
+        let cell:VMainBarCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: VMainBarCell.reusableIdentifier,
+            for:
             indexPath) as! VMainBarCell
-        item.config(cell)
+        item.config(cell:cell)
         
         return cell
     }
     
-    func collectionView(collectionView:UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
-        let transition:MMainTransition = MMainTransition.transition(model.current.index, toIndex:item.index)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.centeredHorizontally,
+            animated:true)
+        let transition:MMainTransition = MMainTransition.transition(
+            fromIndex:model.current.index,
+            toIndex:item.index)
         let controller:UIViewController = item.controller()
-        controllerParent.pushController(controller, transition:transition)
-        model.selectItem(item)
+        controllerParent.pushController(controller:controller, transition:transition)
+        model.selectItem(selected:item)
     }
 }

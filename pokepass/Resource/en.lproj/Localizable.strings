@@ -1,5 +1,5 @@
 "MCreateOptionsItemSave_title"="Save";
-"MCreateOptionsItemClear_title"="Clear";
+"MCreateOptionsItemClear_title"="Restart";
 "MCreateOptionsItemSave_alertTitle"="Save";
 "MCreateOptionsItemSave_alertMessage"="Project name";
 "MCreateOptionsItemSave_cancel"="Cancel";
@@ -11,13 +11,19 @@
 "MProjectsDetailItemSpeedWalk_title"="Walking";
 "MProjectsDetailItemSpeedRun_title"="Running";
 "MProjectsDetailItemSpeedVehicle_title"="Vehicle";
+"MProjectsDetailItemSpeedFastVehicle_title"="Fast Vehicle";
 "MSettingsMenuItemMetricsOptionInternational_name"="International";
 "MSettingsMenuItemMetricsOptionUs_name"="US";
 
 "CMainController_saved"="Project saved!";
 
-"VProjectsHeader_label"="No projects created";
+"VProjectsHeader_label"="New project";
 "VProjectsDetailFooter_label"="Export";
 "VSettingsCellMetrics_label"="Metrics";
 "VCreateFinder_fieldPlaceholder"="Search";
 "VCreateFinder_searchButton"="Search";
+"VCreateHistoryCell_km"="Km";
+"VCreateHistoryCell_mile"="mi";
+"VProjectsCell_points"="%@ points";
+"VProjectsCell_km"="%@ Km";
+"VProjectsCell_mile"="%@ mi";

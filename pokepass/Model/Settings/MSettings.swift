@@ -2,8 +2,14 @@ import Foundation
 
 class MSettings
 {
+    enum Measures:Int16
+    {
+        case metric
+        case imperial
+    }
+    
     static let sharedInstance = MSettings()
-    private(set) var model:DPokePassSettings?
+    private(set) var model:DObjectSettings?
     
     private init()
     {
@@ -13,13 +19,13 @@ class MSettings
     
     private func createModel()
     {
-        DManager.sharedInstance.managerPokePass.createManagedObject(
-            DPokePassSettings.self)
-        { (object) in
+        DManager.sharedInstance.createManagedObject(
+            modelType:DObjectSettings.self)
+        { (object:DObjectSettings) in
             
             self.model = object
             
-            DManager.sharedInstance.managerPokePass.saver.save(false)
+            DManager.sharedInstance.save()
         }
     }
     
@@ -29,19 +35,22 @@ class MSettings
     {
         if model == nil
         {
-            DManager.sharedInstance.managerPokePass.fetchManagedObjects(
-                DPokePassSettings.self,
+            DManager.sharedInstance.fetchManagedObjects(
+                modelType:DObjectSettings.self,
                 limit:1)
-            { (objects) in
+            { (objects:[DObjectSettings]?) in
                 
-                if objects.isEmpty
-                {
-                    self.createModel()
-                }
+                guard
+                
+                    let object:DObjectSettings = objects?.first
+                
                 else
                 {
-                    self.model = objects.first
+                    self.createModel()
+                    return
                 }
+                
+                self.model = object
             }
         }
     }

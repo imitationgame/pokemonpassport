@@ -7,13 +7,6 @@ class MSettingsMenuItem
     let reusableIdentifier:String
     let cellHeight:CGFloat
     
-    class func Metrics() -> MSettingsMenuItemMetrics
-    {
-        let item:MSettingsMenuItemMetrics = MSettingsMenuItemMetrics()
-        
-        return item
-    }
-    
     init(reusableIdentifier:String, cellHeight:CGFloat)
     {
         self.reusableIdentifier = reusableIdentifier

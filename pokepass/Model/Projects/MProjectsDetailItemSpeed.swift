@@ -5,7 +5,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
     let index:Int
     let title:String
     let maxDistance:Double
-    private let kCellHeight:CGFloat = 36
+    private let kCellHeight:CGFloat = 44
     private let kSelectable:Bool = true
     
     init(index:Int, title:String, maxDistance:Double)
@@ -13,7 +13,7 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         self.index = index
         self.title = title
         self.maxDistance = maxDistance
-        let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier()
+        let reusableIdentifier:String = VProjectsDetailCellSpeed.reusableIdentifier
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight, selectable:kSelectable)
     }
@@ -25,13 +25,13 @@ class MProjectsDetailItemSpeed:MProjectsDetailItem
         
         if controller.model.sectionSpeed.selectedItem === self
         {
-            cellSpeed.backgroundColor = UIColor.whiteColor()
-            cellSpeed.label.textColor = UIColor.main()
+            cellSpeed.backgroundColor = UIColor.white
+            cellSpeed.label.textColor = UIColor.main
         }
         else
         {
             cellSpeed.backgroundColor = UIColor(white:1, alpha:0.2)
-            cellSpeed.label.textColor = UIColor.main().colorWithAlphaComponent(0.4)
+            cellSpeed.label.textColor = UIColor.main.withAlphaComponent(0.4)
         }
     }
     

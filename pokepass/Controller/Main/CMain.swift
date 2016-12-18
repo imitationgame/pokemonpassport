@@ -6,11 +6,11 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     var window:UIWindow?
     private weak var parent:CMainParent!
 
-    func application(application:UIApplication, didFinishLaunchingWithOptions launchOptions:[NSObject:AnyObject]?) -> Bool
+    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        let window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        let window = UIWindow(frame:UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        window.backgroundColor = UIColor.whiteColor()
+        window.backgroundColor = UIColor.white
         
         let parent:CMainParent = CMainParent()
         window.rootViewController = parent
