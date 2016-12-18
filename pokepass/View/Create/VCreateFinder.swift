@@ -10,7 +10,7 @@ class VCreateFinder:UIView, UITextFieldDelegate
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor.complement
+        backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = false
         
         let image:UIImageView = UIImageView()
