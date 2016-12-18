@@ -30,7 +30,6 @@
 		DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */; };
 		DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307E1E06263700AFAA98 /* DManager.swift */; };
 		DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */; };
-		DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */; };
 		DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884D1D64BAB100C3A083 /* MSettings.swift */; };
 		DAB088501D64D30800C3A083 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884F1D64D30800C3A083 /* CSettings.swift */; };
 		DAB088521D64D37F00C3A083 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088511D64D37F00C3A083 /* VSettings.swift */; };
@@ -55,11 +54,6 @@
 		DAE03F3A1D605FF50054CDEB /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECB1D605FF50054CDEB /* CMainController.swift */; };
 		DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECC1D605FF50054CDEB /* CMainParent.swift */; };
 		DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ECE1D605FF50054CDEB /* CProjects.swift */; };
-		DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED11D605FF50054CDEB /* DManager.swift */; };
-		DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED21D605FF50054CDEB /* DManagerModel.swift */; };
-		DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */; };
-		DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */; };
-		DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */; };
 		DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE11D605FF50054CDEB /* MCreate.swift */; };
 		DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE41D605FF50054CDEB /* MMainNav.swift */; };
 		DAE03F491D605FF50054CDEB /* MMainNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EE51D605FF50054CDEB /* MMainNavItem.swift */; };
@@ -87,8 +81,6 @@
 		DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F2C1D605FF50054CDEB /* VProjects.swift */; };
 		DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F811D6068040054CDEB /* VMainShadow.swift */; };
 		DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */; };
-		DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */; };
-		DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */; };
 		DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */; };
 		DAE03F991D6080C70054CDEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE03F981D6080C70054CDEB /* MapKit.framework */; };
 		DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */; };
@@ -130,7 +122,6 @@
 		DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPX.xcdatamodel; sourceTree = "<group>"; };
 		DAAE307E1E06263700AFAA98 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemSettings.swift; sourceTree = "<group>"; };
-		DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassSettings.swift; sourceTree = "<group>"; };
 		DAB0884D1D64BAB100C3A083 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
 		DAB0884F1D64D30800C3A083 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAB088511D64D37F00C3A083 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
@@ -155,11 +146,6 @@
 		DAE03ECB1D605FF50054CDEB /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
 		DAE03ECC1D605FF50054CDEB /* CMainParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainParent.swift; sourceTree = "<group>"; };
 		DAE03ECE1D605FF50054CDEB /* CProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProjects.swift; sourceTree = "<group>"; };
-		DAE03ED11D605FF50054CDEB /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
-		DAE03ED21D605FF50054CDEB /* DManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModel.swift; sourceTree = "<group>"; };
-		DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelPokePass.swift; sourceTree = "<group>"; };
-		DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerSaver.swift; sourceTree = "<group>"; };
-		DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = infra.xcdatamodel; sourceTree = "<group>"; };
 		DAE03EDE1D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE03EE11D605FF50054CDEB /* MCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCreate.swift; sourceTree = "<group>"; };
 		DAE03EE41D605FF50054CDEB /* MMainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNav.swift; sourceTree = "<group>"; };
@@ -188,8 +174,6 @@
 		DAE03F2C1D605FF50054CDEB /* VProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjects.swift; sourceTree = "<group>"; };
 		DAE03F811D6068040054CDEB /* VMainShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainShadow.swift; sourceTree = "<group>"; };
 		DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemProjects.swift; sourceTree = "<group>"; };
-		DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassLocation.swift; sourceTree = "<group>"; };
-		DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassProject.swift; sourceTree = "<group>"; };
 		DAE03F961D6080390054CDEB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE03F981D6080C70054CDEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DAE03F9A1D610C0F0054CDEB /* VCreateMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateMap.swift; sourceTree = "<group>"; };
@@ -346,40 +330,10 @@
 		DAE03ECF1D605FF50054CDEB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DAE03ED01D605FF50054CDEB /* Manager */,
-				DAE03ED51D605FF50054CDEB /* Model */,
-				DAE03ED81D605FF50054CDEB /* Object */,
 				DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */,
 				DAAE307E1E06263700AFAA98 /* DManager.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		DAE03ED01D605FF50054CDEB /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03ED11D605FF50054CDEB /* DManager.swift */,
-				DAE03ED21D605FF50054CDEB /* DManagerModel.swift */,
-				DAE03ED31D605FF50054CDEB /* DManagerModelPokePass.swift */,
-				DAE03ED41D605FF50054CDEB /* DManagerSaver.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		DAE03ED51D605FF50054CDEB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DAE03ED81D605FF50054CDEB /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F8D1D607BAA0054CDEB /* PokePass */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 		DAE03EDF1D605FF50054CDEB /* Model */ = {
@@ -544,16 +498,6 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
-		DAE03F8D1D607BAA0054CDEB /* PokePass */ = {
-			isa = PBXGroup;
-			children = (
-				DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */,
-				DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */,
-				DAE03F911D607BAA0054CDEB /* DPokePassProject.swift */,
-			);
-			path = PokePass;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -632,7 +576,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE03F401D605FF50054CDEB /* DManagerSaver.swift in Sources */,
 				DAABC8101D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift in Sources */,
 				DA9AC69C1D62498700F0F5C8 /* MProjects.swift in Sources */,
 				DAE03F571D605FF50054CDEB /* MMainTransitionFade.swift in Sources */,
@@ -648,9 +591,7 @@
 				DAE03F3B1D605FF50054CDEB /* CMainParent.swift in Sources */,
 				DAE03F3C1D605FF50054CDEB /* CProjects.swift in Sources */,
 				DAB088501D64D30800C3A083 /* CSettings.swift in Sources */,
-				DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */,
 				DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */,
-				DAE03F951D607BAA0054CDEB /* DPokePassProject.swift in Sources */,
 				DAB088581D64D5B100C3A083 /* MSettingsMenuItemMetrics.swift in Sources */,
 				DAB0885C1D64DE2A00C3A083 /* VSettingsCellMetrics.swift in Sources */,
 				DAE03F541D605FF50054CDEB /* MMainNavPostNormal.swift in Sources */,
@@ -673,7 +614,6 @@
 				DAE03F481D605FF50054CDEB /* MMainNav.swift in Sources */,
 				DAABC80C1D62A1A100807DA9 /* MProjectsDetailItemSpeedSlowWalk.swift in Sources */,
 				DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */,
-				DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */,
 				DAE03F521D605FF50054CDEB /* MMainNavItemStateNone.swift in Sources */,
 				DAE03FA31D6110590054CDEB /* VCreateMapPin.swift in Sources */,
 				DAE03F381D605FF50054CDEB /* CCreate.swift in Sources */,
@@ -690,7 +630,6 @@
 				DAE03F331D605FF50054CDEB /* CategoryUICollectionReusableView.swift in Sources */,
 				DAE03FC01D61372C0054CDEB /* MCreateOptionsItem.swift in Sources */,
 				DAE03F5A1D605FF50054CDEB /* MMainTransitionReplace.swift in Sources */,
-				DAE03F3D1D605FF50054CDEB /* DManager.swift in Sources */,
 				DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */,
 				DAE03FA91D6111C90054CDEB /* CategoryMKAnnotationView.swift in Sources */,
 				DAB088561D64D59600C3A083 /* MSettingsMenuItem.swift in Sources */,
@@ -700,7 +639,6 @@
 				DA9AC6A01D62512A00F0F5C8 /* VProjectsHeader.swift in Sources */,
 				DAE03F551D605FF50054CDEB /* MMainNavPostPushed.swift in Sources */,
 				DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */,
-				DAE03F411D605FF50054CDEB /* DPokePassModel.xcdatamodeld in Sources */,
 				DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */,
 				DAE03F391D605FF50054CDEB /* CMain.swift in Sources */,
 				DAABC8001D629AEE00807DA9 /* VProjectsDetail.swift in Sources */,
@@ -716,9 +654,7 @@
 				DAABC8021D629DC400807DA9 /* MProjectsDetail.swift in Sources */,
 				DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */,
 				DAB0885A1D64D71500C3A083 /* VSettingsCell.swift in Sources */,
-				DAE03F3E1D605FF50054CDEB /* DManagerModel.swift in Sources */,
 				DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */,
-				DAE03F3F1D605FF50054CDEB /* DManagerModelPokePass.swift in Sources */,
 				DAE03FAD1D6116640054CDEB /* VCreateOptions.swift in Sources */,
 				DAE03F7A1D605FF50054CDEB /* VMainBarBack.swift in Sources */,
 				DAB088601D64EDCB00C3A083 /* MSettingsMenuItemMetricsOptionInternational.swift in Sources */,
@@ -888,16 +824,6 @@
 			);
 			currentVersion = DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */;
 			path = DGPX.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */,
-			);
-			currentVersion = DAE03ED71D605FF50054CDEB /* infra.xcdatamodel */;
-			path = DPokePassModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
