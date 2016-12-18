@@ -4,21 +4,25 @@ import CoreData
 class DManagerModel
 {
     let saver:DManagerSaver
-    fileprivate let managedObjectContext:NSManagedObjectContext
-    fileprivate let kModelExtension:String = "momd"
-    fileprivate let kSQLiteExtension:String = "%@.sqlite"
+    private let managedObjectContext:NSManagedObjectContext
+    private let kModelExtension:String = "momd"
+    private let kSQLiteExtension:String = "%@.sqlite"
     
     init(modelName:String)
     {
         let modelURL:URL = Bundle.main.url(forResource: modelName, withExtension:kModelExtension)!
         let sqliteFile:String = String(format:kSQLiteExtension, modelName)
-        let storeCoordinatorURL:URL = FileManager.appDirectory().appendingPathComponent(sqliteFile)!
+        let storeCoordinatorURL:URL = FileManager.appDirectory.appendingPathComponent(sqliteFile)!
         let managedObjectModel:NSManagedObjectModel = NSManagedObjectModel(contentsOf:modelURL)!
         let persistentStoreCoordinator:NSPersistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel:managedObjectModel)
         
         do
         {
-            try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName:nil, at:storeCoordinatorURL, options:nil)
+            try persistentStoreCoordinator.addPersistentStore(
+                ofType:NSSQLiteStoreType,
+                configurationName:nil,
+                at:storeCoordinatorURL,
+                options:nil)
         }
         catch{}
         

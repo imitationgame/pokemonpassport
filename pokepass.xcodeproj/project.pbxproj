@@ -83,7 +83,6 @@
 		DAE03F7C1D605FF50054CDEB /* VMainAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F281D605FF50054CDEB /* VMainAlert.swift */; };
 		DAE03F7D1D605FF50054CDEB /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F291D605FF50054CDEB /* VMainLoader.swift */; };
 		DAE03F7F1D605FF50054CDEB /* VProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F2C1D605FF50054CDEB /* VProjects.swift */; };
-		DAE03F801D6061960054CDEB /* infraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F191D605FF50054CDEB /* infraTests.swift */; };
 		DAE03F821D6068040054CDEB /* VMainShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F811D6068040054CDEB /* VMainShadow.swift */; };
 		DAE03F841D6069330054CDEB /* MMainNavItemProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F831D6069330054CDEB /* MMainNavItemProjects.swift */; };
 		DAE03F931D607BAA0054CDEB /* DPokePassLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03F8F1D607BAA0054CDEB /* DPokePassLocation.swift */; };
@@ -104,20 +103,9 @@
 		DAE03FCA1D61538A0054CDEB /* VCreateMapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DA2602B41D5E8EC000C3A280 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA2602941D5E8EC000C3A280 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA26029B1D5E8EC000C3A280;
-			remoteInfo = pokepass;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		DA0977AF1D63652100DBE72A /* MProjectItemLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectItemLocation.swift; sourceTree = "<group>"; };
 		DA26029C1D5E8EC000C3A280 /* pokepass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokepass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokepassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9AC6991D6246EA00F0F5C8 /* VProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsCell.swift; sourceTree = "<group>"; };
 		DA9AC69B1D62498700F0F5C8 /* MProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjects.swift; sourceTree = "<group>"; };
 		DA9AC69D1D6249AD00F0F5C8 /* MProjectsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MProjectsItem.swift; sourceTree = "<group>"; };
@@ -187,8 +175,6 @@
 		DAE03EF81D605FF50054CDEB /* MMainTransitionScrollLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollLeft.swift; sourceTree = "<group>"; };
 		DAE03EF91D605FF50054CDEB /* MMainTransitionScrollRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionScrollRight.swift; sourceTree = "<group>"; };
 		DAE03F161D605FF50054CDEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DAE03F181D605FF50054CDEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE03F191D605FF50054CDEB /* infraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infraTests.swift; sourceTree = "<group>"; };
 		DAE03F1C1D605FF50054CDEB /* VCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreate.swift; sourceTree = "<group>"; };
 		DAE03F241D605FF50054CDEB /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 		DAE03F251D605FF50054CDEB /* VMainBarBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarBack.swift; sourceTree = "<group>"; };
@@ -225,13 +211,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA2602B01D5E8EC000C3A280 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -248,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				DA26029C1D5E8EC000C3A280 /* pokepass.app */,
-				DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,7 +273,6 @@
 				DAE03EDE1D605FF50054CDEB /* Info.plist */,
 				DAE03EDF1D605FF50054CDEB /* Model */,
 				DAE03F121D605FF50054CDEB /* Resource */,
-				DAE03F171D605FF50054CDEB /* Test */,
 				DAE03F1A1D605FF50054CDEB /* View */,
 			);
 			path = pokepass;
@@ -492,15 +469,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		DAE03F171D605FF50054CDEB /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				DAE03F181D605FF50054CDEB /* Info.plist */,
-				DAE03F191D605FF50054CDEB /* infraTests.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		DAE03F1A1D605FF50054CDEB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,24 +568,6 @@
 			productReference = DA26029C1D5E8EC000C3A280 /* pokepass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA2602B21D5E8EC000C3A280 /* pokepassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA2602BF1D5E8EC000C3A280 /* Build configuration list for PBXNativeTarget "pokepassTests" */;
-			buildPhases = (
-				DA2602AF1D5E8EC000C3A280 /* Sources */,
-				DA2602B01D5E8EC000C3A280 /* Frameworks */,
-				DA2602B11D5E8EC000C3A280 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA2602B51D5E8EC000C3A280 /* PBXTargetDependency */,
-			);
-			name = pokepassTests;
-			productName = pokepassTests;
-			productReference = DA2602B31D5E8EC000C3A280 /* pokepassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -638,11 +588,6 @@
 							};
 						};
 					};
-					DA2602B21D5E8EC000C3A280 = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0810;
-						TestTargetID = DA26029B1D5E8EC000C3A280;
-					};
 				};
 			};
 			buildConfigurationList = DA2602971D5E8EC000C3A280 /* Build configuration list for PBXProject "pokepass" */;
@@ -658,7 +603,6 @@
 			projectRoot = "";
 			targets = (
 				DA26029B1D5E8EC000C3A280 /* pokepass */,
-				DA2602B21D5E8EC000C3A280 /* pokepassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -672,13 +616,6 @@
 				DAE03FB31D61300B0054CDEB /* ui.xcassets in Resources */,
 				DAE03F971D6080390054CDEB /* LaunchScreen.storyboard in Resources */,
 				DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA2602B11D5E8EC000C3A280 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,23 +718,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA2602AF1D5E8EC000C3A280 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAE03F801D6061960054CDEB /* infraTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DA2602B51D5E8EC000C3A280 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA26029B1D5E8EC000C3A280 /* pokepass */;
-			targetProxy = DA2602B41D5E8EC000C3A280 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DAE03F151D605FF50054CDEB /* Localizable.strings */ = {
@@ -928,33 +849,6 @@
 			};
 			name = Release;
 		};
-		DA2602C01D5E8EC000C3A280 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepass/Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokepass.app/pokepass";
-			};
-			name = Debug;
-		};
-		DA2602C11D5E8EC000C3A280 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = pokepass/Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.pokepassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokepass.app/pokepass";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -972,15 +866,6 @@
 			buildConfigurations = (
 				DA2602BD1D5E8EC000C3A280 /* Debug */,
 				DA2602BE1D5E8EC000C3A280 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA2602BF1D5E8EC000C3A280 /* Build configuration list for PBXNativeTarget "pokepassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA2602C01D5E8EC000C3A280 /* Debug */,
-				DA2602C11D5E8EC000C3A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
