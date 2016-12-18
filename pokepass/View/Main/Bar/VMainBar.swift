@@ -12,7 +12,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private let model:MMainNav
     private var pos:MMainNavPos
     private let kButtonWidth:CGFloat = 70
-    private let kDeselectTime:TimeInterval = 1
+    private let kSelectTime:TimeInterval = 0.2
     
     init(controllerParent:CMainParent)
     {
@@ -114,7 +114,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         pos.adjust(bar:self)
         
         DispatchQueue.main.asyncAfter(
-            deadline:DispatchTime.now() + kDeselectTime)
+            deadline:DispatchTime.now() + kSelectTime)
         { [weak collection, weak model] in
             
             if model != nil

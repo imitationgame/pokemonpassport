@@ -170,7 +170,6 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
-        UIApplication.shared.keyWindow!.endEditing(true)
         controller.viewCreate.notShowingCallout()
     }
     
@@ -198,5 +197,10 @@ class VCreateMap:MKMapView, MKMapViewDelegate
                 
                 break
         }
+    }
+    
+    func mapView(_ mapView:MKMapView, regionDidChangeAnimated animated:Bool)
+    {
+        UIApplication.shared.keyWindow!.endEditing(true)
     }
 }
