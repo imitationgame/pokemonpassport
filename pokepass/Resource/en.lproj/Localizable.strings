@@ -23,4 +23,6 @@
 "VCreateFinder_searchButton"="Search";
 "VCreateHistoryCell_km"="Km";
 "VCreateHistoryCell_mile"="mi";
-"VProjectsCell_points"="Points %@";
+"VProjectsCell_points"="%@ points";
+"VProjectsCell_km"="%@ Km";
+"VProjectsCell_mile"="%@ mi";
