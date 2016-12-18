@@ -2,7 +2,7 @@ import UIKit
 
 class MCreateOptionsItemSave:MCreateOptionsItem
 {
-    fileprivate let kImage:String = "optionsSave"
+    private let kImage:String = "optionsSave"
     
     init()
     {
@@ -10,7 +10,7 @@ class MCreateOptionsItemSave:MCreateOptionsItem
         super.init(image:kImage, title:title)
     }
     
-    override func selected(_ controller:CCreate)
+    override func selected(controller:CCreate)
     {
         if controller.model.locations.isEmpty
         {
