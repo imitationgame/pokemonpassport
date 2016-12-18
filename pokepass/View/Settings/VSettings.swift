@@ -3,15 +3,15 @@ import UIKit
 class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     weak var controller:CSettings!
-    fileprivate let kCollectionTop:CGFloat = 10
-    fileprivate let kCollectionBottom:CGFloat = 40
+    private let kCollectionTop:CGFloat = 10
+    private let kCollectionBottom:CGFloat = 40
     
     convenience init(controller:CSettings)
     {
         self.init()
         self.controller = controller
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         translatesAutoresizingMaskIntoConstraints = false
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -34,14 +34,14 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collection.register(
             VSettingsCellMetrics.self,
             forCellWithReuseIdentifier:
-            VSettingsCellMetrics.reusableIdentifier())
+            VSettingsCellMetrics.reusableIdentifier)
         
         addSubview(collection)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "collection":collection]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[collection]-0-|",
@@ -57,7 +57,7 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: private
     
-    fileprivate func modelAtIndex(_ index:IndexPath) -> MSettingsMenuItem
+    private func modelAtIndex(index:IndexPath) -> MSettingsMenuItem
     {
         let item:MSettingsMenuItem = controller.model.items[index.item]
         
@@ -68,9 +68,9 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        let item:MSettingsMenuItem = modelAtIndex(indexPath)
+        let item:MSettingsMenuItem = modelAtIndex(index:indexPath)
         let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSize(width: width, height: item.cellHeight)
+        let size:CGSize = CGSize(width:width, height:item.cellHeight)
         
         return size
     }
@@ -89,13 +89,13 @@ class VSettings:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MSettingsMenuItem = modelAtIndex(indexPath)
+        let item:MSettingsMenuItem = modelAtIndex(index:indexPath)
         let cell:VSettingsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: item.reusableIdentifier,
             for:
             indexPath) as! VSettingsCell
         
-        item.config(cell, controller:controller)
+        item.config(cell:cell, controller:controller)
         
         return cell
     }
