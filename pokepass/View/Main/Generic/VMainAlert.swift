@@ -2,13 +2,13 @@ import UIKit
 
 class VMainAlert:UIView
 {
-    fileprivate weak var timer:Timer?
-    fileprivate weak var layoutTop:NSLayoutConstraint!
-    fileprivate weak var parentView:UIView?
-    fileprivate let kAnimationDuration:TimeInterval = 0.2
-    fileprivate let kTimeOut:TimeInterval = 3
-    fileprivate let kAlertHeight:CGFloat = 64
-    fileprivate let kLabelTop:CGFloat = 20
+    private weak var timer:Timer?
+    private weak var layoutTop:NSLayoutConstraint!
+    private weak var parentView:UIView?
+    private let kAnimationDuration:TimeInterval = 0.2
+    private let kTimeOut:TimeInterval = 3
+    private let kAlertHeight:CGFloat = 64
+    private let kLabelTop:CGFloat = 20
     
     class func Message(message:String)
     {
@@ -25,7 +25,7 @@ class VMainAlert:UIView
     convenience init(message:String)
     {
         self.init()
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         clipsToBounds = true
         isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
@@ -41,25 +41,30 @@ class VMainAlert:UIView
         
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label]
         
-        let metrics:[String:AnyObject] = [
+        let metrics:[String:CGFloat] = [
             "labelHeight":(kAlertHeight - kLabelTop),
             "labelTop":kLabelTop]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-10-[label]-10-|",
+            withVisualFormat:"H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-(labelTop)-[label(labelHeight)]",
+            withVisualFormat:"V:|-(labelTop)-[label(labelHeight)]",
             options:[],
             metrics:metrics,
             views:views))
         
-        timer = Timer.scheduledTimer(timeInterval: kTimeOut, target:self, selector:#selector(self.timeOut(sender:)), userInfo:self, repeats:false)
+        timer = Timer.scheduledTimer(
+            timeInterval:kTimeOut,
+            target:self,
+            selector:#selector(self.timeOut(sender:)),
+            userInfo:nil,
+            repeats:false)
     }
     
     deinit
@@ -75,23 +80,23 @@ class VMainAlert:UIView
     
     //MARK: private
     
-    fileprivate func addToParent()
+    private func addToParent()
     {
         parentView!.addSubview(self)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "alert":self]
         
-        let metrics:[String:AnyObject] = [
-            "alertHeight":kAlertHeight as AnyObject]
+        let metrics:[String:CGFloat] = [
+            "alertHeight":kAlertHeight]
         
         parentView!.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[alert]-0-|",
+            withVisualFormat:"H:|-0-[alert]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         parentView!.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[alert(alertHeight)]",
+            withVisualFormat:"V:[alert(alertHeight)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -108,30 +113,33 @@ class VMainAlert:UIView
         parentView!.addConstraint(layoutTop)
     }
     
-    fileprivate func animateShow()
+    private func animateShow()
     {
         parentView?.layoutIfNeeded()
         layoutTop.constant = 0
         
-        UIView.animate(withDuration: kAnimationDuration, animations: { [weak self] in
-            
-            self?.parentView?.layoutIfNeeded()
-        })
-        
-    }
-    
-    fileprivate func animateHide()
-    {
-        layoutTop.constant = -kAlertHeight
-        
-        UIView.animate(withDuration: kAnimationDuration, animations:
+        UIView.animate(
+            withDuration:kAnimationDuration)
         { [weak self] in
             
             self?.parentView?.layoutIfNeeded()
-        }, completion: { [weak self] (done) in
+        }
+    }
+    
+    private func animateHide()
+    {
+        layoutTop.constant = -kAlertHeight
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+        { [weak self] in
+            
+            self?.parentView?.layoutIfNeeded()
+        })
+        { [weak self] (done) in
             
             self?.removeFromSuperview()
-        })
-        
+        }
     }
 }

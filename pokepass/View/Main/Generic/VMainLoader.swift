@@ -2,7 +2,7 @@ import UIKit
 
 class VMainLoader:UIImageView
 {
-    fileprivate let kAnimationDuration:TimeInterval = 0.66
+    private let kAnimationDuration:TimeInterval = 0.66
     
     init()
     {

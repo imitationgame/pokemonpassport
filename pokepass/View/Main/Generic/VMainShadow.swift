@@ -19,18 +19,18 @@ class VMainShadow:UIView
         
         addSubview(blur)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "blur":blur]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[blur]-0-|",
+            withVisualFormat:"H:|-0-[blur]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[blur]-0-|",
+            withVisualFormat:"V:|-0-[blur]-0-|",
             options:[],
             metrics:metrics,
             views:views))
