@@ -47,12 +47,7 @@ class VCreateOptionsCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[label(13)]-6-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-6-[image(40)]",
+            withVisualFormat:"V:|-20-[image(30)]-0-[label(13)]",
             options:[],
             metrics:metrics,
             views:views))

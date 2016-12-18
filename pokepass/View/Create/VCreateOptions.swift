@@ -26,7 +26,9 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         flow.scrollDirection = UICollectionViewScrollDirection.horizontal
         flow.sectionInset = UIEdgeInsets.zero
         
-        let collection:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
+        let collection:UICollectionView = UICollectionView(
+            frame:CGRect.zero,
+            collectionViewLayout:flow)
         collection.clipsToBounds = true
         collection.backgroundColor = UIColor.clear
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -44,10 +46,13 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named:"genericBack"), for:UIControlState())
+        button.setImage(
+            UIImage(named:"genericBack"),
+            for:UIControlState())
         button.imageView?.contentMode = UIViewContentMode.center
         button.imageView?.clipsToBounds = true
-        button.imageEdgeInsets = UIEdgeInsetsMake(20, 0, 0, 25)
+        button.imageEdgeInsets = UIEdgeInsetsMake(
+            20, 0, 0, 25)
         button.addTarget(
             self,
             action:#selector(self.actionBack(sender:)),
@@ -141,9 +146,9 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let item:MCreateOptionsItem = modelAtIndex(index:indexPath)
         let cell:VCreateOptionsCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier:VCreateOptionsCell.reusableIdentifier,
-            for:
-            indexPath) as! VCreateOptionsCell
+            withReuseIdentifier:
+            VCreateOptionsCell.reusableIdentifier,
+            for:indexPath) as! VCreateOptionsCell
         item.config(cell:cell)
         
         return cell
