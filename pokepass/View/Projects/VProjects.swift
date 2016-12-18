@@ -5,10 +5,11 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var controller:CProjects!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
-    fileprivate let kCollectionBottom:CGFloat = 40
-    fileprivate let kHeaderHeight:CGFloat = 100
-    fileprivate let kCellHeight:CGFloat = 60
-    fileprivate let kInterLine:CGFloat = 1
+    private let kCollectionBottom:CGFloat = 40
+    private let kHeaderHeight:CGFloat = 100
+    private let kCellHeight:CGFloat = 60
+    private let kInterLine:CGFloat = 1
+    private let kDeselectTime:TimeInterval = 1
     
     convenience init(controller:CProjects)
     {
@@ -42,40 +43,40 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionHeader,
             withReuseIdentifier:
-            VProjectsHeader.reusableIdentifier())
+            VProjectsHeader.reusableIdentifier)
         collection.register(
             VProjectsCell.self,
             forCellWithReuseIdentifier:
-            VProjectsCell.reusableIdentifier())
+            VProjectsCell.reusableIdentifier)
         collection.isHidden = true
         self.collection = collection
         
         addSubview(spinner)
         addSubview(collection)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "spinner":spinner,
             "collection":collection]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[spinner]-0-|",
+            withVisualFormat:"H:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[spinner]-0-|",
+            withVisualFormat:"V:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[collection]-0-|",
+            withVisualFormat:"H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[collection]-0-|",
+            withVisualFormat:"V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -83,13 +84,13 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     override func layoutSubviews()
     {
-        self.collection.collectionViewLayout.invalidateLayout()
+        collection.collectionViewLayout.invalidateLayout()
         super.layoutSubviews()
     }
     
     //MARK: private
     
-    fileprivate func modelAtIndex(_ index:IndexPath) -> MProjectsItem
+    private func modelAtIndex(index:IndexPath) -> MProjectsItem
     {
         let item:MProjectsItem = controller.model.items[index.item]
         
@@ -114,7 +115,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         if controller.model.items.isEmpty
         {
             let width:CGFloat = collectionView.bounds.maxX
-            size = CGSize(width: width, height: kHeaderHeight)
+            size = CGSize(width:width, height:kHeaderHeight)
         }
         else
         {
@@ -127,7 +128,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSize(width: width, height: kCellHeight)
+        let size:CGSize = CGSize(width:width, height:kCellHeight)
         
         return size
     }
@@ -149,7 +150,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         let reusable:UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
             withReuseIdentifier:
-            VProjectsHeader.reusableIdentifier(),
+            VProjectsHeader.reusableIdentifier,
             for:
             indexPath)
         
@@ -158,9 +159,9 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MProjectsItem = modelAtIndex(indexPath)
+        let item:MProjectsItem = modelAtIndex(index:indexPath)
         let cell:VProjectsCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: VProjectsCell.reusableIdentifier(),
+            withReuseIdentifier:VProjectsCell.reusableIdentifier,
             for:
             indexPath) as! VProjectsCell
         cell.config(item)
@@ -170,15 +171,19 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
-        let item:MProjectsItem = modelAtIndex(indexPath)
+        let item:MProjectsItem = modelAtIndex(index:indexPath)
         let transition:MMainTransition = MMainTransition.Push(item.name)
         let detail:CProjectsDetail = CProjectsDetail(item:item)
-        controller.parent.pushController(detail, transition:transition)
+        controller.parent.pushController(controller:detail, transition:transition)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC))
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
         { [weak collectionView] in
             
-            collectionView?.selectItem(at: nil, animated:false, scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.selectItem(
+                at:nil,
+                animated:false,
+                scrollPosition:UICollectionViewScrollPosition())
         }
     }
 }
