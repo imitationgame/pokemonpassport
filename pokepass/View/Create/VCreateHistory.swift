@@ -2,7 +2,7 @@ import UIKit
 
 class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    weak var collectionView:UICollectionView!
+    private weak var collectionView:UICollectionView!
     private weak var controller:CCreate!
     private let kInterline:CGFloat = 1
     private let kCellWidth:CGFloat = 90
@@ -70,6 +70,20 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let item:MCreateAnnotation = controller.model.locations[index.item]
         
         return item
+    }
+    
+    //MARK: public
+    
+    func refresh()
+    {
+        collectionView.reloadData()
+        
+        let count:Int = controller.model.locations.count
+        let index:IndexPath = IndexPath(item:count - 1, section:0)
+        collectionView.selectItem(
+            at:index,
+            animated:true,
+            scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
     }
     
     //MARK: collectionView delegate

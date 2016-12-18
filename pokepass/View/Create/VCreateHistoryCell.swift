@@ -6,7 +6,7 @@ class VCreateHistoryCell:UICollectionViewCell
     private weak var labelLatitude:UILabel!
     private weak var labelLongitude:UILabel!
     private let numberFormatter:NumberFormatter
-    private let kMaxDecimal:Int = 5
+    private let kMaxDecimal:Int = 6
     
     override init(frame:CGRect)
     {
@@ -44,17 +44,17 @@ class VCreateHistoryCell:UICollectionViewCell
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelLatitude]-10-|",
+            withVisualFormat:"H:|-10-[labelLatitude]-2-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelLongitude]-10-|",
+            withVisualFormat:"H:|-10-[labelLongitude]-2-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-20-[labelLatitude(14)]-0-[labelLongitude(14)]",
+            withVisualFormat:"V:|-25-[labelLatitude(13)]-0-[labelLongitude(13)]",
             options:[],
             metrics:metrics,
             views:views))
