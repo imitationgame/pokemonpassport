@@ -6,9 +6,9 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     weak var controller:CCreate!
     let span:MKCoordinateSpan
     var polyLine:MKPolyline?
-    fileprivate var userCoordinate:CLLocationCoordinate2D!
-    fileprivate let kSpanSize:CLLocationDegrees = 0.01
-    fileprivate let kPolylineWidth:CGFloat = 6
+    private var userCoordinate:CLLocationCoordinate2D!
+    private let kSpanSize:CLLocationDegrees = 0.01
+    private let kPolylineWidth:CGFloat = 6
     
     init(controller:CCreate)
     {
@@ -86,13 +86,13 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         }
     }
     
-    func centerLocation(_ locationCoordinate:CLLocationCoordinate2D)
+    func centerLocation(locationCoordinate:CLLocationCoordinate2D)
     {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)
         setRegion(region, animated:true)
     }
     
-    func searchLocation(_ query:String)
+    func searchLocation(query:String)
     {
         let searchRequest:MKLocalSearchRequest = MKLocalSearchRequest()
         searchRequest.naturalLanguageQuery = query
@@ -111,7 +111,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
                     DispatchQueue.main.async
                     { [weak self] in
                         
-                        self?.centerLocation(location)
+                        self?.centerLocation(locationCoordinate:location)
                     }
                 }
             }
@@ -163,7 +163,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
         mapView.deselectAnnotation(view.annotation, animated:true)
         
         let tag:Int = control.tag
-        let callOut:VCreateMapPin.VCreateMapPinCallout = VCreateMapPin.VCreateMapPinCallout(rawValue:tag)!
+        let callOut:VCreateMapPin.Callout = VCreateMapPin.Callout(rawValue:tag)!
         let annotation:MCreateAnnotation = view.annotation as! MCreateAnnotation
         
         switch callOut

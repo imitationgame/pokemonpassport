@@ -5,6 +5,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     weak var controller:CCreate!
     weak var collection:UICollectionView!
     let model:MCreateOptions
+    private let kDeselectTime:TimeInterval = 0.3
     
     init(controller:CCreate)
     {
@@ -38,23 +39,23 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collection.register(
             VCreateOptionsCell.self,
             forCellWithReuseIdentifier:
-            VCreateOptionsCell.reusableIdentifier())
+            VCreateOptionsCell.reusableIdentifier)
         self.collection = collection
         
         addSubview(collection)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "collection":collection]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[collection]-0-|",
+            withVisualFormat:"H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[collection]-0-|",
+            withVisualFormat:"V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -73,7 +74,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     //MARK: private
     
-    fileprivate func modelAtIndex(_ index:IndexPath) -> MCreateOptionsItem
+    private func modelAtIndex(index:IndexPath) -> MCreateOptionsItem
     {
         let item:MCreateOptionsItem = model.items[index.item]
         
@@ -88,7 +89,7 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let width:CGFloat = collectionView.bounds.maxX
         let height:CGFloat = collectionView.bounds.maxY
         let widthPerCell:CGFloat = width / count
-        let size:CGSize = CGSize(width: widthPerCell, height: height)
+        let size:CGSize = CGSize(width:widthPerCell, height:height)
         
         return size
     }
@@ -107,9 +108,9 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MCreateOptionsItem = modelAtIndex(indexPath)
+        let item:MCreateOptionsItem = modelAtIndex(index:indexPath)
         let cell:VCreateOptionsCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: VCreateOptionsCell.reusableIdentifier(),
+            withReuseIdentifier:VCreateOptionsCell.reusableIdentifier,
             for:
             indexPath) as! VCreateOptionsCell
         item.config(cell)
@@ -119,13 +120,17 @@ class VCreateOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
-        let item:MCreateOptionsItem = modelAtIndex(indexPath)
+        let item:MCreateOptionsItem = modelAtIndex(index:indexPath)
         item.selected(controller)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(NSEC_PER_MSEC * 300)) / Double(NSEC_PER_SEC))
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
         { [weak collectionView] in
             
-            collectionView?.selectItem(at: nil, animated:false, scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.selectItem(
+                at:nil,
+                animated:false,
+                scrollPosition:UICollectionViewScrollPosition())
         }
     }
 }

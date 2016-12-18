@@ -20,18 +20,18 @@ class VCreateMapPointer:UIView
         
         addSubview(cross)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "cross":cross]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[cross]-0-|",
+            withVisualFormat:"H:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[cross]-0-|",
+            withVisualFormat:"V:|-0-[cross]-0-|",
             options:[],
             metrics:metrics,
             views:views))

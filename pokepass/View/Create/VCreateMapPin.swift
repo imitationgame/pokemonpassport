@@ -3,30 +3,30 @@ import MapKit
 
 class VCreateMapPin:MKAnnotationView
 {
-    @objc enum VCreateMapPinCallout:Int
+    enum Callout:Int
     {
         case delete
         case move
     }
     
-    fileprivate let kImageWidth:CGFloat = 40
-    fileprivate let kImageHeight:CGFloat = 40
+    private let kImageWidth:CGFloat = 40
+    private let kImageHeight:CGFloat = 40
     
     init(annotation:MCreateAnnotation)
     {
-        let reuseIdentifier:String = VCreateMapPin.reusableIdentifier()
+        let reuseIdentifier:String = VCreateMapPin.reusableIdentifier
         let offsetY:CGFloat = kImageHeight / -2
         let leftCallOut:UIButton = UIButton(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
         leftCallOut.setImage(UIImage(named:"mapAnnotationDelete"), for:UIControlState())
         leftCallOut.imageView?.contentMode = UIViewContentMode.center
         leftCallOut.imageView?.clipsToBounds = true
-        leftCallOut.tag = VCreateMapPinCallout.delete.rawValue
+        leftCallOut.tag = Callout.delete.rawValue
         
         let rightCallOut:UIButton = UIButton(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
         rightCallOut.setImage(UIImage(named:"mapAnnotationMove"), for:UIControlState())
         rightCallOut.imageView?.contentMode = UIViewContentMode.center
         rightCallOut.imageView?.clipsToBounds = true
-        rightCallOut.tag = VCreateMapPinCallout.move.rawValue
+        rightCallOut.tag = Callout.move.rawValue
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
         canShowCallout = true
