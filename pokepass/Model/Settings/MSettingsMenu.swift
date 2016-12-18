@@ -6,7 +6,7 @@ class MSettingsMenu
     
     init()
     {
-        let itemMetrics:MSettingsMenuItemMetrics = MSettingsMenuItem.Metrics()
+        let itemMetrics:MSettingsMenuItemMetrics = MSettingsMenuItemMetrics()
         
         items = [
             itemMetrics

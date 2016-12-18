@@ -10,4 +10,9 @@ class MSettingsMenuItemMetricsOption
         self.name = name
         self.measure = measure
     }
+    
+    init()
+    {
+        fatalError()
+    }
 }
