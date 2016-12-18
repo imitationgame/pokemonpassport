@@ -2,15 +2,60 @@ import UIKit
 
 class VCreateHistoryCell:UICollectionViewCell
 {
-    private weak var label:UILabel!
+    private weak var labelDistance:UILabel!
+    private weak var labelLatitude:UILabel!
+    private weak var labelLongitude:UILabel!
+    private let numberFormatter:NumberFormatter
     
     override init(frame:CGRect)
     {
+        numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.white
 
+        let labelLatitude:UILabel = UILabel()
+        labelLatitude.isUserInteractionEnabled = false
+        labelLatitude.translatesAutoresizingMaskIntoConstraints = false
+        labelLatitude.backgroundColor = UIColor.clear
+        labelLatitude.font = UIFont.regular(size:12)
+        labelLatitude.textColor = UIColor.black
+        self.labelLatitude = labelLatitude
         
+        let labelLongitude:UILabel = UILabel()
+        labelLongitude.isUserInteractionEnabled = false
+        labelLongitude.translatesAutoresizingMaskIntoConstraints = false
+        labelLongitude.backgroundColor = UIColor.clear
+        labelLongitude.font = UIFont.regular(size:12)
+        labelLongitude.textColor = UIColor.black
+        self.labelLongitude = labelLongitude
+        
+        addSubview(labelLatitude)
+        addSubview(labelLongitude)
+        
+        let views:[String:UIView] = [
+            "labelLatitude":labelLatitude,
+            "labelLongitude":labelLongitude]
+        
+        let metrics:[String:CGFloat] = [:]
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-10-[labelLatitude]-10-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-10-[labelLongitude]-10-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-30-[labelLatitude(16)]-0-[labelLongitude(16)]",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     required init?(coder:NSCoder)
@@ -22,6 +67,23 @@ class VCreateHistoryCell:UICollectionViewCell
     
     func config(model:MCreateAnnotation)
     {
+        let numberLat:NSNumber = model.coordinate.latitude as NSNumber
+        let numberLon:NSNumber = model.coordinate.longitude as NSNumber
         
+        guard
+            
+            let stringLat:String = numberFormatter.string(
+                from:numberLat),
+            let stringLon:String = numberFormatter.string(
+                from:numberLon)
+        
+        else
+        {
+            return
+        }
+        
+        
+        labelLatitude.text = stringLat
+        labelLongitude.text = stringLon
     }
 }

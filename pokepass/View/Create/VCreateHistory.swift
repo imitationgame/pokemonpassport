@@ -5,6 +5,7 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     weak var collectionView:UICollectionView!
     private weak var controller:CCreate!
     private let kInterline:CGFloat = 1
+    private let kCellWidth:CGFloat = 90
     
     convenience init(controller:CCreate)
     {
@@ -21,9 +22,9 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         flow.minimumLineSpacing = kInterline
         flow.minimumInteritemSpacing = kInterline
         flow.sectionInset = UIEdgeInsets(
-            top:0,
+            top:kInterline,
             left:kInterline,
-            bottom:0,
+            bottom:kInterline,
             right:kInterline)
         
         let collectionView:UICollectionView = UICollectionView(
@@ -72,6 +73,15 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     //MARK: collectionView delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let height:CGFloat = collectionView.bounds.maxY
+        let usableHeight:CGFloat = height - (kInterline + kInterline)
+        let size:CGSize = CGSize(width:kCellWidth, height:usableHeight)
+        
+        return size
+    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {

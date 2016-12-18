@@ -13,7 +13,7 @@ class VCreate:UIView
     weak var layoutButtonTop:NSLayoutConstraint!
     private let kOptionsHeight:CGFloat = 64
     private let kFinderHeight:CGFloat = 44
-    private let kHistoryHeight:CGFloat = 40
+    private let kHistoryHeight:CGFloat = 60
     private let kButtonSize:CGFloat = 50
     
     convenience init(controller:CCreate)
