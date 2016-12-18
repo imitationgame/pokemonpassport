@@ -47,14 +47,24 @@ class VProjectsCell:UICollectionViewCell
         labelDistance.textColor = UIColor.black
         self.labelDistance = labelDistance
         
+        let buttonShare:UIButton = UIButton()
+        buttonShare.translatesAutoresizingMaskIntoConstraints = false
+        buttonShare.setImage(
+            #imageLiteral(resourceName: "share"),
+            for:UIControlState.normal)
+        buttonShare.imageView!.clipsToBounds = true
+        buttonShare.imageView!.contentMode = UIViewContentMode.center
+        
         addSubview(label)
         addSubview(labelPoints)
         addSubview(labelDistance)
+        addSubview(buttonShare)
         
         let views:[String:UIView] = [
             "label":label,
             "labelPoints":labelPoints,
-            "labelDistance":labelDistance]
+            "labelDistance":labelDistance,
+            "buttonShare":buttonShare]
         
         let metrics:[String:CGFloat] = [:]
         
@@ -70,6 +80,16 @@ class VProjectsCell:UICollectionViewCell
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat:"H:|-10-[labelDistance(200)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:[buttonShare(60)]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[buttonShare]-0-|",
             options:[],
             metrics:metrics,
             views:views))
