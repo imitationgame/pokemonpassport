@@ -69,15 +69,13 @@ class CCreate:CMainController
     private func finishStoring()
     {
         DManager.sharedInstance.save()
-        project = nil
         VMainAlert.Message(message:
             NSLocalizedString("CMainController_saved", comment:""))
         
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.clear()
-            self?.viewCreate.hideLoading()
+            self?.parentController.backController()
         }
     }
     

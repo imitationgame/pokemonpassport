@@ -6,7 +6,7 @@ class VMainAlert:UIView
     private weak var layoutTop:NSLayoutConstraint!
     private weak var parentView:UIView?
     private let kAnimationDuration:TimeInterval = 0.2
-    private let kTimeOut:TimeInterval = 3
+    private let kTimeOut:TimeInterval = 4
     private let kAlertHeight:CGFloat = 64
     private let kLabelTop:CGFloat = 20
     
@@ -32,7 +32,7 @@ class VMainAlert:UIView
         
         let label:UILabel = UILabel()
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:14)
+        label.font = UIFont.medium(size:16)
         label.textColor = UIColor.white
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
