@@ -70,7 +70,7 @@ class CProjects:CMainController
     func createProject()
     {
         let controller:CCreate = CCreate()
-        let transition:MMainTransition = MMainTransitionPush(pushed:controller.na)
+        let transition:MMainTransition = MMainTransitionPushTop()
         parentController.pushController(controller:controller, transition:transition)
     }
 }
