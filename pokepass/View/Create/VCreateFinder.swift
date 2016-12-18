@@ -45,11 +45,12 @@ class VCreateFinder:UIView, UITextFieldDelegate
             for:UIControlEvents.touchUpInside)
         
         let field:UITextField = UITextField()
+        field.keyboardType = UIKeyboardType.alphabet
         field.translatesAutoresizingMaskIntoConstraints = false
         field.clipsToBounds = true
         field.backgroundColor = UIColor.clear
         field.borderStyle = UITextBorderStyle.none
-        field.font = UIFont.regular(size:16)
+        field.font = UIFont.medium(size:17)
         field.textColor = UIColor.black
         field.tintColor = UIColor.black
         field.returnKeyType = UIReturnKeyType.search
