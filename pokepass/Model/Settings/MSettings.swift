@@ -2,6 +2,12 @@ import Foundation
 
 class MSettings
 {
+    enum Measures:Int16
+    {
+        case metric
+        case imperial
+    }
+    
     static let sharedInstance = MSettings()
     fileprivate(set) var model:DPokePassSettings?
     
