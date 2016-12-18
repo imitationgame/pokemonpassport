@@ -2,18 +2,29 @@ import UIKit
 
 class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    weak var collectionView:UICollectionView!
     private weak var controller:CCreate!
-    private weak var collectionView:UICollectionView!
+    private let kInterline:CGFloat = 1
     
     convenience init(controller:CCreate)
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor(white:0.95, alpha:1)
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flow.headerReferenceSize = CGSize.zero
+        flow.footerReferenceSize = CGSize.zero
+        flow.scrollDirection = UICollectionViewScrollDirection.horizontal
+        flow.minimumLineSpacing = kInterline
+        flow.minimumInteritemSpacing = kInterline
+        flow.sectionInset = UIEdgeInsets(
+            top:0,
+            left:kInterline,
+            bottom:0,
+            right:kInterline)
         
         let collectionView:UICollectionView = UICollectionView(
             frame:CGRect.zero,

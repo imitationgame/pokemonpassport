@@ -2,11 +2,14 @@ import UIKit
 
 class VCreateHistoryCell:UICollectionViewCell
 {
+    private weak var label:UILabel!
+    
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
+
         
     }
     

@@ -7,11 +7,13 @@ class VCreate:UIView
     weak var pointer:VCreateMapPointer!
     weak var options:VCreateOptions!
     weak var finder:VCreateFinder!
+    weak var history:VCreateHistory!
     weak var button:UIButton!
     weak var layoutButtonLeft:NSLayoutConstraint!
     weak var layoutButtonTop:NSLayoutConstraint!
     private let kOptionsHeight:CGFloat = 64
     private let kFinderHeight:CGFloat = 44
+    private let kHistoryHeight:CGFloat = 40
     private let kButtonSize:CGFloat = 50
     
     convenience init(controller:CCreate)
@@ -34,7 +36,11 @@ class VCreate:UIView
         let finder:VCreateFinder = VCreateFinder(controller:controller)
         self.finder = finder
         
+        let history:VCreateHistory = VCreateHistory(controller:controller)
+        self.history = history
+        
         let button:UIButton = UIButton()
+        button.backgroundColor = UIColor.red.withAlphaComponent(0.3)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(
             self,
@@ -56,6 +62,7 @@ class VCreate:UIView
         
         addSubview(finder)
         addSubview(map)
+        addSubview(history)
         addSubview(pointer)
         addSubview(options)
         addSubview(button)
@@ -65,12 +72,14 @@ class VCreate:UIView
             "pointer":pointer,
             "options":options,
             "finder":finder,
-            "button":button]
+            "button":button,
+            "history":history]
         
         let metrics:[String:CGFloat] = [
             "optionsHeight":kOptionsHeight,
             "finderHeight":kFinderHeight,
-            "buttonSize":kButtonSize]
+            "buttonSize":kButtonSize,
+            "historyHeight":kHistoryHeight]
         
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat:"H:|-0-[map]-0-|",
@@ -93,7 +102,12 @@ class VCreate:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-0-[options(optionsHeight)]-0-[finder(finderHeight)]-0-[map]-0-|",
+            withVisualFormat:"H:|-0-[history]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-0-[options(optionsHeight)]-0-[finder(finderHeight)]-0-[map]-0-[history(historyHeight)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -138,7 +152,7 @@ class VCreate:UIView
     override func layoutSubviews()
     {
         layoutButtonLeft.constant = bounds.maxX / 2.0
-        layoutButtonTop.constant = (bounds.maxY + kOptionsHeight + kFinderHeight) / 2.0
+        layoutButtonTop.constant = (bounds.maxY + kOptionsHeight + kFinderHeight - kHistoryHeight) / 2.0
         
         super.layoutSubviews()
     }
