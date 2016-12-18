@@ -43,6 +43,7 @@
 		DAB088621D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */; };
 		DAB088641D6509ED00C3A083 /* VCreateFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088631D6509ED00C3A083 /* VCreateFinder.swift */; };
 		DABA400F1E06686F005E932B /* MMainTransitionPushTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */; };
+		DABA40111E067807005E932B /* VCreateHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA40101E067807005E932B /* VCreateHistory.swift */; };
 		DAE03F2D1D605FF50054CDEB /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE03EBA1D605FF40054CDEB /* brand.xcassets */; };
 		DAE03F301D605FF50054CDEB /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */; };
 		DAE03F311D605FF50054CDEB /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */; };
@@ -135,6 +136,7 @@
 		DAB088611D64EDD900C3A083 /* MSettingsMenuItemMetricsOptionUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsMenuItemMetricsOptionUs.swift; sourceTree = "<group>"; };
 		DAB088631D6509ED00C3A083 /* VCreateFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateFinder.swift; sourceTree = "<group>"; };
 		DABA400E1E06686F005E932B /* MMainTransitionPushTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainTransitionPushTop.swift; sourceTree = "<group>"; };
+		DABA40101E067807005E932B /* VCreateHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCreateHistory.swift; sourceTree = "<group>"; };
 		DAE03EBA1D605FF40054CDEB /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE03EBE1D605FF40054CDEB /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAE03EBF1D605FF40054CDEB /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				DAE03FC91D61538A0054CDEB /* VCreateMapPointer.swift */,
 				DAE03FAC1D6116640054CDEB /* VCreateOptions.swift */,
 				DAE03FB01D611AE30054CDEB /* VCreateOptionsCell.swift */,
+				DABA40101E067807005E932B /* VCreateHistory.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				DAABC8061D629DEB00807DA9 /* MProjectsDetailItem.swift in Sources */,
 				DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
+				DABA40111E067807005E932B /* VCreateHistory.swift in Sources */,
 				DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */,
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
