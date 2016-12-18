@@ -15,23 +15,23 @@ class VProjectsCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(17)
-        label.textColor = UIColor.main()
+        label.textColor = UIColor.main
         self.label = label
         
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-10-[label(250)]",
+            withVisualFormat:"H:|-10-[label(250)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[label]-0-|",
+            withVisualFormat:"V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -60,7 +60,7 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: private
     
-    fileprivate func hover()
+    private func hover()
     {
         if isSelected || isHighlighted
         {
@@ -74,7 +74,7 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(_ model:MProjectsItem)
+    func config(model:MProjectsItem)
     {
         label.text = model.name
     }

@@ -5,15 +5,15 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     weak var controller:CProjectsDetail!
     weak var spinner:VMainLoader!
     weak var collection:UICollectionView!
-    fileprivate let kFooterHeight:CGFloat = 150
-    fileprivate let kHeaderHeight:CGFloat = 60
-    fileprivate let kInterLine:CGFloat = 1
+    private let kFooterHeight:CGFloat = 150
+    private let kHeaderHeight:CGFloat = 60
+    private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjectsDetail)
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.complement()
+        backgroundColor = UIColor.complement
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
@@ -22,7 +22,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         self.spinner = spinner
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flow.headerReferenceSize = CGSize(width: 0, height: kHeaderHeight)
+        flow.headerReferenceSize = CGSize(width:0, height:kHeaderHeight)
         flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
         flow.scrollDirection = UICollectionViewScrollDirection.vertical
@@ -42,45 +42,45 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionHeader,
             withReuseIdentifier:
-            VProjectsDetailHeader.reusableIdentifier())
+            VProjectsDetailHeader.reusableIdentifier)
         collection.register(
             VProjectsDetailFooter.self,
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionFooter,
             withReuseIdentifier:
-            VProjectsDetailFooter.reusableIdentifier())
+            VProjectsDetailFooter.reusableIdentifier)
         collection.register(
             VProjectsDetailCellSpeed.self,
             forCellWithReuseIdentifier:
-            VProjectsDetailCellSpeed.reusableIdentifier())
+            VProjectsDetailCellSpeed.reusableIdentifier)
         self.collection = collection
         
         addSubview(spinner)
         addSubview(collection)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "spinner":spinner,
             "collection":collection]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[spinner]-0-|",
+            withVisualFormat:"H:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[spinner]-0-|",
+            withVisualFormat:"V:|-0-[spinner]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[collection]-0-|",
+            withVisualFormat:"H:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[collection]-0-|",
+            withVisualFormat:"V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -92,21 +92,21 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         super.layoutSubviews()
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MProjectsDetailItem
+    {
+        let item:MProjectsDetailItem = controller.model.sections[index.section].items[index.item]
+        
+        return item
+    }
+    
     //MARK: public
     
     func showLoading()
     {
         collection.isHidden = true
         spinner.startAnimating()
-    }
-    
-    //MARK: private
-    
-    fileprivate func modelAtIndex(_ index:IndexPath) -> MProjectsDetailItem
-    {
-        let item:MProjectsDetailItem = controller.model.sections[index.section].items[index.item]
-        
-        return item
     }
     
     //MARK: col del
@@ -118,7 +118,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
         
         if section == count - 1
         {
-            size = CGSize(width: 0, height: kFooterHeight)
+            size = CGSize(width:0, height:kFooterHeight)
         }
         else
         {
@@ -130,7 +130,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let item:MProjectsDetailItem = modelAtIndex(index:indexPath)
         let width:CGFloat = collectionView.bounds.maxX
         let size:CGSize = CGSize(width: width, height: item.cellHeight)
         
@@ -158,7 +158,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
             let header:VProjectsDetailHeader = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier:
-                VProjectsDetailHeader.reusableIdentifier(),
+                VProjectsDetailHeader.reusableIdentifier,
                 for:
                 indexPath) as! VProjectsDetailHeader
             let headerModel:MProjectsDetailSection = controller.model.sections[indexPath.section]
@@ -171,7 +171,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
             let footer:VProjectsDetailFooter = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier:
-                VProjectsDetailFooter.reusableIdentifier(),
+                VProjectsDetailFooter.reusableIdentifier,
                 for:
                 indexPath) as! VProjectsDetailFooter
             footer.config(controller)
@@ -184,19 +184,19 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let item:MProjectsDetailItem = modelAtIndex(index:indexPath)
         let cell:VProjectsDetailCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: item.reusableIdentifier,
             for:
             indexPath) as! VProjectsDetailCell
-        item.config(cell, controller:controller)
+        item.config(cell:cell, controller:controller)
         
         return cell
     }
     
     func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let item:MProjectsDetailItem = modelAtIndex(index:indexPath)
         let selectable:Bool = item.selectable
         
         return selectable
@@ -204,7 +204,7 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MProjectsDetailItem = modelAtIndex(indexPath)
+        let item:MProjectsDetailItem = modelAtIndex(index:indexPath)
         let highlightable:Bool = item.selectable
         
         return highlightable
@@ -213,6 +213,6 @@ class VProjectsDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         let item:MProjectsDetailItem = modelAtIndex(indexPath)
-        item.selected(controller)
+        item.selected(controller:controller)
     }
 }

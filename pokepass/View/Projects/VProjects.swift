@@ -164,7 +164,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             withReuseIdentifier:VProjectsCell.reusableIdentifier,
             for:
             indexPath) as! VProjectsCell
-        cell.config(item)
+        cell.config(model:item)
         
         return cell
     }
