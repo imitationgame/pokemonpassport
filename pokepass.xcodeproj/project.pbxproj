@@ -28,6 +28,7 @@
 		DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */; };
 		DAABC81A1D62A89000807DA9 /* VProjectsDetailCellSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */; };
 		DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */; };
+		DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307E1E06263700AFAA98 /* DManager.swift */; };
 		DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */; };
 		DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */; };
 		DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884D1D64BAB100C3A083 /* MSettings.swift */; };
@@ -127,6 +128,7 @@
 		DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCell.swift; sourceTree = "<group>"; };
 		DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCellSpeed.swift; sourceTree = "<group>"; };
 		DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPX.xcdatamodel; sourceTree = "<group>"; };
+		DAAE307E1E06263700AFAA98 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemSettings.swift; sourceTree = "<group>"; };
 		DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassSettings.swift; sourceTree = "<group>"; };
 		DAB0884D1D64BAB100C3A083 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				DAE03ED51D605FF50054CDEB /* Model */,
 				DAE03ED81D605FF50054CDEB /* Object */,
 				DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */,
+				DAAE307E1E06263700AFAA98 /* DManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				DAABC8061D629DEB00807DA9 /* MProjectsDetailItem.swift in Sources */,
 				DAB0885E1D64EDA600C3A083 /* MSettingsMenuItemMetricsOption.swift in Sources */,
 				DAE03F791D605FF50054CDEB /* VMainBar.swift in Sources */,
+				DAAE307F1E06263700AFAA98 /* DManager.swift in Sources */,
 				DAE03F9B1D610C0F0054CDEB /* VCreateMap.swift in Sources */,
 				DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */,
 				DAE03F4A1D605FF50054CDEB /* MMainNavItemCreate.swift in Sources */,
