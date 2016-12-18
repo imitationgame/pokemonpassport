@@ -7,7 +7,7 @@ class VProjects:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     weak var collection:UICollectionView!
     private let kCollectionBottom:CGFloat = 40
     private let kHeaderHeight:CGFloat = 130
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 70
     private let kInterLine:CGFloat = 1
     
     convenience init(controller:CProjects)

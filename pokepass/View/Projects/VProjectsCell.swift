@@ -35,33 +35,49 @@ class VProjectsCell:UICollectionViewCell
         labelPoints.isUserInteractionEnabled = false
         labelPoints.translatesAutoresizingMaskIntoConstraints = false
         labelPoints.backgroundColor = UIColor.clear
-        labelPoints.font = UIFont.medium(size:13)
-        labelPoints.textColor = UIColor.black
+        labelPoints.font = UIFont.medium(size:12)
+        labelPoints.textColor = UIColor(white:0, alpha:0.6)
         self.labelPoints = labelPoints
         
         let labelDistance:UILabel = UILabel()
         labelDistance.isUserInteractionEnabled = false
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
-        labelDistance.font = UIFont.regular(size:13)
-        labelDistance.textColor = UIColor.black
+        labelDistance.font = UIFont.regular(size:12)
+        labelDistance.textColor = UIColor(white:0, alpha:0.6)
         self.labelDistance = labelDistance
         
         let buttonShare:UIButton = UIButton()
         buttonShare.translatesAutoresizingMaskIntoConstraints = false
         buttonShare.setImage(
-            #imageLiteral(resourceName: "projectShare"),
+            #imageLiteral(resourceName: "projectShare").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
+        buttonShare.setImage(
+            #imageLiteral(resourceName: "projectShare").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
         buttonShare.imageView!.clipsToBounds = true
         buttonShare.imageView!.contentMode = UIViewContentMode.center
+        buttonShare.imageView!.tintColor = UIColor.complement
+        buttonShare.addTarget(
+            self,
+            action:#selector(self.actionShare(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let buttonEdit:UIButton = UIButton()
         buttonEdit.translatesAutoresizingMaskIntoConstraints = false
         buttonEdit.setImage(
-            #imageLiteral(resourceName: "projectEdit"),
+            #imageLiteral(resourceName: "projectEdit").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
+        buttonEdit.setImage(
+            #imageLiteral(resourceName: "projectEdit").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
         buttonEdit.imageView!.clipsToBounds = true
         buttonEdit.imageView!.contentMode = UIViewContentMode.center
+        buttonEdit.imageView!.tintColor = UIColor.complement
+        buttonEdit.addTarget(
+            self,
+            action:#selector(self.actionEdit(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(label)
         addSubview(labelPoints)
@@ -109,7 +125,7 @@ class VProjectsCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-10-[label(21)]-7-[labelPoints(17)]-0-[labelDistance(17)]",
+            withVisualFormat:"V:|-10-[label(21)]-2-[labelPoints(15)]-0-[labelDistance(15)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -118,6 +134,27 @@ class VProjectsCell:UICollectionViewCell
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: actions
+    
+    func actionShare(sender button:UIButton)
+    {
+        guard
+            
+            let model:MProjectsItem = self.model
+        
+        else
+        {
+            return
+        }
+        
+        controller?.export(item:model)
+    }
+    
+    func actionEdit(sender button:UIButton)
+    {
+        
     }
     
     //MARK: private
