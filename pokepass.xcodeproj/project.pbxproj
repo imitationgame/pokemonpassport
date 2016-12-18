@@ -27,6 +27,7 @@
 		DAABC8161D62A5C300807DA9 /* VProjectsDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */; };
 		DAABC8181D62A5D200807DA9 /* VProjectsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */; };
 		DAABC81A1D62A89000807DA9 /* VProjectsDetailCellSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */; };
+		DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */; };
 		DAB088411D64B3BA00C3A083 /* MMainNavItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */; };
 		DAB088481D64B7EE00C3A083 /* DPokePassSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */; };
 		DAB0884E1D64BAB100C3A083 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0884D1D64BAB100C3A083 /* MSettings.swift */; };
@@ -125,6 +126,7 @@
 		DAABC8151D62A5C300807DA9 /* VProjectsDetailFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailFooter.swift; sourceTree = "<group>"; };
 		DAABC8171D62A5D200807DA9 /* VProjectsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCell.swift; sourceTree = "<group>"; };
 		DAABC8191D62A89000807DA9 /* VProjectsDetailCellSpeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VProjectsDetailCellSpeed.swift; sourceTree = "<group>"; };
+		DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DGPX.xcdatamodel; sourceTree = "<group>"; };
 		DAB088401D64B3BA00C3A083 /* MMainNavItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainNavItemSettings.swift; sourceTree = "<group>"; };
 		DAB088461D64B7EE00C3A083 /* DPokePassSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPokePassSettings.swift; sourceTree = "<group>"; };
 		DAB0884D1D64BAB100C3A083 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				DAE03ED01D605FF50054CDEB /* Manager */,
 				DAE03ED51D605FF50054CDEB /* Model */,
 				DAE03ED81D605FF50054CDEB /* Object */,
+				DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				DAABC8101D62A1BA00807DA9 /* MProjectsDetailItemSpeedRun.swift in Sources */,
 				DA9AC69C1D62498700F0F5C8 /* MProjects.swift in Sources */,
 				DAE03F571D605FF50054CDEB /* MMainTransitionFade.swift in Sources */,
+				DAAE307D1E06260300AFAA98 /* DGPX.xcdatamodeld in Sources */,
 				DAE03F7B1D605FF50054CDEB /* VMainBarCell.swift in Sources */,
 				DAE03F531D605FF50054CDEB /* MMainNavPos.swift in Sources */,
 				DAE03F471D605FF50054CDEB /* MCreate.swift in Sources */,
@@ -873,6 +877,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		DAAE307B1E06260300AFAA98 /* DGPX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */,
+			);
+			currentVersion = DAAE307C1E06260300AFAA98 /* DGPX.xcdatamodel */;
+			path = DGPX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		DAE03ED61D605FF50054CDEB /* DPokePassModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
