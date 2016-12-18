@@ -35,29 +35,29 @@ class VMainBarBack:UIView
         addSubview(button)
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "button":button,
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[button(65)]",
+            withVisualFormat:"H:|-0-[button(65)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[button]-0-|",
+            withVisualFormat:"V:|-0-[button]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[label]-0-|",
+            withVisualFormat:"H:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-20-[label(44)]",
+            withVisualFormat:"V:|-20-[label(44)]",
             options:[],
             metrics:metrics,
             views:views))

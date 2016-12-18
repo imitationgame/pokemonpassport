@@ -9,9 +9,10 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     weak var layoutCollectionRight:NSLayoutConstraint!
     weak var layoutBackLeft:NSLayoutConstraint!
     weak var layoutBackRight:NSLayoutConstraint!
-    fileprivate let model:MMainNav
-    fileprivate var pos:MMainNavPos
-    fileprivate let kButtonWidth:CGFloat = 70
+    private let model:MMainNav
+    private var pos:MMainNavPos
+    private let kButtonWidth:CGFloat = 70
+    private let kDeselectTime:TimeInterval = 1
     
     init(controllerParent:CMainParent)
     {
@@ -45,7 +46,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         collection.register(
             VMainBarCell.self,
             forCellWithReuseIdentifier:
-            VMainBarCell.reusableIdentifier()
+            VMainBarCell.reusableIdentifier
         )
         self.collection = collection
         
@@ -55,19 +56,19 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         addSubview(collection)
         addSubview(back)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "collection":collection,
             "back":back]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[collection]-0-|",
+            withVisualFormat:"V:|-0-[collection]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[back]-0-|",
+            withVisualFormat:"V:|-0-[back]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -112,13 +113,17 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         pos.adjust(self)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC))
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
         { [weak collection, weak model] in
             
             if model != nil
             {
                 let indexPath:IndexPath = IndexPath(item:model!.current.index, section:0)
-                collection?.selectItem(at: indexPath, animated:false, scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+                collection?.selectItem(
+                    at:indexPath,
+                    animated:false,
+                    scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
                 collection?.isHidden = false
             }
         }
@@ -141,7 +146,10 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
             {
                 let selected:Int = self!.model.current.index
                 let selectedIndexPath:IndexPath = IndexPath(item:selected, section:0)
-                self!.collection.scrollToItem(at: selectedIndexPath, at:UICollectionViewScrollPosition.centeredHorizontally, animated:true)
+                self!.collection.scrollToItem(
+                    at:selectedIndexPath,
+                    at:UICollectionViewScrollPosition.centeredHorizontally,
+                    animated:true)
             }
         }
         
@@ -150,7 +158,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     //MARK: private
     
-    fileprivate func modelAtIndex(_ index:IndexPath) -> MMainNavItem
+    private func modelAtIndex(index:IndexPath) -> MMainNavItem
     {
         let item:MMainNavItem = model.items[index.item]
         
@@ -159,16 +167,16 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     //MARK: public
     
-    func pushed(_ name:String)
+    func pushed(name:String)
     {
-        pos = MMainNavPos.Pushed()
+        pos = MMainNavPosPushed()
         pos.adjust(self)
         back.label.text = name
     }
     
     func poped()
     {
-        pos = MMainNavPos.Normal()
+        pos = MMainNavPosNormal()
         pos.adjust(self)
     }
     
@@ -187,7 +195,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let height:CGFloat = collectionView.bounds.maxY
-        let size:CGSize = CGSize(width: kButtonWidth, height: height)
+        let size:CGSize = CGSize(width:kButtonWidth, height:height)
         
         return size
     }
@@ -206,7 +214,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
         let should:Bool = item.state.highlightable
         
         return should
@@ -214,7 +222,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
         let should:Bool = item.state.selectable
         
         return should
@@ -222,7 +230,7 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
         let cell:VMainBarCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: VMainBarCell.reusableIdentifier(),
             for:
@@ -234,11 +242,16 @@ class VMainBar:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
-        let item:MMainNavItem = modelAtIndex(indexPath)
-        collectionView.scrollToItem(at: indexPath, at:UICollectionViewScrollPosition.centeredHorizontally, animated:true)
-        let transition:MMainTransition = MMainTransition.transition(model.current.index, toIndex:item.index)
+        let item:MMainNavItem = modelAtIndex(index:indexPath)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.centeredHorizontally,
+            animated:true)
+        let transition:MMainTransition = MMainTransition.transition(
+            fromIndex:model.current.index,
+            toIndex:item.index)
         let controller:UIViewController = item.controller()
-        controllerParent.pushController(controller, transition:transition)
+        controllerParent.pushController(controller:controller, transition:transition)
         model.selectItem(item)
     }
 }
