@@ -35,8 +35,8 @@ class VProjectsCell:UICollectionViewCell
         labelPoints.isUserInteractionEnabled = false
         labelPoints.translatesAutoresizingMaskIntoConstraints = false
         labelPoints.backgroundColor = UIColor.clear
-        labelPoints.font = UIFont.medium(size:12)
-        labelPoints.textColor = UIColor(white:0, alpha:0.6)
+        labelPoints.font = UIFont.regular(size:12)
+        labelPoints.textColor = UIColor(white:0, alpha:0.5)
         self.labelPoints = labelPoints
         
         let labelDistance:UILabel = UILabel()
@@ -44,7 +44,7 @@ class VProjectsCell:UICollectionViewCell
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
         labelDistance.font = UIFont.regular(size:12)
-        labelDistance.textColor = UIColor(white:0, alpha:0.6)
+        labelDistance.textColor = UIColor(white:0, alpha:0.5)
         self.labelDistance = labelDistance
         
         let buttonShare:UIButton = UIButton()
@@ -154,7 +154,16 @@ class VProjectsCell:UICollectionViewCell
     
     func actionEdit(sender button:UIButton)
     {
+        guard
+            
+            let model:MProjectsItem = self.model
+            
+        else
+        {
+            return
+        }
         
+        controller?.edit(item:model)
     }
     
     //MARK: private
