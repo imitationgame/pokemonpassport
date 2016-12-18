@@ -5,7 +5,7 @@ class VCreateHistory:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var collectionView:UICollectionView!
     private weak var controller:CCreate!
     private let kInterline:CGFloat = 1
-    private let kCellWidth:CGFloat = 90
+    private let kCellWidth:CGFloat = 100
     
     convenience init(controller:CCreate)
     {

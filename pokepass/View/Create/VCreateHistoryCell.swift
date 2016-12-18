@@ -39,10 +39,10 @@ class VCreateHistoryCell:UICollectionViewCell
         labelDistance.isUserInteractionEnabled = false
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
-        labelDistance.font = UIFont.medium(size:13)
+        labelDistance.font = UIFont.medium(size:14)
         labelDistance.textColor = UIColor(
-            red:0.65,
-            green:0.8,
+            red:0.55,
+            green:0.7,
             blue:0,
             alpha:1)
         self.labelDistance = labelDistance
@@ -77,7 +77,12 @@ class VCreateHistoryCell:UICollectionViewCell
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelIndex(50)]-0-[labelDistance]-2-|",
+            withVisualFormat:"H:|-10-[labelIndex(50)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-10-[labelDistance]-2-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -92,12 +97,7 @@ class VCreateHistoryCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-4-[labelDistance(24)]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-4-[labelIndex(24)]-10-[labelLatitude(12)]-0-[labelLongitude(12)]",
+            withVisualFormat:"V:|-4-[labelIndex(16)]-0-[labelDistance(18)]-0-[labelLatitude(12)]-0-[labelLongitude(12)]",
             options:[],
             metrics:metrics,
             views:views))
