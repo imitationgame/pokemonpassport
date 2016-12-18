@@ -17,9 +17,9 @@ class CProjects:CMainController
         fatalError()
     }
     
-    override func viewDidLoad()
+    override func viewDidAppear(_ animated:Bool)
     {
-        super.viewDidLoad()
+        super.viewDidAppear(animated)
         loadProjects()
     }
     
