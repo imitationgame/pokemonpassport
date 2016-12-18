@@ -2,7 +2,7 @@ import UIKit
 
 class MMainTransitionReplace:MMainTransition
 {
-    fileprivate let kAnimationDuration:TimeInterval = 0
+    private let kAnimationDuration:TimeInterval = 0
     
     init()
     {

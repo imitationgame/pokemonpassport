@@ -2,7 +2,7 @@ import UIKit
 
 class MMainTransitionPush:MMainTransition
 {
-    fileprivate let kAnimationDuration:TimeInterval = 0.5
+    private let kAnimationDuration:TimeInterval = 0.5
     let pushed:String
     
     init(pushed:String)

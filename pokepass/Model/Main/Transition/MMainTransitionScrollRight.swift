@@ -2,7 +2,7 @@ import UIKit
 
 class MMainTransitionScrollRight:MMainTransition
 {
-    fileprivate let kAnimationDuration:TimeInterval = 0.3
+    private let kAnimationDuration:TimeInterval = 0.3
     
     init()
     {
