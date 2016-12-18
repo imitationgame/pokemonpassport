@@ -3,10 +3,11 @@ import CoreLocation
 
 class VProjectsCell:UICollectionViewCell
 {
+    private weak var model:MProjectsItem?
+    private weak var controller:CProjects?
     private weak var label:UILabel!
     private weak var labelDistance:UILabel!
     private weak var labelPoints:UILabel!
-    private weak var model:MProjectsItem?
     private let numberFormatter:NumberFormatter
     private let kMaxDecimal:Int = 3
     private let kKiloMeter:Double = 0.001
@@ -42,7 +43,7 @@ class VProjectsCell:UICollectionViewCell
         labelDistance.isUserInteractionEnabled = false
         labelDistance.translatesAutoresizingMaskIntoConstraints = false
         labelDistance.backgroundColor = UIColor.clear
-        labelDistance.font = UIFont.regular(size:13)
+        labelDistance.font = UIFont.regular(size:14)
         labelDistance.textColor = UIColor.black
         self.labelDistance = labelDistance
         
@@ -73,7 +74,7 @@ class VProjectsCell:UICollectionViewCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-10-[label(21)]-0-[labelPoints(17)]-0-[labelDistance(17)]",
+            withVisualFormat:"V:|-10-[label(21)]-5-[labelPoints(17)]-0-[labelDistance(18)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -160,9 +161,10 @@ class VProjectsCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(model:MProjectsItem)
+    func config(model:MProjectsItem, controller:CProjects)
     {
         self.model = model
+        self.controller = controller
         label.text = model.name
         
         guard
