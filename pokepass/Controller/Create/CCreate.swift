@@ -168,6 +168,17 @@ class CCreate:CMainController
         beforeAddLocation(location:annotation)
     }
     
+    func cancelMove()
+    {
+        if let movingAnnotation:MCreateAnnotation = self.movingAnnotation
+        {
+            self.movingAnnotation = nil
+            viewCreate.map.addAnnotation(movingAnnotation)
+            regenerateRoute()
+            viewCreate.pointer.showPointer()
+        }
+    }
+    
     func removeLocation(location:MCreateAnnotation)
     {
         model.locations.remove(at:location.index)

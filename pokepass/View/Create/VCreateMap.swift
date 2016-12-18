@@ -181,6 +181,7 @@ class VCreateMap:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
+        controller.cancelMove()
         controller.viewCreate.notShowingCallout()
         controller.viewCreate.history.clearSelection()
     }
