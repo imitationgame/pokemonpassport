@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 class VCreateHistoryCell:UICollectionViewCell
 {
@@ -7,13 +8,20 @@ class VCreateHistoryCell:UICollectionViewCell
     private weak var labelLongitude:UILabel!
     private weak var labelIndex:UILabel!
     private let numberFormatter:NumberFormatter
+    private let distanceFormatter:NumberFormatter
     private let kMaxDecimal:Int = 7
+    private let kMaxDistanceDecimal:Int = 2
+    private let kEmpty:String = ""
     
     override init(frame:CGRect)
     {
         numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         numberFormatter.maximumFractionDigits = kMaxDecimal
+        
+        distanceFormatter = NumberFormatter()
+        distanceFormatter.numberStyle = NumberFormatter.Style.decimal
+        distanceFormatter.maximumFractionDigits = kMaxDistanceDecimal
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -23,9 +31,21 @@ class VCreateHistoryCell:UICollectionViewCell
         labelIndex.isUserInteractionEnabled = false
         labelIndex.translatesAutoresizingMaskIntoConstraints = false
         labelIndex.backgroundColor = UIColor.clear
-        labelIndex.font = UIFont.bold(size:16)
-        labelIndex.textColor = UIColor.complement
+        labelIndex.font = UIFont.bold(size:13)
+        labelIndex.textColor = UIColor.main
         self.labelIndex = labelIndex
+        
+        let labelDistance:UILabel = UILabel()
+        labelDistance.isUserInteractionEnabled = false
+        labelDistance.translatesAutoresizingMaskIntoConstraints = false
+        labelDistance.backgroundColor = UIColor.clear
+        labelDistance.font = UIFont.medium(size:13)
+        labelDistance.textColor = UIColor(
+            red:0.65,
+            green:0.8,
+            blue:0,
+            alpha:1)
+        self.labelDistance = labelDistance
         
         let labelLatitude:UILabel = UILabel()
         labelLatitude.isUserInteractionEnabled = false
@@ -46,16 +66,18 @@ class VCreateHistoryCell:UICollectionViewCell
         addSubview(labelIndex)
         addSubview(labelLatitude)
         addSubview(labelLongitude)
+        addSubview(labelDistance)
         
         let views:[String:UIView] = [
             "labelLatitude":labelLatitude,
             "labelLongitude":labelLongitude,
-            "labelIndex":labelIndex]
+            "labelIndex":labelIndex,
+            "labelDistance":labelDistance]
         
         let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-10-[labelIndex(50)]",
+            withVisualFormat:"H:|-10-[labelIndex(50)]-0-[labelDistance]-2-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -66,6 +88,11 @@ class VCreateHistoryCell:UICollectionViewCell
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat:"H:|-10-[labelLongitude]-2-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:|-4-[labelDistance(24)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -85,9 +112,11 @@ class VCreateHistoryCell:UICollectionViewCell
     
     func config(index:Int, model:MCreateAnnotation, modelPrevious:MCreateAnnotation?)
     {
+        let latitude:CLLocationDegrees = model.coordinate.latitude
+        let longitude:CLLocationDegrees = model.coordinate.longitude
         let numberIndex:NSNumber = index as NSNumber
-        let numberLat:NSNumber = model.coordinate.latitude as NSNumber
-        let numberLon:NSNumber = model.coordinate.longitude as NSNumber
+        let numberLat:NSNumber = latitude as NSNumber
+        let numberLon:NSNumber = longitude as NSNumber
         
         guard
             
@@ -106,5 +135,36 @@ class VCreateHistoryCell:UICollectionViewCell
         labelIndex.text = stringIndex
         labelLatitude.text = stringLat
         labelLongitude.text = stringLon
+        
+        if let previous:CLLocationCoordinate2D = modelPrevious?.coordinate
+        {
+            let location:CLLocation = CLLocation(
+                latitude:latitude,
+                longitude:longitude)
+            let locationPrev:CLLocation = CLLocation(
+                latitude:previous.latitude,
+                longitude:previous.longitude)
+            let distance:CLLocationDistance = location.distance(from:locationPrev)
+            let distanceNum:NSNumber = distance as NSNumber
+            
+            guard
+            
+                let distanceString:String = distanceFormatter.string(
+                    from:distanceNum)
+            
+            else
+            {
+                labelDistance.text = kEmpty
+                
+                return
+            }
+            
+            let completeString:String = "+ \(distanceString) Km"
+            labelDistance.text = completeString
+        }
+        else
+        {
+            labelDistance.text = kEmpty
+        }
     }
 }
