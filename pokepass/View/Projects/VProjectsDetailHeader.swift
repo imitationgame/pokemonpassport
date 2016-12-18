@@ -15,7 +15,7 @@ class VProjectsDetailHeader:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(15)
+        label.font = UIFont.bold(size:15)
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
@@ -23,18 +23,18 @@ class VProjectsDetailHeader:UICollectionReusableView
         
         addSubview(label)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-10-[label]-10-|",
+            withVisualFormat:"H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[label(20)]-10-|",
+            withVisualFormat:"V:[label(20)]-10-|",
             options:[],
             metrics:metrics,
             views:views))

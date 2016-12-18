@@ -14,8 +14,8 @@ class VProjectsDetailFooter:UICollectionReusableView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(12)
-        label.textColor = UIColor.main()
+        label.font = UIFont.bold(size:12)
+        label.textColor = UIColor.main
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.text = NSLocalizedString("VProjectsDetailFooter_label", comment:"")
@@ -30,29 +30,29 @@ class VProjectsDetailFooter:UICollectionReusableView
         addSubview(label)
         addSubview(button)
         
-        let views:[String:AnyObject] = [
+        let views:[String:UIView] = [
             "label":label,
             "button":button]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:CGFloat] = [:]
         
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-10-[label]-10-|",
+            withVisualFormat:"H:|-10-[label]-10-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-100-[button]-100-|",
+            withVisualFormat:"H:|-100-[button]-100-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[button(80)]-15-|",
+            withVisualFormat:"V:[button(80)]-15-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[label(20)]-(-25)-[button]",
+            withVisualFormat:"V:[label(20)]-(-25)-[button]",
             options:[],
             metrics:metrics,
             views:views))
@@ -73,7 +73,7 @@ class VProjectsDetailFooter:UICollectionReusableView
     
     //MARK: public
     
-    func config(_ controller:CProjectsDetail)
+    func config(controller:CProjectsDetail)
     {
         self.controller = controller
     }
